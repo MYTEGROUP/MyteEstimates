@@ -1,0 +1,1170 @@
+[
+    {
+        "FeatureListID": 4,
+        "Features": [
+            {
+                "Feature": "VisionInputInterface",
+                "SubFeature": "TextInput",
+                "TaskName": "CreateTextInputArea",
+                "TaskDescription": {
+                    "Description": "Create text input area for product vision entry.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "VisionInputInterface",
+                "SubFeature": "TextInput",
+                "TaskName": "EditAndUpdateVision",
+                "TaskDescription": {
+                    "Description": "Implement functionality to edit and update the vision statement.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "EpicCreationFunctionality",
+                "SubFeature": "EpicManagement",
+                "TaskName": "DevelopEpicInterface",
+                "TaskDescription": {
+                    "Description": "Develop interface for manual input of Epic titles and descriptions.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "EpicCreationFunctionality",
+                "SubFeature": "EpicManagement",
+                "TaskName": "LinkEpicsToVision",
+                "TaskDescription": {
+                    "Description": "Create function to link Epics to the high-level product vision.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "EpicCreationFunctionality",
+                "SubFeature": "EpicManagement",
+                "TaskName": "EditAndDeleteEpics",
+                "TaskDescription": {
+                    "Description": "Implement options to edit and delete Epics.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "UserStoryGeneration",
+                "SubFeature": "StoryManagement",
+                "TaskName": "BuildStoryInterface",
+                "TaskDescription": {
+                    "Description": "Build interface for creating User Stories within each Epic.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "UserStoryGeneration",
+                "SubFeature": "StoryManagement",
+                "TaskName": "AddStoryDetails",
+                "TaskDescription": {
+                    "Description": "Add fields for User Story details: title, description, acceptance criteria.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "UserStoryGeneration",
+                "SubFeature": "StoryManagement",
+                "TaskName": "ReorderAndPrioritizeStories",
+                "TaskDescription": {
+                    "Description": "Enable functionality to reorder and prioritize User Stories.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "UserStoryGeneration",
+                "SubFeature": "StoryManagement",
+                "TaskName": "EditAndDeleteStories",
+                "TaskDescription": {
+                    "Description": "Provide edit and delete capabilities for User Stories.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "TaskBreakdownFeature",
+                "SubFeature": "TaskAssignment",
+                "TaskName": "CreateTaskInterface",
+                "TaskDescription": {
+                    "Description": "Create interface for adding Tasks under each User Story.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "TaskBreakdownFeature",
+                "SubFeature": "TaskAssignment",
+                "TaskName": "AssignTasksToMembers",
+                "TaskDescription": {
+                    "Description": "Implement ability to assign Tasks to team members.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "TaskBreakdownFeature",
+                "SubFeature": "TaskDetailing",
+                "TaskName": "CaptureTaskDetails",
+                "TaskDescription": {
+                    "Description": "Include fields to capture Task details: description, effort estimation, and status.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "TaskBreakdownFeature",
+                "SubFeature": "TaskDetailing",
+                "TaskName": "EditAndDeleteTasks",
+                "TaskDescription": {
+                    "Description": "Develop edit and delete functionalities for Tasks.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "DataDrivenInsight",
+                "SubFeature": "ProgressDashboard",
+                "TaskName": "DisplayProgressDashboard",
+                "TaskDescription": {
+                    "Description": "Display dashboard with the current status of Epics, User Stories, and Tasks.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "DataDrivenInsight",
+                "SubFeature": "ProgressDashboard",
+                "TaskName": "VisualProgressIndicators",
+                "TaskDescription": {
+                    "Description": "Implement visual indicators for progress tracking.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "DataDrivenInsight",
+                "SubFeature": "MetricsTracking",
+                "TaskName": "IntegrateTrackingMetrics",
+                "TaskDescription": {
+                    "Description": "Integrate basic metrics for tracking velocity and burndown rates.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "MinimalUserRoleManagement",
+                "SubFeature": "UserAuthentication",
+                "TaskName": "SetupUserSystem",
+                "TaskDescription": {
+                    "Description": "Set up user registration and login system.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "MinimalUserRoleManagement",
+                "SubFeature": "RoleBasedAccessControl",
+                "TaskName": "DevelopRoleAssignment",
+                "TaskDescription": {
+                    "Description": "Develop role assignment functionality.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "MinimalUserRoleManagement",
+                "SubFeature": "RoleBasedAccessControl",
+                "TaskName": "EstablishRolePermissions",
+                "TaskDescription": {
+                    "Description": "Establish permissions for each role.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "BasicWorkflowManagement",
+                "SubFeature": "WorkflowVisualization",
+                "TaskName": "ImplementKanbanVisualization",
+                "TaskDescription": {
+                    "Description": "Implement Kanban board visualization.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "BasicWorkflowManagement",
+                "SubFeature": "WorkflowVisualization",
+                "TaskName": "DragAndDropWorkflowManagement",
+                "TaskDescription": {
+                    "Description": "Add drag-and-drop functionality for Task workflow management.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            },
+            {
+                "Feature": "BasicWorkflowManagement",
+                "SubFeature": "WorkflowCustomization",
+                "TaskName": "CreateWorkflowStages",
+                "TaskDescription": {
+                    "Description": "Enable creation and labeling of workflow stages.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 4,
+                "FeatureListID": 4
+            }
+        ],
+        "TotalHours": 144
+    },
+    {
+        "FeatureListID": 2,
+        "Features": [
+            {
+                "Feature": "TopicSpecification",
+                "SubFeature": "InputMechanism",
+                "TaskName": "TextboxImplementation",
+                "TaskDescription": {
+                    "Description": "Implement a text box for users to type in topics.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "TopicSpecification",
+                "SubFeature": "InputMechanism",
+                "TaskName": "SubmissionButtonCreation",
+                "TaskDescription": {
+                    "Description": "Create a submission button to send entered topics for processing.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "TopicSpecification",
+                "SubFeature": "TopicValidation",
+                "TaskName": "RegexCheckDevelopment",
+                "TaskDescription": {
+                    "Description": "Develop a regex check to validate topic format.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "TopicSpecification",
+                "SubFeature": "TopicValidation",
+                "TaskName": "UserFeedbackProvision",
+                "TaskDescription": {
+                    "Description": "Provide user feedback if the topic format is invalid.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "WebsiteTargeting",
+                "SubFeature": "WebsiteListInput",
+                "TaskName": "InterfaceDesign",
+                "TaskDescription": {
+                    "Description": "Design an interface to input and edit a list of URLs or domains.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "WebsiteTargeting",
+                "SubFeature": "WebsiteListInput",
+                "TaskName": "AddButtonIntegration",
+                "TaskDescription": {
+                    "Description": "Integrate an 'add' button for appending new URLs to the list.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "WebsiteTargeting",
+                "SubFeature": "WebsiteListInput",
+                "TaskName": "RemoveOptionInclusion",
+                "TaskDescription": {
+                    "Description": "Include a 'remove' option to delete URLs from the list.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "WebsiteTargeting",
+                "SubFeature": "TargetValidation",
+                "TaskName": "RegexCheckCreation",
+                "TaskDescription": {
+                    "Description": "Create a regex check to validate URL/domain format.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "WebsiteTargeting",
+                "SubFeature": "TargetValidation",
+                "TaskName": "ReachabilityTestImplementation",
+                "TaskDescription": {
+                    "Description": "Implement a reachability test to verify URL/domain accessibility.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "AdjustableFrequency",
+                "SubFeature": "FrequencySelector",
+                "TaskName": "DropdownMenuDevelopment",
+                "TaskDescription": {
+                    "Description": "Develop a dropdown menu for frequency options.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "AdjustableFrequency",
+                "SubFeature": "SchedulingSystem",
+                "TaskName": "TimerProgramming",
+                "TaskDescription": {
+                    "Description": "Program a timer or cron job to initiate scraping based on the selected frequency.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "JSONDataStorage",
+                "SubFeature": "DataModelDefinition",
+                "TaskName": "JSONSchemaDefinition",
+                "TaskDescription": {
+                    "Description": "Define a JSON schema with `URL`, `ScrapedContent`, and `DateScraped` fields.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "JSONDataStorage",
+                "SubFeature": "StorageMechanism",
+                "TaskName": "DatabaseSetup",
+                "TaskDescription": {
+                    "Description": "Set up a database or file system for JSON data storage.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "JSONDataStorage",
+                "SubFeature": "StorageMechanism",
+                "TaskName": "CRUDOperationsImplementation",
+                "TaskDescription": {
+                    "Description": "Implement CRUD operations for the stored JSON data.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "UserInterface",
+                "SubFeature": "GUIFramework",
+                "TaskName": "GUIFrameworkChoiceAndImplementation",
+                "TaskDescription": {
+                    "Description": "Choose and implement a GUI framework compatible with the project requirements.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "UserInterface",
+                "SubFeature": "InputForms",
+                "TaskName": "FormsCreation",
+                "TaskDescription": {
+                    "Description": "Create forms for topic and website entry, as well as frequency selection.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "UserInterface",
+                "SubFeature": "DisplayOfResults",
+                "TaskName": "ResultsSectionDevelopment",
+                "TaskDescription": {
+                    "Description": "Develop a results section to show the scraped content.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "UserInterface",
+                "SubFeature": "ErrorHandlingAndFeedback",
+                "TaskName": "UserAlertsGeneration",
+                "TaskDescription": {
+                    "Description": "Generate user alerts for successful actions or encountered errors.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "UserInterface",
+                "SubFeature": "CommandLineInterface",
+                "TaskName": "CLIDevelopment",
+                "TaskDescription": {
+                    "Description": "Develop a CLI with additional settings or features for advanced users.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "OperationalConsiderationsForMVP",
+                "SubFeature": "ComplianceChecker",
+                "TaskName": "RobotsTxtParsingFunctionImplementation",
+                "TaskDescription": {
+                    "Description": "Implement a function to parse and respect `robots.txt` of target sites.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "OperationalConsiderationsForMVP",
+                "SubFeature": "ErrorHandling",
+                "TaskName": "ErrorManagementSystemEstablishment",
+                "TaskDescription": {
+                    "Description": "Establish a system to manage exceptions and log errors during the scraping process.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "OperationalConsiderationsForMVP",
+                "SubFeature": "Security",
+                "TaskName": "DataEncryptionAndSecureTransmission",
+                "TaskDescription": {
+                    "Description": "Apply encryption for stored data and secure transmission protocols.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "OperationalConsiderationsForMVP",
+                "SubFeature": "Security",
+                "TaskName": "SecurityAuditConduction",
+                "TaskDescription": {
+                    "Description": "Conduct a basic security audit to identify and address potential vulnerabilities.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            },
+            {
+                "Feature": "OperationalConsiderationsForMVP",
+                "SubFeature": "Documentation",
+                "TaskName": "UserDocumentationWriting",
+                "TaskDescription": {
+                    "Description": "Write user documentation including setup, usage instructions, and troubleshooting.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 2,
+                "FeatureListID": 2
+            }
+        ],
+        "TotalHours": 140
+    },
+    {
+        "FeatureListID": 1,
+        "Features": [
+            {
+                "Feature": "CuratedNewsCategories",
+                "SubFeature": "CategorySelection",
+                "TaskName": "CreateCategoryList",
+                "TaskDescription": {
+                    "Description": "Create a predefined list of news categories",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "CuratedNewsCategories",
+                "SubFeature": "CategorySelection",
+                "TaskName": "UserInterfaceForCategorySelection",
+                "TaskDescription": {
+                    "Description": "Implement a user interface for category selection during onboarding",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "CuratedNewsCategories",
+                "SubFeature": "CategoryManagement",
+                "TaskName": "UserInterfaceForCategoryUpdate",
+                "TaskDescription": {
+                    "Description": "Develop a user interface for updating category preferences",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "CuratedNewsCategories",
+                "SubFeature": "CategoryManagement",
+                "TaskName": "BackendSupportForCategoryChanges",
+                "TaskDescription": {
+                    "Description": "Implement backend support for persisting user category changes",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "StandardizedSummaries",
+                "SubFeature": "SummarizationEngine",
+                "TaskName": "DevelopNLPAlgorithm",
+                "TaskDescription": {
+                    "Description": "Develop NLP algorithm for extracting relevant content",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "StandardizedSummaries",
+                "SubFeature": "SummarizationEngine",
+                "TaskName": "ImplementSummarizationLogic",
+                "TaskDescription": {
+                    "Description": "Implement summarization logic to condense content into a standardized length",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "StandardizedSummaries",
+                "SubFeature": "QualityControl",
+                "TaskName": "IntegrateReadabilityChecks",
+                "TaskDescription": {
+                    "Description": "Integrate readability checks into the summarization process",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "StandardizedSummaries",
+                "SubFeature": "QualityControl",
+                "TaskName": "EnsureAccuracyAndObjectivity",
+                "TaskDescription": {
+                    "Description": "Ensure accuracy and objectivity of summaries through algorithmic or manual review",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "DailyDigestCompilation",
+                "TaskName": "AggregateNewsSummaries",
+                "TaskDescription": {
+                    "Description": "Aggregate selected news summaries into a daily digest",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "DailyDigestCompilation",
+                "TaskName": "CustomizeDigestContent",
+                "TaskDescription": {
+                    "Description": "Ensure user-specific customization of the digest content",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "EmailComposition",
+                "TaskName": "FormatDigestEmail",
+                "TaskDescription": {
+                    "Description": "Format the digest into a simple, text-based, bullet-point email",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "EmailComposition",
+                "TaskName": "TestEmailFormatCompatibility",
+                "TaskDescription": {
+                    "Description": "Test email format compatibility across various email clients",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "SchedulingAndAutomation",
+                "TaskName": "SetupAutomatedEmailSystem",
+                "TaskDescription": {
+                    "Description": "Set up an automated system to send emails at a scheduled time",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "SchedulingAndAutomation",
+                "TaskName": "ImplementTimeZoneAdjustments",
+                "TaskDescription": {
+                    "Description": "Implement time zone adjustments for user-specific delivery",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "DeliveryConfirmation",
+                "TaskName": "IntegrateDeliveryConfirmationSystem",
+                "TaskDescription": {
+                    "Description": "Integrate a system to confirm successful email delivery",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "EmailDeliverySystem",
+                "SubFeature": "DeliveryConfirmation",
+                "TaskName": "LogAndTroubleshootFailures",
+                "TaskDescription": {
+                    "Description": "Log and troubleshoot any failed email deliveries",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SourceAggregation",
+                "SubFeature": "FeedAggregator",
+                "TaskName": "IncorporateVariousNewsFeeds",
+                "TaskDescription": {
+                    "Description": "Incorporate feeds from various reputable news sources",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SourceAggregation",
+                "SubFeature": "FeedAggregator",
+                "TaskName": "UpdateFeedsRegularly",
+                "TaskDescription": {
+                    "Description": "Regularly update feeds to ensure fresh content",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SourceAggregation",
+                "SubFeature": "ContentFiltering",
+                "TaskName": "FilterContentByCategory",
+                "TaskDescription": {
+                    "Description": "Filter content to match user's selected categories",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SourceAggregation",
+                "SubFeature": "ContentFiltering",
+                "TaskName": "AdjustFiltersBasedOnFeedback",
+                "TaskDescription": {
+                    "Description": "Adjust filters based on user feedback for improved relevance",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SourceAggregation",
+                "SubFeature": "DuplicationAvoidance",
+                "TaskName": "PreventDuplicateSummaries",
+                "TaskDescription": {
+                    "Description": "Implement checks to prevent summarizing duplicate content for the same user",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SourceAggregation",
+                "SubFeature": "DuplicationAvoidance",
+                "TaskName": "AuditSystemForDuplication",
+                "TaskDescription": {
+                    "Description": "Regularly audit the system for duplication issues and refine as needed",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "FeedbackMechanism",
+                "SubFeature": "FeedbackCollection",
+                "TaskName": "EmbedFeedbackInterface",
+                "TaskDescription": {
+                    "Description": "Embed a feedback interface in the email or link to an external form",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "FeedbackMechanism",
+                "SubFeature": "FeedbackCollection",
+                "TaskName": "SimplifyFeedbackSubmission",
+                "TaskDescription": {
+                    "Description": "Simplify the feedback submission process for user convenience",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "FeedbackMechanism",
+                "SubFeature": "FeedbackAnalysis",
+                "TaskName": "DevelopFeedbackAnalysisSystem",
+                "TaskDescription": {
+                    "Description": "Develop a system to compile and analyze user feedback",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "FeedbackMechanism",
+                "SubFeature": "FeedbackAnalysis",
+                "TaskName": "InformServiceImprovement",
+                "TaskDescription": {
+                    "Description": "Use feedback analysis to inform continuous improvement of the service",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "UserAcquisition",
+                "TaskName": "IntegrateSignUpRateAnalytics",
+                "TaskDescription": {
+                    "Description": "Integrate analytics to capture and report on sign-up rates",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "Engagement",
+                "TaskName": "TrackEmailOpenAndClickThroughRates",
+                "TaskDescription": {
+                    "Description": "Implement tracking for email open rates and click-through rates",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "Engagement",
+                "TaskName": "AnalyzeEngagementData",
+                "TaskDescription": {
+                    "Description": "Analyze engagement data to inform content and feature improvements",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "Retention",
+                "TaskName": "MonitorUserInteractionPatterns",
+                "TaskDescription": {
+                    "Description": "Monitor user interaction patterns over time",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "Retention",
+                "TaskName": "AdjustBasedOnRetentionData",
+                "TaskDescription": {
+                    "Description": "Adjust features and content delivery based on retention data",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "FeedbackQuality",
+                "TaskName": "DevelopFeedbackCategorization",
+                "TaskDescription": {
+                    "Description": "Develop categorization for feedback to assess quality and relevance",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            },
+            {
+                "Feature": "SuccessMetrics",
+                "SubFeature": "FeedbackQuality",
+                "TaskName": "RefineAlgorithmsBasedOnFeedback",
+                "TaskDescription": {
+                    "Description": "Utilize feedback quality data to refine the summarization and content selection algorithms",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 1,
+                "FeatureListID": 1
+            }
+        ],
+        "TotalHours": 230
+    },
+    {
+        "FeatureListID": 3,
+        "Features": [
+            {
+                "Feature": "UserVisionInterface",
+                "SubFeature": "InputFields",
+                "TaskName": "Design input fields for Epics, Stories, and Tasks",
+                "TaskDescription": {
+                    "Description": "Create the layout and structure for input fields to capture user stories and tasks.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "UserVisionInterface",
+                "SubFeature": "InputFields",
+                "TaskName": "Implement data capture for user input",
+                "TaskDescription": {
+                    "Description": "Develop the functionality to store and process the data entered by users.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "UserVisionInterface",
+                "SubFeature": "GuidedProcess",
+                "TaskName": "Create a step-by-step wizard interface",
+                "TaskDescription": {
+                    "Description": "Design a user-friendly wizard to guide users through the proposal creation process.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "UserVisionInterface",
+                "SubFeature": "GuidedProcess",
+                "TaskName": "Implement logic to guide users through data entry",
+                "TaskDescription": {
+                    "Description": "Program the underlying logic to ensure users follow the steps in the correct order.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "UserVisionInterface",
+                "SubFeature": "InputValidation",
+                "TaskName": "Develop validation rules for user input",
+                "TaskDescription": {
+                    "Description": "Establish a set of criteria to validate the data entered by users.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "UserVisionInterface",
+                "SubFeature": "InputValidation",
+                "TaskName": "Implement real-time feedback for incorrect inputs",
+                "TaskDescription": {
+                    "Description": "Create a system to provide immediate feedback to users when the input does not meet validation criteria.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AutomatedDocumentGeneration",
+                "SubFeature": "TemplateEngine",
+                "TaskName": "Design a proposal document template",
+                "TaskDescription": {
+                    "Description": "Create a standardized template for proposal documents.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AutomatedDocumentGeneration",
+                "SubFeature": "TemplateEngine",
+                "TaskName": "Implement a template engine to populate user data",
+                "TaskDescription": {
+                    "Description": "Develop a system to automatically fill in the proposal template with user-provided data.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AutomatedDocumentGeneration",
+                "SubFeature": "ContentStructuring",
+                "TaskName": "Develop logic to structure user input into document sections",
+                "TaskDescription": {
+                    "Description": "Create rules to organize user input into coherent sections within the document.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AutomatedDocumentGeneration",
+                "SubFeature": "ContentStructuring",
+                "TaskName": "Implement structuring rules within the template engine",
+                "TaskDescription": {
+                    "Description": "Integrate the structuring logic into the template engine to format the document automatically.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AutomatedDocumentGeneration",
+                "SubFeature": "Formatting",
+                "TaskName": "Create a style guide for the document",
+                "TaskDescription": {
+                    "Description": "Develop a set of styling rules to ensure consistency across proposal documents.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AutomatedDocumentGeneration",
+                "SubFeature": "Formatting",
+                "TaskName": "Apply formatting rules to the template engine output",
+                "TaskDescription": {
+                    "Description": "Implement the style guide rules to the output of the template engine.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "BasicHourEstimationModule",
+                "SubFeature": "ComplexityLevels",
+                "TaskName": "Define a set of complexity levels for tasks",
+                "TaskDescription": {
+                    "Description": "Establish a range of complexity levels that can be applied to tasks for estimation purposes.",
+                    "EstimatedHours": 4
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "BasicHourEstimationModule",
+                "SubFeature": "ComplexityLevels",
+                "TaskName": "Implement a selection interface for complexity levels",
+                "TaskDescription": {
+                    "Description": "Create a user interface component that allows users to assign complexity levels to tasks.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "BasicHourEstimationModule",
+                "SubFeature": "EstimationAlgorithm",
+                "TaskName": "Create a basic algorithm for time estimation",
+                "TaskDescription": {
+                    "Description": "Develop a simple algorithm to estimate the time required to complete tasks based on complexity levels.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "BasicHourEstimationModule",
+                "SubFeature": "EstimationAlgorithm",
+                "TaskName": "Integrate estimation algorithm with user inputs",
+                "TaskDescription": {
+                    "Description": "Link the estimation algorithm to the user input data to provide automated time estimates.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "BasicHourEstimationModule",
+                "SubFeature": "UserOverrideOption",
+                "TaskName": "Provide an interface for manual time entry",
+                "TaskDescription": {
+                    "Description": "Design a feature that allows users to input their own time estimates for tasks.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "BasicHourEstimationModule",
+                "SubFeature": "UserOverrideOption",
+                "TaskName": "Implement logic to prioritize user estimates over algorithm",
+                "TaskDescription": {
+                    "Description": "Ensure that the system prioritizes manual user estimates over those generated by the algorithm.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "DownloadableProposalDocument",
+                "SubFeature": "ExportFunctionality",
+                "TaskName": "Develop functionality to convert document to Word format",
+                "TaskDescription": {
+                    "Description": "Create a feature that enables the proposal document to be exported in Microsoft Word format.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "DownloadableProposalDocument",
+                "SubFeature": "ExportFunctionality",
+                "TaskName": "Implement a download mechanism for the document",
+                "TaskDescription": {
+                    "Description": "Develop a system that allows users to download the final proposal document.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "DownloadableProposalDocument",
+                "SubFeature": "DocumentReview",
+                "TaskName": "Create a preview interface for the generated document",
+                "TaskDescription": {
+                    "Description": "Design an interface where users can preview the generated proposal document before downloading.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "DownloadableProposalDocument",
+                "SubFeature": "DocumentReview",
+                "TaskName": "Implement review and edit capabilities before download",
+                "TaskDescription": {
+                    "Description": "Develop functionality that allows users to review and make edits to the document prior to downloading.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AdditionalConsiderations",
+                "SubFeature": "SimplicityAndUsability",
+                "TaskName": "Ensure user interface is intuitive and easy to navigate",
+                "TaskDescription": {
+                    "Description": "Focus on creating a user interface that is straightforward and minimizes user confusion.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AdditionalConsiderations",
+                "SubFeature": "MinimalViableGuidance",
+                "TaskName": "Provide tooltips or brief instructions for Epics, Stories, and Tasks",
+                "TaskDescription": {
+                    "Description": "Incorporate helpful tooltips or instructions within the interface to assist users in understanding how to use the system.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            },
+            {
+                "Feature": "AdditionalConsiderations",
+                "SubFeature": "ScalabilityFramework",
+                "TaskName": "Design system architecture to support future feature integration",
+                "TaskDescription": {
+                    "Description": "Plan and design the system architecture with scalability in mind to accommodate additional features in the future.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 3,
+                "FeatureListID": 3
+            }
+        ],
+        "TotalHours": 168
+    }
+]

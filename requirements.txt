@@ -1,0 +1,4 @@
+openai  # Replace <version> with the specific version of the OpenAI package you are using
+python-dotenv==0.20.0
+pandas
+python-docx==0.8.11

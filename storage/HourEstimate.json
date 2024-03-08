@@ -1,0 +1,404 @@
+[
+    {
+        "FeatureListID": 7,
+        "Features": [
+            {
+                "Feature": "AI-Powered Question Generation",
+                "SubFeature": "Contextual Understanding",
+                "TaskName": "Implement AI model",
+                "TaskDescription": {
+                    "Description": "Implement AI model for context interpretation from initial project descriptions.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "AI-Powered Question Generation",
+                "SubFeature": "Contextual Understanding",
+                "TaskName": "Train AI",
+                "TaskDescription": {
+                    "Description": "Train AI on diverse project datasets for broad context recognition.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "AI-Powered Question Generation",
+                "SubFeature": "Dynamic Questioning",
+                "TaskName": "Develop algorithm",
+                "TaskDescription": {
+                    "Description": "Develop algorithm for question adjustment based on user responses.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "AI-Powered Question Generation",
+                "SubFeature": "Dynamic Questioning",
+                "TaskName": "Integrate feedback loop",
+                "TaskDescription": {
+                    "Description": "Integrate feedback loop for continuous question relevance improvement.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "AI-Powered Question Generation",
+                "SubFeature": "Feedback Loop for Improvement",
+                "TaskName": "Create UI component",
+                "TaskDescription": {
+                    "Description": "Create user interface component for feedback on question relevance.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "AI-Powered Question Generation",
+                "SubFeature": "Feedback Loop for Improvement",
+                "TaskName": "Implement backend logic",
+                "TaskDescription": {
+                    "Description": "Implement backend logic to adjust question generation based on user feedback.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Feature Breakdown and Identification",
+                "SubFeature": "Natural Language Processing (NLP)",
+                "TaskName": "Implement NLP",
+                "TaskDescription": {
+                    "Description": "Implement NLP to analyze and extract project features from user descriptions.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Feature Breakdown and Identification",
+                "SubFeature": "Natural Language Processing (NLP)",
+                "TaskName": "Train NLP model",
+                "TaskDescription": {
+                    "Description": "Train NLP model on software development terminology and concepts.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Feature Breakdown and Identification",
+                "SubFeature": "Feature Categorization",
+                "TaskName": "Develop categorization algorithm",
+                "TaskDescription": {
+                    "Description": "Develop categorization algorithm for identifying core vs. peripheral features.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Feature Breakdown and Identification",
+                "SubFeature": "Feature Categorization",
+                "TaskName": "Integrate user interface",
+                "TaskDescription": {
+                    "Description": "Integrate user interface for feature review and adjustment.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Feature Breakdown and Identification",
+                "SubFeature": "Validation and Confirmation",
+                "TaskName": "Create validation step",
+                "TaskDescription": {
+                    "Description": "Create validation step in UI for user confirmation of identified features.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Feature Breakdown and Identification",
+                "SubFeature": "Validation and Confirmation",
+                "TaskName": "Implement logic for adjustments",
+                "TaskDescription": {
+                    "Description": "Implement logic for user adjustments and confirmations to refine AI accuracy.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Story and Task Delineation",
+                "SubFeature": "Automated Story Generation",
+                "TaskName": "Develop algorithm for stories",
+                "TaskDescription": {
+                    "Description": "Develop algorithm for converting identified features into user stories.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Story and Task Delineation",
+                "SubFeature": "Automated Story Generation",
+                "TaskName": "Integrate story generation",
+                "TaskDescription": {
+                    "Description": "Integrate story generation within the feature identification process.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Story and Task Delineation",
+                "SubFeature": "Task Breakdown",
+                "TaskName": "Implement task breakdown logic",
+                "TaskDescription": {
+                    "Description": "Implement task breakdown logic from user stories.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Story and Task Delineation",
+                "SubFeature": "Task Breakdown",
+                "TaskName": "Create UI components",
+                "TaskDescription": {
+                    "Description": "Create UI components for viewing and adjusting task breakdowns.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Story and Task Delineation",
+                "SubFeature": "Dependencies Identification",
+                "TaskName": "Develop algorithm for dependencies",
+                "TaskDescription": {
+                    "Description": "Develop algorithm for identifying dependencies among tasks.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Story and Task Delineation",
+                "SubFeature": "Dependencies Identification",
+                "TaskName": "Integrate dependency visualization",
+                "TaskDescription": {
+                    "Description": "Integrate dependency visualization in the project planning UI.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Rough Time Estimation",
+                "SubFeature": "Historical Data Analysis",
+                "TaskName": "Incorporate historical data",
+                "TaskDescription": {
+                    "Description": "Incorporate historical project data for estimation calibration.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Rough Time Estimation",
+                "SubFeature": "Historical Data Analysis",
+                "TaskName": "Develop data analysis tools",
+                "TaskDescription": {
+                    "Description": "Develop data analysis tools for extracting estimation insights.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Rough Time Estimation",
+                "SubFeature": "Estimation Algorithms",
+                "TaskName": "Create estimation algorithms",
+                "TaskDescription": {
+                    "Description": "Create algorithms for generating time estimates for tasks and projects.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Rough Time Estimation",
+                "SubFeature": "Estimation Algorithms",
+                "TaskName": "Integrate variability",
+                "TaskDescription": {
+                    "Description": "Integrate variability and confidence intervals in time estimations.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Rough Time Estimation",
+                "SubFeature": "Adjustable Parameters",
+                "TaskName": "Develop UI for parameters",
+                "TaskDescription": {
+                    "Description": "Develop UI for adjusting estimation parameters (team size, expertise level).",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Rough Time Estimation",
+                "SubFeature": "Adjustable Parameters",
+                "TaskName": "Implement backend logic for estimates",
+                "TaskDescription": {
+                    "Description": "Implement backend logic to refine estimates based on adjusted parameters.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Key Integrations and Functionalities",
+                "SubFeature": "Export Functionality",
+                "TaskName": "Implement export functionality",
+                "TaskDescription": {
+                    "Description": "Implement functionality for exporting to Trello, Jira, CSV, and JSON formats.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Key Integrations and Functionalities",
+                "SubFeature": "Export Functionality",
+                "TaskName": "Develop API integrations",
+                "TaskDescription": {
+                    "Description": "Develop API integrations for seamless project plan exports.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Key Integrations and Functionalities",
+                "SubFeature": "User Interface (UI)",
+                "TaskName": "Design and develop UI",
+                "TaskDescription": {
+                    "Description": "Design and develop a user-friendly interface for the estimation process.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Key Integrations and Functionalities",
+                "SubFeature": "User Interface (UI)",
+                "TaskName": "Integrate UI with backend",
+                "TaskDescription": {
+                    "Description": "Integrate UI with backend systems for real-time data processing and display.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Key Integrations and Functionalities",
+                "SubFeature": "Initial Data Set for AI Training",
+                "TaskName": "Collect initial dataset",
+                "TaskDescription": {
+                    "Description": "Collect and anonymize initial dataset for AI training.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Key Integrations and Functionalities",
+                "SubFeature": "Initial Data Set for AI Training",
+                "TaskName": "Prepare data ingestion pipeline",
+                "TaskDescription": {
+                    "Description": "Prepare data ingestion and processing pipeline for AI model training.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Essential Technical Considerations",
+                "SubFeature": "Scalability",
+                "TaskName": "Design system architecture",
+                "TaskDescription": {
+                    "Description": "Design system architecture for easy scaling and future feature additions.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Essential Technical Considerations",
+                "SubFeature": "Scalability",
+                "TaskName": "Implement scalable solutions",
+                "TaskDescription": {
+                    "Description": "Implement scalable cloud services and database solutions.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Essential Technical Considerations",
+                "SubFeature": "Security and Privacy",
+                "TaskName": "Enforce data encryption",
+                "TaskDescription": {
+                    "Description": "Enforce data encryption and secure access protocols.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Essential Technical Considerations",
+                "SubFeature": "Security and Privacy",
+                "TaskName": "Ensure compliance",
+                "TaskDescription": {
+                    "Description": "Ensure compliance with privacy laws and regulations.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Essential Technical Considerations",
+                "SubFeature": "Feedback Mechanism",
+                "TaskName": "Create feedback form",
+                "TaskDescription": {
+                    "Description": "Create a simple and accessible feedback form within the UI.",
+                    "EstimatedHours": 6
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            },
+            {
+                "Feature": "Essential Technical Considerations",
+                "SubFeature": "Feedback Mechanism",
+                "TaskName": "Implement backend support",
+                "TaskDescription": {
+                    "Description": "Implement backend support for collecting and analyzing user feedback.",
+                    "EstimatedHours": 8
+                },
+                "ProposalID": 7,
+                "FeatureListID": 7
+            }
+        ],
+        "TotalHours": 282
+    }
+]
