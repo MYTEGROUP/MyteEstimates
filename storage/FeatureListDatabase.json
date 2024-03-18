@@ -291,5 +291,471 @@
                 "FeatureListID": 7
             }
         ]
+    },
+    {
+        "FeatureListID": 8,
+        "Features": [
+            {
+                "Feature": "CustomizableTemplates",
+                "SubFeature": "SingleTemplateDesign",
+                "TaskName": "Template Development",
+                "TaskDescription": "Develop a versatile template suitable for various industries.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "CustomizableTemplates",
+                "SubFeature": "BasicCustomizationOptions",
+                "TaskName": "Color Scheme Modification",
+                "TaskDescription": "Implement primary color scheme modifications.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "CustomizableTemplates",
+                "SubFeature": "BasicCustomizationOptions",
+                "TaskName": "Font Modification",
+                "TaskDescription": "Implement font choice modifications.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "BrandingIntegration",
+                "SubFeature": "LogoUpload",
+                "TaskName": "Logo Upload Functionality",
+                "TaskDescription": "Provide logo upload functionality.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "BrandingIntegration",
+                "SubFeature": "BrandColorsIncorporation",
+                "TaskName": "Hex Code Input",
+                "TaskDescription": "Enable input of specific brand hex codes.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "BrandingIntegration",
+                "SubFeature": "BrandColorsIncorporation",
+                "TaskName": "Color Picker",
+                "TaskDescription": "Include a color picker for brand colors application.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "ContentIntegration",
+                "SubFeature": "VideoUploadAndEmbedding",
+                "TaskName": "Video Format Support",
+                "TaskDescription": "Support standard video format uploads.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "ContentIntegration",
+                "SubFeature": "VideoUploadAndEmbedding",
+                "TaskName": "Video Embedding",
+                "TaskDescription": "Ensure ease of video embedding within the template.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "ContentIntegration",
+                "SubFeature": "DocumentUpload",
+                "TaskName": "PDF and DOCX Upload",
+                "TaskDescription": "Allow uploading of PDF and DOCX formats.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "IntuitiveUserInterface",
+                "SubFeature": "SimplicityAndAccessibility",
+                "TaskName": "Navigable Interface Design",
+                "TaskDescription": "Design an easily navigable interface.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "IntuitiveUserInterface",
+                "SubFeature": "SimplicityAndAccessibility",
+                "TaskName": "Clear Instructions",
+                "TaskDescription": "Provide clear instructions and a logical layout.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "IntuitiveUserInterface",
+                "SubFeature": "AdvancedFeaturesAccessibility",
+                "TaskName": "Advanced Customization Features",
+                "TaskDescription": "Include more advanced customization features for interested users.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "FocusedOnSMEs",
+                "SubFeature": "FeaturePrioritization",
+                "TaskName": "SME-focused Feature Development",
+                "TaskDescription": "Develop features with SME needs in focus.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "FocusedOnSMEs",
+                "SubFeature": "UserExperienceConsiderations",
+                "TaskName": "SME-tailored Interface",
+                "TaskDescription": "Tailor interface and support for SME challenges and preferences.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "ScalableTechnologyStack",
+                "SubFeature": "ModularArchitecture",
+                "TaskName": "Technology Stack Selection",
+                "TaskDescription": "Choose a technology stack that supports modular development.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "ScalableTechnologyStack",
+                "SubFeature": "IntegrationCapabilities",
+                "TaskName": "Integration With SME Tools",
+                "TaskDescription": "Ensure integration with popular SME tools and platforms.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "CompetitiveDifferentiation",
+                "SubFeature": "GapAnalysis",
+                "TaskName": "Competitive Landscape Analysis",
+                "TaskDescription": "Conduct analysis of the competitive landscape to identify unmet needs.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "CompetitiveDifferentiation",
+                "SubFeature": "UniqueFeatureDevelopment",
+                "TaskName": "Unique Feature Creation",
+                "TaskDescription": "Develop a unique feature or significantly improve an existing one based on gap analysis.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "OperationalEssentialsForMVP",
+                "SubFeature": "UserAccountManagement",
+                "TaskName": "Account Management Features",
+                "TaskDescription": "Implement sign-up, login, and profile customization.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "OperationalEssentialsForMVP",
+                "SubFeature": "ResponsiveDesign",
+                "TaskName": "Cross-device Responsiveness",
+                "TaskDescription": "Ensure responsiveness across devices and screen sizes.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "OperationalEssentialsForMVP",
+                "SubFeature": "SecurityMeasures",
+                "TaskName": "Data Protection Practices",
+                "TaskDescription": "Adopt standard security practices for data protection.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            },
+            {
+                "Feature": "OperationalEssentialsForMVP",
+                "SubFeature": "FeedbackMechanism",
+                "TaskName": "User Feedback Incorporation",
+                "TaskDescription": "Incorporate a mechanism for user feedback.",
+                "ProposalID": 8,
+                "FeatureListID": 8
+            }
+        ]
+    },
+    {
+        "FeatureListID": 9,
+        "Features": [
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "AIDrivenCustomization",
+                "TaskName": "ImplementAIAlgorithms",
+                "TaskDescription": "Implement AI algorithms to assess new employees\u2019 roles, interests, and skill levels",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "AIDrivenCustomization",
+                "TaskName": "CreateTailoredLearningPaths",
+                "TaskDescription": "Create tailored learning paths based on AI assessments",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "AIDrivenCustomization",
+                "TaskName": "AdaptLearningPaths",
+                "TaskDescription": "Adapt learning paths over time based on employee progress and feedback",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "DynamicContentAdaptation",
+                "TaskName": "UpdateLearningContent",
+                "TaskDescription": "Update learning content based on ongoing assessment",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "DynamicContentAdaptation",
+                "TaskName": "EnsureContentRelevance",
+                "TaskDescription": "Ensure content relevance to employee's changing needs",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "FeedbackLoopIntegration",
+                "TaskName": "IncorporateFeedbackMechanisms",
+                "TaskDescription": "Incorporate feedback mechanisms for content improvement",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "PersonalizedLearningAndDevelopmentPlan",
+                "SubFeature": "FeedbackLoopIntegration",
+                "TaskName": "RefineAIDrivenLearningPaths",
+                "TaskDescription": "Use employee feedback to refine AI-driven learning paths",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "SimplifiedAdministrativeOnboarding",
+                "SubFeature": "DigitalDocumentManagement",
+                "TaskName": "EnableDigitalCompletion",
+                "TaskDescription": "Enable digital completion and submission of paperwork",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "SimplifiedAdministrativeOnboarding",
+                "SubFeature": "DigitalDocumentManagement",
+                "TaskName": "ReduceManualHandling",
+                "TaskDescription": "Reduce manual handling and processing time",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "SimplifiedAdministrativeOnboarding",
+                "SubFeature": "AutomatedTaskChecklist",
+                "TaskName": "GuideNewEmployees",
+                "TaskDescription": "Guide new employees through administrative tasks",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "SimplifiedAdministrativeOnboarding",
+                "SubFeature": "AutomatedTaskChecklist",
+                "TaskName": "TrackTaskCompletion",
+                "TaskDescription": "Track task completion in real-time",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "SimplifiedAdministrativeOnboarding",
+                "SubFeature": "HRISIntegration",
+                "TaskName": "IntegrateWithHRIS",
+                "TaskDescription": "Integrate with HRIS for seamless data flow",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "SimplifiedAdministrativeOnboarding",
+                "SubFeature": "HRISIntegration",
+                "TaskName": "MinimizeManualDataEntry",
+                "TaskDescription": "Minimize manual data entry",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CulturalImmersionContent",
+                "SubFeature": "MultimediaContentDelivery",
+                "TaskName": "PresentCompanyCulture",
+                "TaskDescription": "Present company culture through various formats",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CulturalImmersionContent",
+                "SubFeature": "MultimediaContentDelivery",
+                "TaskName": "FlexibleCMS",
+                "TaskDescription": "Ensure flexible content management system",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CulturalImmersionContent",
+                "SubFeature": "PersonalizationFeatures",
+                "TaskName": "RecommendCulturalContent",
+                "TaskDescription": "Recommend cultural content based on employee's role and interests",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CulturalImmersionContent",
+                "SubFeature": "PersonalizationFeatures",
+                "TaskName": "EnsureContentRelevanceAndEngagement",
+                "TaskDescription": "Ensure content relevance and engagement",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CulturalImmersionContent",
+                "SubFeature": "SocialIntegration",
+                "TaskName": "EncourageInteraction",
+                "TaskDescription": "Encourage interaction with team members",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CulturalImmersionContent",
+                "SubFeature": "SocialIntegration",
+                "TaskName": "FosterSenseOfBelonging",
+                "TaskDescription": "Foster a sense of belonging",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "UserAccountCreation",
+                "TaskName": "CreateUserProfiles",
+                "TaskDescription": "Create secure and intuitive user profiles",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "UserAccountCreation",
+                "TaskName": "RespectDataPrivacyLaws",
+                "TaskDescription": "Respect data privacy laws",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "RoleBasedAccessControl",
+                "TaskName": "ProvideTailoredAccess",
+                "TaskDescription": "Provide tailored access based on user's role",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "RoleBasedAccessControl",
+                "TaskName": "EnsureDataSecurityAndCompliance",
+                "TaskDescription": "Ensure data security and compliance",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "ContentManagementSystemCMS",
+                "TaskName": "EnableNoCodeContentManagement",
+                "TaskDescription": "Enable no-code content creation and management",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "ContentManagementSystemCMS",
+                "TaskName": "IncorporateAISuggestions",
+                "TaskDescription": "Incorporate AI suggestions for content improvement",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "MultilingualSupport",
+                "TaskName": "TranslatePlatformAndContent",
+                "TaskDescription": "Translate platform and content into multiple languages",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "MultilingualSupport",
+                "TaskName": "SupportInclusivityAndAccessibility",
+                "TaskDescription": "Support inclusivity and accessibility",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "FeedbackMechanismAndAnalytics",
+                "TaskName": "IntegrateSurveysAndAnalytics",
+                "TaskDescription": "Integrate surveys and analytics for continuous improvement",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "CrossFunctionalRequirements",
+                "SubFeature": "FeedbackMechanismAndAnalytics",
+                "TaskName": "MonitorEngagementMetrics",
+                "TaskDescription": "Monitor engagement metrics",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "TechnicalAndOperationalInfrastructure",
+                "SubFeature": "CloudInfrastructure",
+                "TaskName": "UtilizeScalableCloudServices",
+                "TaskDescription": "Utilize scalable cloud services",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "TechnicalAndOperationalInfrastructure",
+                "SubFeature": "CloudInfrastructure",
+                "TaskName": "AccommodateVaryingUsersAndDataLoads",
+                "TaskDescription": "Accommodate varying numbers of users and data loads",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "TechnicalAndOperationalInfrastructure",
+                "SubFeature": "DataSecurityAndCompliance",
+                "TaskName": "AdoptEncryptionAndAccessControl",
+                "TaskDescription": "Adopt encryption and access control measures",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "TechnicalAndOperationalInfrastructure",
+                "SubFeature": "DataSecurityAndCompliance",
+                "TaskName": "EnsureComplianceWithDataProtectionLaws",
+                "TaskDescription": "Ensure compliance with data protection laws",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "TechnicalAndOperationalInfrastructure",
+                "SubFeature": "RegularUpdatesAndMaintenance",
+                "TaskName": "UpdatePlatformFeaturesRegularly",
+                "TaskDescription": "Update platform features and content regularly",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            },
+            {
+                "Feature": "TechnicalAndOperationalInfrastructure",
+                "SubFeature": "RegularUpdatesAndMaintenance",
+                "TaskName": "PrioritizeEnhancementsBasedOnFeedback",
+                "TaskDescription": "Prioritize enhancements based on user feedback",
+                "ProposalID": 9,
+                "FeatureListID": 9
+            }
+        ]
     }
 ]
