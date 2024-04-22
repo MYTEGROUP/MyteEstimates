@@ -1,0 +1,28 @@
+{
+    "Project Vision": "**Project Vision: Revolutionizing Property Management with Next-Gen Digital Solutions**\n\nImagine a world where property management is seamlessly integrated, incredibly efficient, and delightfully user-friendly. We are at the brink of launching a cutting-edge digital platform that will transform the property rental market. Our innovative solution is designed to empower property managers, tenants, and subcontractors through a comprehensive suite of tools that streamline every aspect of property management.\n\nFrom tenant verification, lease management, and maintenance requests to seamless scheduling and financial transactions, our platform provides an all-encompassing ecosystem. Equipped with robust integrations with top-tier services like Calendly, DocuSign, Stripe, and SingleKey, we are setting a new industry standard. Our platform not only simplifies operations but also enhances user experiences, ensuring that managing or renting a property is as easy as clicking a button.\n\nJoin us as we redefine the landscape of property management, making it more accessible, efficient, and secure. With our solution, property management professionals can focus more on strategic decisions and less on administrative burdens, tenants enjoy unparalleled convenience, and subcontractors gain access to a broader market. This is more than just a software solution\u2014it\u2019s the future of property management, today.",
+    "Business Vertical": [
+        "Property Management"
+    ],
+    "Stakeholders": [
+        "Property Managers",
+        "Tenants",
+        "Subcontractors"
+    ],
+    "Revenue Models": [
+        {
+            "Stakeholder": "Property Managers",
+            "Model": "Subscription",
+            "Rationale": "Property managers operate as key users of the platform, leveraging its full suite of features for property listing, tenant management, financial transactions, and more. A subscription model is suitable as it provides predictable revenue and allows property managers to access the platform on an ongoing basis. They pay a monthly fee per unit managed, which covers continuous access to the platform's tools and services. The revenue is collected by the platform provider."
+        },
+        {
+            "Stakeholder": "Tenants",
+            "Model": "Direct Payment",
+            "Rationale": "Tenants use the platform to search for rental properties, book appointments, apply for leases, and make payments like rent and security deposits. A direct payment model is appropriate for tenants as they engage in occasional transactions rather than regular use of extensive platform features. They pay per transaction, such as application fees or lease processing fees, directly related to specific services they use. The revenue from these transactions goes to the platform provider, with possible shares to property managers for certain services."
+        },
+        {
+            "Stakeholder": "Subcontractors",
+            "Model": "Subscription",
+            "Rationale": "Subcontractors pay a monthly access fee to utilize the platform's marketplace for job postings and contract management. This model supports their need for regular access to a potentially continuous stream of job opportunities. The subscription fee ensures they can bid on projects and manage their contracts through the platform. The collected fees are revenue for the platform provider and help maintain and improve the subcontractor-specific functionalities."
+        }
+    ]
+}

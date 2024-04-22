@@ -1,0 +1,140 @@
+{
+    "Stakeholder_Epics": {
+        "Subcontractors": [
+            {
+                "Epic ID": "E001",
+                "Title": "Subcontractor Marketplace Access",
+                "Description": "Provide subcontractors with access to a job marketplace where they can find and apply for work offerings related to property maintenance and repairs."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Job Application Management",
+                "Description": "Enable subcontractors to apply for jobs, manage their applications, and view the status of their bids, facilitating an organized approach to securing contracts."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Communication and Coordination",
+                "Description": "Facilitate effective communication between subcontractors, property managers, and tenants through an integrated chat system to discuss job details and coordinate schedules."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Profile and Credentials Management",
+                "Description": "Allow subcontractors to create and manage their profiles, showcasing their credentials, past work, and areas of expertise to enhance their visibility in the marketplace."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Financial Transaction Management",
+                "Description": "Provide a secure platform for subcontractors to receive payments for completed jobs through integrated financial services like Stripe, including managing invoices and transaction history."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Feedback and Ratings",
+                "Description": "Implement a system where subcontractors can receive feedback and ratings from property managers and tenants, helping to build their reputation in the community."
+            }
+        ],
+        "Property Managers": [
+            {
+                "Epic ID": "E001",
+                "Title": "Property Listing Management",
+                "Description": "Enable property managers to add, update, and remove property listings, including detailed descriptions, amenities, rules, and photos to attract potential tenants."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Lease Management",
+                "Description": "Facilitate the creation, updating, renewal, and termination of lease agreements, including the use of templates, e-signing via DocuSign, and managing lease durations."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Financial Transactions and Reporting",
+                "Description": "Manage financial aspects including rent collection, security deposits, and service fee payments through Stripe, and provide detailed financial reports and analytics."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Maintenance Request Coordination",
+                "Description": "Handle maintenance and repair requests from tenants, delegate tasks to subcontractors, and manage status updates from request to completion."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Tenant Management",
+                "Description": "Oversee tenant profiles, rental applications, tenant verification via SingleKey, and maintain a communication channel between property managers and tenants."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Appointment Scheduling",
+                "Description": "Integrate with Calendly to facilitate the scheduling of property visits for tenants and subcontractors, and manage calendar views for availability."
+            },
+            {
+                "Epic ID": "E007",
+                "Title": "Access and Permission Controls",
+                "Description": "Define and manage access permissions across different functionalities of the platform to secure sensitive information and operations."
+            },
+            {
+                "Epic ID": "E008",
+                "Title": "User Role Management",
+                "Description": "Create and manage different user roles within the platform, specifically focusing on roles under property management like secondary property managers or administrative staff."
+            },
+            {
+                "Epic ID": "E009",
+                "Title": "Security and Compliance",
+                "Description": "Ensure the platform conforms to Canadian laws for data protection and privacy, implementing necessary security protocols for safeguarding user data."
+            },
+            {
+                "Epic ID": "E010",
+                "Title": "Platform Customization and Settings",
+                "Description": "Allow property managers to customize platform settings such as notification preferences, report configurations, and interface layouts."
+            }
+        ],
+        "Tenants": [
+            {
+                "Epic ID": "E001",
+                "Title": "Tenant Authentication",
+                "Description": "Enable tenants to securely log in and out of the platform using their registered credentials, and manage their session with features like 'Remember Me' and 'Forgot Password'."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Tenant Profile Management",
+                "Description": "Allow tenants to create, view, and update their profiles with personal and contact information, manage their bank/card details for payments, and handle their documents."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Property Search and Listings",
+                "Description": "Provide tenants with functionalities to search for properties based on various filters, view listings with detailed information, and manage their saved/bookmarked properties."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Lease Application and Management",
+                "Description": "Facilitate tenants to apply for leases, view the status of their applications, manage ongoing leases, and handle lease renewals and terminations."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Payment Management",
+                "Description": "Enable tenants to make secure payments for rent and security deposits, view their payment history, and manage their payment methods."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Maintenance Request System",
+                "Description": "Allow tenants to submit maintenance requests, track the status of these requests, and communicate with property managers and subcontractors regarding these requests."
+            },
+            {
+                "Epic ID": "E007",
+                "Title": "Appointment Booking",
+                "Description": "Provide a system for tenants to schedule and manage appointments with property managers or for property visits through integration with Calendly."
+            },
+            {
+                "Epic ID": "E008",
+                "Title": "Notifications and Alerts",
+                "Description": "Implement a notification system to alert tenants about important events such as lease renewals, payment due dates, and maintenance request updates."
+            },
+            {
+                "Epic ID": "E009",
+                "Title": "Feedback and Reviews",
+                "Description": "Allow tenants to give feedback on properties and services, and view reviews from other tenants to help them make informed decisions."
+            },
+            {
+                "Epic ID": "E010",
+                "Title": "Tenant Verification",
+                "Description": "Integrate with third-party services like SingleKey to verify tenant credentials during the lease application process."
+            }
+        ]
+    }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Breakdown - {{ name }}</title>
+    <style>
+    .epic-card, .story-card, .task-card {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .epic-card {
+        border: 2px solid black;
+        background-color: #f9f9f9;
+    }
+    .story-card {
+        border: 2px solid blue;
+        background-color: #e9f5ff;
+    }
+    .task-card {
+        border: 2px solid red;
+        background-color: #ffe9e9;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 8px 16px;
+        margin: 5px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <h1>Edit Project Breakdown for: {{ name }}</h1>
+    <div style="margin: 20px;">
+        <button onclick="window.location.href = '{{ url_for('stakeholder', name=prev_stakeholder) }}'">Previous Stakeholder</button>
+        <button onclick="window.location.href = '{{ url_for('stakeholder', name=next_stakeholder) }}'">Next Stakeholder</button>
+    </div>
+    {% for epic_id, stories in epics.items() %}
+        <div class="epic-card" data-epic-id="{{ epic_id }}">
+            <h2>{{ stories[0]['Epic Title'] }}</h2>
+            <p>{{ stories[0]['Epic Description'] }}</p>
+            {% for story in stories %}
+                <div class="story-card" data-story-id="{{ story['Story ID'] }}">
+                    <input type="text" name="story_title" value="{{ story['Story Description'] }}">
+                    {% for task in story['Tasks'] %}
+                        <div class="task-card" data-task-id="{{ task['Task ID'] }}">
+                            <input type="text" name="task_description" value="{{ task['Description'] }}">
+                            <button onclick="approveTask('{{ epic_id }}', '{{ story['Story ID'] }}', '{{ task['Task ID'] }}')">Approve Task</button>
+                        </div>
+                    {% endfor %}
+                    <button onclick="approveStory('{{ epic_id }}', '{{ story['Story ID'] }}')">Approve Story</button>
+                </div>
+            {% endfor %}
+            <button onclick="approveEpic('{{ epic_id }}')">Approve Epic</button>
+        </div>
+    {% endfor %}
+</body>
+<script>
+function approveTask(epicId, storyId, taskId) {
+    var data = { 'action': 'approve_task', 'epic_id': epicId, 'story_id': storyId, 'task_id': taskId };
+    sendUpdateRequest(data);
+}
+
+function approveStory(epicId, storyId) {
+    let allTasksApproved = true;
+    const tasks = document.querySelectorAll(`.story-card[data-story-id="${storyId}"] .task-card`);
+    tasks.forEach(task => {
+        if (!task.dataset.approved) {
+            allTasksApproved = false;
+        }
+    });
+
+    if (!allTasksApproved) {
+        alert('Please approve all tasks before approving the story.');
+        return;
+    }
+
+    var data = { 'action': 'approve_story', 'epic_id': epicId, 'story_id': storyId };
+    sendUpdateRequest(data);
+}
+
+function approveEpic(epicId) {
+    let allStoriesApproved = true;
+    const stories = document.querySelectorAll(`.epic-card[data-epic-id="${epicId}"] .story-card`);
+    stories.forEach(story => {
+        if (!story.dataset.approved) {
+            allStoriesApproved = false;
+        }
+    });
+
+    if (!allStoriesApproved) {
+        alert('Please approve all stories before approving the epic.');
+        return;
+    }
+
+    var data = { 'action': 'approve_epic', 'epic_id': epicId };
+    sendUpdateRequest(data);
+}
+
+function sendUpdateRequest(data) {
+    fetch('/update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(responseData => {
+        if (responseData.success) {
+            alert('Update successful!');
+            window.location.reload(); // This may be changed to dynamically update the UI instead
+        } else {
+            alert('Error: ' + responseData.message);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Error sending update request.');
+    });
+}
+</script>
+
+
+</html>

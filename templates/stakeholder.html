@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Breakdown - {{ name }}</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    {% for epic_id, epics in data.items() %}
+        {% for epic in epics %}
+            <div style="border: 1px solid black; margin: 10px; padding: 10px;">
+                <h2>Epic: {{ epic['Epic Title'] }} ({{ epic_id }})</h2>
+                <p>{{ epic['Epic Description'] }}</p>
+                {% for story in epics %}
+                    <div style="border: 1px solid blue; margin: 10px; padding: 10px;">
+                        <h3>Story: {{ story['Story ID'] }} - {{ story['Story Description'] }}</h3>
+                        <ul>
+                            {% for criteria in story['Story Acceptance Criteria'] %}
+                                <li>{{ criteria }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% for task in story['Tasks'] %}
+                            <div style="border: 1px solid red; margin: 10px; padding: 5px;">
+                                <p>Task: {{ task['Task ID'] }} - {{ task['Description'] }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

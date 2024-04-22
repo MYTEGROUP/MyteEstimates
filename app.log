@@ -1,0 +1,5 @@
+root - INFO - Starting task processing for Subcontractors epic: Repair Ticket Management story: View Repair Tickets on Map
+httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+root - INFO - Starting task processing for Subcontractors epic: Repair Ticket Management story: Submit Bids for Repair Jobs
+httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+root - INFO - Starting task processing for Subcontractors epic: Repair Ticket Management story: Request and Schedule Site Visits
