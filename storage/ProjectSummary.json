@@ -1,28 +1,16 @@
 {
-    "Project Vision": "**Project Vision: Revolutionizing Property Management with Next-Gen Digital Solutions**\n\nImagine a world where property management is seamlessly integrated, incredibly efficient, and delightfully user-friendly. We are at the brink of launching a cutting-edge digital platform that will transform the property rental market. Our innovative solution is designed to empower property managers, tenants, and subcontractors through a comprehensive suite of tools that streamline every aspect of property management.\n\nFrom tenant verification, lease management, and maintenance requests to seamless scheduling and financial transactions, our platform provides an all-encompassing ecosystem. Equipped with robust integrations with top-tier services like Calendly, DocuSign, Stripe, and SingleKey, we are setting a new industry standard. Our platform not only simplifies operations but also enhances user experiences, ensuring that managing or renting a property is as easy as clicking a button.\n\nJoin us as we redefine the landscape of property management, making it more accessible, efficient, and secure. With our solution, property management professionals can focus more on strategic decisions and less on administrative burdens, tenants enjoy unparalleled convenience, and subcontractors gain access to a broader market. This is more than just a software solution\u2014it\u2019s the future of property management, today.",
+    "Project Vision": "**Project Vision: Revolutionizing Personalized Marketing with AI-Driven Precision**\n\nIn an era where connection is key, our innovative software stands poised to redefine how platform owners engage with their networks. Envision a future where your outreach is not just broad, but astoundingly precise. Our tool harnesses the power of AI, specifically OpenAI transformers, to delve deep into your first-level contacts on platforms like LinkedIn and Facebook, transforming raw social data into a goldmine for targeted marketing.\n\nGone are the days of scattergun marketing strategies. Our software meticulously curates contact lists by analyzing personal interests and professional needs, matching your products or services with the individuals most likely to be captivated. It's not just about reaching out; it's about reaching right.\n\nLocal storage ensures that your data remains secure and private, operated within a user-friendly interface that makes sophisticated marketing feel like a breeze. Whether you're launching a new product or nurturing existing relationships, our tool empowers you to conduct your marketing campaigns with unprecedented efficiency and effectiveness.\n\nEmbrace the future of marketing\u2014personalized, powerful, and privacy-focused. Let's make every contact count!",
     "Business Vertical": [
-        "Property Management"
+        "Digital Marketing"
     ],
     "Stakeholders": [
-        "Property Managers",
-        "Tenants",
-        "Subcontractors"
+        "Platform Owner"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "Property Managers",
-            "Model": "Subscription",
-            "Rationale": "Property managers operate as key users of the platform, leveraging its full suite of features for property listing, tenant management, financial transactions, and more. A subscription model is suitable as it provides predictable revenue and allows property managers to access the platform on an ongoing basis. They pay a monthly fee per unit managed, which covers continuous access to the platform's tools and services. The revenue is collected by the platform provider."
-        },
-        {
-            "Stakeholder": "Tenants",
+            "Stakeholder": "Platform Owner",
             "Model": "Direct Payment",
-            "Rationale": "Tenants use the platform to search for rental properties, book appointments, apply for leases, and make payments like rent and security deposits. A direct payment model is appropriate for tenants as they engage in occasional transactions rather than regular use of extensive platform features. They pay per transaction, such as application fees or lease processing fees, directly related to specific services they use. The revenue from these transactions goes to the platform provider, with possible shares to property managers for certain services."
-        },
-        {
-            "Stakeholder": "Subcontractors",
-            "Model": "Subscription",
-            "Rationale": "Subcontractors pay a monthly access fee to utilize the platform's marketplace for job postings and contract management. This model supports their need for regular access to a potentially continuous stream of job opportunities. The subscription fee ensures they can bid on projects and manage their contracts through the platform. The collected fees are revenue for the platform provider and help maintain and improve the subcontractor-specific functionalities."
+            "Rationale": "The platform owner is both the user and the beneficiary of the software, designed specifically to enhance his marketing efforts using AI-driven data analysis for his personal network of first-level contacts. Since the software is tailored for his exclusive use and not intended for a broader market, the most suitable revenue model is direct payment. The platform owner would pay for the software development and maintenance upfront or as per agreement milestones directly to the developers or the service provider. This payment covers the customization, privacy-focused design, AI capabilities, and any specific functionalities required by the platform owner. The revenue for this work goes directly to the software developers or the development company tasked with creating and maintaining the software."
         }
     ]
 }

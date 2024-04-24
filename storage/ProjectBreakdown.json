@@ -1,1201 +1,58 @@
 {
-    "Subcontractors": [
+    "Platform Owner": [
         {
             "Epic ID": "E001",
-            "Title": "Subcontractor Marketplace Access",
-            "Description": "Provide subcontractors with access to a job marketplace where they can find and apply for work offerings related to property maintenance and repairs.",
+            "Title": "Data Extraction and Database Creation",
+            "Description": "Develop functionality to extract first-level contact information from the platform owner's LinkedIn and Facebook profiles, including personal and professional details to form a comprehensive database.",
             "User Stories": [
                 {
-                    "Title": "Subcontractor Registration",
-                    "Description": "As a Subcontractor, I want to be able to register on the platform by providing my personal and business details, so that I can access the job marketplace and find property maintenance and repair work.",
+                    "Title": "Authenticate Platform Owner's Social Media Access",
+                    "Description": "As a Platform Owner, I want the ability to securely authenticate my LinkedIn and Facebook accounts so that the system can access my first-level contact information without compromising my login credentials.",
                     "AcceptanceCriteria": [
-                        "Subcontractor can enter personal details including name, email, and phone number.",
-                        "Subcontractor can enter business details including business name, type, and services offered.",
-                        "Subcontractor must verify their phone number through OTP.",
-                        "The system must send an activation link to the subcontractor\u2019s email for account activation.",
-                        "Subcontractor can set a password for login credentials."
+                        "The system should provide an OAuth login for LinkedIn and Facebook.",
+                        "Authentication must be secure and follow best practices for OAuth implementations.",
+                        "The system should only request permissions necessary for accessing first-level contact information."
                     ],
                     "Story ID": "S001"
                 },
                 {
-                    "Title": "Subcontractor Login",
-                    "Description": "As a Subcontractor, I want to be able to log into the platform using my registered credentials, so that I can access my profile and job marketplace.",
+                    "Title": "Extract Contact Information",
+                    "Description": "As a Platform Owner, I want to extract first-level contact details from LinkedIn and Facebook so that I can build a comprehensive database of my professional and personal contacts.",
                     "AcceptanceCriteria": [
-                        "Subcontractor can log in using email and password.",
-                        "Subcontractor can request a password reset link if they forget their password.",
-                        "The system should provide \u2018Remember Me\u2019 functionality to facilitate easier logins on return visits."
+                        "Contact information should include name, email, job title, company, and social profile URLs.",
+                        "The extraction process must handle pagination to ensure all contacts are retrieved.",
+                        "Contacts must be deduplicated across both platforms.",
+                        "Extracted data should be validated to ensure accuracy and completeness."
                     ],
                     "Story ID": "S002"
                 },
                 {
-                    "Title": "View Job Listings",
-                    "Description": "As a Subcontractor, I want to view a list of available jobs in my set radius/working area, so that I can apply for jobs that match my skills and preferences.",
+                    "Title": "Store Contact Information Locally",
+                    "Description": "As a Platform Owner, I want to store the extracted contact information locally in JSON format so that I can ensure data privacy and security.",
                     "AcceptanceCriteria": [
-                        "Job listings must be displayed with essential details like location, job description, and estimated pay.",
-                        "Subcontractor can filter job listings by categories such as electrical, plumbing, etc.",
-                        "Subcontractor can view details of a job by selecting it from the list."
+                        "Extracted data should be stored in a structured JSON format.",
+                        "Data storage should occur on the local machine or a designated secure local server.",
+                        "The JSON file should include clear, human-readable labels for each data field."
                     ],
                     "Story ID": "S003"
                 },
                 {
-                    "Title": "Apply for Jobs",
-                    "Description": "As a Subcontractor, I want to be able to apply for jobs by submitting a proposal, so that property managers can consider me for the work.",
+                    "Title": "Manual Data Backup Process",
+                    "Description": "As a Platform Owner, I want to manually initiate a backup of the contact database so that I can prevent data loss.",
                     "AcceptanceCriteria": [
-                        "Subcontractor can submit a proposal including a cover letter, estimated cost, and timeframe.",
-                        "Subcontractor can attach supporting documents to their proposal.",
-                        "Subcontractor receives confirmation upon successful submission of a job application."
+                        "There should be an option in the interface to manually trigger a backup.",
+                        "Backup should create a timestamped copy of the JSON data file.",
+                        "The system should verify the integrity of the backup file after completion."
                     ],
                     "Story ID": "S004"
                 },
                 {
-                    "Title": "Receive Notifications",
-                    "Description": "As a Subcontractor, I want to receive notifications about job application statuses and other relevant updates, so that I am informed about opportunities and changes in real time.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor receives an email and in-app notification when their job application is accepted or rejected.",
-                        "Subcontractor receives alerts for new jobs posted within their service area."
-                    ],
-                    "Story ID": "S005"
-                },
-                {
-                    "Title": "Manage Profile and Services",
-                    "Description": "As a Subcontractor, I want to manage my profile and the services I offer, so that potential clients can view up-to-date information about my business.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can update personal and business information in their profile.",
-                        "Subcontractor can add or remove services they provide.",
-                        "Changes must be saved and reflected immediately on the platform."
-                    ],
-                    "Story ID": "S006"
-                },
-                {
-                    "Title": "Manage Payment Information",
-                    "Description": "As a Subcontractor, I want to manage my payment details securely on the platform, so that I can receive payments directly to my account for completed jobs.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can add or update their bank information.",
-                        "The platform must comply with Canadian law for data protection.",
-                        "Subcontractor can remove existing bank details."
-                    ],
-                    "Story ID": "S007"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E002",
-            "Title": "Job Application Management",
-            "Description": "Enable subcontractors to apply for jobs, manage their applications, and view the status of their bids, facilitating an organized approach to securing contracts.",
-            "User Stories": [
-                {
-                    "Title": "Subcontractor Job Application Creation",
-                    "Description": "As a Subcontractor, I want to create and submit job applications so that I can apply for specific job postings relevant to my skills.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can access a job application form from their dashboard.",
-                        "Form includes fields for job specifics, expected compensation, and project duration.",
-                        "Subcontractor can attach relevant documents or images.",
-                        "Application can be saved as a draft before submitting.",
-                        "Confirmation message appears after successful submission."
-                    ],
-                    "Story ID": "S008"
-                },
-                {
-                    "Title": "View and Manage Job Applications",
-                    "Description": "As a Subcontractor, I want to view, track, and manage my job applications to monitor the status of my bids and make necessary updates.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can view a list of all job applications submitted.",
-                        "Each application in the list shows its current status (pending, accepted, rejected).",
-                        "Subcontractor can edit and update their applications until they are reviewed.",
-                        "Subcontractor can withdraw their application if it has not been accepted yet."
-                    ],
-                    "Story ID": "S009"
-                },
-                {
-                    "Title": "Job Application Notifications",
-                    "Description": "As a Subcontractor, I want to receive notifications regarding the status of my job applications so that I am informed of any updates or changes.",
-                    "AcceptanceCriteria": [
-                        "Notifications for job application status updates (accepted, rejected, feedback) are automatically sent to the subcontractor.",
-                        "Subcontractor can view notifications in a dedicated section.",
-                        "Email notifications are sent in addition to in-platform notifications."
-                    ],
-                    "Story ID": "S010"
-                },
-                {
-                    "Title": "Job Application History",
-                    "Description": "As a Subcontractor, I want to access a history of all my job applications to review past applications and learn from feedback.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can access a historical view of all job applications.",
-                        "History includes details of the job, application status, and feedback from employers.",
-                        "Filter and search functionality to find specific applications by date, job title, or status."
-                    ],
-                    "Story ID": "S011"
-                },
-                {
-                    "Title": "Feedback System for Job Applications",
-                    "Description": "As a Subcontractor, I want to receive feedback on my rejected applications so that I can improve future applications.",
-                    "AcceptanceCriteria": [
-                        "Feedback is provided for each rejected application, visible in the application details.",
-                        "Feedback section includes comments from the employer on why the application was rejected.",
-                        "Subcontractor can request further clarification on feedback via a messaging feature."
-                    ],
-                    "Story ID": "S012"
-                },
-                {
-                    "Title": "Secure Login and Account Management",
-                    "Description": "As a Subcontractor, I want to securely log into the platform and manage my account settings to ensure my personal and application data is protected.",
-                    "AcceptanceCriteria": [
-                        "Secure login process with email and password.",
-                        "Forgot password and password reset functionalities.",
-                        "Profile management features to update personal details, credentials, and communication preferences."
-                    ],
-                    "Story ID": "S013"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E003",
-            "Title": "Communication and Coordination",
-            "Description": "Facilitate effective communication between subcontractors, property managers, and tenants through an integrated chat system to discuss job details and coordinate schedules.",
-            "User Stories": [
-                {
-                    "Title": "Login to Communication Platform",
-                    "Description": "As a subcontractor, I want to be able to log in securely to the chat system so that I can access my messages and communicate with property managers and tenants.",
-                    "AcceptanceCriteria": [
-                        "Login page is accessible from the main website.",
-                        "Subcontractors can log in using their registered email and password.",
-                        "System validates credentials and denies access with incorrect login details.",
-                        "Redirect to the main communication dashboard upon successful login."
-                    ],
-                    "Story ID": "S014"
-                },
-                {
-                    "Title": "Password Recovery for Chat System",
-                    "Description": "As a subcontractor, I want to recover my password via email if I forget it so that I can regain access to the chat system.",
-                    "AcceptanceCriteria": [
-                        "Password recovery option is available on the login page.",
-                        "Subcontractors can enter their registered email to receive a password reset link.",
-                        "Subcontractors can reset their password using the link sent to their email.",
-                        "Subcontractors can log in with the new password after resetting."
-                    ],
-                    "Story ID": "S015"
-                },
-                {
-                    "Title": "Send Direct Messages",
-                    "Description": "As a subcontractor, I want to send direct messages to property managers and tenants so that I can discuss job details and respond to queries.",
-                    "AcceptanceCriteria": [
-                        "Ability to select a recipient from a list of contacts which includes property managers and tenants.",
-                        "Text box to type messages and a send button.",
-                        "Sent messages are visible in the chat window.",
-                        "Recipients receive messages in real-time."
-                    ],
-                    "Story ID": "S016"
-                },
-                {
-                    "Title": "Receive and View Messages",
-                    "Description": "As a subcontractor, I want to receive and view messages from property managers and tenants so that I can keep up-to-date with job requirements and scheduling.",
-                    "AcceptanceCriteria": [
-                        "Incoming messages are notified with an alert.",
-                        "Messages are displayed in chronological order in the chat window.",
-                        "Subcontractors can view the sender\u2019s name and message timestamp.",
-                        "Read/unread status is visible for each message."
-                    ],
-                    "Story ID": "S017"
-                },
-                {
-                    "Title": "Create Group Chats",
-                    "Description": "As a subcontractor, I want to create group chats including myself, tenants, and property managers so that we can coordinate more efficiently on projects requiring multiple stakeholders.",
-                    "AcceptanceCriteria": [
-                        "Option to create a new group chat from the communication dashboard.",
-                        "Ability to select multiple contacts to add to the group chat.",
-                        "Group chat allows for messages to be sent and received by all members.",
-                        "Members receive notifications when added to a group chat."
-                    ],
-                    "Story ID": "S018"
-                },
-                {
-                    "Title": "Upload and Share Files",
-                    "Description": "As a subcontractor, I want to upload and share files within the chat system so that I can provide visual details or documents related to the maintenance jobs.",
-                    "AcceptanceCriteria": [
-                        "Feature to attach files within the message composer.",
-                        "Support for common file types (e.g., PDF, JPG, DOCX).",
-                        "Files are scanned for viruses upon upload.",
-                        "Recipients can download and view files directly from the chat."
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "Archive and Search Conversations",
-                    "Description": "As a subcontractor, I want to archive and search past conversations so that I can refer back to old messages and maintain a clean and organized chat environment.",
-                    "AcceptanceCriteria": [
-                        "Option to archive conversations.",
-                        "Archived messages are stored but can be accessed if needed.",
-                        "Search functionality to find specific messages or conversations by keyword.",
-                        "Search results display relevant messages and their context."
-                    ],
-                    "Story ID": "S020"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E004",
-            "Title": "Profile and Credentials Management",
-            "Description": "Allow subcontractors to create and manage their profiles, showcasing their credentials, past work, and areas of expertise to enhance their visibility in the marketplace.",
-            "User Stories": [
-                {
-                    "Title": "Subcontractor Profile Creation",
-                    "Description": "As a subcontractor, I want to create and customize my profile so that I can showcase my credentials, past work, and areas of expertise.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can access a registration form.",
-                        "Fields include: name, contact information, skill set, certifications, and portfolio uploads (images, documents).",
-                        "Profile creation must be confirmed by email verification.",
-                        "Subcontractor can view and edit profile after creation."
-                    ],
-                    "Story ID": "S021"
-                },
-                {
-                    "Title": "Subcontractor Profile Visibility",
-                    "Description": "As a subcontractor, I want my profile to be publicly visible on the marketplace so that potential clients can view my expertise and past projects.",
-                    "AcceptanceCriteria": [
-                        "Profile should be searchable and accessible by other users.",
-                        "Visibility options available to the subcontractor: public, private, or to specific property managers.",
-                        "Profile must include subcontractor's credentials, specialties, reviews and ratings."
-                    ],
-                    "Story ID": "S022"
-                },
-                {
-                    "Title": "Subcontractor Credential Upload",
-                    "Description": "As a subcontractor, I want to upload and update my certifications and credentials so that I can enhance trust with potential clients.",
-                    "AcceptanceCriteria": [
-                        "Ability to upload digital copies of credentials and certificates.",
-                        "Support for multiple file formats (PDF, JPG, PNG).",
-                        "Facility to update or remove outdated credentials."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "Subcontractor Portfolio Management",
-                    "Description": "As a subcontractor, I want to manage a portfolio of my past projects so that I can showcase my experience and quality of work to potential clients.",
-                    "AcceptanceCriteria": [
-                        "Ability to add, edit, and delete project entries.",
-                        "Each entry can include images, a project description, and a link to the project case study.",
-                        "Ability to categorize projects based on the type of work (e.g., electrical, plumbing)."
-                    ],
-                    "Story ID": "S024"
-                },
-                {
-                    "Title": "Subcontractor Profile Searchability and Filters",
-                    "Description": "As a subcontractor, I want my profile to be easily searchable with filters so that property managers can find me based on relevant criteria.",
-                    "AcceptanceCriteria": [
-                        "Property managers can search for subcontractors based on location, specialty, and ratings.",
-                        "Filters for the type of service (e.g., plumbing, electrical), availability, and previous client reviews.",
-                        "Search results display relevant matches with an option to view detailed profiles."
-                    ],
-                    "Story ID": "S025"
-                },
-                {
-                    "Title": "Subcontractor Availability Settings",
-                    "Description": "As a subcontractor, I want to set my availability within my profile so that property managers know when I am available for projects.",
-                    "AcceptanceCriteria": [
-                        "Ability to set standard availability in the profile settings.",
-                        "Options to mark specific dates as unavailable.",
-                        "Automatic updates to property managers viewing the profile regarding availability status."
-                    ],
-                    "Story ID": "S026"
-                },
-                {
-                    "Title": "Subcontractor Ratings and Reviews",
-                    "Description": "As a subcontractor, I want to receive ratings and reviews from property managers so that I can build my reputation in the marketplace.",
-                    "AcceptanceCriteria": [
-                        "Property managers can post reviews and rate subcontractors after a project is completed.",
-                        "Subcontractors can respond to reviews.",
-                        "Aggregate rating displayed on the subcontractor's profile."
-                    ],
-                    "Story ID": "S027"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E005",
-            "Title": "Financial Transaction Management",
-            "Description": "Provide a secure platform for subcontractors to receive payments for completed jobs through integrated financial services like Stripe, including managing invoices and transaction history.",
-            "User Stories": [
-                {
-                    "Title": "Subcontractor Authentication",
-                    "Description": "As a Subcontractor, I want to be able to log in to the platform using my registered credentials so that I can access my secure personal and financial information.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can enter username and password",
-                        "Successful login directs to the Subcontractor dashboard",
-                        "Unsuccessful login provides an error message and the option to reset the password"
-                    ],
-                    "Story ID": "S028"
-                },
-                {
-                    "Title": "Invoice Generation",
-                    "Description": "As a Subcontractor, I want to generate invoices automatically after completing a job so that I can ensure timely and accurate billing to the property managers or tenants.",
-                    "AcceptanceCriteria": [
-                        "Automatically generate an invoice upon job completion",
-                        "Invoice includes detailed information such as job description, hours worked, rate, and total cost",
-                        "Subcontractor can review and edit the invoice before sending"
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "View Payment History",
-                    "Description": "As a Subcontractor, I want to view my payment history so that I can track all my received payments and manage my financial records efficiently.",
-                    "AcceptanceCriteria": [
-                        "Access to a payment history tab on the dashboard",
-                        "List all payments received with dates and amounts",
-                        "Option to download payment records as a CSV file"
-                    ],
-                    "Story ID": "S030"
-                },
-                {
-                    "Title": "Stripe Integration for Receiving Payments",
-                    "Description": "As a Subcontractor, I want to receive payments through Stripe integration so that I can ensure secure and reliable transaction processing.",
-                    "AcceptanceCriteria": [
-                        "Integration with Stripe for receiving payments",
-                        "Confirmation of payment received is visible in the subcontractor's dashboard",
-                        "Subcontractors can withdraw or transfer funds to their bank account from Stripe"
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Manage Bank Details",
-                    "Description": "As a Subcontractor, I want to be able to add and manage my bank details so that I can receive payments directly to my preferred account.",
-                    "AcceptanceCriteria": [
-                        "Option to add and edit bank details in profile settings",
-                        "Secure storage of bank information",
-                        "Bank details are used for transactions processed through Stripe"
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "Password Reset",
-                    "Description": "As a Subcontractor, I want to be able to reset my password if I forget it so that I can regain access to my account without compromising security.",
-                    "AcceptanceCriteria": [
-                        "Option to reset password via a linked email",
-                        "Receive an email with a password reset link",
-                        "Must be able to set a new password following security standards"
-                    ],
-                    "Story ID": "S033"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E006",
-            "Title": "Feedback and Ratings",
-            "Description": "Implement a system where subcontractors can receive feedback and ratings from property managers and tenants, helping to build their reputation in the community.",
-            "User Stories": [
-                {
-                    "Title": "Subcontractor Profile Creation",
-                    "Description": "As a Subcontractor, I want to create and manage my profile so that I can present my skills and services to property managers and tenants.",
-                    "AcceptanceCriteria": [
-                        "Subcontractor can register with email, phone number, and password.",
-                        "Subcontractor can provide details such as services offered, certifications, and past work experience.",
-                        "Profile changes must be saved and updated immediately in the database.",
-                        "Subcontractors can view their profile to confirm accurate display of provided information."
-                    ],
-                    "Story ID": "S034"
-                },
-                {
-                    "Title": "Receive Feedback and Ratings",
-                    "Description": "As a Subcontractor, I want to receive feedback and ratings from property managers and tenants after job completion so that I can build my reputation and attract more work.",
-                    "AcceptanceCriteria": [
-                        "Subcontractors can view all feedback and ratings left by tenants and property managers.",
-                        "Feedback includes a numerical rating and a text comment.",
-                        "Feedback and ratings are visible on the subcontractor's public profile.",
-                        "There should be a functionality to respond to feedback within the platform."
-                    ],
-                    "Story ID": "S035"
-                },
-                {
-                    "Title": "View Job Listings and Apply",
-                    "Description": "As a Subcontractor, I want to view available job listings and apply to them so that I can secure work engagements.",
-                    "AcceptanceCriteria": [
-                        "List of available jobs is accessible to logged-in subcontractors.",
-                        "Jobs can be filtered by type, location, and urgency.",
-                        "Application process allows submission of a proposal and expected cost.",
-                        "Subcontractors receive a confirmation upon successful job application submission."
-                    ],
-                    "Story ID": "S036"
-                },
-                {
-                    "Title": "Job Completion and Initiation of Feedback",
-                    "Description": "As a Subcontractor, I want to mark jobs as completed and initiate the feedback process so that I can ensure my services are adequately reviewed.",
-                    "AcceptanceCriteria": [
-                        "Subcontractors can mark a job as completed in the system.",
-                        "Upon marking as completed, the property manager and tenant are notified to leave feedback.",
-                        "The system should capture the date of completion.",
-                        "A reminder for feedback submission is sent to the property manager and tenant if not submitted within a specified timeframe."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Access to Feedback History",
-                    "Description": "As a Subcontractor, I want to access my historical feedback and ratings to evaluate my performance over time.",
-                    "AcceptanceCriteria": [
-                        "Subcontractors can access a dashboard showing all past feedback and ratings.",
-                        "Feedback history can be filtered by date, job type, or property manager.",
-                        "The system provides average rating calculation based on historical data.",
-                        "Feedback details are expandable for full review directly on the dashboard."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Dispute Resolution Feature",
-                    "Description": "As a Subcontractor, I want to be able to dispute unfair ratings or feedback to maintain my reputation integrity.",
-                    "AcceptanceCriteria": [
-                        "Feature to flag feedback for review available on the subcontractor's dashboard.",
-                        "Flagger must provide a reason and any evidence supporting their dispute claim.",
-                        "Disputed feedback is reviewed by an administrator with a response time of no more than 5 business days.",
-                        "Subcontractors are notified of the dispute outcome, and adjustments are made if necessary."
-                    ],
-                    "Story ID": "S039"
-                }
-            ]
-        }
-    ],
-    "Property Managers": [
-        {
-            "Epic ID": "E001",
-            "Title": "Property Listing Management",
-            "Description": "Enable property managers to add, update, and remove property listings, including detailed descriptions, amenities, rules, and photos to attract potential tenants.",
-            "User Stories": [
-                {
-                    "Title": "Add Property Listing",
-                    "Description": "As a Property Manager, I want to add property listings so that I can advertise available properties to potential tenants.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can enter property details including name, address, description, property type, and photos.",
-                        "System must validate entered data for completeness and correctness.",
-                        "Upon successful submission, the property listing should be visible on the platform.",
-                        "Property Manager receives confirmation of listing addition."
-                    ],
-                    "Story ID": "S001"
-                },
-                {
-                    "Title": "Update Property Listing",
-                    "Description": "As a Property Manager, I want to update property listings to ensure all information is current and accurate.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can select an existing listing and update any of the details including descriptions, amenities, rules, and photos.",
-                        "System must validate updated data for completeness and correctness.",
-                        "Changes should be immediately reflected on the platform upon submission.",
-                        "Property Manager receives confirmation of listing update."
-                    ],
-                    "Story ID": "S002"
-                },
-                {
-                    "Title": "Remove Property Listing",
-                    "Description": "As a Property Manager, I want to remove property listings that are no longer available to rent.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can select an existing listing and remove it from the platform.",
-                        "System should prompt for confirmation before deletion to prevent accidental removals.",
-                        "Once confirmed and removed, the listing should no longer be visible or searchable on the platform.",
-                        "Property Manager receives confirmation of listing removal."
-                    ],
-                    "Story ID": "S003"
-                },
-                {
-                    "Title": "View Listing Details",
-                    "Description": "As a Property Manager, I want to view detailed information of property listings so that I can oversee all listings under my management.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can select a listing and view all details including descriptions, amenities, rules, and photos.",
-                        "All details should be presented clearly and be easily readable.",
-                        "Property Managers can navigate back to the listing overview seamlessly."
-                    ],
-                    "Story ID": "S004"
-                },
-                {
-                    "Title": "Search and Filter Listings",
-                    "Description": "As a Property Manager, I want to search and filter property listings to easily find specific properties or types of properties.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can use a search bar to enter search criteria.",
-                        "Property Manager can apply filters such as location, property type, and availability status.",
-                        "Results should update in real-time as filters are applied.",
-                        "Listings matching the criteria are displayed; if no matches are found, an appropriate message is shown."
-                    ],
-                    "Story ID": "S005"
-                },
-                {
-                    "Title": "Login and Authentication",
-                    "Description": "As a Property Manager, I want to securely log in to manage property listings.",
-                    "AcceptanceCriteria": [
-                        "Login page accessible from the main website.",
-                        "Secure authentication with username and password.",
-                        "Forgot password and reset functionality.",
-                        "Session timeouts for security."
-                    ],
-                    "Story ID": "S006"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E002",
-            "Title": "Lease Management",
-            "Description": "Facilitate the creation, updating, renewal, and termination of lease agreements, including the use of templates, e-signing via DocuSign, and managing lease durations.",
-            "User Stories": [
-                {
-                    "Title": "Create Lease Agreement",
-                    "Description": "As a Property Manager, I want to create lease agreements using templates so that I can efficiently prepare contracts for new tenants.",
-                    "AcceptanceCriteria": [
-                        "Ability to select from predefined or previously used templates.",
-                        "Customize templates with specific lease details (e.g., rent amount, duration).",
-                        "Preview lease agreement before finalizing."
-                    ],
-                    "Story ID": "S007"
-                },
-                {
-                    "Title": "E-Sign Lease Agreement",
-                    "Description": "As a Property Manager, I want tenants to e-sign the lease agreements via DocuSign so that the lease process is expedited and legally binding.",
-                    "AcceptanceCriteria": [
-                        "Integration with DocuSign for e-signing functionality.",
-                        "Notification to property manager when a tenant has signed the document.",
-                        "Secure storage of signed documents accessible via the platform."
-                    ],
-                    "Story ID": "S008"
-                },
-                {
-                    "Title": "Update Lease Agreement",
-                    "Description": "As a Property Manager, I want to be able to modify existing lease agreements so that I can update terms according to new agreements or corrections.",
-                    "AcceptanceCriteria": [
-                        "Functionality to select existing lease and make modifications.",
-                        "Track changes made to the lease documents.",
-                        "Re-submit for e-signing if significant changes are made."
-                    ],
-                    "Story ID": "S009"
-                },
-                {
-                    "Title": "Renew Lease Agreement",
-                    "Description": "As a Property Manager, I want to easily renew lease agreements so that I can retain tenants and ensure continuous occupancy.",
-                    "AcceptanceCriteria": [
-                        "Option to renew an existing lease with the same terms or updated conditions.",
-                        "Automatic notification to tenants about upcoming lease expirations.",
-                        "Quick re-signing process via DocuSign."
-                    ],
-                    "Story ID": "S010"
-                },
-                {
-                    "Title": "Terminate Lease Agreement",
-                    "Description": "As a Property Manager, I want to terminate lease agreements when necessary so that I can end the contract legally and make the unit available for new tenants.",
-                    "AcceptanceCriteria": [
-                        "Functionality to mark a lease as terminated with reasons.",
-                        "Notification to tenant regarding lease termination.",
-                        "Archiving of the terminated lease documentation."
-                    ],
-                    "Story ID": "S011"
-                },
-                {
-                    "Title": "Lease Duration Management",
-                    "Description": "As a Property Manager, I want to manage lease durations so that I can ensure contracts are up-to-date and comply with legal standards.",
-                    "AcceptanceCriteria": [
-                        "Track start and end dates of all leases.",
-                        "Alerts for leases nearing their end date.",
-                        "Options to extend or modify the lease duration directly from the dashboard."
-                    ],
-                    "Story ID": "S012"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E003",
-            "Title": "Financial Transactions and Reporting",
-            "Description": "Manage financial aspects including rent collection, security deposits, and service fee payments through Stripe, and provide detailed financial reports and analytics.",
-            "User Stories": [
-                {
-                    "Title": "Integrate Stripe for Rent Payments",
-                    "Description": "As a Property Manager, I want to integrate Stripe for processing rent payments so that I can securely collect monthly rent from tenants.",
-                    "AcceptanceCriteria": [
-                        "Ensure secure Stripe integration for rent transactions.",
-                        "Ensure data encryption for sensitive information during transactions.",
-                        "Provide confirmation of payment to both tenant and property manager via email and in-app notification.",
-                        "Log all transactions in the system for future reference and reporting."
-                    ],
-                    "Story ID": "S013"
-                },
-                {
-                    "Title": "Security Deposit Management",
-                    "Description": "As a Property Manager, I want to manage security deposits through Stripe so that I can securely hold and return deposits according to lease terms.",
-                    "AcceptanceCriteria": [
-                        "Allow collection of security deposits during lease signing.",
-                        "Securely store deposit information in the platform.",
-                        "Automate the return of deposits upon lease termination, minus any damages costs.",
-                        "Provide detailed transaction records for both manager and tenant."
-                    ],
-                    "Story ID": "S014"
-                },
-                {
-                    "Title": "Service Fee Collection",
-                    "Description": "As a Property Manager, I want to automatically collect a service fee from subcontractors after each completed job so that I can maintain revenue from marketplace activities.",
-                    "AcceptanceCriteria": [
-                        "Automatically calculate and deduct a 3% service fee from subcontractor payments through Stripe.",
-                        "Provide real-time updates of fee deductions to subcontractors.",
-                        "Record all fee transactions for financial reporting."
-                    ],
-                    "Story ID": "S015"
-                },
-                {
-                    "Title": "Financial Reporting and Analytics",
-                    "Description": "As a Property Manager, I want to generate financial reports and analytics so that I can monitor the financial performance of properties.",
-                    "AcceptanceCriteria": [
-                        "Generate monthly financial reports on rents, deposits, and service fees.",
-                        "Offer analytics on payment trends and overdue accounts.",
-                        "Enable downloading of reports in PDF format.",
-                        "Ensure reports are accessible only by authorized staff."
-                    ],
-                    "Story ID": "S016"
-                },
-                {
-                    "Title": "Automate Late Payment Notifications",
-                    "Description": "As a Property Manager, I want the system to automatically notify tenants of late payments so that I can ensure timely rent collection.",
-                    "AcceptanceCriteria": [
-                        "Send automatic email and in-app notifications to tenants within one day of missed payment deadline.",
-                        "Provide property managers the ability to customize the notification message.",
-                        "Log all notifications sent for record-keeping and follow-up."
-                    ],
-                    "Story ID": "S017"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E004",
-            "Title": "Maintenance Request Coordination",
-            "Description": "Handle maintenance and repair requests from tenants, delegate tasks to subcontractors, and manage status updates from request to completion.",
-            "User Stories": [
-                {
-                    "Title": "User Login & Authentication",
-                    "Description": "As a Property Manager, I want to be able to securely log in to the platform so that I can access my dashboard and manage maintenance requests.",
-                    "AcceptanceCriteria": [
-                        "Secure login page using registered credentials",
-                        "Session management with timeout for security",
-                        "Functionality for 'Forgot Password' to recover access"
-                    ],
-                    "Story ID": "S018"
-                },
-                {
-                    "Title": "View Maintenance Requests",
-                    "Description": "As a Property Manager, I want to view a list of all maintenance and repair requests submitted by tenants so that I can track and prioritize tasks effectively.",
-                    "AcceptanceCriteria": [
-                        "List all maintenance requests in an organized dashboard",
-                        "Filter requests by status (Pending, Accepted, Rejected, and Completed)",
-                        "Option to view detailed descriptions and attached documents or images"
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "Delegate Tasks to Subcontractors",
-                    "Description": "As a Property Manager, I want to delegate repair tasks to available subcontractors so that maintenance issues are resolved promptly.",
-                    "AcceptanceCriteria": [
-                        "Function to assign tasks to subcontractors directly from the maintenance request list",
-                        "Notification system to alert subcontractors of new assignments",
-                        "Subcontractors can accept or reject tasks"
-                    ],
-                    "Story ID": "S020"
-                },
-                {
-                    "Title": "Manage and Update Task Status",
-                    "Description": "As a Property Manager, I want to update and track the status of each maintenance task so that I can keep tenants informed and ensure timely resolution of issues.",
-                    "AcceptanceCriteria": [
-                        "Update task statuses (Pending, In Progress, Completed)",
-                        "Automated notifications to tenants upon status updates",
-                        "Log and track changes in the maintenance request dashboard"
-                    ],
-                    "Story ID": "S021"
-                },
-                {
-                    "Title": "Review and Approve Subcontractor Work",
-                    "Description": "As a Property Manager, I want to review completed work by subcontractors to ensure quality before marking tasks as completed.",
-                    "AcceptanceCriteria": [
-                        "Ability to review work reports and uploaded proof of work (photos/documents)",
-                        "Approve or request rework based on satisfaction",
-                        "Finalize payment and close tasks upon approval"
-                    ],
-                    "Story ID": "S022"
-                },
-                {
-                    "Title": "Payment Processing for Subcontractors",
-                    "Description": "As a Property Manager, I want to process payments to subcontractors through the platform to streamline financial transactions and maintain records.",
-                    "AcceptanceCriteria": [
-                        "Integration with payment systems like Stripe for direct payments",
-                        "Record and track payment statuses within the platform",
-                        "Generate invoices and receipts for bookkeeping purposes"
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "Access Control and Permissions",
-                    "Description": "As a Property Manager, I want to ensure that access to sensitive information is controlled based on user roles to maintain platform security and data privacy.",
-                    "AcceptanceCriteria": [
-                        "Define and enforce role-based access controls",
-                        "Restrict tenant's access to other tenants' and subcontractors' personal data",
-                        "Audit trails for monitoring access and activities within the platform"
-                    ],
-                    "Story ID": "S024"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E005",
-            "Title": "Tenant Management",
-            "Description": "Oversee tenant profiles, rental applications, tenant verification via SingleKey, and maintain a communication channel between property managers and tenants.",
-            "User Stories": [
-                {
-                    "Title": "Tenant Profile Creation",
-                    "Description": "As a Property Manager, I want to create and manage tenant profiles so that I can keep track of tenant information and rental history.",
-                    "AcceptanceCriteria": [
-                        "Ability to create a new tenant profile with fields for personal, contact, and financial information.",
-                        "Functionality for updating and deleting tenant profiles.",
-                        "Profiles must include necessary identification for SingleKey verification.",
-                        "System must securely store and handle sensitive tenant data in compliance with Canadian Law."
-                    ],
-                    "Story ID": "S025"
-                },
-                {
-                    "Title": "Rental Application Management",
-                    "Description": "As a Property Manager, I want to manage rental applications so that I can efficiently process potential tenant requests.",
-                    "AcceptanceCriteria": [
-                        "Ability to receive and review rental applications through the platform.",
-                        "Functionality to accept or reject applications with reasons for decision.",
-                        "Notification system to inform tenants of application status automatically."
-                    ],
-                    "Story ID": "S026"
-                },
-                {
-                    "Title": "Tenant Verification Integration",
-                    "Description": "As a Property Manager, I want to integrate SingleKey for tenant verification to ensure tenant reliability and reduce rental risks.",
-                    "AcceptanceCriteria": [
-                        "SingleKey API integration for conducting credit and background checks.",
-                        "Capability for tenants to pay for their verification if required by property manager.",
-                        "Verification status should be updated in tenant profiles upon completion."
-                    ],
-                    "Story ID": "S027"
-                },
-                {
-                    "Title": "Communication Channel Setup",
-                    "Description": "As a Property Manager, I want to maintain a communication channel between myself, tenants, and subcontractors so that we can coordinate effectively.",
-                    "AcceptanceCriteria": [
-                        "In-app messaging functionality for one-to-one and group conversations.",
-                        "Ability to share documents and images within chats.",
-                        "Chat history should be stored securely and be easily accessible."
-                    ],
-                    "Story ID": "S028"
-                },
-                {
-                    "Title": "Access Control and Permissions",
-                    "Description": "As a Property Manager, I want to manage access controls and permissions within the platform to ensure data privacy and appropriate access to information.",
-                    "AcceptanceCriteria": [
-                        "Different access levels for tenants, property managers, and subcontractors.",
-                        "Tenants should only access their profile, rental details, and communication features.",
-                        "Subcontractors should have limited access, primarily to job-related features and chats."
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "Rental Lease Management",
-                    "Description": "As a Property Manager, I want to oversee lease agreements and renewals to manage property rental effectively.",
-                    "AcceptanceCriteria": [
-                        "Ability to create, send, and manage digital lease agreements via DocuSign integration.",
-                        "Notifications for lease expirations and renewals should be automated.",
-                        "Functionality for tenants to e-sign and return documents seamlessly within the platform."
-                    ],
-                    "Story ID": "S030"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E006",
-            "Title": "Appointment Scheduling",
-            "Description": "Integrate with Calendly to facilitate the scheduling of property visits for tenants and subcontractors, and manage calendar views for availability.",
-            "User Stories": [
-                {
-                    "Title": "Login Access for Property Managers",
-                    "Description": "As a Property Manager, I want to be able to log in securely so that I can access my dashboard to manage property visits and availability.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can log in using email and password",
-                        "Session management must be secure",
-                        "Should have options for 'Remember Me' and 'Forgot Password'"
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Setup Integration with Calendly",
-                    "Description": "As a Property Manager, I want to integrate Calendly into the platform so that I can manage scheduling property visits efficiently.",
-                    "AcceptanceCriteria": [
-                        "Calendly integration setup is confirmed in the backend",
-                        "Property managers can view and manage Calendly calendar from their dashboard",
-                        "Ensure the Calendly API is connected and functioning properly for scheduling"
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "View Calendar for Property Availability",
-                    "Description": "As a Property Manager, I want to view a calendar of property availability so that I can easily see when properties are available for visits.",
-                    "AcceptanceCriteria": [
-                        "Calendar view is integrated into the property manager dashboard",
-                        "Calendar shows all current bookings and availability",
-                        "Property managers can adjust availability directly from the calendar view"
-                    ],
-                    "Story ID": "S033"
-                },
-                {
-                    "Title": "Manage Appointment Requests",
-                    "Description": "As a Property Manager, I want to manage appointment requests so that I can accept or reject bookings based on my availability and tenant requests.",
-                    "AcceptanceCriteria": [
-                        "Dashboard includes a section for managing incoming appointment requests",
-                        "Property managers can accept or reject appointments with a single click",
-                        "Notifications are sent to tenants and subcontractors upon acceptance or rejection"
-                    ],
-                    "Story ID": "S034"
-                },
-                {
-                    "Title": "Configure Notification Settings",
-                    "Description": "As a Property Manager, I want to configure notification settings so that I can receive updates about booking requests and changes to the schedule.",
-                    "AcceptanceCriteria": [
-                        "Ability to set preferences for receiving email and in-app notifications about booking activities",
-                        "Notifications for new booking requests, confirmations, and cancellations",
-                        "Customizable settings for notification frequency and types"
-                    ],
-                    "Story ID": "S035"
-                },
-                {
-                    "Title": "Password Recovery Feature",
-                    "Description": "As a Property Manager, I want a password recovery feature so that I can regain access to my account if I forget my password.",
-                    "AcceptanceCriteria": [
-                        "Password recovery option available on the login page",
-                        "Security questions or email verification to confirm identity",
-                        "Ability to reset password securely"
-                    ],
-                    "Story ID": "S036"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E007",
-            "Title": "Access and Permission Controls",
-            "Description": "Define and manage access permissions across different functionalities of the platform to secure sensitive information and operations.",
-            "User Stories": [
-                {
-                    "Title": "Login Authentication for Property Managers",
-                    "Description": "As a Property Manager, I want to securely log in using my registered credentials, so that I can access my account and manage properties securely.",
-                    "AcceptanceCriteria": [
-                        "The login page must be accessible to property managers.",
-                        "Authentication should be done through registered email and password.",
-                        "The system must validate the credentials against the stored data securely.",
-                        "On successful login, redirect the property manager to the dashboard.",
-                        "Provide error messages for incorrect credentials.",
-                        "Ensure the process adheres to security best practices, including data encryption."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Role-Based Access Control",
-                    "Description": "As a Property Manager, I want the platform to enforce role-based access controls, so that all users can access only the features and data pertinent to their roles.",
-                    "AcceptanceCriteria": [
-                        "Define access roles within the system (Property Managers, Tenants, Subcontractors).",
-                        "Property managers should have permissions to manage property listings, tenant applications, financials, and maintenance requests.",
-                        "Ensure tenants have access only to their profile, lease applications, and ability to make payments.",
-                        "Subcontractors should only access the job marketplace and manage job offers and invoices.",
-                        "A mechanism must be in place to verify the role of the user upon login and direct them to the appropriate interface.",
-                        "Access control violations should be logged and reported to system administrators."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Password Recovery for Property Managers",
-                    "Description": "As a Property Manager, I want to recover my password if I forget it, so that I can regain access to my account without compromising security.",
-                    "AcceptanceCriteria": [
-                        "Provide a 'Forgot Password' link on the login page.",
-                        "Upon request, prompt the user to enter their registered email address.",
-                        "Send a password reset link to the specified email only if it is associated with an existing account.",
-                        "Ensure the reset link is time-bound (e.g., valid for 1 hour).",
-                        "Allow the user to set a new password after verifying through the link.",
-                        "Confirm password reset via email after the process is successfully completed."
-                    ],
-                    "Story ID": "S039"
-                },
-                {
-                    "Title": "Manage Property Listings",
-                    "Description": "As a Property Manager, I want to add, update, and remove property listings, so that I can keep the property data current and accurate.",
-                    "AcceptanceCriteria": [
-                        "Provide interfaces for adding, updating, and removing listings.",
-                        "Ensure that changes can only be made by property managers or higher roles.",
-                        "Each action must be logged for audit purposes.",
-                        "The updated listings should be immediately visible on the platform.",
-                        "Allow bulk updates and deletion options for managing multiple properties.",
-                        "Provide confirmation prompts for delete actions to prevent accidental data loss."
-                    ],
-                    "Story ID": "S040"
-                },
-                {
-                    "Title": "View Financial Reports",
-                    "Description": "As a Property Manager, I want to view financial reports and analytics, so that I can make informed decisions about the properties under my management.",
-                    "AcceptanceCriteria": [
-                        "Allow access to financial reports from the dashboard.",
-                        "Reports should include data on current month's revenue, outstanding payments, and occupancy rates.",
-                        "Provide filtering options for different properties or time periods.",
-                        "Ensure data accuracy and real-time updates to reflect recent transactions.",
-                        "Include export options for reports in PDF or Excel formats.",
-                        "Reports must be viewable only by property managers and higher roles to maintain confidentiality."
-                    ],
-                    "Story ID": "S041"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E008",
-            "Title": "User Role Management",
-            "Description": "Create and manage different user roles within the platform, specifically focusing on roles under property management like secondary property managers or administrative staff.",
-            "User Stories": [
-                {
-                    "Title": "Create Secondary Property Manager Accounts",
-                    "Description": "As a Property Manager, I want to create and manage secondary property manager accounts so that I can delegate specific management responsibilities to my team.",
-                    "AcceptanceCriteria": [
-                        "Ability to create an account with username, email, and password.",
-                        "Ability to assign specific properties to the secondary manager's account.",
-                        "Interface for managing permissions specific to property-related tasks.",
-                        "Successful login and logout functionality for secondary managers.",
-                        "Email notification sent to secondary managers upon account creation."
-                    ],
-                    "Story ID": "S042"
-                },
-                {
-                    "Title": "Define Permissions for Secondary Property Managers",
-                    "Description": "As a Property Manager, I want to define and customize permissions for secondary property managers so that they can operate within their designated responsibilities without compromising system security.",
-                    "AcceptanceCriteria": [
-                        "Ability to set permissions related to property listings management, tenant interactions, and financial transactions.",
-                        "UI for selecting and modifying permissions.",
-                        "Changes should be saved and reflected immediately upon confirmation.",
-                        "Secondary managers should only access features and data as per their permissions."
-                    ],
-                    "Story ID": "S043"
-                },
-                {
-                    "Title": "Reset Password for Secondary Property Manager",
-                    "Description": "As a Property Manager, I want to provide a secure way for secondary property managers to reset their passwords so that account security is maintained.",
-                    "AcceptanceCriteria": [
-                        "Secondary property managers can initiate a password reset.",
-                        "Email with password reset link sent to the registered email address.",
-                        "Successful password update allows login with new credentials.",
-                        "All sessions are logged out upon password reset."
-                    ],
-                    "Story ID": "S044"
-                },
-                {
-                    "Title": "Remove Secondary Property Manager",
-                    "Description": "As a Property Manager, I want to remove secondary property manager accounts so that I can ensure system integrity and manage staff changes effectively.",
-                    "AcceptanceCriteria": [
-                        "Ability to select and remove a secondary property manager account.",
-                        "Confirmation prompt before deletion to prevent accidental removals.",
-                        "All associated data with the manager is securely handled and access is revoked.",
-                        "Audit log entry created for the account removal activity."
-                    ],
-                    "Story ID": "S045"
-                },
-                {
-                    "Title": "Audit Trail for Secondary Property Managers",
-                    "Description": "As a Property Manager, I want to view an audit trail for secondary property managers so that I can track changes and actions performed by them within the platform.",
-                    "AcceptanceCriteria": [
-                        "Access to a detailed log of actions taken by secondary property managers.",
-                        "Filter options by date, type of action, and secondary manager involved.",
-                        "Read-only access to ensure the integrity of the audit log.",
-                        "Export functionality for audit logs in CSV format."
-                    ],
-                    "Story ID": "S046"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E009",
-            "Title": "Security and Compliance",
-            "Description": "Ensure the platform conforms to Canadian laws for data protection and privacy, implementing necessary security protocols for safeguarding user data.",
-            "User Stories": [
-                {
-                    "Title": "Data Encryption",
-                    "Description": "As a Property Manager, I want all sensitive data to be encrypted both in transit and at rest, so that user information is secured against unauthorized access.",
-                    "AcceptanceCriteria": [
-                        "All data transmitted over the network must be encrypted using TLS 1.2 or higher.",
-                        "Data stored in the database must be encrypted using AES-256 or an equivalent standard.",
-                        "Automated tests must confirm encryption on all sensitive fields."
-                    ],
-                    "Story ID": "S047"
-                },
-                {
-                    "Title": "Compliance Audits",
-                    "Description": "As a Property Manager, I want the system to undergo regular compliance audits, so that it adheres to Canadian data protection and privacy laws.",
-                    "AcceptanceCriteria": [
-                        "A compliance report should be generated every quarter.",
-                        "The report must detail adherence to laws such as PIPEDA.",
-                        "Non-compliance issues must be flagged and addressed promptly."
-                    ],
-                    "Story ID": "S048"
-                },
-                {
-                    "Title": "User Consent Management",
-                    "Description": "As a Property Manager, I want a feature that allows users to give or revoke their consent for data use, so that we comply with user consent requirements under Canadian law.",
-                    "AcceptanceCriteria": [
-                        "Users can easily access and modify their consent preferences.",
-                        "All changes in consent are logged and timestamped.",
-                        "Users are notified of any changes in data usage policies."
-                    ],
-                    "Story ID": "S049"
-                },
-                {
-                    "Title": "Data Access Logs",
-                    "Description": "As a Property Manager, I want detailed logs of who accesses user data and when, so that we can ensure accountability and traceability in compliance with Canadian law.",
-                    "AcceptanceCriteria": [
-                        "Logs must capture the identity of the accessor, timestamp, and type of access.",
-                        "Logs should be securely stored and only accessible to authorized personnel.",
-                        "Log integrity must be ensured to prevent tampering."
-                    ],
-                    "Story ID": "S050"
-                },
-                {
-                    "Title": "User Data Access",
-                    "Description": "As a Property Manager, I want users to be able to request access to their stored personal data, so that we comply with the transparency and user access guidelines of Canadian data protection laws.",
-                    "AcceptanceCriteria": [
-                        "Users can submit a data access request through their account settings.",
-                        "Data must be provided in a commonly used format within 30 days of the request.",
-                        "Procedures for data access must be documented and reviewed regularly."
-                    ],
-                    "Story ID": "S051"
-                },
-                {
-                    "Title": "Secure Data Deletion",
-                    "Description": "As a Property Manager, I want a feature that allows for secure deletion of user data when no longer needed or upon user request, ensuring compliance with data retention laws.",
-                    "AcceptanceCriteria": [
-                        "Data deletion requests by users must be processed within 30 days.",
-                        "Deletion must be confirmed to the user via email.",
-                        "All copies of the data in backups must also be deleted in accordance with the policy."
-                    ],
-                    "Story ID": "S052"
-                },
-                {
-                    "Title": "Security Breach Notification",
-                    "Description": "As a Property Manager, I want an automated system to notify users and regulatory bodies in the event of a data breach, so that we comply with legal obligations.",
-                    "AcceptanceCriteria": [
-                        "Notifications must be sent within 72 hours of breach discovery.",
-                        "Notification must include details of the data affected and steps taken to mitigate the breach.",
-                        "A log of all breach notifications must be maintained."
-                    ],
-                    "Story ID": "S053"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E010",
-            "Title": "Platform Customization and Settings",
-            "Description": "Allow property managers to customize platform settings such as notification preferences, report configurations, and interface layouts.",
-            "User Stories": [
-                {
-                    "Title": "Customize Notification Settings",
-                    "Description": "As a Property Manager, I want to customize my notification settings, so that I can receive alerts relevant to my specific needs and preferences.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can enable or disable specific types of notifications (e.g., payment reminders, maintenance updates).",
-                        "Changes must be saved and take immediate effect.",
-                        "Property Manager can specify delivery methods (email, SMS, in-app).",
-                        "System should verify and confirm changes with a confirmation message."
-                    ],
-                    "Story ID": "S054"
-                },
-                {
-                    "Title": "Configure Report Settings",
-                    "Description": "As a Property Manager, I want to configure report settings, so that I can receive tailored reports that help me monitor the performance and status of properties effectively.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can select types of reports to receive (e.g., financial, occupancy).",
-                        "Ability to schedule reports on a daily, weekly, or monthly basis.",
-                        "Option to receive reports via email or accessible through the platform.",
-                        "System confirms any adjustments to settings with a confirmation message."
-                    ],
-                    "Story ID": "S055"
-                },
-                {
-                    "Title": "Adjust Interface Layouts",
-                    "Description": "As a Property Manager, I want to adjust interface layouts, so that I can personalize the dashboard to highlight information that is most important to my day-to-day operations.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can add, remove, or rearrange elements on the dashboard.",
-                        "Support drag-and-drop functionality for rearranging components.",
-                        "Layout changes should be auto-saved and persist upon subsequent logins.",
-                        "System should provide an option to reset layout to default settings."
-                    ],
-                    "Story ID": "S056"
-                },
-                {
-                    "Title": "Manage Access Permissions",
-                    "Description": "As a Property Manager, I want to manage access permissions for my team, so that I can control the scope of actions they can perform on the platform.",
-                    "AcceptanceCriteria": [
-                        "Property Manager can define roles (e.g., assistant manager, maintenance staff) and assign permissions.",
-                        "Permissions settings include read, write, modify, and delete actions for various features.",
-                        "System should log and display changes to permissions for auditing.",
-                        "Ensure changes are effective immediately after confirmation."
-                    ],
-                    "Story ID": "S057"
-                },
-                {
-                    "Title": "Customize Payment Processing Options",
-                    "Description": "As a Property Manager, I want to customize payment processing options, so that I can streamline rent collection and other financial transactions efficiently.",
-                    "AcceptanceCriteria": [
-                        "Ability to select preferred payment gateways (e.g., Stripe, PayPal).",
-                        "Option to configure payment terms, late fees, and reminders.",
-                        "System must provide secure processing and storage of financial data in compliance with applicable laws.",
-                        "Property Manager receives confirmation of any changes made to the payment settings."
-                    ],
-                    "Story ID": "S058"
-                }
-            ]
-        }
-    ],
-    "Tenants": [
-        {
-            "Epic ID": "E001",
-            "Title": "Tenant Authentication",
-            "Description": "Enable tenants to securely log in and out of the platform using their registered credentials, and manage their session with features like 'Remember Me' and 'Forgot Password'.",
-            "User Stories": [
-                {
-                    "Title": "Tenant Login",
-                    "Description": "As a Tenant, I want to log in using my registered email and password so that I can access my personal dashboard and manage my rental details securely.",
-                    "AcceptanceCriteria": [
-                        "Tenant must be able to enter an email and password.",
-                        "System validates credentials against the database.",
-                        "Tenant is redirected to their personal dashboard upon successful login.",
-                        "An error message is displayed if the login fails."
-                    ],
-                    "Story ID": "S001"
-                },
-                {
-                    "Title": "Remember Me Feature",
-                    "Description": "As a Tenant, I want the system to remember my login credentials on my device so that I do not have to re-enter them every time I access the platform.",
-                    "AcceptanceCriteria": [
-                        "Option for 'Remember Me' is visible on the login page.",
-                        "If selected, the system stores the Tenant's credentials securely.",
-                        "On subsequent visits, the login fields are pre-populated with the stored credentials.",
-                        "Tenant must be able to opt-out of this feature by deselecting 'Remember Me'."
-                    ],
-                    "Story ID": "S002"
-                },
-                {
-                    "Title": "Forgot Password",
-                    "Description": "As a Tenant, I want to be able to reset my password if I forget it so that I can regain access to my account.",
-                    "AcceptanceCriteria": [
-                        "A 'Forgot Password' link is available on the login page.",
-                        "Tenant can enter their registered email address to receive a reset link.",
-                        "Tenant receives an email with a link to reset their password.",
-                        "Tenant can create a new password after clicking the reset link.",
-                        "Tenant can log in with the new password."
-                    ],
-                    "Story ID": "S003"
-                },
-                {
-                    "Title": "Logout Functionality",
-                    "Description": "As a Tenant, I want to be able to securely log out from the platform so that I can ensure my account remains secure when I'm not using it.",
-                    "AcceptanceCriteria": [
-                        "A 'Logout' option is available in the user interface.",
-                        "Clicking 'Logout' ends the session and redirects the user to the login page.",
-                        "After logging out, user must log in again to access personal data."
-                    ],
-                    "Story ID": "S004"
-                },
-                {
-                    "Title": "Session Timeout",
-                    "Description": "As a Tenant, I want my login session to automatically timeout after a period of inactivity so that my account is protected from unauthorized access.",
-                    "AcceptanceCriteria": [
-                        "Session times out after 15 minutes of inactivity.",
-                        "Tenant is notified about the impending timeout 1 minute before with an option to extend the session.",
-                        "Upon timeout, the Tenant is automatically logged out and redirected to the login page.",
-                        "Tenant must log in again to access the account."
+                    "Title": "View and Edit Contact Information",
+                    "Description": "As a Platform Owner, I want to view and edit the details of my stored contacts so that I can ensure the information is current and accurate.",
+                    "AcceptanceCriteria": [
+                        "The system should provide a GUI to display contact details.",
+                        "Editing functionality should allow modifying all stored fields of contact information.",
+                        "Changes should be saved immediately to the local JSON file."
                     ],
                     "Story ID": "S005"
                 }
@@ -1203,620 +60,321 @@
         },
         {
             "Epic ID": "E002",
-            "Title": "Tenant Profile Management",
-            "Description": "Allow tenants to create, view, and update their profiles with personal and contact information, manage their bank/card details for payments, and handle their documents.",
+            "Title": "Data Enhancement Using AI",
+            "Description": "Utilize OpenAI transformers to enhance the extracted data by analyzing and enriching contact profiles with additional details such as personal interests, family information, activities, and travel history.",
             "User Stories": [
                 {
-                    "Title": "Tenant Profile Creation",
-                    "Description": "As a Tenant, I want to create my profile with personal and contact information so that I can manage my rental interactions securely and efficiently.",
+                    "Title": "Profile Enrichment with Personal Interests",
+                    "Description": "As a Platform Owner, I want the system to use OpenAI transformers to analyze each contact's social media activities and enrich their profiles with identified personal interests, so that I can better understand their preferences and tailor my marketing approaches accordingly.",
                     "AcceptanceCriteria": [
-                        "Tenant can enter and save personal information such as full name, date of birth, and contact details.",
-                        "Tenant can upload a photograph for identification.",
-                        "The system validates mandatory fields and provides error messages if incomplete."
+                        "System extracts data points related to personal interests from social media platforms.",
+                        "OpenAI transformers analyze text to identify and catalog interests within the contact's profile.",
+                        "Updated profiles are saved with new personal interest data in the local database.",
+                        "Platform owner can review enriched data on a user interface."
                     ],
                     "Story ID": "S006"
                 },
                 {
-                    "Title": "Tenant Profile Viewing",
-                    "Description": "As a Tenant, I want to view my profile details so that I can verify my personal information and ensure it is up to date.",
+                    "Title": "Addition of Family Information to Profiles",
+                    "Description": "As a Platform Owner, I want the system to enrich contact profiles with family information such as marital status and children, so that I can create more personalized marketing messages that resonate with the contact's family dynamics.",
                     "AcceptanceCriteria": [
-                        "Tenant can view all personal and contact information previously entered.",
-                        "Profile viewing is secure and only accessible after tenant login."
+                        "System identifies mentions of family-related information from social media posts and profile details.",
+                        "OpenAI transformers interpret and classify family information accurately.",
+                        "Contact profiles are updated with family information in the local database.",
+                        "Platform owner can view these updates on the system's GUI."
                     ],
                     "Story ID": "S007"
                 },
                 {
-                    "Title": "Tenant Profile Update",
-                    "Description": "As a Tenant, I want to update my profile with new or changed personal and contact information so that my rental interactions remain current and accurate.",
+                    "Title": "Incorporation of Activity and Interest Data",
+                    "Description": "As a Platform Owner, I want the system to automatically extract and integrate data about contacts\u2019 activities such as events attended and hobbies from social media, using OpenAI transformers to ensure relevance and accuracy, so that I can better segment and target my outreach.",
                     "AcceptanceCriteria": [
-                        "Tenant can edit and save changes to any personal or contact information.",
-                        "The system confirms successful updates with a notification."
+                        "Automatic extraction of activity-related information from social media.",
+                        "Data is processed and verified using AI to ensure it reflects current interests.",
+                        "Activity data is accurately incorporated into the existing contact profiles.",
+                        "Profiles with updated activity information are accessible to the platform owner."
                     ],
                     "Story ID": "S008"
                 },
                 {
-                    "Title": "Manage Bank/Card Details",
-                    "Description": "As a Tenant, I want to manage my bank or card details for payments so that I can handle my financial transactions securely within the platform.",
+                    "Title": "Travel History Analysis",
+                    "Description": "As a Platform Owner, I want the system to analyze and record the travel history of my contacts by interpreting posts and check-ins, so that I can offer travel-related products or services more effectively.",
                     "AcceptanceCriteria": [
-                        "Tenant can add, view, and delete bank or card information.",
-                        "The platform provides secure data handling compliant with financial regulations."
+                        "Extraction of relevant travel-related posts and check-ins.",
+                        "Use of OpenAI transformers to analyze and interpret travel data.",
+                        "Travel history is added to the contact's profile in the local database.",
+                        "Platform owner has the ability to view and utilize this enriched travel information."
                     ],
                     "Story ID": "S009"
                 },
                 {
-                    "Title": "Document Handling",
-                    "Description": "As a Tenant, I want to upload, view, and manage my documents such as lease agreements and identity proofs so that I can maintain necessary records digitally.",
+                    "Title": "Profile Matching and List Generation",
+                    "Description": "As a Platform Owner, I want the system to match the enriched profiles against the characteristics of the products or services I wish to promote, so that I can generate a curated list of contacts most likely to be interested.",
                     "AcceptanceCriteria": [
-                        "Tenant can upload documents in supported formats (e.g., PDF, JPG).",
-                        "Tenant can view a list of all uploaded documents.",
-                        "Tenant can delete documents no longer needed."
+                        "System uses enhanced profiles to match with input product/service characteristics.",
+                        "Generation of a detailed list of matching contacts based on profile similarities and product/service features.",
+                        "Curated lists are accessible and can be exported by the platform owner for outreach.",
+                        "Ensure high accuracy in matching to maximize outreach potential."
                     ],
                     "Story ID": "S010"
-                },
-                {
-                    "Title": "Tenant Login",
-                    "Description": "As a Tenant, I want to log in to the platform using my registered credentials so that I can access my personal tenant profile and related functionalities securely.",
-                    "AcceptanceCriteria": [
-                        "Tenant can log in using an email address and password.",
-                        "The system provides error messages for invalid login attempts.",
-                        "Successful login directs the tenant to their dashboard."
-                    ],
-                    "Story ID": "S011"
-                },
-                {
-                    "Title": "Password Recovery",
-                    "Description": "As a Tenant, I want to recover or reset my password if I forget it so that I can regain access to my profile without compromising security.",
-                    "AcceptanceCriteria": [
-                        "Tenant can initiate a password reset via a registered email link.",
-                        "Tenant receives clear instructions for resetting their password.",
-                        "The system confirms the successful password update."
-                    ],
-                    "Story ID": "S012"
                 }
             ]
         },
         {
             "Epic ID": "E003",
-            "Title": "Property Search and Listings",
-            "Description": "Provide tenants with functionalities to search for properties based on various filters, view listings with detailed information, and manage their saved/bookmarked properties.",
+            "Title": "Data Analysis for Matching",
+            "Description": "Analyze the enhanced data to identify potential targets for specific products or services based on their profiles and interests, as defined by the platform owner.",
             "User Stories": [
                 {
-                    "Title": "Search Properties with Filters",
-                    "Description": "As a Tenant, I want to search for properties using various filters such as location, price range, and amenities so that I can find listings that match my specific needs.",
+                    "Title": "User Story: Input Product or Service Details",
+                    "Description": "As a Platform Owner, I want to input details of a specific product or service, so that these can be used to find matching profiles in the contact database.",
                     "AcceptanceCriteria": [
-                        "Tenant can select multiple filters such as location, property type, number of rooms, and price range.",
-                        "Filters for advanced options like pet policy and amenities are available and functional.",
-                        "Results update dynamically as filters are applied.",
-                        "No results found message is displayed when no properties match the criteria."
+                        "A simple GUI input field for product/service details is provided.",
+                        "The input allows textual descriptions up to a specified character limit.",
+                        "The system confirms receipt of the input data."
+                    ],
+                    "Story ID": "S011"
+                },
+                {
+                    "Title": "User Story: AI-Driven Profile Generation",
+                    "Description": "As a Platform Owner, I want the system to use AI to generate a profile for the input product or service, so that this profile accurately represents the target audience characteristics.",
+                    "AcceptanceCriteria": [
+                        "The system uses OpenAI transformers to process input data.",
+                        "Generated profiles include demographics, interests, and other relevant attributes.",
+                        "The profile generation process completes within a reasonable time frame."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "User Story: Match Profiles with Contact Database",
+                    "Description": "As a Platform Owner, I want the system to match the generated product/service profile with profiles in the enhanced contact database, so that I can identify potential targets efficiently.",
+                    "AcceptanceCriteria": [
+                        "The matching process uses attributes such as interests, demographics, and activities.",
+                        "The system displays the percentage match for potential contacts.",
+                        "Only contacts matching above a specified threshold are included in the results."
                     ],
                     "Story ID": "S013"
                 },
                 {
-                    "Title": "View Property Details",
-                    "Description": "As a Tenant, I want to view detailed information about properties so that I can assess if the property fits my requirements before scheduling a visit or applying.",
+                    "Title": "User Story: Generate Curated Contact Lists",
+                    "Description": "As a Platform Owner, I want the system to generate a list of contacts that match the product/service profile, so that I can target them with tailored marketing efforts.",
                     "AcceptanceCriteria": [
-                        "Detailed page for each property listing is accessible.",
-                        "Property details include images, floor plans, property rules, amenities, and contact information.",
-                        "All listed details are correctly populated from the database."
+                        "The list includes contact name, social media profiles, and matching percentage.",
+                        "Contacts are sorted by relevance based on the matching percentage.",
+                        "The system allows exporting the list to an Excel file."
                     ],
                     "Story ID": "S014"
                 },
                 {
-                    "Title": "Save/Bookmark Properties",
-                    "Description": "As a Tenant, I want to save or bookmark properties so that I can easily return to them later without having to search again.",
+                    "Title": "User Story: Export Contact Lists",
+                    "Description": "As a Platform Owner, I want to be able to export the generated contact lists into an Excel file, so that I can use them for outreach or further analysis externally.",
                     "AcceptanceCriteria": [
-                        "Tenants can click a save or bookmark icon on the property listings.",
-                        "Saved properties are accessible through a 'Saved Properties' section in the user's profile.",
-                        "Tenants can remove properties from their saved list."
+                        "Export functionality is easily accessible in the GUI.",
+                        "The Excel file contains all relevant details of the contacts.",
+                        "The export process is secure and completes without data loss."
                     ],
                     "Story ID": "S015"
                 },
                 {
-                    "Title": "Property Application",
-                    "Description": "As a Tenant, I want to apply for a lease directly from the property details page so that I can initiate the rental process efficiently.",
+                    "Title": "User Story: View Detailed Contact Profiles",
+                    "Description": "As a Platform Owner, I want to view detailed profiles of potential contacts from the curated list, so that I can understand their backgrounds and interests before making contact.",
                     "AcceptanceCriteria": [
-                        "A 'Apply for Lease' button is available on each property detail page.",
-                        "Clicking the button opens a form where the tenant can submit their application.",
-                        "Confirmation is shown after successfully submitting the application.",
-                        "The property owner receives the application for review."
+                        "Detailed profiles can be accessed by clicking on contact names in the list.",
+                        "Profiles include enriched data such as interests, family information, and activities.",
+                        "The interface for viewing profiles is user-friendly and displays all relevant information comprehensively."
                     ],
                     "Story ID": "S016"
-                },
-                {
-                    "Title": "Schedule Property Visits",
-                    "Description": "As a Tenant, I want to schedule visits to properties I am interested in using an integrated calendar so that I can see the property in person at a convenient time.",
-                    "AcceptanceCriteria": [
-                        "Tenants can view available time slots and schedule appointments through a calendar interface integrated with the property details page.",
-                        "Email confirmation is sent to the tenant and property manager upon scheduling.",
-                        "Tenants can reschedule or cancel appointments with notifications sent to property managers."
-                    ],
-                    "Story ID": "S017"
-                },
-                {
-                    "Title": "Manage Profile",
-                    "Description": "As a Tenant, I want to manage my profile information so that I can ensure my contact details and preferences are up-to-date.",
-                    "AcceptanceCriteria": [
-                        "Tenants can access their profile from a user dashboard.",
-                        "Editable fields include phone number, email, and password.",
-                        "Changes can be saved directly, with confirmation of successful updates."
-                    ],
-                    "Story ID": "S018"
-                },
-                {
-                    "Title": "Tenant Login",
-                    "Description": "As a Tenant, I want to log into my account using my registered credentials so that I can access personalized features like saved properties and profile management.",
-                    "AcceptanceCriteria": [
-                        "Login page accepts username (or email) and password.",
-                        "Successful login redirects to the tenant's dashboard.",
-                        "Error message displayed for incorrect credentials."
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "Password Recovery",
-                    "Description": "As a Tenant, I want to recover my password if I forget it so that I can regain access to my account without losing my saved data.",
-                    "AcceptanceCriteria": [
-                        "Password recovery option is available on the login page.",
-                        "Tenant can enter their email to receive a password reset link.",
-                        "Tenant can set a new password using the link."
-                    ],
-                    "Story ID": "S020"
                 }
             ]
         },
         {
             "Epic ID": "E004",
-            "Title": "Lease Application and Management",
-            "Description": "Facilitate tenants to apply for leases, view the status of their applications, manage ongoing leases, and handle lease renewals and terminations.",
+            "Title": "Generation of Curated Contact Lists",
+            "Description": "Generate curated lists of contacts likely interested in the specific product or service offerings inputted by the platform owner, including contact details and relevant social media profiles.",
             "User Stories": [
                 {
-                    "Title": "Tenant Lease Application Submission",
-                    "Description": "As a Tenant, I want to be able to submit lease applications through the platform so that I can apply for rental units quickly and efficiently.",
+                    "Title": "Contact Data Extraction",
+                    "Description": "As a Platform Owner, I want to extract first-level contact information from my LinkedIn and Facebook profiles so that I can build a database of potential leads.",
                     "AcceptanceCriteria": [
-                        "Tenant can fill out an application form with necessary details.",
-                        "Tenant can submit the completed application form.",
-                        "System validates the data before submission to ensure all required fields are filled.",
-                        "Tenant receives confirmation of submission."
+                        "Successfully extract names, emails, and social media URLs from LinkedIn and Facebook.",
+                        "Ensure data is extracted only from first-level connections to maintain privacy and relevance.",
+                        "System should handle permissions and authentication required for accessing LinkedIn and Facebook data."
+                    ],
+                    "Story ID": "S017"
+                },
+                {
+                    "Title": "AI-Driven Data Enhancement",
+                    "Description": "As a Platform Owner, I want to use AI to enhance the extracted contact data with additional personal details so that I can create detailed profiles for more effective targeting.",
+                    "AcceptanceCriteria": [
+                        "AI uses OpenAI transformers to analyze social media activity and add data such as interests and activities to contact profiles.",
+                        "Enhanced data includes actionable insights like family status, interests, and recent activities.",
+                        "Ensure the AI processing respects privacy norms and only uses publicly available data."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Product and Service Input",
+                    "Description": "As a Platform Owner, I want to input details about the products or services I am promoting so that the system can identify relevant contacts.",
+                    "AcceptanceCriteria": [
+                        "System allows easy input of product/service details through a simple GUI.",
+                        "Input data includes product descriptions, target demographics, and any special requirements.",
+                        "GUI confirms successful data entry with an acknowledgment message."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Contact Matching and List Generation",
+                    "Description": "As a Platform Owner, I want the system to match my product and service offerings with the enhanced profiles so that I can receive a curated list of potentially interested contacts.",
+                    "AcceptanceCriteria": [
+                        "System processes input product/service details and matches them with contact profiles using AI.",
+                        "Generate lists that include contact details and relevance scores based on potential interest in the offering.",
+                        "Allow the platform owner to review and modify the generated lists before finalizing."
+                    ],
+                    "Story ID": "S020"
+                },
+                {
+                    "Title": "Export Curated Contact Lists",
+                    "Description": "As a Platform Owner, I want the ability to export the curated lists of contacts to Excel so that I can utilize them for outreach efforts.",
+                    "AcceptanceCriteria": [
+                        "Export function includes all relevant contact details and any additional notes or tags from the analysis.",
+                        "Excel files are formatted for easy reading and further manipulation if required.",
+                        "Ensure the export process is secure and maintains the confidentiality of the contact data."
                     ],
                     "Story ID": "S021"
                 },
                 {
-                    "Title": "View Application Status",
-                    "Description": "As a Tenant, I want to view the status of my lease applications so that I can stay updated on the progress and plan accordingly.",
+                    "Title": "Local Data Storage and Backup",
+                    "Description": "As a Platform Owner, I want all data to be stored locally and have robust backup processes so that I can ensure data security and availability.",
                     "AcceptanceCriteria": [
-                        "Tenant can access a dashboard showing all submitted applications.",
-                        "Each application displays its current status (e.g., pending, accepted, rejected).",
-                        "Updates to application status are shown in real-time."
+                        "Data stored in non-encrypted JSON files locally on the platform owner's device.",
+                        "System provides a manual backup option and instructions for the platform owner to secure data.",
+                        "Alerts the platform owner of successful or failed backup attempts."
                     ],
                     "Story ID": "S022"
-                },
-                {
-                    "Title": "Manage Ongoing Leases",
-                    "Description": "As a Tenant, I want to manage my ongoing leases through the platform to easily access lease details and related documents anytime.",
-                    "AcceptanceCriteria": [
-                        "Tenant can view a list of all active leases.",
-                        "Access detailed view of each lease including terms, payment schedules, and documents.",
-                        "Functionality to download or request physical copies of lease documents."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "Lease Renewal Management",
-                    "Description": "As a Tenant, I want to manage lease renewals through the platform so that I can easily extend my stay without administrative hassles.",
-                    "AcceptanceCriteria": [
-                        "Notification alerts tenant of upcoming lease expiration two months in advance.",
-                        "Tenant can initiate lease renewal directly through the platform.",
-                        "System guides tenant through any changes in terms or conditions for the renewal process."
-                    ],
-                    "Story ID": "S024"
-                },
-                {
-                    "Title": "Lease Termination Initiation",
-                    "Description": "As a Tenant, I want to initiate lease terminations when necessary so that I can end my lease officially and in compliance with rental agreements.",
-                    "AcceptanceCriteria": [
-                        "Tenant can request lease termination from the platform.",
-                        "Tenant must confirm the request after being shown any potential fees or penalties.",
-                        "Tenant receives a checklist of tasks to complete before vacating (e.g., cleaning, key return).",
-                        "Confirmation of lease termination is recorded and visible in the tenant\u2019s history."
-                    ],
-                    "Story ID": "S025"
-                },
-                {
-                    "Title": "Password Recovery/Reset",
-                    "Description": "As a Tenant, I want to be able to recover or reset my password so that I can regain access to my account if I forget my password.",
-                    "AcceptanceCriteria": [
-                        "Tenant can request a password reset from the login page.",
-                        "Tenant receives a password reset link via email.",
-                        "Tenant can create a new password following secure password guidelines.",
-                        "Tenant can log in with the new password."
-                    ],
-                    "Story ID": "S026"
-                },
-                {
-                    "Title": "Secure Login",
-                    "Description": "As a Tenant, I want to securely log into the platform so that my personal and lease information remains protected.",
-                    "AcceptanceCriteria": [
-                        "Tenant logs in using a username and password.",
-                        "System provides an option for two-factor authentication for enhanced security.",
-                        "Session timeout after a period of inactivity for security purposes."
-                    ],
-                    "Story ID": "S027"
                 }
             ]
         },
         {
             "Epic ID": "E005",
-            "Title": "Payment Management",
-            "Description": "Enable tenants to make secure payments for rent and security deposits, view their payment history, and manage their payment methods.",
+            "Title": "Local Data Storage and Management",
+            "Description": "Ensure all data is stored locally in JSON files to prioritize privacy and security, with the platform owner responsible for data backup and maintenance.",
             "User Stories": [
                 {
-                    "Title": "Tenant Secure Login",
-                    "Description": "As a Tenant, I want to securely log into my account using my email and password so that I can access my payment and lease information securely.",
+                    "Title": "Secure Local Data Storage",
+                    "Description": "As a Platform Owner, I want all data to be stored in local JSON files so that I can ensure the privacy and security of sensitive information.",
                     "AcceptanceCriteria": [
-                        "Tenant can enter email and password to log in",
-                        "System validates credentials and grants access",
-                        "Login attempt is secure and encrypted",
-                        "Forgot password and reset options are available"
+                        "Data is stored in JSON format on the local machine.",
+                        "No data is stored or transferred to cloud services.",
+                        "All stored data must be accessible only through the application."
+                    ],
+                    "Story ID": "S023"
+                },
+                {
+                    "Title": "Data Backup System",
+                    "Description": "As a Platform Owner, I want to implement a manual backup system so that I can securely back up data to prevent loss.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to manually initiate data backups.",
+                        "Backups must be stored in a secure location specified by the Platform Owner.",
+                        "The system must confirm successful completion of backups."
+                    ],
+                    "Story ID": "S024"
+                },
+                {
+                    "Title": "Data Integrity Check",
+                    "Description": "As a Platform Owner, I want the system to perform routine integrity checks on the stored data so that I can trust the data's accuracy and completeness.",
+                    "AcceptanceCriteria": [
+                        "Integrity checks are performed automatically at set intervals.",
+                        "Any issues detected during checks are logged and reported to the Platform Owner.",
+                        "The system can recover corrupted data from the latest backup if integrity checks fail."
+                    ],
+                    "Story ID": "S025"
+                },
+                {
+                    "Title": "Secure Data Access",
+                    "Description": "As a Platform Owner, I want the system to require authentication for accessing the local data storage so that unauthorized access is prevented.",
+                    "AcceptanceCriteria": [
+                        "Access to the JSON files is gated by authentication requiring a username and password.",
+                        "The system logs all access attempts, successful or failed.",
+                        "Multiple failed access attempts result in a temporary lockout to prevent brute-force attacks."
+                    ],
+                    "Story ID": "S026"
+                },
+                {
+                    "Title": "Data Export Functionality",
+                    "Description": "As a Platform Owner, I want the ability to export data from JSON files to Excel so that I can easily review and manipulate the data outside the system.",
+                    "AcceptanceCriteria": [
+                        "Exported data must reflect the current state of the JSON files.",
+                        "The system provides options for selecting specific data fields for export.",
+                        "Exported Excel files are stored locally and are not emailed or uploaded to cloud services."
+                    ],
+                    "Story ID": "S027"
+                },
+                {
+                    "Title": "Local Data Deletion Protocol",
+                    "Description": "As a Platform Owner, I want a secure method to delete outdated or unnecessary data from the local storage without affecting integrity so that I can manage storage space and maintain data relevancy.",
+                    "AcceptanceCriteria": [
+                        "The system allows for selective deletion of data entries.",
+                        "Deletion actions require confirmation from the Platform Owner to proceed.",
+                        "The system logs all deletion activities for audit purposes."
                     ],
                     "Story ID": "S028"
-                },
-                {
-                    "Title": "View Payment History",
-                    "Description": "As a Tenant, I want to view my past payment history so that I can keep track of all my rent and deposit transactions.",
-                    "AcceptanceCriteria": [
-                        "Tenant can access a section with historical payment data",
-                        "Payment history includes date, amount, and payment method details",
-                        "Data is displayed in a chronological order",
-                        "Tenant can download the payment history as a PDF"
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "Make Secure Payment",
-                    "Description": "As a Tenant, I want to make secure payments for rent and security deposits using integrated payment methods like credit card or bank transfer so that I can ensure my transactions are safe and recorded.",
-                    "AcceptanceCriteria": [
-                        "Tenant can choose from multiple payment methods (credit card, bank transfer)",
-                        "Payment process is integrated with Stripe for secure processing",
-                        "Tenant receives confirmation of payment via email and in-app notification",
-                        "Payment details are updated in real-time in the tenant\u2019s payment history"
-                    ],
-                    "Story ID": "S030"
-                },
-                {
-                    "Title": "Manage Payment Methods",
-                    "Description": "As a Tenant, I want to add, remove, and manage my stored payment methods so that I can easily control how I pay for rent and deposits.",
-                    "AcceptanceCriteria": [
-                        "Tenant can access a payment method management interface",
-                        "Options to add new payment methods with form validations",
-                        "Ability to remove existing payment methods with confirmation prompt",
-                        "Changes are saved immediately and securely"
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Set Up Recurring Payments",
-                    "Description": "As a Tenant, I want to set up recurring payments for my rent so that I can automate the payment process and avoid late payments.",
-                    "AcceptanceCriteria": [
-                        "Tenant can opt-in for recurring payments via their payment settings",
-                        "Tenant can select the date for the recurring payment each month",
-                        "System sends reminders two days before the scheduled payment",
-                        "Tenant can cancel or modify the recurring payment settings anytime"
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "Secure Account Logout",
-                    "Description": "As a Tenant, I want to securely log out from my account so that I can ensure my account remains secure after I\u2019ve finished my session.",
-                    "AcceptanceCriteria": [
-                        "Log out option is easily accessible from all pages",
-                        "Session is completely terminated after logging out",
-                        "Tenant is redirected to the login page after logging out",
-                        "Confirmation message is displayed post-logout"
-                    ],
-                    "Story ID": "S033"
                 }
             ]
         },
         {
             "Epic ID": "E006",
-            "Title": "Maintenance Request System",
-            "Description": "Allow tenants to submit maintenance requests, track the status of these requests, and communicate with property managers and subcontractors regarding these requests.",
+            "Title": "User Interface Development",
+            "Description": "Develop a simple graphical user interface (GUI) that allows the platform owner to input product or service details, view the generated contact lists, and export these lists to an Excel file.",
             "User Stories": [
                 {
-                    "Title": "Tenant Maintenance Request Submission",
-                    "Description": "As a Tenant, I want to submit maintenance requests through the platform, so that I can report issues without delay and ensure they are addressed promptly.",
+                    "Title": "Input Product/Service Details",
+                    "Description": "As a Platform Owner, I want to input details of products or services into the GUI so that I can specify the offerings for which I need targeted contact lists.",
                     "AcceptanceCriteria": [
-                        "Tenant can log into their dashboard.",
-                        "Tenant can fill out a form detailing the maintenance issue, including type of issue, description, urgency, and the ability to attach photos or videos.",
-                        "Tenant can submit the request which is then visible to the property manager and relevant subcontractors.",
-                        "Tenants receive a confirmation notification/email when the request is submitted."
+                        "A form is provided in the GUI to input product or service details.",
+                        "The form must include fields for all necessary attributes like name, description, and any specific filters or criteria.",
+                        "Input data is validated for correctness and completeness before being accepted."
                     ],
-                    "Story ID": "S034"
+                    "Story ID": "S029"
                 },
                 {
-                    "Title": "Tenant Track Maintenance Request Status",
-                    "Description": "As a Tenant, I want to track the status of my maintenance requests, so that I can stay informed about the progress and resolution of my issues.",
+                    "Title": "View Generated Contact Lists",
+                    "Description": "As a Platform Owner, I want to be able to view the generated contact lists on the GUI so that I can review and verify the contacts selected based on my input details.",
                     "AcceptanceCriteria": [
-                        "Tenant can view a list of all submitted maintenance requests in their dashboard.",
-                        "Each request shows current status (Pending, Accepted, Rejected, Completed).",
-                        "Tenants receive real-time updates when the status of their request changes."
+                        "The GUI displays the list of contacts in a readable and organized format.",
+                        "The list includes essential contact details such as name, email, and social profile links.",
+                        "The GUI provides an option to refresh or regenerate the list based on the same or modified input criteria."
                     ],
-                    "Story ID": "S035"
+                    "Story ID": "S030"
                 },
                 {
-                    "Title": "Tenant-Subcontractor Communication",
-                    "Description": "As a Tenant, I want to communicate directly with subcontractors, so that I can discuss maintenance issues, schedule appointments, or provide further details as necessary.",
+                    "Title": "Export Contact Lists to Excel",
+                    "Description": "As a Platform Owner, I want an option to export the generated contact lists to an Excel file so that I can use them for outreach or other business processes outside the platform.",
                     "AcceptanceCriteria": [
-                        "Once a maintenance request is accepted, a chat window is enabled between the tenant and the assigned subcontractor.",
-                        "Messages can include text and the ability to attach images or documents.",
-                        "Both parties receive notifications of new messages in the chat interface and via email."
+                        "A clear and accessible option to export the contact list to Excel is available in the GUI.",
+                        "The exported file must preserve the organization and formatting of the data displayed in the GUI.",
+                        "The export process should handle large data sets efficiently, ensuring a quick response time and minimal disruption."
                     ],
-                    "Story ID": "S036"
+                    "Story ID": "S031"
                 },
                 {
-                    "Title": "Maintenance Request Review and Feedback",
-                    "Description": "As a Tenant, I want to provide feedback on completed maintenance jobs, so that I can express satisfaction or concerns about the service provided.",
+                    "Title": "Secure Local Data Handling",
+                    "Description": "As a Platform Owner, I want the software to handle data securely in the local system without transmitting it over the internet so that I can maintain control over the privacy of my data.",
                     "AcceptanceCriteria": [
-                        "After a maintenance request is marked as completed, tenants can access a feedback form.",
-                        "Tenants can rate the service (e.g., 1-5 stars) and provide written feedback.",
-                        "Feedback is shared with the property manager and can be viewed by other tenants."
+                        "All data inputs and outputs are handled locally within the GUI, with no data sent to or stored in the cloud.",
+                        "The system has provisions for local data backup and recovery in case of data loss.",
+                        "The design adheres to best practices for secure data handling and storage."
                     ],
-                    "Story ID": "S037"
+                    "Story ID": "S032"
                 },
                 {
-                    "Title": "Maintenance History Access",
-                    "Description": "As a Tenant, I want to access the history of all my maintenance requests, so that I can refer back to previous issues and resolutions for my records.",
+                    "Title": "Simple and Intuitive User Interface",
+                    "Description": "As a Platform Owner, I want the GUI to be simple and intuitive so that I can easily navigate and use the software without requiring extensive training or technical support.",
                     "AcceptanceCriteria": [
-                        "Tenants can view a historical log of all maintenance requests from their dashboard.",
-                        "The history includes detailed descriptions, dates submitted, actions taken, final status, and feedback provided.",
-                        "The data is searchable by date range and type of maintenance."
+                        "The user interface is clean, with a clear layout and minimalistic design.",
+                        "All functionalities (input, view, export) are easily accessible from the main interface.",
+                        "The system provides helpful hints or tooltips as necessary to guide the user through various tasks."
                     ],
-                    "Story ID": "S038"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E007",
-            "Title": "Appointment Booking",
-            "Description": "Provide a system for tenants to schedule and manage appointments with property managers or for property visits through integration with Calendly.",
-            "User Stories": [
-                {
-                    "Title": "Tenant Authentication for Appointment Booking",
-                    "Description": "As a Tenant, I want to be able to log in securely so that I can schedule appointments with property managers or for property visits.",
-                    "AcceptanceCriteria": [
-                        "Tenant is able to log in using email and password.",
-                        "System supports 'Forgot Password' functionality to reset password.",
-                        "After login, the tenant should be redirected to the appointment booking page."
-                    ],
-                    "Story ID": "S039"
-                },
-                {
-                    "Title": "View Available Time Slots",
-                    "Description": "As a Tenant, I want to view available time slots for property visits so that I can choose a slot that fits my schedule.",
-                    "AcceptanceCriteria": [
-                        "Tenant can see a calendar with available slots highlighted.",
-                        "The calendar integrates with the property manager\u2019s calendar via Calendly.",
-                        "Tenant can view time slots for the next 30 days."
-                    ],
-                    "Story ID": "S040"
-                },
-                {
-                    "Title": "Schedule Property Visit",
-                    "Description": "As a Tenant, I want to schedule a property visit through Calendly integration so that the appointment is automatically synced with the property manager\u2019s calendar.",
-                    "AcceptanceCriteria": [
-                        "Tenant selects a time slot and schedules a visit directly.",
-                        "Confirmation of the appointment is sent to the tenant\u2019s email.",
-                        "Property manager receives a notification about the scheduled visit."
-                    ],
-                    "Story ID": "S041"
-                },
-                {
-                    "Title": "Cancel or Reschedule Appointment",
-                    "Description": "As a Tenant, I want to be able to cancel or reschedule my appointment so that I can manage changes in my availability.",
-                    "AcceptanceCriteria": [
-                        "Tenant can access their booked appointments from their dashboard.",
-                        "Each appointment has options to reschedule or cancel.",
-                        "Notifications are sent to both tenant and property manager upon cancellation or rescheduling."
-                    ],
-                    "Story ID": "S042"
-                },
-                {
-                    "Title": "Appointment Reminders",
-                    "Description": "As a Tenant, I want to receive reminders about my appointments so that I do not miss scheduled visits.",
-                    "AcceptanceCriteria": [
-                        "Tenant receives an email reminder 24 hours before the appointment.",
-                        "A reminder notification is pushed through the application 1 hour before the appointment."
-                    ],
-                    "Story ID": "S043"
-                },
-                {
-                    "Title": "Feedback Submission Post-Visit",
-                    "Description": "As a Tenant, I want to submit feedback after a property visit so that I can share my experience and any concerns.",
-                    "AcceptanceCriteria": [
-                        "After the appointment, the tenant receives a prompt to submit feedback.",
-                        "Tenant can rate the visit and submit comments through a form in the app.",
-                        "Feedback is stored and can be accessed by the property manager for review."
-                    ],
-                    "Story ID": "S044"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E008",
-            "Title": "Notifications and Alerts",
-            "Description": "Implement a notification system to alert tenants about important events such as lease renewals, payment due dates, and maintenance request updates.",
-            "User Stories": [
-                {
-                    "Title": "Lease Renewal Notifications",
-                    "Description": "As a Tenant, I want to receive notifications about upcoming lease renewals so that I can make timely decisions about extending my stay or moving out.",
-                    "AcceptanceCriteria": [
-                        "Notification is automatically triggered 60 days before the lease expiry date.",
-                        "Tenant receives the notification via both email and in-app notification.",
-                        "Tenant can directly navigate to the lease renewal section from the notification."
-                    ],
-                    "Story ID": "S045"
-                },
-                {
-                    "Title": "Payment Due Date Alerts",
-                    "Description": "As a Tenant, I want to receive reminders about upcoming rent payment due dates so that I can ensure timely payments without incurring any late fees.",
-                    "AcceptanceCriteria": [
-                        "Reminder notifications are sent 7 days before the due date.",
-                        "Additional reminder if the rent is not paid, 1 day before the due date.",
-                        "Tenant receives these alerts via email and in-app notifications.",
-                        "Links to the payment portal are included in the notifications."
-                    ],
-                    "Story ID": "S046"
-                },
-                {
-                    "Title": "Maintenance Request Updates",
-                    "Description": "As a Tenant, I want to receive updates about the status of my maintenance requests so that I can stay informed about when issues will be resolved.",
-                    "AcceptanceCriteria": [
-                        "Tenant receives an immediate notification when a maintenance request is accepted, rejected, or completed.",
-                        "Each notification includes details about the request status and expected next steps or completion date.",
-                        "Notifications are available through both in-app notifications and emails."
-                    ],
-                    "Story ID": "S047"
-                },
-                {
-                    "Title": "General Announcement Notifications",
-                    "Description": "As a Tenant, I want to receive general announcements related to the property so that I am informed about matters affecting my tenancy.",
-                    "AcceptanceCriteria": [
-                        "General announcements such as changes in management, major construction, or policy changes are communicated via notifications.",
-                        "Tenant receives these through email and in-app notifications.",
-                        "Each notification includes a summary of the announcement and links to detailed information if available."
-                    ],
-                    "Story ID": "S048"
-                },
-                {
-                    "Title": "Custom Notification Settings",
-                    "Description": "As a Tenant, I want to customize my notification preferences so that I only receive relevant alerts and can choose the notification methods that suit me best.",
-                    "AcceptanceCriteria": [
-                        "Tenants can access a settings menu to turn on/off specific types of notifications.",
-                        "Tenants can choose the method of notification (email, in-app, both).",
-                        "Changes to settings must be saved and take effect immediately."
-                    ],
-                    "Story ID": "S049"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E009",
-            "Title": "Feedback and Reviews",
-            "Description": "Allow tenants to give feedback on properties and services, and view reviews from other tenants to help them make informed decisions.",
-            "User Stories": [
-                {
-                    "Title": "Tenant Feedback Submission",
-                    "Description": "As a Tenant, I want to submit feedback on my rental property and services provided so that I can share my experiences with the property management and other potential tenants.",
-                    "AcceptanceCriteria": [
-                        "Tenant is able to access a feedback submission form from their dashboard.",
-                        "Tenant can rate aspects such as cleanliness, service responsiveness, and amenities.",
-                        "Tenant can leave detailed textual feedback.",
-                        "Feedback submission updates the property's overall rating in real-time.",
-                        "Feedback is immediately visible in the tenant's feedback history."
-                    ],
-                    "Story ID": "S050"
-                },
-                {
-                    "Title": "View Property Reviews",
-                    "Description": "As a Tenant, I want to view reviews and ratings from other tenants for a specific property so that I can make informed decisions about potential rentals.",
-                    "AcceptanceCriteria": [
-                        "Tenant can access a reviews section from the property details page.",
-                        "Reviews display both ratings and textual feedback.",
-                        "Reviews include the date of submission and the first name of the reviewer for authenticity.",
-                        "Tenant can filter reviews by date and rating."
-                    ],
-                    "Story ID": "S051"
-                },
-                {
-                    "Title": "Feedback Moderation and Management",
-                    "Description": "As a Tenant, I want to be able to edit or delete my previous feedback submissions so that I can correct errors or update my opinions as situations change.",
-                    "AcceptanceCriteria": [
-                        "Tenant can view their own past reviews and ratings via their profile.",
-                        "Tenant has the option to edit or delete their submissions.",
-                        "Changes in reviews are reflected immediately across the platform.",
-                        "Notifications are sent to property managers when a review is edited or deleted."
-                    ],
-                    "Story ID": "S052"
-                },
-                {
-                    "Title": "Receive Notifications on Feedback Responses",
-                    "Description": "As a Tenant, I want to receive notifications when property management responds to my feedback so that I can stay updated on dialogues concerning my reviews.",
-                    "AcceptanceCriteria": [
-                        "Notification is sent to the tenant's dashboard and email when a response is made.",
-                        "Tenant can directly access the response through links provided in the notification.",
-                        "Tenant can reply to the response from the property manager."
-                    ],
-                    "Story ID": "S053"
-                },
-                {
-                    "Title": "Tenant Dashboard for Feedback Overview",
-                    "Description": "As a Tenant, I want a dashboard widget that summarizes all my given feedback, average ratings I've provided, and any responses from landlords or property managers so that I can easily track my interactions.",
-                    "AcceptanceCriteria": [
-                        "Dashboard widget shows a summary of all feedback given by the tenant.",
-                        "Widget displays average rating and number of reviews submitted.",
-                        "Tenant receives visual notification on the widget for any new responses from property managers."
-                    ],
-                    "Story ID": "S054"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E010",
-            "Title": "Tenant Verification",
-            "Description": "Integrate with third-party services like SingleKey to verify tenant credentials during the lease application process.",
-            "User Stories": [
-                {
-                    "Title": "Tenant Profile Verification Initiation",
-                    "Description": "As a Tenant, I want to initiate my profile verification using SingleKey during the lease application process so that I can ensure my credentials are validated and increase my trustworthiness to potential landlords.",
-                    "AcceptanceCriteria": [
-                        "Tenant initiates verification from the tenant dashboard.",
-                        "Tenant is redirected to the SingleKey integration interface.",
-                        "Tenant inputs required information and submits it for verification.",
-                        "Tenant receives a notification upon successful submission of their verification request."
-                    ],
-                    "Story ID": "S055"
-                },
-                {
-                    "Title": "Verification Status Feedback",
-                    "Description": "As a Tenant, I want to receive real-time updates on my verification status so that I am informed of the current progress and can take necessary actions if there are any issues.",
-                    "AcceptanceCriteria": [
-                        "Tenant receives an in-app notification and email regarding the status of the verification.",
-                        "Tenant can view the current status of their verification process on their dashboard.",
-                        "The system updates the tenant's profile status automatically based on the verification results (verified or needs additional info)."
-                    ],
-                    "Story ID": "S056"
-                },
-                {
-                    "Title": "Verification Payment Process",
-                    "Description": "As a Tenant, I want to be able to pay for the verification process through the platform if the property owner requires tenants to bear the cost, so that I can complete necessary financial transactions securely and conveniently.",
-                    "AcceptanceCriteria": [
-                        "Tenant is prompted to make a payment if the property owner has set the verification payment responsibility to the tenant.",
-                        "Tenant can use Stripe integration to make the payment securely.",
-                        "Tenant receives confirmation of the payment.",
-                        "System records the transaction in the tenant's payment history."
-                    ],
-                    "Story ID": "S057"
-                },
-                {
-                    "Title": "Error Handling and Support for Verification",
-                    "Description": "As a Tenant, I want to receive helpful error messages and access support if the verification process encounters issues, so that I can resolve any problems efficiently and complete my profile verification.",
-                    "AcceptanceCriteria": [
-                        "System displays clear and specific error messages if the verification cannot be processed.",
-                        "Tenant can access a FAQ or Help section regarding common verification issues.",
-                        "Tenant has the option to contact support directly from the verification page."
-                    ],
-                    "Story ID": "S058"
-                },
-                {
-                    "Title": "Resubmission of Verification Documents",
-                    "Description": "As a Tenant, I want the ability to resubmit verification documents if my initial submission is rejected, so that I can correct any errors and complete the verification process.",
-                    "AcceptanceCriteria": [
-                        "Tenant is notified of the need for resubmission and the reasons for rejection.",
-                        "Tenant can resubmit the documents through the SingleKey interface.",
-                        "Tenant receives confirmation of the resubmission.",
-                        "System updates the verification status accordingly."
-                    ],
-                    "Story ID": "S059"
+                    "Story ID": "S033"
                 }
             ]
         }

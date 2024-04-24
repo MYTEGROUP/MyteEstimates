@@ -181,24 +181,22 @@ def define_user_stories(epic, stakeholder, list_of_epics, list_of_stakeholders, 
     system_context = (
         "As a Product Architect involved in Agile Scrum development, your provided with stake holder, epics, requirements and the initial client requirements."
         "Based solely on the provided information, your task is to take a high-level Epic provided within its project context "
-        "and break it down into detailed, actionable user stories. Each user story should represent a specific functionality or feature to be developed, "
+        "and break it down into detailed, actionable user stories. Each user story should represent a specific functionality or feature to be developed for the provided Epic, "
         "focusing on delivering value to the primary stakeholder identified in the project. The stories should be concise, testable, and provide clear acceptance criteria."
-        "If Critical logical elements are missing from the requirements context, such as Login/Access to the platform for the stakholder, Password Recovery/reset please include it as those are often skipped when"
-        "capturing initial requirements from the client."
     )
     assistant_context = (
         "Respond with a JSON object where each 'UserStories' array contains objects with the keys 'Title', 'Description', and 'AcceptanceCriteria'. "
         "Ensure the stories are granular enough to be completed within a single sprint and contribute directly to achieving the goals of the Epic and Stakeholder"
-        "Make sure to use 'UserStories' as the key for the array of stories and 'Acceptance Criteria' as the key for the list of criteria within each story. "
+        "Make sure to use 'UserStories' as the key for the array of stories and 'AcceptanceCriteria' as the key for the list of criteria within each story. "
         "Each 'Description' should follow the Agile Scrum user story format: 'As a [role], I want [feature] so that [benefit]'."
     )
     initial_prompt = (
         f"Given the Epic: {epic} and the stakeholder: {stakeholder}, along with the following context: project requirements: {project_requirements}, "
         f"initial client requirements:{client_requirements}, the primary stakeholders: {list_of_stakeholders}, and the global list of epics: {list_of_epics}, "
-        "define a list of user stories for this stakeholder and epic. "
-        "These stories should detail the specific functionalities or features needed to fulfill the objectives of the Epic, tailored to the needs of the stakeholder. "
-        "Respond with a JSON object structured with keys for 'Title', 'Description', and 'AcceptanceCriteria'. "
-        "Each 'Description' should follow the Agile Scrum user story format: 'As a [role], I want [feature] so that [benefit]'."
+        f"define a list of user stories specifically for this stakeholder: {stakeholder} and Epic: {epic}. "
+        f"These stories should detail the specific functionalities or features needed to fulfill the objectives of the Epic: {epic}, tailored to the needs of the stakeholder: {stakeholder} . "
+        f"Respond with a JSON object structured with keys for 'Title', 'Description', and 'AcceptanceCriteria'. "
+        f"Each 'Description' should follow the Agile Scrum user story format: 'As a [role], I want [feature] so that [benefit]'."
 
     )
 
