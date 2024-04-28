@@ -1,35 +1,69 @@
 {
     "Stakeholder_Epics": {
-        "Platform Owner": [
+        "End Users": [
             {
                 "Epic ID": "E001",
-                "Title": "Data Extraction and Database Creation",
-                "Description": "Develop functionality to extract first-level contact information from the platform owner's LinkedIn and Facebook profiles, including personal and professional details to form a comprehensive database."
+                "Title": "User Account Management",
+                "Description": "Provide functionalities for users to create and manage their accounts, enabling secure SignUp and SignIn processes, and allowing users to update and edit their profile information post-login."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Data Enhancement Using AI",
-                "Description": "Utilize OpenAI transformers to enhance the extracted data by analyzing and enriching contact profiles with additional details such as personal interests, family information, activities, and travel history."
+                "Title": "Wishlist Creation and Management",
+                "Description": "Enable authenticated users to create and manage a personal wishlist, adding and modifying items or interests as desired within their user profile."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Data Analysis for Matching",
-                "Description": "Analyze the enhanced data to identify potential targets for specific products or services based on their profiles and interests, as defined by the platform owner."
+                "Title": "Landing Page Development",
+                "Description": "Develop a visually appealing and informative landing page that effectively guides users to SignUp or SignIn, and provides direct access to edit profile and create wishlist functionalities."
+            }
+        ],
+        "Business Owners": [
+            {
+                "Epic ID": "E001",
+                "Title": "User Account Management",
+                "Description": "Develop secure and intuitive user account management functionalities including SignUp and SignIn, allowing users to register, access, and manage their accounts, thus driving user engagement and platform security."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "User Profile Customization",
+                "Description": "Create functionalities for users to edit and update their profiles post-registration, enabling personalized user experiences which can improve user satisfaction and retention."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Wishlist Creation",
+                "Description": "Implement a feature for users to create and manage personalized wishlists, enhancing user interaction and engagement with the platform, which can lead to increased user retention and satisfaction."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Generation of Curated Contact Lists",
-                "Description": "Generate curated lists of contacts likely interested in the specific product or service offerings inputted by the platform owner, including contact details and relevant social media profiles."
+                "Title": "Landing Page Development",
+                "Description": "Design and implement an inviting and informative landing page that directs users efficiently to either sign up, sign in, or access their profiles and wishlists, thereby increasing conversion rates and enhancing user experience."
+            }
+        ],
+        "System Administrators": [
+            {
+                "Epic ID": "E001",
+                "Title": "User Management System",
+                "Description": "Develop a robust user management system to handle SignUp, SignIn, and user authentication processes, ensuring secure access controls and management capabilities for administrators."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Profile Management System",
+                "Description": "Implement a system that allows administrators to manage and oversee user profile information, including the ability to edit, update, or remove user profiles as necessary."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Wishlist Management Module",
+                "Description": "Create a module that enables administrators to manage user wishlists, including adding, editing, or deleting wishlist items, and to oversee how these lists are used and managed within the application."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Security and Compliance Enforcement",
+                "Description": "Ensure the web application adheres to relevant security standards and data protection regulations, implementing necessary security measures to protect user data and system integrity."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Local Data Storage and Management",
-                "Description": "Ensure all data is stored locally in JSON files to prioritize privacy and security, with the platform owner responsible for data backup and maintenance."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "User Interface Development",
-                "Description": "Develop a simple graphical user interface (GUI) that allows the platform owner to input product or service details, view the generated contact lists, and export these lists to an Excel file."
+                "Title": "System Monitoring and Reporting",
+                "Description": "Develop a comprehensive system monitoring and reporting framework that allows administrators to monitor system performance, user activities, and security logs to ensure smooth operations."
             }
         ]
     }

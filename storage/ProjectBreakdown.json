@@ -1,58 +1,61 @@
 {
-    "Platform Owner": [
+    "End Users": [
         {
             "Epic ID": "E001",
-            "Title": "Data Extraction and Database Creation",
-            "Description": "Develop functionality to extract first-level contact information from the platform owner's LinkedIn and Facebook profiles, including personal and professional details to form a comprehensive database.",
+            "Title": "User Account Management",
+            "Description": "Provide functionalities for users to create and manage their accounts, enabling secure SignUp and SignIn processes, and allowing users to update and edit their profile information post-login.",
             "User Stories": [
                 {
-                    "Title": "Authenticate Platform Owner's Social Media Access",
-                    "Description": "As a Platform Owner, I want the ability to securely authenticate my LinkedIn and Facebook accounts so that the system can access my first-level contact information without compromising my login credentials.",
+                    "Title": "User Registration",
+                    "Description": "As an End User, I want to register an account so that I can securely access personalized features of the web application.",
                     "AcceptanceCriteria": [
-                        "The system should provide an OAuth login for LinkedIn and Facebook.",
-                        "Authentication must be secure and follow best practices for OAuth implementations.",
-                        "The system should only request permissions necessary for accessing first-level contact information."
+                        "User can fill out a registration form with name, email, and password.",
+                        "Input validation to ensure email format and password strength.",
+                        "Confirmation email is sent to the user upon successful registration.",
+                        "User data is stored securely in the database."
                     ],
                     "Story ID": "S001"
                 },
                 {
-                    "Title": "Extract Contact Information",
-                    "Description": "As a Platform Owner, I want to extract first-level contact details from LinkedIn and Facebook so that I can build a comprehensive database of my professional and personal contacts.",
+                    "Title": "User Login",
+                    "Description": "As an End User, I want to be able to log into my account using my credentials so that I can access my personal and application-specific data securely.",
                     "AcceptanceCriteria": [
-                        "Contact information should include name, email, job title, company, and social profile URLs.",
-                        "The extraction process must handle pagination to ensure all contacts are retrieved.",
-                        "Contacts must be deduplicated across both platforms.",
-                        "Extracted data should be validated to ensure accuracy and completeness."
+                        "User can login using email and password.",
+                        "System validates credentials against stored data.",
+                        "Error message displayed if login fails.",
+                        "Session management to keep the user logged in during interaction."
                     ],
                     "Story ID": "S002"
                 },
                 {
-                    "Title": "Store Contact Information Locally",
-                    "Description": "As a Platform Owner, I want to store the extracted contact information locally in JSON format so that I can ensure data privacy and security.",
+                    "Title": "Profile Editing",
+                    "Description": "As an End User, I want to edit my profile information after logging in so that I can keep my personal information up to date.",
                     "AcceptanceCriteria": [
-                        "Extracted data should be stored in a structured JSON format.",
-                        "Data storage should occur on the local machine or a designated secure local server.",
-                        "The JSON file should include clear, human-readable labels for each data field."
+                        "User can access a form to edit profile details such as name and email.",
+                        "Changes are saved and updated immediately in the database.",
+                        "User receives confirmation that profile has been updated."
                     ],
                     "Story ID": "S003"
                 },
                 {
-                    "Title": "Manual Data Backup Process",
-                    "Description": "As a Platform Owner, I want to manually initiate a backup of the contact database so that I can prevent data loss.",
+                    "Title": "Password Update",
+                    "Description": "As an End User, I want to be able to change my password so that I can maintain the security of my account.",
                     "AcceptanceCriteria": [
-                        "There should be an option in the interface to manually trigger a backup.",
-                        "Backup should create a timestamped copy of the JSON data file.",
-                        "The system should verify the integrity of the backup file after completion."
+                        "User can initiate a password change request from their profile.",
+                        "User must verify their current password before setting a new one.",
+                        "Input validation for new password strength.",
+                        "Confirmation message displayed upon successful password update."
                     ],
                     "Story ID": "S004"
                 },
                 {
-                    "Title": "View and Edit Contact Information",
-                    "Description": "As a Platform Owner, I want to view and edit the details of my stored contacts so that I can ensure the information is current and accurate.",
+                    "Title": "Account Recovery",
+                    "Description": "As an End User, I want to recover my account using my registered email in case I forget my login credentials so that I can regain access to my account.",
                     "AcceptanceCriteria": [
-                        "The system should provide a GUI to display contact details.",
-                        "Editing functionality should allow modifying all stored fields of contact information.",
-                        "Changes should be saved immediately to the local JSON file."
+                        "User can request password reset via email.",
+                        "User receives an email with a link to reset password.",
+                        "User can set a new password using the link.",
+                        "Confirmation of password reset is communicated to the user."
                     ],
                     "Story ID": "S005"
                 }
@@ -60,61 +63,61 @@
         },
         {
             "Epic ID": "E002",
-            "Title": "Data Enhancement Using AI",
-            "Description": "Utilize OpenAI transformers to enhance the extracted data by analyzing and enriching contact profiles with additional details such as personal interests, family information, activities, and travel history.",
+            "Title": "Wishlist Creation and Management",
+            "Description": "Enable authenticated users to create and manage a personal wishlist, adding and modifying items or interests as desired within their user profile.",
             "User Stories": [
                 {
-                    "Title": "Profile Enrichment with Personal Interests",
-                    "Description": "As a Platform Owner, I want the system to use OpenAI transformers to analyze each contact's social media activities and enrich their profiles with identified personal interests, so that I can better understand their preferences and tailor my marketing approaches accordingly.",
+                    "Title": "User Registration",
+                    "Description": "As an End User, I want to be able to register an account so that I can securely access and personalize my wishlist.",
                     "AcceptanceCriteria": [
-                        "System extracts data points related to personal interests from social media platforms.",
-                        "OpenAI transformers analyze text to identify and catalog interests within the contact's profile.",
-                        "Updated profiles are saved with new personal interest data in the local database.",
-                        "Platform owner can review enriched data on a user interface."
+                        "User can input name, email, and password to create an account.",
+                        "System validates the data to ensure it meets security standards.",
+                        "Upon successful registration, a confirmation email is sent to the user.",
+                        "The user can proceed to log in after confirming their email."
                     ],
                     "Story ID": "S006"
                 },
                 {
-                    "Title": "Addition of Family Information to Profiles",
-                    "Description": "As a Platform Owner, I want the system to enrich contact profiles with family information such as marital status and children, so that I can create more personalized marketing messages that resonate with the contact's family dynamics.",
+                    "Title": "User Login",
+                    "Description": "As an End User, I want to log into my account so that I can access my personal wishlist.",
                     "AcceptanceCriteria": [
-                        "System identifies mentions of family-related information from social media posts and profile details.",
-                        "OpenAI transformers interpret and classify family information accurately.",
-                        "Contact profiles are updated with family information in the local database.",
-                        "Platform owner can view these updates on the system's GUI."
+                        "User can log in using their email and password.",
+                        "System authenticates the credentials and grants access.",
+                        "If the credentials are incorrect, the user is informed and can attempt to log in again.",
+                        "Successful login redirects the user to their profile page."
                     ],
                     "Story ID": "S007"
                 },
                 {
-                    "Title": "Incorporation of Activity and Interest Data",
-                    "Description": "As a Platform Owner, I want the system to automatically extract and integrate data about contacts\u2019 activities such as events attended and hobbies from social media, using OpenAI transformers to ensure relevance and accuracy, so that I can better segment and target my outreach.",
+                    "Title": "Edit User Profile",
+                    "Description": "As an End User, I want to edit my profile so that I can update my personal information as needed.",
                     "AcceptanceCriteria": [
-                        "Automatic extraction of activity-related information from social media.",
-                        "Data is processed and verified using AI to ensure it reflects current interests.",
-                        "Activity data is accurately incorporated into the existing contact profiles.",
-                        "Profiles with updated activity information are accessible to the platform owner."
+                        "User can access a 'Edit Profile' section after logging in.",
+                        "User can update fields such as name, email, and profile picture.",
+                        "Changes are saved immediately upon user confirmation.",
+                        "System provides a confirmation message upon successful update."
                     ],
                     "Story ID": "S008"
                 },
                 {
-                    "Title": "Travel History Analysis",
-                    "Description": "As a Platform Owner, I want the system to analyze and record the travel history of my contacts by interpreting posts and check-ins, so that I can offer travel-related products or services more effectively.",
+                    "Title": "Create Wishlist",
+                    "Description": "As an End User, I want to create a personal wishlist so that I can keep track of items or interests I desire.",
                     "AcceptanceCriteria": [
-                        "Extraction of relevant travel-related posts and check-ins.",
-                        "Use of OpenAI transformers to analyze and interpret travel data.",
-                        "Travel history is added to the contact's profile in the local database.",
-                        "Platform owner has the ability to view and utilize this enriched travel information."
+                        "Authenticated users can access a 'Create Wishlist' feature from their profile.",
+                        "Users can add items with details such as item name, description, and optional images or links.",
+                        "Users can save the wishlist, which is then viewable and editable within their profile.",
+                        "The system confirms the creation of the wishlist with a message."
                     ],
                     "Story ID": "S009"
                 },
                 {
-                    "Title": "Profile Matching and List Generation",
-                    "Description": "As a Platform Owner, I want the system to match the enriched profiles against the characteristics of the products or services I wish to promote, so that I can generate a curated list of contacts most likely to be interested.",
+                    "Title": "Manage Wishlist",
+                    "Description": "As an End User, I want to modify and delete items in my wishlist so that it stays current with my interests.",
                     "AcceptanceCriteria": [
-                        "System uses enhanced profiles to match with input product/service characteristics.",
-                        "Generation of a detailed list of matching contacts based on profile similarities and product/service features.",
-                        "Curated lists are accessible and can be exported by the platform owner for outreach.",
-                        "Ensure high accuracy in matching to maximize outreach potential."
+                        "Users can view their current wishlist from their profile.",
+                        "Users can edit or delete any item on their wishlist.",
+                        "Modifications are saved and reflected immediately in the system.",
+                        "The system provides a confirmation upon successful modification or deletion."
                     ],
                     "Story ID": "S010"
                 }
@@ -122,66 +125,267 @@
         },
         {
             "Epic ID": "E003",
-            "Title": "Data Analysis for Matching",
-            "Description": "Analyze the enhanced data to identify potential targets for specific products or services based on their profiles and interests, as defined by the platform owner.",
+            "Title": "Landing Page Development",
+            "Description": "Develop a visually appealing and informative landing page that effectively guides users to SignUp or SignIn, and provides direct access to edit profile and create wishlist functionalities.",
             "User Stories": [
                 {
-                    "Title": "User Story: Input Product or Service Details",
-                    "Description": "As a Platform Owner, I want to input details of a specific product or service, so that these can be used to find matching profiles in the contact database.",
+                    "Title": "User Story: Landing Page Design",
+                    "Description": "As an End User, I want the landing page to be visually appealing and intuitive so that I feel welcomed and can easily navigate to SignUp or SignIn.",
                     "AcceptanceCriteria": [
-                        "A simple GUI input field for product/service details is provided.",
-                        "The input allows textual descriptions up to a specified character limit.",
-                        "The system confirms receipt of the input data."
+                        "The landing page must load within 3 seconds.",
+                        "Include visual elements that are aesthetically pleasing.",
+                        "Buttons for SignUp and SignIn are clearly visible and accessible.",
+                        "Responsive design to ensure accessibility on various devices (desktop, tablet, mobile)."
                     ],
                     "Story ID": "S011"
                 },
                 {
-                    "Title": "User Story: AI-Driven Profile Generation",
-                    "Description": "As a Platform Owner, I want the system to use AI to generate a profile for the input product or service, so that this profile accurately represents the target audience characteristics.",
+                    "Title": "User Story: SignUp Functionality",
+                    "Description": "As an End User, I want to be able to easily register for an account from the landing page so that I can access personalized features.",
                     "AcceptanceCriteria": [
-                        "The system uses OpenAI transformers to process input data.",
-                        "Generated profiles include demographics, interests, and other relevant attributes.",
-                        "The profile generation process completes within a reasonable time frame."
+                        "Provide a clear and concise SignUp form accessible from the landing page.",
+                        "The SignUp process requires minimal steps to enhance user convenience.",
+                        "Required fields are clearly indicated, with tooltips for information about the inputs.",
+                        "Upon successful registration, a confirmation email is sent."
                     ],
                     "Story ID": "S012"
                 },
                 {
-                    "Title": "User Story: Match Profiles with Contact Database",
-                    "Description": "As a Platform Owner, I want the system to match the generated product/service profile with profiles in the enhanced contact database, so that I can identify potential targets efficiently.",
+                    "Title": "User Story: SignIn Functionality",
+                    "Description": "As an End User, I want to be able to securely log into my account from the landing page so that I can access my personalized settings and wishlist.",
                     "AcceptanceCriteria": [
-                        "The matching process uses attributes such as interests, demographics, and activities.",
-                        "The system displays the percentage match for potential contacts.",
-                        "Only contacts matching above a specified threshold are included in the results."
+                        "Include a SignIn form on the landing page.",
+                        "The form should include fields for username and password.",
+                        "Provide an option to view the password as it is being typed.",
+                        "Implement secure handling of credentials.",
+                        "Display error messages for incorrect inputs."
                     ],
                     "Story ID": "S013"
                 },
                 {
-                    "Title": "User Story: Generate Curated Contact Lists",
-                    "Description": "As a Platform Owner, I want the system to generate a list of contacts that match the product/service profile, so that I can target them with tailored marketing efforts.",
+                    "Title": "User Story: Direct Access to Edit Profile",
+                    "Description": "As an End User, I want to be able to navigate directly to the Edit Profile page from the landing page after logging in so that I can easily update my personal information.",
                     "AcceptanceCriteria": [
-                        "The list includes contact name, social media profiles, and matching percentage.",
-                        "Contacts are sorted by relevance based on the matching percentage.",
-                        "The system allows exporting the list to an Excel file."
+                        "After SignIn, provide a direct link or button to 'Edit Profile'.",
+                        "Ensure the 'Edit Profile' page allows for editing all relevant user details.",
+                        "Changes should be savable with a single action.",
+                        "Users receive visual confirmation of successful updates."
                     ],
                     "Story ID": "S014"
                 },
                 {
-                    "Title": "User Story: Export Contact Lists",
-                    "Description": "As a Platform Owner, I want to be able to export the generated contact lists into an Excel file, so that I can use them for outreach or further analysis externally.",
+                    "Title": "User Story: Create Wishlist Access",
+                    "Description": "As an End User, I want to be able to directly access and create a wishlist from the landing page so that I can personalize my experience and save items of interest.",
                     "AcceptanceCriteria": [
-                        "Export functionality is easily accessible in the GUI.",
-                        "The Excel file contains all relevant details of the contacts.",
-                        "The export process is secure and completes without data loss."
+                        "Provide a prominent feature on the landing page post-login for 'Create Wishlist'.",
+                        "Allow users to add items to their wishlist easily.",
+                        "Ensure the wishlist can be viewed and modified at any time.",
+                        "Provide options to save or clear the wishlist."
+                    ],
+                    "Story ID": "S015"
+                }
+            ]
+        }
+    ],
+    "Business Owners": [
+        {
+            "Epic ID": "E001",
+            "Title": "User Account Management",
+            "Description": "Develop secure and intuitive user account management functionalities including SignUp and SignIn, allowing users to register, access, and manage their accounts, thus driving user engagement and platform security.",
+            "User Stories": [
+                {
+                    "Title": "User Registration",
+                    "Description": "As a new user, I want to be able to sign up for an account so that I can access personalized features and maintain my privacy.",
+                    "AcceptanceCriteria": [
+                        "The SignUp page must include fields for name, email, and password.",
+                        "Passwords must be encrypted before storage.",
+                        "A confirmation email is sent to the user after successful registration.",
+                        "An error message is displayed if the signup fails due to an existing email address."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "User Login",
+                    "Description": "As a returning user, I want to be able to sign in using my email and password so that I can access my account securely.",
+                    "AcceptanceCriteria": [
+                        "The SignIn page must authenticate users by their email and encrypted password.",
+                        "Users are redirected to their profile page upon successful login.",
+                        "An error message is displayed for incorrect login credentials.",
+                        "Session timeout must be implemented for security."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Edit User Profile",
+                    "Description": "As a logged-in user, I want to be able to edit my profile details so that I can keep my personal information up to date.",
+                    "AcceptanceCriteria": [
+                        "Logged-in users can access an Edit Profile page with pre-populated fields of current information.",
+                        "Users can update their name, email, and profile picture.",
+                        "Changes are saved immediately upon user confirmation.",
+                        "Users receive a confirmation notification upon successful update."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "Create User Wishlist",
+                    "Description": "As a logged-in user, I want to create and manage a wishlist so that I can save items or services I am interested in for future reference.",
+                    "AcceptanceCriteria": [
+                        "Logged-in users can access a 'Create Wishlist' feature from their profile.",
+                        "Users can add items to their wishlist and remove them as needed.",
+                        "The wishlist must update in real-time as items are added or removed.",
+                        "Users can view their complete wishlist at any time."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "Landing Page Accessibility",
+                    "Description": "As a user, I want to be able to navigate easily from the landing page to SignUp, SignIn, and other functionalities so that I can utilize the application smoothly.",
+                    "AcceptanceCriteria": [
+                        "The landing page must clearly display options for SignUp and SignIn.",
+                        "Links to 'Edit Profile' and 'Create Wishlist' should be accessible post-login.",
+                        "The landing page should load within 3 seconds to ensure a quick access time.",
+                        "The design should be responsive for accessibility across devices."
+                    ],
+                    "Story ID": "S005"
+                },
+                {
+                    "Title": "Data Security and Compliance",
+                    "Description": "As a Business Owner, I want all user data to be handled securely in compliance with relevant laws and regulations to protect the business from legal issues and to maintain user trust.",
+                    "AcceptanceCriteria": [
+                        "All data transmission must be secured using HTTPS.",
+                        "Compliance with GDPR and other relevant privacy laws must be ensured.",
+                        "Regular security audits are conducted to identify and rectify vulnerabilities.",
+                        "Encryption standards like AES or bcrypt are used for storing sensitive user data."
+                    ],
+                    "Story ID": "S006"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "User Profile Customization",
+            "Description": "Create functionalities for users to edit and update their profiles post-registration, enabling personalized user experiences which can improve user satisfaction and retention.",
+            "User Stories": [
+                {
+                    "Title": "User Profile Update Functionality",
+                    "Description": "As a registered user, I want to update my profile information, so that I can keep my personal data up-to-date.",
+                    "AcceptanceCriteria": [
+                        "Users can access their profile via a secure login.",
+                        "Users can edit fields such as name, email, and profile picture.",
+                        "Changes must be saved and immediately visible upon the user session refresh.",
+                        "There should be a confirmation message after successful update.",
+                        "The system should handle errors and provide meaningful messages if updates fail."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "Profile Customization Options",
+                    "Description": "As a registered user, I want to customize additional elements of my profile, such as a custom username and a bio, so that I can personalize my user experience on the platform.",
+                    "AcceptanceCriteria": [
+                        "Users can edit customizable fields like username and bio from their profile settings.",
+                        "The changes should be immediately reflected in the user's profile view to others.",
+                        "Input fields should have validation to prevent inappropriate content.",
+                        "Provide tooltips or helper text to guide users through the customization options."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "Privacy Settings Management",
+                    "Description": "As a registered user, I want to manage my privacy settings, so that I can control the visibility of my profile information.",
+                    "AcceptanceCriteria": [
+                        "Users should have a section in their profile for privacy settings.",
+                        "Options to make certain information public or private must be available (e.g., email, phone number).",
+                        "Changes should take effect immediately.",
+                        "System should confirm privacy settings updates with the user."
+                    ],
+                    "Story ID": "S009"
+                },
+                {
+                    "Title": "Profile Data Security Enhancement",
+                    "Description": "As a business owner, I want the user profile data to be securely handled, so that user trust is maintained thereby increasing retention.",
+                    "AcceptanceCriteria": [
+                        "Profile edits and data transmission are secured via HTTPS.",
+                        "Implement data encryption for sensitive user data stored in the database.",
+                        "Regular security audits and compliance checks must be performed.",
+                        "Users are notified of the privacy and security measures in place through the user interface."
+                    ],
+                    "Story ID": "S010"
+                },
+                {
+                    "Title": "Comprehensive User Profile Analytics",
+                    "Description": "As a business owner, I want to analyze user profile updates, so that I can understand user behavior and preferences to improve marketing strategies.",
+                    "AcceptanceCriteria": [
+                        "System should log all profile update activities.",
+                        "Analytics dashboard should represent data through charts and graphs.",
+                        "Data should be filterable by date, type of change, and user demographics.",
+                        "Dashboard must be accessible only by authorized personnel."
+                    ],
+                    "Story ID": "S011"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Wishlist Creation",
+            "Description": "Implement a feature for users to create and manage personalized wishlists, enhancing user interaction and engagement with the platform, which can lead to increased user retention and satisfaction.",
+            "User Stories": [
+                {
+                    "Title": "User Story: Wishlist Creation",
+                    "Description": "As a user, I want to create a personalized wishlist so that I can save items I am interested in for future reference or purchase.",
+                    "AcceptanceCriteria": [
+                        "User must be logged in to access the wishlist creation feature.",
+                        "User should be able to add items to the wishlist from the product catalog.",
+                        "User should be able to name the wishlist and provide a description.",
+                        "The system must save the wishlist persistently so that it can be accessed in future sessions.",
+                        "The system should provide a confirmation message once the wishlist is created."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "User Story: Wishlist Management",
+                    "Description": "As a user, I want to manage my existing wishlists so that I can update items, rename, or delete my wishlist as needed.",
+                    "AcceptanceCriteria": [
+                        "User must be logged in to modify a wishlist.",
+                        "User should be able to add or remove items from the wishlist.",
+                        "User should be able to rename the wishlist and change its description.",
+                        "User should be able to delete a wishlist with a confirmation prompt to prevent accidental deletions.",
+                        "Changes to the wishlist should be updated in real-time and stored persistently."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "User Story: Wishlist Sharing",
+                    "Description": "As a user, I want to share my wishlist with friends or family so that they can view the items I've saved.",
+                    "AcceptanceCriteria": [
+                        "User must be logged in to share a wishlist.",
+                        "The system should generate a shareable link that the user can send to others.",
+                        "Recipients of the link should be able to view the wishlist without needing to log in.",
+                        "The shareable link should be secure and should not allow unauthorized editing of the wishlist.",
+                        "The system should provide an option to revoke the shared link."
+                    ],
+                    "Story ID": "S014"
+                },
+                {
+                    "Title": "User Story: Wishlist Visibility Settings",
+                    "Description": "As a user, I want to set visibility options for my wishlists so that I can control who can see my wishlists.",
+                    "AcceptanceCriteria": [
+                        "User must be logged in to set wishlist visibility.",
+                        "User should be able to set the wishlist as public, private, or visible only to specific people.",
+                        "If set to specific people, the system should allow users to select friends or enter email addresses to grant access.",
+                        "Changes to visibility settings should be applied immediately and persistently saved.",
+                        "The system should ensure that privacy settings are respected in all views and shared links."
                     ],
                     "Story ID": "S015"
                 },
                 {
-                    "Title": "User Story: View Detailed Contact Profiles",
-                    "Description": "As a Platform Owner, I want to view detailed profiles of potential contacts from the curated list, so that I can understand their backgrounds and interests before making contact.",
+                    "Title": "User Story: Business Analytics for Wishlists",
+                    "Description": "As a business owner, I want to access analytics on user wishlists so that I can understand customer preferences and plan my inventory accordingly.",
                     "AcceptanceCriteria": [
-                        "Detailed profiles can be accessed by clicking on contact names in the list.",
-                        "Profiles include enriched data such as interests, family information, and activities.",
-                        "The interface for viewing profiles is user-friendly and displays all relevant information comprehensively."
+                        "Business owners must have administrative access to view analytics.",
+                        "Analytics should include data on the most added items, frequently shared wishlists, and user engagement with wishlists.",
+                        "The system should provide options to filter analytics by date range, product category, and user demographics.",
+                        "Data should be presented in a clear, visual format such as graphs and charts.",
+                        "The analytics feature should comply with privacy regulations, ensuring that user-specific data is anonymized."
                     ],
                     "Story ID": "S016"
                 }
@@ -189,192 +393,390 @@
         },
         {
             "Epic ID": "E004",
-            "Title": "Generation of Curated Contact Lists",
-            "Description": "Generate curated lists of contacts likely interested in the specific product or service offerings inputted by the platform owner, including contact details and relevant social media profiles.",
+            "Title": "Landing Page Development",
+            "Description": "Design and implement an inviting and informative landing page that directs users efficiently to either sign up, sign in, or access their profiles and wishlists, thereby increasing conversion rates and enhancing user experience.",
             "User Stories": [
                 {
-                    "Title": "Contact Data Extraction",
-                    "Description": "As a Platform Owner, I want to extract first-level contact information from my LinkedIn and Facebook profiles so that I can build a database of potential leads.",
+                    "Title": "Landing Page Design",
+                    "Description": "As a Business Owner, I want the landing page to have a visually appealing and clear design that highlights the SignUp, SignIn, Edit Profile, and Create Wishlist features, so that new and returning users are encouraged to interact with the site, leading to higher engagement and conversion rates.",
                     "AcceptanceCriteria": [
-                        "Successfully extract names, emails, and social media URLs from LinkedIn and Facebook.",
-                        "Ensure data is extracted only from first-level connections to maintain privacy and relevance.",
-                        "System should handle permissions and authentication required for accessing LinkedIn and Facebook data."
+                        "Landing page must include visible call-to-action buttons for SignUp and SignIn.",
+                        "Include separate links or buttons for returning users to access their profiles and wishlists directly.",
+                        "Design must be responsive to work across various devices and screen sizes.",
+                        "Landing page loads within 3 seconds to ensure quick access."
                     ],
                     "Story ID": "S017"
                 },
                 {
-                    "Title": "AI-Driven Data Enhancement",
-                    "Description": "As a Platform Owner, I want to use AI to enhance the extracted contact data with additional personal details so that I can create detailed profiles for more effective targeting.",
+                    "Title": "User SignUp",
+                    "Description": "As a Business Owner, I want the website to offer an easy and secure SignUp process on the landing page, so that new users can effortlessly create accounts, thereby increasing user growth and expanding the customer base.",
                     "AcceptanceCriteria": [
-                        "AI uses OpenAI transformers to analyze social media activity and add data such as interests and activities to contact profiles.",
-                        "Enhanced data includes actionable insights like family status, interests, and recent activities.",
-                        "Ensure the AI processing respects privacy norms and only uses publicly available data."
+                        "SignUp form is accessible from the main landing page.",
+                        "Form includes fields for name, email, and password.",
+                        "All data entries must be validated for format and completeness before submission.",
+                        "Submission of the signup form leads to a verification email being sent to the user\u2019s provided email address."
                     ],
                     "Story ID": "S018"
                 },
                 {
-                    "Title": "Product and Service Input",
-                    "Description": "As a Platform Owner, I want to input details about the products or services I am promoting so that the system can identify relevant contacts.",
+                    "Title": "User SignIn",
+                    "Description": "As a Business Owner, I want the website to enable a secure SignIn option on the landing page, so that returning users can easily access their profiles and wishlists, promoting frequent user engagement.",
                     "AcceptanceCriteria": [
-                        "System allows easy input of product/service details through a simple GUI.",
-                        "Input data includes product descriptions, target demographics, and any special requirements.",
-                        "GUI confirms successful data entry with an acknowledgment message."
+                        "SignIn form is accessible from the main landing page.",
+                        "Includes fields for email and password.",
+                        "Must include a 'Forgot password?' link.",
+                        "Correct credentials allow access to the user's dashboard.",
+                        "Invalid login attempts provide a clear error message without revealing which element (email or password) was incorrect."
                     ],
                     "Story ID": "S019"
                 },
                 {
-                    "Title": "Contact Matching and List Generation",
-                    "Description": "As a Platform Owner, I want the system to match my product and service offerings with the enhanced profiles so that I can receive a curated list of potentially interested contacts.",
+                    "Title": "Profile and Wishlist Access",
+                    "Description": "As a Business Owner, I want returning users to be able to access their profile and wishlist directly from the landing page after signing in, so that they can easily manage their personal information and preferences, enhancing user satisfaction and retention.",
                     "AcceptanceCriteria": [
-                        "System processes input product/service details and matches them with contact profiles using AI.",
-                        "Generate lists that include contact details and relevance scores based on potential interest in the offering.",
-                        "Allow the platform owner to review and modify the generated lists before finalizing."
+                        "Direct links to 'Edit Profile' and 'Create Wishlist' are visible and accessible post-login.",
+                        "Users can update personal information and save changes with immediate effect.",
+                        "Users can add, modify, and delete items in their wishlist smoothly."
                     ],
                     "Story ID": "S020"
                 },
                 {
-                    "Title": "Export Curated Contact Lists",
-                    "Description": "As a Platform Owner, I want the ability to export the curated lists of contacts to Excel so that I can utilize them for outreach efforts.",
+                    "Title": "Analytics Integration on Landing Page",
+                    "Description": "As a Business Owner, I want to integrate analytics on the landing page, so that we can track user interactions with the SignUp, SignIn, and other features, enabling us to gather data to further optimize the user experience and increase conversions.",
                     "AcceptanceCriteria": [
-                        "Export function includes all relevant contact details and any additional notes or tags from the analysis.",
-                        "Excel files are formatted for easy reading and further manipulation if required.",
-                        "Ensure the export process is secure and maintains the confidentiality of the contact data."
+                        "Integration with a web analytics tool like Google Analytics.",
+                        "Track clicks on SignUp, SignIn, Edit Profile, and Create Wishlist.",
+                        "Regular reports are generated showing user interaction metrics.",
+                        "Data privacy regulations compliance must be ensured while collecting data."
+                    ],
+                    "Story ID": "S021"
+                }
+            ]
+        }
+    ],
+    "System Administrators": [
+        {
+            "Epic ID": "E001",
+            "Title": "User Management System",
+            "Description": "Develop a robust user management system to handle SignUp, SignIn, and user authentication processes, ensuring secure access controls and management capabilities for administrators.",
+            "User Stories": [
+                {
+                    "Title": "Admin Dashboard Access",
+                    "Description": "As a System Administrator, I want to access a dedicated admin dashboard so that I can manage all user accounts and their activities.",
+                    "AcceptanceCriteria": [
+                        "Admin login credentials must be validated securely.",
+                        "The dashboard must display user account status, recent activity, and management options.",
+                        "The dashboard must be accessible only to users with administrator privileges."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "User Account Management",
+                    "Description": "As a System Administrator, I want to have the ability to activate, deactivate, or delete user accounts so that I can ensure proper access control and compliance with our policies.",
+                    "AcceptanceCriteria": [
+                        "Options to activate, deactivate, or delete accounts must be clearly accessible in the admin dashboard.",
+                        "Changes made by the administrator should be reflected immediately in the system.",
+                        "All changes must be logged for audit purposes."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Role-Based Access Control",
+                    "Description": "As a System Administrator, I want to assign roles to users and modify them as necessary so that users have appropriate access to system functionalities.",
+                    "AcceptanceCriteria": [
+                        "Administrators should be able to assign, modify, or revoke roles through the admin dashboard.",
+                        "The system must enforce access restrictions based on user roles.",
+                        "Any role changes should be updated in real-time and logged for auditing."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "Audit Logs",
+                    "Description": "As a System Administrator, I want to view and export audit logs so that I can monitor changes and access patterns to ensure security compliance.",
+                    "AcceptanceCriteria": [
+                        "Audit logs must capture all user activities including logins, role changes, and profile updates.",
+                        "Logs must be viewable through the admin dashboard and exportable in common file formats.",
+                        "Logs should be stored securely and retain data according to compliance requirements."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "Two-Factor Authentication Setup for Admins",
+                    "Description": "As a System Administrator, I want to enable two-factor authentication for administrative accounts to enhance the security of sensitive operations.",
+                    "AcceptanceCriteria": [
+                        "Two-factor authentication must be configurable through the admin dashboard.",
+                        "Once enabled, it should require a secondary verification method (e.g., SMS, email, authenticator app) in addition to the password.",
+                        "There should be support for backup codes in case the primary two-factor method is unavailable."
+                    ],
+                    "Story ID": "S005"
+                },
+                {
+                    "Title": "Real-Time Notifications",
+                    "Description": "As a System Administrator, I want to receive real-time notifications for critical user actions such as failed login attempts or role changes so that I can respond promptly to potential security incidents.",
+                    "AcceptanceCriteria": [
+                        "Notifications must be configurable in terms of types of actions that trigger alerts.",
+                        "Notifications should be delivered via email and/or SMS to the administrator.",
+                        "Each notification should provide sufficient details about the action to enable quick assessment and response."
+                    ],
+                    "Story ID": "S006"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "Profile Management System",
+            "Description": "Implement a system that allows administrators to manage and oversee user profile information, including the ability to edit, update, or remove user profiles as necessary.",
+            "User Stories": [
+                {
+                    "Title": "Admin Profile Access Control",
+                    "Description": "As a System Administrator, I want to have the ability to access and view all user profiles so that I can oversee and manage user information effectively.",
+                    "AcceptanceCriteria": [
+                        "Admin can log into a secure admin panel.",
+                        "Admin can view a list of all registered user profiles.",
+                        "Admin can select any user profile to view detailed information.",
+                        "Ensure security and confidentiality of user data during access."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "Edit User Profiles",
+                    "Description": "As a System Administrator, I want the capability to edit user profiles so that I can update information on behalf of users when necessary.",
+                    "AcceptanceCriteria": [
+                        "Admin can select a user profile and edit fields such as name, email, etc.",
+                        "Changes are saved and immediately reflected in the user's profile.",
+                        "Admin receives a confirmation notification upon successful update.",
+                        "User receives a notification that their profile has been updated by an administrator."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "Disable User Accounts",
+                    "Description": "As a System Administrator, I want the ability to disable user accounts so that I can restrict access when users violate terms of service.",
+                    "AcceptanceCriteria": [
+                        "Admin can select a user profile and disable the user\u2019s account.",
+                        "Disabled accounts cannot log in or access the application.",
+                        "Admin receives a confirmation notification upon successful account disabling.",
+                        "User receives an email notification about their account status change."
+                    ],
+                    "Story ID": "S009"
+                },
+                {
+                    "Title": "Delete User Profiles",
+                    "Description": "As a System Administrator, I want the option to delete user profiles so that I can remove users who no longer wish to use our platform or have requested account deletion.",
+                    "AcceptanceCriteria": [
+                        "Admin can permanently delete a user's profile from the database.",
+                        "Ensure that all data related to the user is completely removed.",
+                        "Admin receives a confirmation notification upon successful deletion.",
+                        "Ensure compliance with data protection regulations concerning user data deletion."
+                    ],
+                    "Story ID": "S010"
+                },
+                {
+                    "Title": "Audit User Activities",
+                    "Description": "As a System Administrator, I want to monitor and audit user activities so that I can ensure compliance with policy and detect any suspicious behavior.",
+                    "AcceptanceCriteria": [
+                        "Admin can view logs of user activities such as login times and changes made to profiles.",
+                        "System maintains a secure and tamper-proof log of all user activities.",
+                        "Admin can generate reports based on activity logs for audit and compliance purposes."
+                    ],
+                    "Story ID": "S011"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Wishlist Management Module",
+            "Description": "Create a module that enables administrators to manage user wishlists, including adding, editing, or deleting wishlist items, and to oversee how these lists are used and managed within the application.",
+            "User Stories": [
+                {
+                    "Title": "Admin View Wishlist",
+                    "Description": "As a System Administrator, I want the ability to view all user wishlists so that I can oversee the overall wishlist content and ensure it adheres to community guidelines.",
+                    "AcceptanceCriteria": [
+                        "Admin can view a list of all wishlists.",
+                        "Admin can select any user's wishlist to view its details.",
+                        "Admin can see the timestamp of the last update for each wishlist.",
+                        "Ensure that the viewing interface is user-friendly and displays relevant information clearly."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "Admin Add Wishlist Items",
+                    "Description": "As a System Administrator, I want the ability to add items to any user's wishlist so that I can assist in managing content when necessary.",
+                    "AcceptanceCriteria": [
+                        "Admin can select a user and add items to the user's wishlist.",
+                        "The system should verify the admin's permissions before allowing the addition.",
+                        "Admin must be able to search and select items to add using a search interface.",
+                        "The system should confirm the addition with the admin and optionally notify the user."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "Admin Edit Wishlist Items",
+                    "Description": "As a System Administrator, I want the ability to edit items in any user's wishlist so that I can correct errors or update information as needed.",
+                    "AcceptanceCriteria": [
+                        "Admin can select an item in a user's wishlist and edit details.",
+                        "The system should provide a form to change item details such as name, description, and quantity.",
+                        "Changes must be saved immediately and accurately reflect in the system.",
+                        "The system should log all changes made by the administrator for auditing purposes."
+                    ],
+                    "Story ID": "S014"
+                },
+                {
+                    "Title": "Admin Delete Wishlist Items",
+                    "Description": "As a System Administrator, I want the ability to delete items from any user's wishlist so that I can remove inappropriate or outdated items as necessary.",
+                    "AcceptanceCriteria": [
+                        "Admin can select an item in any user's wishlist and delete it.",
+                        "The system should ask for confirmation before deleting the item.",
+                        "Deleted items should be removed from the list instantly and no longer be retrievable.",
+                        "The system should log the deletion and notify the user if configurated."
+                    ],
+                    "Story ID": "S015"
+                },
+                {
+                    "Title": "Admin Audit Wishlist Changes",
+                    "Description": "As a System Administrator, I want to view a history of all changes made to wishlists so that I can monitor activity and revert any inappropriate modifications.",
+                    "AcceptanceCriteria": [
+                        "Admin must be able to access a log of all edits, additions, and deletions made to wishlists.",
+                        "The log should include details such as the type of change, who made the change, and the time of the change.",
+                        "Admin should have the ability to filter the log by user, date, and type of change.",
+                        "The system should allow admins to revert changes directly from the audit log."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "Admin Manage Wishlist Notifications",
+                    "Description": "As a System Administrator, I want to configure notifications for changes to wishlists so that users can be informed of modifications by the admin team.",
+                    "AcceptanceCriteria": [
+                        "Admin can enable or disable notifications for specific types of wishlist changes such as additions, deletions, or modifications.",
+                        "The system should offer customizable templates for notifications sent to users.",
+                        "Notifications must be sent automatically based on admin settings.",
+                        "Admin should be able to review a log of all sent notifications."
+                    ],
+                    "Story ID": "S017"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E004",
+            "Title": "Security and Compliance Enforcement",
+            "Description": "Ensure the web application adheres to relevant security standards and data protection regulations, implementing necessary security measures to protect user data and system integrity.",
+            "User Stories": [
+                {
+                    "Title": "Implement Secure Authentication",
+                    "Description": "As a System Administrator, I want the web application to implement secure authentication mechanisms so that user credentials are protected against unauthorized access.",
+                    "AcceptanceCriteria": [
+                        "Authentication uses a secure hash algorithm for password storage.",
+                        "Implements multi-factor authentication for added security.",
+                        "Provides detailed logs of authentication attempts for monitoring."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Data Encryption at Rest and Transit",
+                    "Description": "As a System Administrator, I want all sensitive user data to be encrypted both at rest and in transit so that the integrity and confidentiality of user data are maintained.",
+                    "AcceptanceCriteria": [
+                        "All sensitive data stored in databases must be encrypted using industry-standard encryption protocols.",
+                        "All data transmitted over the network must be encrypted using HTTPS or other secure protocols.",
+                        "Regular audits to verify the implementation of encryption standards."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Regular Security Audits",
+                    "Description": "As a System Administrator, I want the application to undergo regular security audits so that any vulnerabilities can be identified and remediated promptly to maintain system security.",
+                    "AcceptanceCriteria": [
+                        "Conduct bi-annual security audits using a reputable third-party security firm.",
+                        "Audit results must be documented and reviewed by the development team.",
+                        "Implement recommendations from the audit findings within a reasonable timeframe."
+                    ],
+                    "Story ID": "S020"
+                },
+                {
+                    "Title": "Role-Based Access Control Implementation",
+                    "Description": "As a System Administrator, I want the web application to have a robust role-based access control system so that users can only access features and data relevant to their roles, ensuring system security and data privacy.",
+                    "AcceptanceCriteria": [
+                        "Define and implement at least three user roles with specific access rights.",
+                        "Enforce access restrictions based on user roles at all points of interaction within the application.",
+                        "Regularly review and update access rights as necessary."
                     ],
                     "Story ID": "S021"
                 },
                 {
-                    "Title": "Local Data Storage and Backup",
-                    "Description": "As a Platform Owner, I want all data to be stored locally and have robust backup processes so that I can ensure data security and availability.",
+                    "Title": "Compliance with GDPR and Other Regulations",
+                    "Description": "As a System Administrator, I want the web application to comply with GDPR and other relevant data protection regulations so that the application is legally compliant and user trust is maintained.",
                     "AcceptanceCriteria": [
-                        "Data stored in non-encrypted JSON files locally on the platform owner's device.",
-                        "System provides a manual backup option and instructions for the platform owner to secure data.",
-                        "Alerts the platform owner of successful or failed backup attempts."
+                        "Implement mechanisms for users to view, download, and delete their data.",
+                        "Ensure all data collection and processing activities have user consent where required.",
+                        "Regular training for staff on GDPR compliance and data handling procedures."
                     ],
                     "Story ID": "S022"
+                },
+                {
+                    "Title": "Secure System Logging and Monitoring",
+                    "Description": "As a System Administrator, I want the web application to have secure logging and monitoring mechanisms so that I can track all system activities and detect potential security threats early.",
+                    "AcceptanceCriteria": [
+                        "All logs must be encrypted and stored securely.",
+                        "Implement real-time monitoring tools to detect and alert on suspicious activities.",
+                        "Logs should include user actions, system errors, and access attempts."
+                    ],
+                    "Story ID": "S023"
                 }
             ]
         },
         {
             "Epic ID": "E005",
-            "Title": "Local Data Storage and Management",
-            "Description": "Ensure all data is stored locally in JSON files to prioritize privacy and security, with the platform owner responsible for data backup and maintenance.",
+            "Title": "System Monitoring and Reporting",
+            "Description": "Develop a comprehensive system monitoring and reporting framework that allows administrators to monitor system performance, user activities, and security logs to ensure smooth operations.",
             "User Stories": [
                 {
-                    "Title": "Secure Local Data Storage",
-                    "Description": "As a Platform Owner, I want all data to be stored in local JSON files so that I can ensure the privacy and security of sensitive information.",
+                    "Title": "User Activity Logging",
+                    "Description": "As a System Administrator, I want a feature to log all user activities so that I can review actions taken by users within the system for security and operational audits.",
                     "AcceptanceCriteria": [
-                        "Data is stored in JSON format on the local machine.",
-                        "No data is stored or transferred to cloud services.",
-                        "All stored data must be accessible only through the application."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "Data Backup System",
-                    "Description": "As a Platform Owner, I want to implement a manual backup system so that I can securely back up data to prevent loss.",
-                    "AcceptanceCriteria": [
-                        "The system provides an option to manually initiate data backups.",
-                        "Backups must be stored in a secure location specified by the Platform Owner.",
-                        "The system must confirm successful completion of backups."
+                        "All user actions are logged with a timestamp and user identifier.",
+                        "Logs are stored securely and are accessible only to authorized administrators.",
+                        "The system provides filters to view logs by user, date, and type of activity."
                     ],
                     "Story ID": "S024"
                 },
                 {
-                    "Title": "Data Integrity Check",
-                    "Description": "As a Platform Owner, I want the system to perform routine integrity checks on the stored data so that I can trust the data's accuracy and completeness.",
+                    "Title": "Real-Time System Performance Monitoring",
+                    "Description": "As a System Administrator, I want to monitor system performance in real-time so that I can quickly identify and address performance bottlenecks or failures.",
                     "AcceptanceCriteria": [
-                        "Integrity checks are performed automatically at set intervals.",
-                        "Any issues detected during checks are logged and reported to the Platform Owner.",
-                        "The system can recover corrupted data from the latest backup if integrity checks fail."
+                        "Real-time performance metrics (CPU, memory usage, network status) are displayed on a dashboard.",
+                        "Performance thresholds can be set, with alerts triggered when these thresholds are exceeded.",
+                        "The dashboard is updated automatically without needing to refresh the page."
                     ],
                     "Story ID": "S025"
                 },
                 {
-                    "Title": "Secure Data Access",
-                    "Description": "As a Platform Owner, I want the system to require authentication for accessing the local data storage so that unauthorized access is prevented.",
+                    "Title": "Security Log Monitoring",
+                    "Description": "As a System Administrator, I want to monitor security logs to detect any unauthorized access or potential security threats.",
                     "AcceptanceCriteria": [
-                        "Access to the JSON files is gated by authentication requiring a username and password.",
-                        "The system logs all access attempts, successful or failed.",
-                        "Multiple failed access attempts result in a temporary lockout to prevent brute-force attacks."
+                        "Security logs are compiled in a central repository.",
+                        "The system provides an interface to search and filter security logs by severity, date, and type of threat.",
+                        "Alerts are sent to administrators in case of detected high-severity threats."
                     ],
                     "Story ID": "S026"
                 },
                 {
-                    "Title": "Data Export Functionality",
-                    "Description": "As a Platform Owner, I want the ability to export data from JSON files to Excel so that I can easily review and manipulate the data outside the system.",
+                    "Title": "System Health Reports",
+                    "Description": "As a System Administrator, I want to generate system health reports so that I can provide regular updates on system status and compliance with performance standards.",
                     "AcceptanceCriteria": [
-                        "Exported data must reflect the current state of the JSON files.",
-                        "The system provides options for selecting specific data fields for export.",
-                        "Exported Excel files are stored locally and are not emailed or uploaded to cloud services."
+                        "Administrators can generate customizable reports on system performance and security status.",
+                        "Reports can be exported in various formats (PDF, CSV, HTML).",
+                        "The system stores historical report data for comparison over time."
                     ],
                     "Story ID": "S027"
                 },
                 {
-                    "Title": "Local Data Deletion Protocol",
-                    "Description": "As a Platform Owner, I want a secure method to delete outdated or unnecessary data from the local storage without affecting integrity so that I can manage storage space and maintain data relevancy.",
+                    "Title": "User Activity Alert System",
+                    "Description": "As a System Administrator, I want an alert system for unusual user activities so that I can take immediate action to prevent potential breaches or misuse of the system.",
                     "AcceptanceCriteria": [
-                        "The system allows for selective deletion of data entries.",
-                        "Deletion actions require confirmation from the Platform Owner to proceed.",
-                        "The system logs all deletion activities for audit purposes."
+                        "The system analyzes user activities and flags activities that deviate from normal patterns.",
+                        "Administrators receive real-time alerts of these unusual activities.",
+                        "Administrators can customize the parameters that define normal vs. unusual activity."
                     ],
                     "Story ID": "S028"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E006",
-            "Title": "User Interface Development",
-            "Description": "Develop a simple graphical user interface (GUI) that allows the platform owner to input product or service details, view the generated contact lists, and export these lists to an Excel file.",
-            "User Stories": [
-                {
-                    "Title": "Input Product/Service Details",
-                    "Description": "As a Platform Owner, I want to input details of products or services into the GUI so that I can specify the offerings for which I need targeted contact lists.",
-                    "AcceptanceCriteria": [
-                        "A form is provided in the GUI to input product or service details.",
-                        "The form must include fields for all necessary attributes like name, description, and any specific filters or criteria.",
-                        "Input data is validated for correctness and completeness before being accepted."
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "View Generated Contact Lists",
-                    "Description": "As a Platform Owner, I want to be able to view the generated contact lists on the GUI so that I can review and verify the contacts selected based on my input details.",
-                    "AcceptanceCriteria": [
-                        "The GUI displays the list of contacts in a readable and organized format.",
-                        "The list includes essential contact details such as name, email, and social profile links.",
-                        "The GUI provides an option to refresh or regenerate the list based on the same or modified input criteria."
-                    ],
-                    "Story ID": "S030"
-                },
-                {
-                    "Title": "Export Contact Lists to Excel",
-                    "Description": "As a Platform Owner, I want an option to export the generated contact lists to an Excel file so that I can use them for outreach or other business processes outside the platform.",
-                    "AcceptanceCriteria": [
-                        "A clear and accessible option to export the contact list to Excel is available in the GUI.",
-                        "The exported file must preserve the organization and formatting of the data displayed in the GUI.",
-                        "The export process should handle large data sets efficiently, ensuring a quick response time and minimal disruption."
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Secure Local Data Handling",
-                    "Description": "As a Platform Owner, I want the software to handle data securely in the local system without transmitting it over the internet so that I can maintain control over the privacy of my data.",
-                    "AcceptanceCriteria": [
-                        "All data inputs and outputs are handled locally within the GUI, with no data sent to or stored in the cloud.",
-                        "The system has provisions for local data backup and recovery in case of data loss.",
-                        "The design adheres to best practices for secure data handling and storage."
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "Simple and Intuitive User Interface",
-                    "Description": "As a Platform Owner, I want the GUI to be simple and intuitive so that I can easily navigate and use the software without requiring extensive training or technical support.",
-                    "AcceptanceCriteria": [
-                        "The user interface is clean, with a clear layout and minimalistic design.",
-                        "All functionalities (input, view, export) are easily accessible from the main interface.",
-                        "The system provides helpful hints or tooltips as necessary to guide the user through various tasks."
-                    ],
-                    "Story ID": "S033"
                 }
             ]
         }
