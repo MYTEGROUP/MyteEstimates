@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items vertically */
+            height: 100vh;
+            background-color: white;
+        }
+        #question {
+            display: none; /* Initially hide the question */
+            text-align: center;
+            margin-bottom: 50px; /* Space between question and input field */
+        }
+        #answer-input {
+            display: none; /* Initially hide the input field */
+            width: 600px;
+            min-height: 250px; /* Adjustable height */
+            border: 4px solid black; /* Thick black border */
+            border-radius: 25px; /* Oval shape */
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 25px; /* Space between input field and buttons */
+            font-size: 16px;
+            color: #333;
+        }
+        #answer-input::placeholder {
+            color: #aaa; /* Grey scale placeholder text */
+        }
+        #submit-btn, #speak-btn {
+            display: none; /* Initially hide the buttons */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 0px; /* For the submit button */
+        }
+        #speak-btn {
+            margin-left: 0;
+            margin-bottom: 10px; /* Space above the submit button */
+        }
+        #begin-btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #replay-btn {
+            display: none; /* Initially hide the Replay button */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px; /* Space below the question */
+        }
+    </style>
+</head>
+<body>
+
+<button id="begin-btn">Begin</button>
+<div id="question">Hey, glad you're here with us. Can you start by telling us what you plan on building as a platform?</div>
+<textarea id="answer-input" placeholder="Provide your answer"></textarea>
+<button id="speak-btn">Speak</button>
+<button id="submit-btn">Submit</button>
+<button id="replay-btn">Replay</button> <!-- Replay button -->
+
+<script>
+    function startRecording() {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                const audioContext = new AudioContext();
+                const mediaStreamSource = audioContext.createMediaStreamSource(stream);
+                const processor = audioContext.createScriptProcessor(4096, 1, 1);
+
+                mediaStreamSource.connect(processor);
+                processor.connect(audioContext.destination);
+
+                const audioChunks = [];
+                let silenceStart = performance.now();
+                let isRecording = true;
+
+                processor.onaudioprocess = function(event) {
+                    if (!isRecording) return;
+                    const input = event.inputBuffer.getChannelData(0);
+                    let isSilent = true;
+                    // Simple silence detection: check if amplitude is below a threshold
+                    for (let i = 0; i < input.length; i++) {
+                        if (Math.abs(input[i]) > 0.01) { // Threshold might need adjustment
+                            isSilent = false;
+                            break;
+                        }
+                    }
+                    if (isSilent) {
+                        if (performance.now() - silenceStart > 2000) { // Adjusted to 2 seconds of silence
+                            isRecording = false;
+                            mediaRecorder.stop();
+                            stream.getTracks().forEach(track => track.stop()); // Stop the audio track
+                        }
+                    } else {
+                        silenceStart = performance.now();
+                    }
+                };
+
+                const mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.start();
+
+                mediaRecorder.addEventListener("dataavailable", event => {
+                    audioChunks.push(event.data);
+                });
+
+                mediaRecorder.addEventListener("stop", () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const formData = new FormData();
+                    formData.append("audio", audioBlob, "recording.wav");
+
+                    fetch("/process_audio", { // Adjusted to match your Flask route
+                        method: "POST",
+                        body: formData,
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('answer-input').value = data.text; // Display the transcribed text
+                        document.getElementById('answer-input').style.display = 'block'; // Ensure input field is visible
+                    })
+                    .catch(error => console.error("Error:", error));
+                });
+            })
+            .catch(error => console.error("Error accessing microphone:", error));
+    }
+
+    document.getElementById('begin-btn').onclick = function() {
+        this.style.display = 'none'; // Hide the button
+        document.getElementById('question').style.display = 'block'; // Show the question
+        document.getElementById('answer-input').style.display = 'block'; // Show the input field
+        document.getElementById('submit-btn').style.display = 'inline-block'; // Show the submit button
+        document.getElementById('speak-btn').style.display = 'inline-block'; // Show the speak button
+
+        // Play the audio
+        var audio = new Audio('/static/InitialGreeting.mp3');
+        audio.play();
+    };
+
+    // Bind the startRecording function to the 'Speak' button
+    document.getElementById('speak-btn').addEventListener('click', startRecording);
+
+    let currentAudioSource = '';
+
+    document.getElementById('submit-btn').onclick = function() {
+        const userResponse = document.getElementById('answer-input').value;
+
+        fetch('/submit_response', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ response: userResponse })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update the question displayed to the user
+            document.getElementById('question').innerText = data.nextQuestion;
+
+            // Clear the answer input field
+            document.getElementById('answer-input').value = '';
+
+            // Update currentAudioSource with the new audio file path
+            currentAudioSource = data.audioFilePath;
+
+            // Play the response audio
+            var audio = new Audio(data.audioFilePath);
+            audio.play();
+            // Show the Replay button
+            document.getElementById('replay-btn').style.display = 'inline-block';
+        })
+        .catch(error => console.error('Error:', error));
+    };
+    // Functionality to replay the current audio
+    document.getElementById('replay-btn').onclick = function() {
+        if (currentAudioSource) {
+            var audio = new Audio(currentAudioSource);
+            audio.play();
+        }
+    };
+</script>
+
+</body>
+</html>

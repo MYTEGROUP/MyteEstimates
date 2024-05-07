@@ -1,69 +1,114 @@
 {
     "Stakeholder_Epics": {
-        "End Users": [
+        "Recruiter": [
             {
                 "Epic ID": "E001",
-                "Title": "User Account Management",
-                "Description": "Provide functionalities for users to create and manage their accounts, enabling secure SignUp and SignIn processes, and allowing users to update and edit their profile information post-login."
+                "Title": "CRM System Development",
+                "Description": "Design and develop a CRM system to manage up to 30,000 LinkedIn contacts, enabling sorting by industry, role level, and geographic region, integrating NLP for data categorization and personalized communication."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Wishlist Creation and Management",
-                "Description": "Enable authenticated users to create and manage a personal wishlist, adding and modifying items or interests as desired within their user profile."
+                "Title": "Profile Analysis and Personalization",
+                "Description": "Implement functionality to analyze LinkedIn profiles using OpenAI API to categorize contacts and personalize messages based on industry, role, and region, ensuring relevant and targeted communications."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Landing Page Development",
-                "Description": "Develop a visually appealing and informative landing page that effectively guides users to SignUp or SignIn, and provides direct access to edit profile and create wishlist functionalities."
-            }
-        ],
-        "Business Owners": [
-            {
-                "Epic ID": "E001",
-                "Title": "User Account Management",
-                "Description": "Develop secure and intuitive user account management functionalities including SignUp and SignIn, allowing users to register, access, and manage their accounts, thus driving user engagement and platform security."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "User Profile Customization",
-                "Description": "Create functionalities for users to edit and update their profiles post-registration, enabling personalized user experiences which can improve user satisfaction and retention."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Wishlist Creation",
-                "Description": "Implement a feature for users to create and manage personalized wishlists, enhancing user interaction and engagement with the platform, which can lead to increased user retention and satisfaction."
+                "Title": "Message Review and Approval Interface",
+                "Description": "Create a user interface using Plasma that allows the recruiter to review, approve, or reject personalized messages in a photo card layout, with real-time editing capabilities to ensure message accuracy before sending."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Landing Page Development",
-                "Description": "Design and implement an inviting and informative landing page that directs users efficiently to either sign up, sign in, or access their profiles and wishlists, thereby increasing conversion rates and enhancing user experience."
-            }
-        ],
-        "System Administrators": [
-            {
-                "Epic ID": "E001",
-                "Title": "User Management System",
-                "Description": "Develop a robust user management system to handle SignUp, SignIn, and user authentication processes, ensuring secure access controls and management capabilities for administrators."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "Profile Management System",
-                "Description": "Implement a system that allows administrators to manage and oversee user profile information, including the ability to edit, update, or remove user profiles as necessary."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Wishlist Management Module",
-                "Description": "Create a module that enables administrators to manage user wishlists, including adding, editing, or deleting wishlist items, and to oversee how these lists are used and managed within the application."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Security and Compliance Enforcement",
-                "Description": "Ensure the web application adheres to relevant security standards and data protection regulations, implementing necessary security measures to protect user data and system integrity."
+                "Title": "Local Data Management",
+                "Description": "Develop a solution for managing LinkedIn contact data locally using Google Sheets or JSON structures, ensuring easy access and manipulation of contact data without complex security measures."
             },
             {
                 "Epic ID": "E005",
-                "Title": "System Monitoring and Reporting",
-                "Description": "Develop a comprehensive system monitoring and reporting framework that allows administrators to monitor system performance, user activities, and security logs to ensure smooth operations."
+                "Title": "Multi-threading for Performance Optimization",
+                "Description": "Implement multi-threading capabilities to enhance system performance, allowing up to 10 concurrent threads to handle operations without overloading the local system, focusing on maintaining human-like interactions."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Logging and Monitoring",
+                "Description": "Establish a logging mechanism for each function within the software to track operations and performance, particularly in multi-threaded environments, ensuring reliability and aiding in troubleshooting."
+            },
+            {
+                "Epic ID": "E007",
+                "Title": "Unit Testing for System Verification",
+                "Description": "Define and implement unit tests for each function of the system to ensure all components work as intended, prioritizing reliability and correctness in the software's operations."
+            }
+        ],
+        "Sales Representative": [
+            {
+                "Epic ID": "E001",
+                "Title": "CRM Development for LinkedIn Outreach",
+                "Description": "Develop a CRM system that integrates with the user's LinkedIn account to manage and analyze up to 30,000 contacts. This system should include functionalities to categorize contacts by industry, role, and geographic region using NLP techniques."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Message Management System",
+                "Description": "Implement a system that allows the user to send up to 30 personalized messages daily to LinkedIn contacts, with functionality for users to manually review, edit, and approve each message before sending."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "User Interface for Message Review",
+                "Description": "Design and implement a user interface using Plasma that displays messages in a photocards-like format with options to approve, edit, or reject messages in real-time."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Local Data Management",
+                "Description": "Create a system to manage data locally using Google Sheets or JSON structures, ensuring easy access and manipulation of data without the need for advanced security measures."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "System Performance Optimization",
+                "Description": "Ensure the system operates efficiently on local machines using multi-threading with up to 10 threads, focusing on quality and human-like interactions without the use of external automation tools like Selenium."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Logging and Monitoring",
+                "Description": "Develop a logging mechanism that tracks each function's performance and interactions, especially under multi-threading operations, to ensure system reliability and facilitate debugging."
+            }
+        ],
+        "Business Professional": [
+            {
+                "Epic ID": "E001",
+                "Title": "LinkedIn Profile Management",
+                "Description": "Develop a system to analyze and categorize LinkedIn profiles based on industry, role level, and geographic region using NLP, facilitating targeted and efficient outreach."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "CRM Integration and Management",
+                "Description": "Create a CRM system within the platform that integrates with the LinkedIn profile analysis to manage contacts up to 30,000, enabling sorting and filtering capabilities by various criteria such as industry and location."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Message Personalization and Dispatch",
+                "Description": "Implement functionality to send personalized messages to LinkedIn contacts, with a review and approval system allowing the user to edit messages in real-time before dispatch to maintain quality communication."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "UI Development for Message Review",
+                "Description": "Design and implement a user interface using Plasma that allows users to review, approve, or reject messages via a card-like layout, enhancing the ease of interaction and decision-making."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Local Data Handling and Security",
+                "Description": "Establish mechanisms for managing data locally using Google Sheets or JSON structures, ensuring simple and direct data management tailored to individual use without advanced security measures."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Performance Optimization",
+                "Description": "Incorporate multi-threading to optimize system performance, allowing up to 10 threads simultaneously without overloading the local system, ensuring efficient operation under the specified local hardware constraints."
+            },
+            {
+                "Epic ID": "E007",
+                "Title": "System Logging and Monitoring",
+                "Description": "Develop comprehensive logging functionalities for each system operation, especially focusing on multi-threaded processes, to ensure transparency and aid in maintenance and troubleshooting."
+            },
+            {
+                "Epic ID": "E008",
+                "Title": "User Interaction Design",
+                "Description": "Create an intuitive and action-oriented user flow that starts with a manual trigger by the user to initiate message sending, enhancing user control and interaction with the system."
             }
         ]
     }
