@@ -1,0 +1,20 @@
+{
+    "Very Simple": {
+        "hours": 0.5
+    },
+    "Simple": {
+        "hours": 1
+    },
+    "Medium": {
+        "hours": 2
+    },
+    "Complex": {
+        "hours": 4
+    },
+    "Very Complex": {
+        "hours": 12
+    },
+    "Hourly Rate": {
+        "Rate": 50
+    }
+}

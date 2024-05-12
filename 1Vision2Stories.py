@@ -4,7 +4,7 @@ from OpenAIModels.textgen import generate_text, generate_text_json
 import threading
 from collections import OrderedDict
 import tkinter as tk
-from tkinter import scrolledtext
+from tkinter import scrolledtext, simpledialog
 import queue
 import time
 
@@ -91,6 +91,40 @@ def StakeHolders(Project_Requirements):
     primary_stakeholders_response = generate_text_json(system_context, assistant_context, initial_prompt)
     return primary_stakeholders_response
 
+
+def edit_stakeholders(stakeholders_json):
+    """Opens a popup window to edit or delete stakeholders from stakeholders_json."""
+    root = tk.Tk()
+    root.title("Edit Stakeholders")
+
+    # Extract stakeholders from JSON
+    stakeholders = json.loads(stakeholders_json)['Stakeholders']
+
+    # Dictionary to store checkboxes and their labels
+    stakeholder_vars = {}
+
+    # Function to save changes and close the popup
+    def save_changes():
+        updated_stakeholders = [stakeholder for stakeholder, var in stakeholder_vars.items() if var.get() == 1]
+        # Update the stakeholders_json directly
+        nonlocal stakeholders_json
+        stakeholders_json = json.dumps({'Stakeholders': updated_stakeholders})
+        root.destroy()
+
+    # Create checkboxes for each stakeholder
+    for stakeholder in stakeholders:
+        var = tk.IntVar(value=1)  # Default is checked
+        checkbox = tk.Checkbutton(root, text=stakeholder, variable=var)
+        checkbox.pack(anchor='w')
+        stakeholder_vars[stakeholder] = var
+
+    # Button to confirm changes
+    confirm_button = tk.Button(root, text="Confirm Changes", command=save_changes)
+    confirm_button.pack()
+
+    root.mainloop()
+
+    return stakeholders_json
 
 
 def Revenue_Model(Project_Requirements, primary_stakeholders):
@@ -376,7 +410,10 @@ def main():
     print(f"{business_verticles_json}")
 
     stakeholders_json = StakeHolders(Project_Requirements)
-    print(f"{stakeholders_json}")
+    print(f"Original Stakeholders: {stakeholders_json}")
+
+    # Open the popup to edit stakeholders
+    stakeholders_json = edit_stakeholders(stakeholders_json)
 
     revenue_models_json = Revenue_Model(Project_Requirements, stakeholders_json)
     print(f"{revenue_models_json}")

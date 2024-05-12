@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Proposal Letter</title>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo" style="height: 100px;">
+    </header>
+    <main>
+        <h1>{{ data['ProjectTitle'] }}</h1>
+        <p><strong>Executive Summary:</strong> {{ data['ExecutiveSummary'] }}</p>
+        <p><strong>Background:</strong> {{ data['Background'] }}</p>
+        <h2>Objectives</h2>
+        <ul>
+            {% for obj in data['Objectives'] %}
+            <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Scope:</strong> {{ data['Scope'] }}</p>
+        <h2>Deliverables</h2>
+        <ul>
+            {% for deliverable in data['Deliverables'] %}
+            <li>{{ deliverable }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Milestones</h2>
+        <div>
+            {% for milestone in data['Milestones']['Milestones'] %}
+                <h3>{{ milestone['MilestoneName'] }}</h3>
+                <ul>
+                    {% for deliverable in milestone['KeyDeliverables'] %}
+                        <li>{{ deliverable }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+        <h2>Risks</h2>
+        <div>
+            {% for risk in data['Risks']['Risks'] %}
+                <h3>{{ risk['RiskDescription'] }}</h3>
+                <ul>
+                    {% for strategy in risk['MitigationStrategies'] %}
+                        <li>{{ strategy }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+        <h2>Client Information</h2>
+        <p><strong>Company Name:</strong> {{ data['ClientInformation']['CompanyName'] }}</p>
+        <p><strong>Contact Person:</strong> {{ data['ClientInformation']['ContactPerson'] }}</p>
+        <p><strong>Address:</strong> {{ data['ClientInformation']['Address'] }}</p>
+        <p><strong>Email:</strong> {{ data['ClientInformation']['Email'] }}</p>
+        <p><strong>Phone:</strong> {{ data['ClientInformation']['Phone'] }}</p>
+    </main>
+</body>
+</html>

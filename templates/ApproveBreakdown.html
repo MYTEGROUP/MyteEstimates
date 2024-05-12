@@ -59,20 +59,32 @@
                         <div class="task-card" data-task-id="{{ task['Task ID'] }}">
                             <input type="text" name="task_description" value="{{ task['Description'] }}">
                             <button onclick="approveTask('{{ epic_id }}', '{{ story['Story ID'] }}', '{{ task['Task ID'] }}')">Approve Task</button>
+                            <button onclick="deleteTask('{{ epic_id }}', '{{ story['Story ID'] }}', '{{ task['Task ID'] }}')">Delete Task</button>
                         </div>
                     {% endfor %}
                     <button onclick="approveStory('{{ epic_id }}', '{{ story['Story ID'] }}')">Approve Story</button>
+                    <button onclick="deleteStory('{{ epic_id }}', '{{ story['Story ID'] }}')">Delete Story</button>
                 </div>
             {% endfor %}
             <button onclick="approveEpic('{{ epic_id }}')">Approve Epic</button>
+            <button onclick="deleteEpic('{{ epic_id }}')">Delete Epic</button>
         </div>
     {% endfor %}
 </body>
 <script>
 function approveTask(epicId, storyId, taskId) {
-    var data = { 'action': 'approve_task', 'epic_id': epicId, 'story_id': storyId, 'task_id': taskId };
+    var inputField = document.querySelector(`div[data-task-id="${taskId}"] input[name="task_description"]`);
+    var newDescription = inputField.value;
+    var data = {
+        'action': 'approve_task',
+        'epic_id': epicId,
+        'story_id': storyId,
+        'task_id': taskId,
+        'new_description': newDescription  // Send the new description to the server
+    };
     sendUpdateRequest(data);
 }
+
 
 function approveStory(epicId, storyId) {
     let allTasksApproved = true;
@@ -110,7 +122,26 @@ function approveEpic(epicId) {
     sendUpdateRequest(data);
 }
 
-function sendUpdateRequest(data) {
+function deleteEpic(epicId) {
+    sendUpdateRequest({ 'action': 'delete_epic', 'epic_id': epicId });
+}
+
+function deleteStory(epicId, storyId) {
+    sendUpdateRequest({ 'action': 'delete_story', 'epic_id': epicId, 'story_id': storyId });
+}
+
+function deleteTask(epicId, storyId, taskId) {
+    var data = {
+        'action': 'delete_task',
+        'epic_id': epicId,
+        'story_id': storyId,
+        'task_id': taskId
+    };
+    sendUpdateRequest(data, taskId);  // Pass the taskId to identify which task to remove
+}
+
+
+function sendUpdateRequest(data, taskId) {
     fetch('/update', {
         method: 'POST',
         headers: {
@@ -118,18 +149,29 @@ function sendUpdateRequest(data) {
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(responseData => {
         if (responseData.success) {
             alert('Update successful!');
-            window.location.reload(); // This may be changed to dynamically update the UI instead
+            // Check if it's a delete task action and remove the task from the UI
+            if (data.action === 'delete_task' && taskId) {
+                var taskCard = document.querySelector(`div[data-task-id="${taskId}"]`);
+                if (taskCard) {
+                    taskCard.remove();  // Remove the task card from the document
+                }
+            }
         } else {
             alert('Error: ' + responseData.message);
         }
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('Error sending update request.');
+        alert('Error sending update request: ' + error.message);
     });
 }
 </script>

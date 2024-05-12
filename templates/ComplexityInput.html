@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complexity Editor</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
+<style>
+  body { font-family: Arial, sans-serif; }
+  table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+  th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+  input { padding: 8px; width: 100px; }
+  button { padding: 10px 20px; margin-top: 20px; }
+</style>
+</head>
+<body>
+<h1>Edit Complexity and Hourly Rate</h1>
+<table>
+  <tr>
+    <th>Complexity</th>
+    <th>Hours</th>
+  </tr>
+  {% for complexity, details in complexities.items() if complexity != 'Hourly Rate' %}
+  <tr>
+    <td>{{ complexity }}</td>
+    <td><input type="number" value="{{ details.hours }}" id="{{ complexity }}"></td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <th>Hourly Rate</th>
+    <td><input type="number" value="{{ complexities['Hourly Rate'].Rate }}" id="Hourly_Rate"></td>
+  </tr>
+</table>
+<button onclick="saveData()">Save</button>
+<script>
+function saveData() {
+    console.log("Saving data...");
+    const complexities = {};
+    document.querySelectorAll('tr').forEach(row => {
+        const complexity = row.cells[0].textContent.trim();
+        const hoursInput = row.querySelector('input');
+        if (hoursInput) {  // Check if the input exists
+            if (complexity === 'Hourly Rate') {
+                complexities[complexity] = { "Rate": parseInt(hoursInput.value) };
+            } else {
+                complexities[complexity] = { "hours": parseInt(hoursInput.value) };
+            }
+        } else {
+            console.error('Input not found for complexity:', complexity);
+        }
+    });
+    console.log("Data to save:", complexities);
+    fetch('/save', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(complexities)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Response:", data);
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Failed to save data.");
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ data['ProjectTitle'] }} - Proposal</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo">
+            <div class="title-date">
+                <h1>{{ data['ProjectTitle'] }}</h1>
+                <p>Proposal ID: {{ data['ProposalID'] }}</p> <!-- Add Proposal ID here -->
+            </div>
+        </div>
+        <div class="client-info">
+            <p>Date: {{ data['Date']['CurrentDate'] }}</p>
+            <p>{{ data['ClientInformation']['CompanyName'] }}</p>
+            <p>{{ data['ClientInformation']['ContactPerson'] }}</p>
+            <p>{{ data['ClientInformation']['Address'] }}</p>
+            <p>{{ data['ClientInformation']['Email'] }}</p>
+            <p>{{ data['ClientInformation']['Phone'] }}</p>
+        </div>
+    </header>
+    <main>
+        <section class="executive-summary">
+            <h2>Executive Summary</h2>
+            <p>{{ data['ExecutiveSummary'] }}</p>
+        </section>
+        <section class="background">
+            <h2>Background</h2>
+            <p>{{ data['Background'] }}</p>
+        </section>
+        <section class="objectives">
+            <h2>Objectives</h2>
+            <ul>
+                {% for objective in data['Objectives'] %}
+                <li>{{ objective }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="scope">
+            <h2>Scope</h2>
+            <p>{{ data['Scope'] }}</p>
+        </section>
+        <section class="deliverables">
+            <h2>Deliverables</h2>
+            <ul>
+                {% for deliverable in data['Deliverables'] %}
+                <li>{{ deliverable }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="milestones">
+            <h2>Milestones</h2>
+            {% for milestone in data['Milestones']['Milestones'] %}
+            <div>
+                <h3>{{ milestone['MilestoneName'] }}</h3>
+                <ul>
+                    {% for key_deliverable in milestone['KeyDeliverables'] %}
+                    <li>{{ key_deliverable }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+        <section class="risks">
+            <h2>Risks</h2>
+            {% for risk in data['Risks']['Risks'] %}
+            <div>
+                <h3>{{ risk['RiskDescription'] }}</h3>
+                <ul>
+                    {% for strategy in risk['MitigationStrategies'] %}
+                    <li>{{ strategy }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+        <section class="qualifications">
+            <h2>Our Qualifications</h2>
+            <h3>Company Profile</h3>
+            <p>{{ data['OurQualifications']['CompanyProfile'] }}</p>
+            <h3>Relevant Experience</h3>
+            <p>{{ data['OurQualifications']['RelevantExperience'] }}</p>
+            <h3>Team Expertise</h3>
+            <p>{{ data['OurQualifications']['TeamExpertise'] }}</p>
+        </section>
+       <section class="budget">
+            <h2>Budget</h2>
+            <p>Total Estimated Hours: {{ data['Budget']['TotalEstimatedHours'] }}</p>
+            <p>Total Estimated Cost: ${{ data['Budget']['TotalEstimatedCost'] }}</p>
+       <section class="Project Breakdown">
+            <h2>Project Breakdown</h2>
+            {% for stakeholder in data['Budget']['CostBreakdown'] %}
+            <h3>Stake Holder : {{ stakeholder['Stakeholder'] }}</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Hours</th>
+                        <th>Total Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for detail in stakeholder['Details'] %}
+                    <tr>
+                        <td>{{ detail['Item'] }}</td>
+                        <td>{{ detail['Description'] }}</td>
+                        <td>{{ detail['TotalHours'] }}</td>
+                        <td>${{ detail['Cost'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endfor %}
+        </section>
+    </main>
+<!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>{{ data['UserInformation']['CompanyName'] }}</p>
+            <p>{{ data['UserInformation']['Address'] }}</p>
+            <p>{{ data['UserInformation']['Email'] }}</p>
+            <p>{{ data['UserInformation']['Phone'] }}</p>
+            <p>{{ data['UserInformation']['Website'] }}</p>
+        </div>
+    </footer>
+    <!-- Print Button -->
+    <button onclick="printPDF()">Print Me</button>
+
+    <!-- JavaScript for Printing PDF -->
+    <script>
+        function printPDF() {
+            // Make an AJAX request to the print_pdf route
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/print_pdf", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.responseType = "blob"; // Set response type to blob
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Create a blob URL for the PDF
+                    var blob = new Blob([xhr.response], { type: "application/pdf" });
+                    var url = window.URL.createObjectURL(blob);
+                    // Create a link element to download the PDF
+                    var a = document.createElement("a");
+                    a.href = url;
+                    a.download = "{{ data['UserInformation']['CompanyName'] }} - {{ data['ProjectTitle'] }} - Proposal - {{ data['Date']['CurrentDate'] }}.pdf";
+                    document.body.appendChild(a);
+                    a.click();
+                    // Cleanup
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                }
+            };
+            // Send the AJAX request with the JSON data
+            xhr.send(JSON.stringify({}));
+        }
+    </script>
+
+</body>
+</html>

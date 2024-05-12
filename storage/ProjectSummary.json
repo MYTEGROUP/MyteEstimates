@@ -1,28 +1,40 @@
 {
-    "Project Vision": "**Project Vision: Revolutionizing Professional Networking with Precision and Personal Touch**\n\nImagine a world where professional outreach is not just efficient but exquisitely tailored to each contact. We are crafting an innovative software solution designed to transform how professionals engage on LinkedIn. Our cutting-edge CRM tool leverages the power of Natural Language Processing to analyze and categorize LinkedIn profiles, optimizing your network strategy by industry, role, and region. \n\nSet to redefine personalized communication, our system allows you to send up to 30 meticulously crafted messages per day, reviewed and refined by you to ensure authenticity and relevance. This tool isn't just software; it's your personal assistant, enhancing your professional interactions without compromising the human touch.\n\nDesigned for simplicity and effectiveness, our user-friendly interface ensures that managing your professional network is seamless, enabling more meaningful connections. Step into the future of professional networking where managing and expanding your LinkedIn network is not only possible but also a pleasure. Join us in making professional networking more personal, precise, and powerful.",
+    "Project Vision": "**Revolutionize Real Estate Transactions with Our All-in-One Mobile Platform**\n\nImagine a world where all your real estate needs are met with a single tap on your smartphone. That's the future we're building! Our innovative mobile platform is designed to transform the real estate industry by streamlining every aspect of property transactions. With an intuitive interface that caters to property owners, managers, agents, buyers, sellers, tenants, and service providers, our app ensures a seamless, efficient, and enjoyable real estate experience.\n\nGone are the days of juggling multiple tools and platforms. Our app integrates listing properties, managing transactions, booking services, and facilitating communication into one cohesive platform. With features like role-based access, real-time analytics, and robust security measures, users enjoy unparalleled convenience and control, making property dealings more effective than ever before.\n\nJoin us in reshaping the real estate landscape. Our platform not only enhances user satisfaction but also opens the market to new possibilities, empowering stakeholders to succeed in today\u2019s dynamic real estate environment. Be part of this revolutionary change where technology meets real estate, and together, let\u2019s build a future where real estate transactions are as simple as a click!",
     "Business Vertical": [
-        "Professional Networking"
+        "Real Estate"
     ],
     "Stakeholders": [
-        "Sales Representative",
-        "Recruiter",
-        "Business Professional"
+        "Property Owners",
+        "Real Estate Agents",
+        "Buyers and Sellers",
+        "Tenants",
+        "Service Providers"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "Sales Representative",
+            "Stakeholder": "Property Owners",
             "Model": "Subscription",
-            "Rationale": "Sales representatives using the LinkedIn outreach system would benefit from continual access to the CRM and messaging functionalities to maintain and expand their sales network effectively. A subscription model enables ongoing access to updated features and support, ensuring the tool remains useful for their dynamic sales activities. The sales representative pays a regular fee (monthly or annually) for using the software, which is collected by the software provider."
+            "Rationale": "Property owners would benefit from a subscription model, paying monthly or annually for access to the platform to manage properties, list them, and utilize enhanced tools for analytics and transactions. The subscription fee is for continuous access to the app's management features, and the revenue is received by the software provider."
         },
         {
-            "Stakeholder": "Recruiter",
-            "Model": "Subscription",
-            "Rationale": "Recruiters require consistent access to a tool that helps manage and engage with potential candidates. A subscription model is suitable as it provides recruiters with continuous access to the system's features, including profile analysis and personalized messaging, which are critical for their ongoing recruitment campaigns. This model ensures that recruiters have the latest functionalities for effective communication and candidate management. The recruiter pays a subscription fee to the software provider for system access."
+            "Stakeholder": "Real Estate Agents",
+            "Model": "Commission",
+            "Rationale": "Real estate agents typically earn through commissions from sales and rentals. The app could charge a small commission fee for transactions processed through the platform or for successful leads generated, aligning with how agents typically earn. This commission would be a percentage of the transaction value, paid by agents only upon successful transactions, with the revenue going to the software provider."
         },
         {
-            "Stakeholder": "Business Professional",
+            "Stakeholder": "Buyers and Sellers",
+            "Model": "Direct Payment",
+            "Rationale": "Buyers and sellers could pay a fixed fee for premium features such as featured listings or enhanced visibility of their properties, or for accessing specialized market analytics. These direct payments ensure that users only pay for the services they opt into, with the software provider receiving these fees."
+        },
+        {
+            "Stakeholder": "Tenants",
             "Model": "Subscription",
-            "Rationale": "Business professionals, such as networking individuals or entrepreneurs, will use the system to enhance their professional interactions on LinkedIn. The subscription model offers them a reliable and consistent service, which is essential for building and maintaining professional relationships. They pay a recurring subscription fee for access to the system, ensuring they can continually benefit from organized contact management and personalized communication capabilities. Revenue from subscriptions is directed to the software provider."
+            "Rationale": "Tenants could use a subscription model to access the platform for ongoing housing searches, automated alerts for new listings, and management of rental agreements. A monthly subscription fee would provide them continuous access to rental-related services, with the revenue collected by the software company."
+        },
+        {
+            "Stakeholder": "Service Providers",
+            "Model": "Commission",
+            "Rationale": "Service providers, such as maintenance or repair professionals, could be charged a commission for each booking made through the app. This aligns with their existing pricing models where they pay per lead or job, ensuring they only incur costs when they gain business. The commission is taken as a percentage of the service fee, with the revenue going to the software provider."
         }
     ]
 }

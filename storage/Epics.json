@@ -1,114 +1,158 @@
 {
     "Stakeholder_Epics": {
-        "Recruiter": [
+        "Buyers and Sellers": [
             {
                 "Epic ID": "E001",
-                "Title": "CRM System Development",
-                "Description": "Design and develop a CRM system to manage up to 30,000 LinkedIn contacts, enabling sorting by industry, role level, and geographic region, integrating NLP for data categorization and personalized communication."
+                "Title": "Property Listing Management",
+                "Description": "Create a seamless interface for sellers to list their properties with detailed attributes such as location, price, and descriptions, and allow buyers to easily browse and filter these listings."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Profile Analysis and Personalization",
-                "Description": "Implement functionality to analyze LinkedIn profiles using OpenAI API to categorize contacts and personalize messages based on industry, role, and region, ensuring relevant and targeted communications."
+                "Title": "Transaction Handling",
+                "Description": "Develop a robust system to manage the end-to-end transaction process for buyers and sellers, including offers, counteroffers, and closing transactions digitally."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Message Review and Approval Interface",
-                "Description": "Create a user interface using Plasma that allows the recruiter to review, approve, or reject personalized messages in a photo card layout, with real-time editing capabilities to ensure message accuracy before sending."
+                "Title": "Real-Time Analytics for Market Trends",
+                "Description": "Provide buyers and sellers with real-time analytics on market trends, property valuations, and other relevant data to help them make informed decisions."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Local Data Management",
-                "Description": "Develop a solution for managing LinkedIn contact data locally using Google Sheets or JSON structures, ensuring easy access and manipulation of contact data without complex security measures."
+                "Title": "Integrated Communication Tools",
+                "Description": "Implement communication tools within the app to enable direct and secure communication between buyers and sellers to negotiate deals and exchange information."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Multi-threading for Performance Optimization",
-                "Description": "Implement multi-threading capabilities to enhance system performance, allowing up to 10 concurrent threads to handle operations without overloading the local system, focusing on maintaining human-like interactions."
+                "Title": "Secure Document Handling and Storage",
+                "Description": "Ensure secure handling, signing, and storage of documents such as contracts and legal papers necessary for property transactions."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Logging and Monitoring",
-                "Description": "Establish a logging mechanism for each function within the software to track operations and performance, particularly in multi-threaded environments, ensuring reliability and aiding in troubleshooting."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "Unit Testing for System Verification",
-                "Description": "Define and implement unit tests for each function of the system to ensure all components work as intended, prioritizing reliability and correctness in the software's operations."
+                "Title": "User Verification and Authentication",
+                "Description": "Enhance security by implementing a robust user verification and authentication system to protect the interests of both buyers and sellers."
             }
         ],
-        "Sales Representative": [
+        "Property Owners": [
             {
                 "Epic ID": "E001",
-                "Title": "CRM Development for LinkedIn Outreach",
-                "Description": "Develop a CRM system that integrates with the user's LinkedIn account to manage and analyze up to 30,000 contacts. This system should include functionalities to categorize contacts by industry, role, and geographic region using NLP techniques."
+                "Title": "Property Management Integration",
+                "Description": "Develop a comprehensive module within the app that enables property owners to efficiently manage their properties, including functionalities such as listing properties for sale or rent, tracking and managing multiple properties, and receiving notifications about property status changes."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Message Management System",
-                "Description": "Implement a system that allows the user to send up to 30 personalized messages daily to LinkedIn contacts, with functionality for users to manually review, edit, and approve each message before sending."
+                "Title": "Financial Management Tools",
+                "Description": "Create tools for property owners to handle financial aspects related to property management, such as tracking rental payments, calculating expenses, and managing financial reports to streamline their financial oversight."
             },
             {
                 "Epic ID": "E003",
-                "Title": "User Interface for Message Review",
-                "Description": "Design and implement a user interface using Plasma that displays messages in a photocards-like format with options to approve, edit, or reject messages in real-time."
+                "Title": "Service Booking System",
+                "Description": "Implement a system that allows property owners to book and manage services related to property maintenance, including scheduling repairs, regular maintenance, and managing service provider contracts directly from the app."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Local Data Management",
-                "Description": "Create a system to manage data locally using Google Sheets or JSON structures, ensuring easy access and manipulation of data without the need for advanced security measures."
+                "Title": "Owner Communication Portal",
+                "Description": "Establish a communication platform within the app that facilitates seamless communication between property owners, tenants, real estate agents, and service providers, enhancing coordination and resolving issues promptly."
             },
             {
                 "Epic ID": "E005",
-                "Title": "System Performance Optimization",
-                "Description": "Ensure the system operates efficiently on local machines using multi-threading with up to 10 threads, focusing on quality and human-like interactions without the use of external automation tools like Selenium."
+                "Title": "Security and Privacy Enhancements",
+                "Description": "Enhance the app with robust security measures to protect sensitive information and transactions related to property ownership and management, ensuring that property owners can operate with confidence in the security of their data."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Logging and Monitoring",
-                "Description": "Develop a logging mechanism that tracks each function's performance and interactions, especially under multi-threading operations, to ensure system reliability and facilitate debugging."
+                "Title": "Analytics and Reporting",
+                "Description": "Provide property owners with advanced analytics tools to gain insights into property performance, market trends, and investment returns, helping them make informed decisions about their real estate investments."
             }
         ],
-        "Business Professional": [
+        "Real Estate Agents": [
             {
                 "Epic ID": "E001",
-                "Title": "LinkedIn Profile Management",
-                "Description": "Develop a system to analyze and categorize LinkedIn profiles based on industry, role level, and geographic region using NLP, facilitating targeted and efficient outreach."
+                "Title": "Property Listings Management",
+                "Description": "Enable real estate agents to list, update, and manage properties efficiently on the platform, including details like location, price, images, and specifications."
             },
             {
                 "Epic ID": "E002",
-                "Title": "CRM Integration and Management",
-                "Description": "Create a CRM system within the platform that integrates with the LinkedIn profile analysis to manage contacts up to 30,000, enabling sorting and filtering capabilities by various criteria such as industry and location."
+                "Title": "Transaction Handling",
+                "Description": "Facilitate the management of transactions for buying, selling, and renting, including capabilities for overseeing offers, negotiations, and closing processes directly from the app."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Message Personalization and Dispatch",
-                "Description": "Implement functionality to send personalized messages to LinkedIn contacts, with a review and approval system allowing the user to edit messages in real-time before dispatch to maintain quality communication."
+                "Title": "Client Communication Tools",
+                "Description": "Develop integrated communication tools within the app to allow real estate agents to maintain continuous and effective communication with clients, including notifications and messaging functionalities."
             },
             {
                 "Epic ID": "E004",
-                "Title": "UI Development for Message Review",
-                "Description": "Design and implement a user interface using Plasma that allows users to review, approve, or reject messages via a card-like layout, enhancing the ease of interaction and decision-making."
+                "Title": "Performance Analytics",
+                "Description": "Provide real estate agents with real-time analytics on property listings and market trends to aid in strategic decision-making and enhance their ability to serve clients effectively."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Local Data Handling and Security",
-                "Description": "Establish mechanisms for managing data locally using Google Sheets or JSON structures, ensuring simple and direct data management tailored to individual use without advanced security measures."
+                "Title": "Security and Data Privacy",
+                "Description": "Ensure robust security measures and data privacy protocols to protect sensitive client information and transaction details, complying with relevant regulations."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Performance Optimization",
-                "Description": "Incorporate multi-threading to optimize system performance, allowing up to 10 threads simultaneously without overloading the local system, ensuring efficient operation under the specified local hardware constraints."
+                "Title": "User Training and Support",
+                "Description": "Offer comprehensive training materials and support systems to help real estate agents adapt to and navigate the new platform, maximizing its utility in their daily operations."
+            }
+        ],
+        "Tenants": [
+            {
+                "Epic ID": "E001",
+                "Title": "Tenant Property Search and Filtering",
+                "Description": "Develop a comprehensive search functionality that allows tenants to search for properties based on various criteria such as location, price, size, and other relevant parameters. Include advanced filtering options to help tenants narrow down their choices efficiently."
             },
             {
-                "Epic ID": "E007",
-                "Title": "System Logging and Monitoring",
-                "Description": "Develop comprehensive logging functionalities for each system operation, especially focusing on multi-threaded processes, to ensure transparency and aid in maintenance and troubleshooting."
+                "Epic ID": "E002",
+                "Title": "Rental Application and Lease Management",
+                "Description": "Create a system for tenants to easily apply for rentals and manage lease documents within the app. This system should support uploading necessary documents, digital signing, and tracking the status of their application."
             },
             {
-                "Epic ID": "E008",
-                "Title": "User Interaction Design",
-                "Description": "Create an intuitive and action-oriented user flow that starts with a manual trigger by the user to initiate message sending, enhancing user control and interaction with the system."
+                "Epic ID": "E003",
+                "Title": "Communication Tools for Tenant Interactions",
+                "Description": "Implement integrated communication tools that enable tenants to contact property managers and landlords directly through the app for inquiries, issues, or updates related to their rental situation."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Maintenance Request Portal",
+                "Description": "Provide a feature where tenants can report maintenance issues and track the status of their requests. This portal should allow for uploading images or videos, choosing urgency levels, and receiving updates on scheduled repairs."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Payment System Integration",
+                "Description": "Develop a secure payment gateway for tenants to pay rent and other property-related fees. This system should support various payment methods and provide reminders and receipts for transactions."
+            }
+        ],
+        "Service Providers": [
+            {
+                "Epic ID": "E001",
+                "Title": "Service Booking Management",
+                "Description": "Develop a robust system within the app that allows service providers to manage bookings, schedule appointments, and track service requests from property managers and owners efficiently."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Service Listing and Promotion",
+                "Description": "Create features that enable service providers to list their services, including descriptions, availability, and pricing, and promote their offerings to targeted real estate stakeholders within the app."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Communication Tools Integration",
+                "Description": "Implement integrated communication tools that enable service providers to communicate directly with clients (property owners, managers, and tenants) to discuss services, negotiate contracts, and provide updates."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Transaction Management for Service Providers",
+                "Description": "Develop a transaction management system specifically for service providers to process payments securely, generate invoices, and manage financial records within the app."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Performance Analytics Dashboard",
+                "Description": "Provide a dashboard for service providers that delivers real-time analytics on their service usage, client satisfaction ratings, and financial performance to help them optimize their operations."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Feedback and Ratings System",
+                "Description": "Integrate a feedback and ratings system that allows property owners, managers, and tenants to rate services provided, thereby helping service providers improve service quality and reputation within the platform."
             }
         ]
     }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 8.5in; /* Set maximum width to fit 8.5x11 letter format */
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: Center;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+            animation: fadeInUp 1s ease-out;
+        }
+        h2, h3, h4 {
+            color: white;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            display: table;
+        }
+        h2 { background: #4CAF50; } /* Title background color */
+        h3.epic-title { background-color: #6767b8; } /* Epic card title background color */
+        h3.story-title { background-color: #67b867; } /* Story card title background color */
+        h3.task-title { background-color: #b86767; } /* Task card title background color */
+        p, li {
+            margin-top: 0;
+            animation: fadeInUp 1s ease-out;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding-left: 20px;
+            position: relative;
+        }
+        li:before {
+            content: "\2022";
+            color: #4CAF50;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .card {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left; /* Align content to the left */
+        }
+        .stakeholder-card { background-color: #f9f9f9; }
+        .epic-card { background-color: #e9e9ff; }
+        .story-card { background-color: #e9ffe9; }
+        .task-card { background-color: #ffe9e9; }
+    </style>
+</head>
+<body>
+    <h1>{{ proposal_data["ProjectTitle"] }}</h1>
+
+    <div>
+        <h2>Executive Summary</h2>
+        <p>{{ proposal_data["ExecutiveSummary"] }}</p>
+    </div>
+
+    <div>
+        <h2>Background</h2>
+        <p>{{ proposal_data["Background"] }}</p>
+    </div>
+
+    <div>
+        <h2>Objectives</h2>
+        <ul>
+            {% for objective in proposal_data["Objectives"] %}
+                <li>{{ objective["Objective"] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <h2>Scope</h2>
+        <p>{{ proposal_data["Scope"] }}</p>
+    </div>
+
+    <div>
+        <h2>Deliverables</h2>
+        <ul>
+            {% for deliverable in proposal_data["Deliverables"] %}
+                <li>{{ deliverable["Deliverable"] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Project Breakdown -->
+    <h1>Project Breakdown</h1>
+    {% for stakeholder, epics_dict in project_breakdown.items() %}
+    <div class="card stakeholder-card">
+        <h2>Stakeholder: {{ stakeholder }}</h2>
+        <!-- Epics -->
+        {% for epic_id, epics in epics_dict.items() %}
+            {% for epic in epics %}
+            <div class="card epic-card">
+                <h3 class="epic-title">Epic ID: {{ epic['Epic ID'] }} - {{ epic['Epic Title'] }}</h3>
+                <p>{{ epic['Epic Description'] }}</p>
+                <!-- Stories -->
+                {% for story in [epic] %}
+                <div class="card story-card">
+                    <h3 class="story-title">Story ID: {{ story['Story ID'] }} - {{ story['Story Title'] }}</h3>
+                    <p>{{ story['Story Description'] }}</p>
+                    <ul>
+                        {% for criteria in story['Story Acceptance Criteria'] %}
+                        <li>{{ criteria }}</li>
+                        {% endfor %}
+                    </ul>
+                    <!-- Tasks -->
+                    {% for task in story['Tasks'] %}
+                    <div class="card task-card">
+                        <h3 class="task-title">Task ID: {{ task['Task ID'] }} - {{ task['Description'] }}</h3>
+                        <p>Complexity: {{ task['Complexity'] }}</p>
+                        <p>Hours: {{ task['Estimated Hours'] }}</p>
+                        <p>Cost: {{ task['Cost'] }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+</html>

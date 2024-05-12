@@ -1,0 +1,67 @@
+{
+  "Date": {
+    "CurrentDate": ""
+  },
+ "ClientInformation":
+        {
+            "CompanyName": "Montreal Jewish Hospital",
+            "ContactPerson": "Marco Mascerella",
+            "Address": "9215 Villieu, Montreal, QC, CA H1R2J5",
+            "Email": "marco@testc.com",
+            "Phone": "5148049207"
+         },
+  "UserInformation":
+        {
+            "CompanyName": "Myte Group Inc.",
+            "Address": "7501 M.B Jodoin, Anjou, ",
+            "Email": "ahmed.mekallach@mytegroup.com",
+            "Phone": "5148049207",
+            "Website": "www.mytegroup.com"
+        },
+  "OurQualifications": {
+    "CompanyProfile": "",
+    "RelevantExperience": "",
+    "TeamExpertise": ""
+  },
+  "ProjectTitle": "",
+  "ExecutiveSummary": "",
+  "Background": "",
+  "Objectives": "",
+  "Scope": "",
+  "Deliverables": [
+    {
+      "Deliverable": ""
+    }
+  ],
+  "TechnologyStack": "",
+  "Timeline": {
+    "StartToEndDates": {
+      "EstimatedStartDate": "",
+      "CompletionDate": ""
+    },
+    "Milestones": [
+      {
+        "MilestoneName": "",
+        "EstimatedDate": "",
+        "KeyDeliverables": ""
+      }
+    ]
+  },
+  "Budget": {
+    "TotalEstimate": "",
+    "CostBreakdown": [
+      {
+        "Item": "",
+        "Cost": "",
+        "Description": ""
+      }
+    ]
+  },
+  "Risks": [
+    {
+      "RiskDescription": "",
+      "MitigationStrategies": ""
+    }
+  ],
+  "Appendices": ""
+}
