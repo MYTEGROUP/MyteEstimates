@@ -67,6 +67,7 @@ def generate_tasks_for_story(story, acceptance_criteria, epic, stakeholder,proje
         "Provide tasks that are specific, measurable, achievable, and relevant that can be packaged into a function on python with clear inputs and outputs in the description. "
         "Your response should be based specifically on the provided project context: the story, its acceptance criteria, the epic it's under, "
         "the stakeholder the epic is under, the list of stakeholders, epics, stories. Do not provide a time estimate in the task description."
+        "Consider the following Tech Stack : (Python / Flask -- AWS services for databases -- OpenAI API For any NLP Transformer needs -- Desktop Application focus for Windows)"
     )
 
     assistant_context = ("Structure each task in a JSON format with key 'Tasks' and then a list of descriptions for each task. "
