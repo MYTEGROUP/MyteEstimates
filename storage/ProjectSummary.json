@@ -1,58 +1,16 @@
 {
-    "Project Vision": "### Project Vision\n\nImagine a world where managing complex software development projects is as seamless and efficient as a well-oiled machine. Our revolutionary AI-powered internal tool is set to transform the operations of an AI Automation Software Development Service Company, bringing unparalleled efficiency and integration to every facet of the business. \n\nThis cutting-edge application will empower Project Managers (PMs) to independently handle customer relationships, project proposals, contracts, and project execution with the robust support of advanced AI systems. By leveraging Python, Flask, and AWS, our tool will centralize and streamline backend processes, eliminating inefficiencies and fragmentation.\n\nKey features include an intelligent CRM system that auto-extracts and analyzes emails using OpenAI GPT-4, a dynamic project management suite that distributes tasks globally, and a comprehensive client portal that enhances transparency and engagement. Additionally, our tool will automate social media outreach, content creation, and financial transactions, ensuring every aspect of the business is optimized for success.\n\nOur vision is to create a unified platform that not only boosts productivity and data consistency but also propels the company to new heights of operational excellence. This is not just software; it's the future of AI-driven project management, designed to elevate your business to unprecedented levels of efficiency and growth. Join us in revolutionizing the way you work!",
+    "Project Vision": "### Project Vision\n\nImagine a world where your LinkedIn networking is not just automated but intelligently optimized, freeing you from the mundane while amplifying your professional reach. Introducing **LinkedIn AI Agent**, a groundbreaking standalone desktop application designed to revolutionize how you manage and expand your LinkedIn connections. \n\nHarnessing the power of AI and Natural Language Processing (NLP) from OpenAI, this innovative tool will effortlessly scrape and organize your first-level contacts, generate personalized outreach messages, and manage follow-ups\u2014all while you focus on what truly matters. With a sleek, user-friendly interface built using Tkinter, you\u2019ll have a modern dashboard at your fingertips, making it easy to navigate through contacts, campaigns, and message approvals.\n\nGone are the days of manual data entry and repetitive tasks. Our AI Agent will not only save you time but also enhance the quality of your interactions, making your networking efforts more effective and impactful. Whether you\u2019re a busy professional, a sales executive, or an entrepreneur, this tool will be your personal LinkedIn assistant, operating seamlessly on your Windows PC.\n\nStep into the future of professional networking with LinkedIn AI Agent\u2014where automation meets intelligence, and your career growth knows no bounds.",
     "Business Vertical": [
-        "Software Development"
+        "Professional Networking"
     ],
     "Stakeholders": [
-        "Project Managers",
-        "Clients",
-        "International Coders",
-        "Company Management",
-        "Accounting Team",
-        "AI System Developers",
-        "Employees",
-        "Social Media Managers"
+        "LinkedIn User"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "Project Managers",
+            "Stakeholder": "LinkedIn User",
             "Model": "Subscription",
-            "Rationale": "Project Managers benefit from the comprehensive suite of tools provided by the software, which streamlines their workflow and increases efficiency. A subscription model ensures continuous access to the latest features and updates. The company pays a recurring fee for the service, and the revenue goes to the software provider."
-        },
-        {
-            "Stakeholder": "Clients",
-            "Model": "Direct Payment",
-            "Rationale": "Clients use the client portal to access contracts, communications, and project progress. They can also initiate new proposals. A direct payment model allows clients to pay for specific services or features they use, such as proposal generation or detailed project reports. The revenue is received by the software provider."
-        },
-        {
-            "Stakeholder": "International Coders",
-            "Model": "Commission",
-            "Rationale": "International Coders are paid based on the tasks they complete and the time they spend on projects. A commission model ensures they are compensated fairly for their work. The company pays the coders, and the revenue is distributed to the coders based on their contributions."
-        },
-        {
-            "Stakeholder": "Company Management",
-            "Model": "Subscription",
-            "Rationale": "Company Management requires access to comprehensive dashboards and reporting tools to monitor CRM, opportunities, contracts, and financials. A subscription model provides ongoing access to these critical features. The company pays a recurring fee, and the revenue goes to the software provider."
-        },
-        {
-            "Stakeholder": "Accounting Team",
-            "Model": "Subscription",
-            "Rationale": "The Accounting Team benefits from integrated financial modules that streamline accounting processes and connect with banking APIs. A subscription model ensures continuous access to these tools and regular updates. The company pays a recurring fee, and the revenue goes to the software provider."
-        },
-        {
-            "Stakeholder": "AI System Developers",
-            "Model": "Subscription",
-            "Rationale": "AI System Developers require a robust and scalable infrastructure to implement AI features. A subscription model provides ongoing access to necessary resources and updates. The company pays a recurring fee, and the revenue goes to the software provider."
-        },
-        {
-            "Stakeholder": "Employees",
-            "Model": "Subscription",
-            "Rationale": "Employees use the system to manage their profiles, track tasks, and communicate within the company. A subscription model ensures they have continuous access to these features. The company pays a recurring fee, and the revenue goes to the software provider."
-        },
-        {
-            "Stakeholder": "Social Media Managers",
-            "Model": "Subscription",
-            "Rationale": "Social Media Managers use tools to automate LinkedIn, Facebook outreach, and article writing and posting. A subscription model provides ongoing access to these tools and regular updates. The company pays a recurring fee, and the revenue goes to the software provider."
+            "Rationale": "A subscription model is suitable for LinkedIn users who will benefit from continuous updates, maintenance, and support for the software. Users pay a recurring fee (monthly or annually) for access to the software and its ongoing improvements. This model ensures a steady revenue stream for the developer while providing users with the latest features and enhancements. The developer receives the revenue, and users pay for the value of ongoing service and updates."
         }
     ]
 }

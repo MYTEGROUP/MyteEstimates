@@ -169,7 +169,7 @@
             currentAudioSource = data.audioFilePath;
 
             // Play the response audio
-            var audio = new Audio(data.audioFilePath);
+            var audio = new Audio(`/serve_audio/${data.audioDir}/${data.audioFile}`);
             audio.play();
             // Show the Replay button
             document.getElementById('replay-btn').style.display = 'inline-block';

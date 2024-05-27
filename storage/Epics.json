@@ -1,359 +1,40 @@
 {
     "Stakeholder_Epics": {
-        "International Coders": [
+        "LinkedIn User": [
             {
                 "Epic ID": "E001",
-                "Title": "Task Distribution and Management",
-                "Description": "Develop a system to distribute tasks to international coders, allowing them to start and end tasks, track time spent, and report progress. This system will ensure efficient task allocation and management."
+                "Title": "Data Collection and Storage",
+                "Description": "Implement functionalities to scrape first-level LinkedIn contacts, create an ignore list using NLP, store conversation history, and upload data for personalized messaging. This includes creating a UI for managing the ignore list and storing all data in local JSON files."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Time Tracking and Reporting",
-                "Description": "Implement a feature to track the time spent on each task by coders. This will compile time data by contract and coder, providing detailed reports for invoicing and project management."
+                "Title": "Contact Analysis and Message Generation",
+                "Description": "Develop features to analyze LinkedIn contact profiles using OpenAI NLP, generate personalized initial and follow-up messages based on conversation history and profile analysis, and store these messages with approval tracking keys."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Project Kick-Off System",
-                "Description": "Create a project kick-off system that takes detailed plans and distributes tasks to coders. This system will also track the start and end times of tasks, ensuring accurate time tracking and project progress monitoring."
+                "Title": "User Interface for Message Approval",
+                "Description": "Create a user-friendly interface for reviewing and approving generated messages. This UI should allow users to update the approval status of initial and follow-up messages, ensuring control over the communication being sent out."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Code Analysis and Reporting",
-                "Description": "Develop the Myte Code Checker tool to analyze code changes daily, compare them with the previous day's data, and generate natural language reports. This will help coders understand the changes and updates in the codebase."
+                "Title": "Campaign Management",
+                "Description": "Build functionalities for users to create and manage campaigns, filter contacts by various criteria, set system contexts for transformers, and view historical campaigns. This includes a UI for campaign creation and management."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Communication and Collaboration Tools",
-                "Description": "Implement tools for coders to communicate and collaborate effectively within the platform. This includes messaging, file sharing, and discussion boards to facilitate teamwork and coordination."
+                "Title": "Managing Potential Contacts",
+                "Description": "Implement features to create new contact lists based on specific criteria from LinkedIn searches, invite potential contacts programmatically, and track the status of these invitations. This includes storing potential contacts in a local JSON file and recording invite dates."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Access to Project Documentation",
-                "Description": "Provide coders with access to all relevant project documentation, including requirements, epics, stories, and tasks. This will ensure they have all the information needed to complete their tasks efficiently."
+                "Title": "Automated Follow-Up and Outreach",
+                "Description": "Develop functionalities to send follow-up messages automatically if no response is received to the initial message after 48 hours, track pending invitations, and use LinkedIn Sales Navigator for outreach to invited contacts who haven't accepted the connection request."
             },
             {
                 "Epic ID": "E007",
-                "Title": "Performance and Progress Tracking",
-                "Description": "Create a dashboard for coders to view their performance metrics, track their progress on tasks, and receive feedback. This will help them stay on track and improve their productivity."
-            }
-        ],
-        "Social Media Managers": [
-            {
-                "Epic ID": "E001",
-                "Title": "Automated Twitter Management",
-                "Description": "Develop the Myte Twitter tool to research recent AI news, create daily tweet threads, and post them on the company's Twitter account. This tool will ensure consistent and engaging content is shared with the audience."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "LinkedIn Outreach Automation",
-                "Description": "Implement the Myte Social LinkedIn tool to manage the LinkedIn CRM, analyze profiles, and send 30 personalized messages daily. This will help in maintaining and expanding professional connections on LinkedIn."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Facebook Outreach Automation",
-                "Description": "Create the Myte Social Facebook tool to manage the Facebook CRM, analyze profiles, and send 30 personalized messages daily. This will enhance engagement and outreach on Facebook."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Automated Article Writing and Posting",
-                "Description": "Develop the Myte Researcher tool to collect news on given topics, allow user input, and craft articles with embedded sources and catchy titles. The tool will post these articles to LinkedIn, Twitter, and the personal website, ensuring regular and informative content updates."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Social Media Analytics Dashboard",
-                "Description": "Create a dashboard to track the performance of social media posts and outreach activities. This will provide insights into engagement metrics, helping social media managers optimize their strategies."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Human-like Social Media Operations",
-                "Description": "Implement features to ensure that automated tasks, such as posting articles and sending messages, are performed in a human-like manner. This will help avoid detection as automated behavior by social media platforms."
-            }
-        ],
-        "Accounting Team": [
-            {
-                "Epic ID": "E001",
-                "Title": "Automated Invoicing System",
-                "Description": "Develop a system to prepare invoices based on account/contact information and hours spent by activity. Integrate the invoicing system with the accounting module to ensure seamless financial tracking and reporting."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "Expense Account Management Mobile App",
-                "Description": "Create a mobile application that allows employees to submit expenses by taking pictures of receipts and conversing with an AI system. The app should use a CoT system to analyze conversations and structure expense reports for reimbursement via E-Transfer."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "TD API Integration for Financial Transactions",
-                "Description": "Implement a module to connect with the TD API for monitoring business credit card and checking account transactions. Ensure secure and efficient data retrieval to streamline the accounting process and prepare documentation for the CPA."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Comprehensive Financial Reporting",
-                "Description": "Develop a reporting tool within the accounting module to generate comprehensive financial reports. This includes tracking all monetary transactions, preparing necessary documentation for the CPA, and ensuring compliance with regulatory requirements."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Automated Expense Analysis and Reimbursement",
-                "Description": "Create an automated system to analyze submitted expenses and process reimbursements. This system should ensure accurate categorization of expenses and streamline the reimbursement process via E-Transfer."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Secure Data Storage and Backup",
-                "Description": "Implement robust security measures for storing financial data on AWS. Ensure regular backups and data encryption to protect sensitive financial information and comply with data privacy regulations."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "User-Friendly Accounting Dashboard",
-                "Description": "Design a user-friendly dashboard for the accounting team to view and manage all financial transactions, invoices, and expense reports. The dashboard should provide real-time updates and easy access to financial data."
-            },
-            {
-                "Epic ID": "E008",
-                "Title": "Integration with Project Management System",
-                "Description": "Ensure seamless integration between the accounting module and the project management system to accurately track hours spent on tasks and generate corresponding invoices. This integration should facilitate efficient financial tracking and reporting."
-            }
-        ],
-        "Employees": [
-            {
-                "Epic ID": "E001",
-                "Title": "Employee Digital Profile Management",
-                "Description": "Develop a comprehensive system to maintain digital profiles for all employees, including personal information, job roles, and relevant tracking data. This will enable Project Managers (PMs) to manage all aspects of employee data efficiently."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "Task Assignment and Tracking",
-                "Description": "Implement a robust task management system that allows PMs to assign tasks to employees, track task progress, and monitor time spent on each task. This will ensure efficient task distribution and accountability."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Expense Submission and Management",
-                "Description": "Create a mobile application that enables employees to submit expenses by taking pictures of receipts and conversing with an AI system. The AI will analyze the conversations and structure the expense reports for reimbursement via E-Transfer."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Project Kick-Off and Execution",
-                "Description": "Develop a system to distribute project tasks to international coders, allowing them to start and end tasks while tracking the time spent. This will compile time data by contract/coder for invoicing and project management purposes."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Employee Communication and Collaboration",
-                "Description": "Implement features that facilitate communication and collaboration among employees, including internal messaging, shared project boards, and document sharing. This will enhance teamwork and project coordination."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Performance and Productivity Tracking",
-                "Description": "Create tools to monitor and report on employee performance and productivity, including time tracking, task completion rates, and project contributions. This will help in evaluating employee performance and identifying areas for improvement."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "Training and Onboarding",
-                "Description": "Develop a comprehensive training and onboarding module that provides new employees with the necessary resources and guidance to get started with the system. This will include tutorials, documentation, and support for new hires."
-            },
-            {
-                "Epic ID": "E008",
-                "Title": "Employee Feedback and Improvement",
-                "Description": "Implement a feedback system that allows employees to provide input on the usability and functionality of the software. This feedback will be used to make continuous improvements to the system, ensuring it meets the needs of all users."
-            }
-        ],
-        "Clients": [
-            {
-                "Epic ID": "E001",
-                "Title": "Client Portal Access",
-                "Description": "Develop a client portal that allows clients to view their contracts, communications, and project progress. The portal will provide a comprehensive overview of all interactions and project statuses, ensuring transparency and easy access to information."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "Client Chatbot Integration",
-                "Description": "Integrate a chatbot within the client portal powered by OpenAI API. The chatbot will be trained on client-relevant data, including client emails and progress reports, to provide quick answers and support for client inquiries."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Proposal Initiation and Tracking",
-                "Description": "Enable clients to initiate new proposals through the client portal using the Myte Estimates tool. This feature will allow clients to input their requirements, which will then be evaluated and tracked as leads and proposals by the company."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Contract Management and Digital Signatures",
-                "Description": "Implement a system for creating, sending, and storing contracts digitally. Clients will be able to review and sign contracts electronically, ensuring a seamless and efficient contract management process."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Progress Report Notifications",
-                "Description": "Provide clients with regular updates on project progress through automated notifications. These updates will include detailed reports generated by the Myte Code Checker, ensuring clients are always informed about the status of their projects."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Communication History Access",
-                "Description": "Maintain a comprehensive history of all communications related to each contract within the client portal. Clients will be able to access past emails and messages, ensuring all interactions are well-documented and easily retrievable."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "Invoice and Payment Tracking",
-                "Description": "Develop a system for clients to view and track their invoices and payments. This feature will provide a clear overview of all financial transactions related to their contracts, ensuring transparency and ease of financial management."
-            },
-            {
-                "Epic ID": "E008",
-                "Title": "Client Feedback and Support",
-                "Description": "Implement a feedback and support system within the client portal. Clients will be able to provide feedback on the services received and request support for any issues or inquiries, ensuring continuous improvement and client satisfaction."
-            }
-        ],
-        "Company Management": [
-            {
-                "Epic ID": "E001",
-                "Title": "Comprehensive CRM System",
-                "Description": "Develop a CRM system to manage company, office, and contact information, including automated email extraction and analysis to maintain a comprehensive conversation history."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "Lead and Opportunity Tracking",
-                "Description": "Implement a system to track new leads and opportunities, monitoring their status until they become proposals, ensuring a streamlined sales process."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Proposal and Contract Management",
-                "Description": "Create tools for generating detailed project breakdowns and proposals, sending proposals to clients, and managing digital contracts with a comprehensive contract database."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Project Kick-Off and Task Management",
-                "Description": "Develop a system to distribute tasks to international coders, track task progress and time spent, and compile this data for invoicing and project management purposes."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Automated Code Analysis and Reporting",
-                "Description": "Implement the Myte Code Checker tool to analyze daily code changes, generate natural language reports, and send updates to clients automatically."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Invoicing and Accounting Integration",
-                "Description": "Create an invoicing system linked to the accounting module, integrating with the TD API to monitor financial transactions and prepare documentation for CPAs."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "Employee Database and Management",
-                "Description": "Develop a comprehensive digital profile system for employees, enabling efficient management and tracking of employee information and tasks."
-            },
-            {
-                "Epic ID": "E008",
-                "Title": "Myte Dashboard",
-                "Description": "Build a dashboard for company management to view CRM data, opportunities, contracts, RFIs, invoices, and other key metrics, including a chatbot for querying company data."
-            },
-            {
-                "Epic ID": "E009",
-                "Title": "Client Portal",
-                "Description": "Develop a client portal for clients to view their contracts, communications, and project progress, interact with a chatbot, and initiate new proposals."
-            },
-            {
-                "Epic ID": "E010",
-                "Title": "Social Media and Content Management",
-                "Description": "Implement tools for automating social media outreach on Twitter, LinkedIn, and Facebook, and for creating and posting articles to various platforms."
-            }
-        ],
-        "Project Managers": [
-            {
-                "Epic ID": "E001",
-                "Title": "CRM System Development",
-                "Description": "Develop a comprehensive CRM system to manage company, office, and contact information. This includes extracting and analyzing emails using OpenAI GPT-4o to populate the CRM, maintaining a conversation history, and ensuring continuous syncing of contact information."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "Lead and Opportunity Tracking",
-                "Description": "Implement a system to track new opportunities associated with accounts. This includes monitoring the status of opportunities until they become proposals, ensuring that PMs can manage and follow up on leads effectively."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Proposal Management",
-                "Description": "Create a tool for preparing project breakdowns and proposals using Myte Estimates. This involves generating detailed PDFs with client requirements, estimated time, cost, and risks, and sending these proposals to clients."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Contract Management System",
-                "Description": "Develop a system for creating, sending, and digitally storing contracts. This includes linking contracts to employees, maintaining a history of all related communications, and ensuring that all contractual obligations are well-documented and accessible."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Project Kick-Off and Task Management",
-                "Description": "Implement a project kick-off system to distribute tasks to international coders, track task start and end times, and compile time spent per contract/coder for invoicing. This ensures efficient task management and accurate tracking of project progress."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Project Management and Code Analysis",
-                "Description": "Develop the Myte Code Checker tool to analyze code changes daily, generate natural language reports, and automatically send updates to contract contacts. This ensures that PMs can keep clients informed about project progress."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "Invoicing System",
-                "Description": "Create a system to prepare invoices based on account/contact information and hours spent by activity. This includes linking the invoicing system to the accounting system to streamline financial processes."
-            },
-            {
-                "Epic ID": "E008",
-                "Title": "Employee Database Management",
-                "Description": "Develop a digital profile system for all employees, enabling PMs to manage end-to-end tasks efficiently. This includes maintaining relevant information and ensuring easy access to employee data."
-            },
-            {
-                "Epic ID": "E009",
-                "Title": "Myte Dashboard Development",
-                "Description": "Create a comprehensive dashboard for PMs to view CRM data, opportunities, contact conversations, current contracts, leads, active proposals, and more. This includes integrating a chatbot to answer questions about company data."
-            },
-            {
-                "Epic ID": "E010",
-                "Title": "Client Portal Development",
-                "Description": "Develop a client portal where clients can view their contracts, communications, and project progress. This includes integrating a chatbot for quick answers and enabling clients to initiate new proposals using Myte Estimates."
-            }
-        ],
-        "AI System Developers": [
-            {
-                "Epic ID": "E001",
-                "Title": "Email Extraction and Analysis System",
-                "Description": "Develop a system to extract emails from Gmail and analyze them using OpenAI GPT-4o. This includes extracting details like Name, Company Name, Address, and Phone Number, and maintaining a conversation history for each contact."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "AI-Powered CRM Initialization",
-                "Description": "Implement AI models to initialize the CRM by analyzing historical emails to populate contact details and conversation history. Ensure continuous syncing to keep contact information up-to-date."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "AI-Driven Proposal Generation",
-                "Description": "Integrate Myte Estimates tool to use AI for generating detailed project breakdowns and proposals. This includes estimating time, cost, and identifying risks based on client requirements."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "AI-Based Contract Management",
-                "Description": "Develop AI systems to create, send, and manage contracts digitally. This includes linking contracts to relevant employees and maintaining a history of all related communications."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Automated Project Kick-Off and Task Distribution",
-                "Description": "Create an AI system to distribute tasks to international coders, track task start and end times, and compile time spent per contract/coder for invoicing."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Code Analysis and Reporting System",
-                "Description": "Build Myte Code Checker to analyze code changes daily using OpenAI Transformers and generate natural language reports. Ensure the system can handle large codebases and provide accurate updates."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "AI-Enhanced Invoicing System",
-                "Description": "Develop an AI system to prepare invoices based on account/contact information and hours spent by activity. Integrate this system with the accounting module for seamless financial management."
-            },
-            {
-                "Epic ID": "E008",
-                "Title": "AI-Powered Social Media Automation",
-                "Description": "Implement AI tools like Myte Twitter, Myte Social LinkedIn, and Myte Social Facebook to automate social media outreach and content creation. Ensure the system can operate in a human-like manner to avoid detection by social media platforms."
-            },
-            {
-                "Epic ID": "E009",
-                "Title": "AI-Driven Content Creation",
-                "Description": "Develop Myte Researcher to collect news on given topics, allow user input, and craft articles with sources and catchy titles. Automate the posting of these articles to LinkedIn, Twitter, and personal websites."
-            },
-            {
-                "Epic ID": "E010",
-                "Title": "AI-Enhanced Expense Management",
-                "Description": "Create a mobile app with AI capabilities to submit expenses via receipt photos and voice inputs. Use a CoT system to analyze conversations and structure expense reports for reimbursement."
-            },
-            {
-                "Epic ID": "E011",
-                "Title": "AI-Powered Client Portal",
-                "Description": "Develop a client portal with AI chatbot capabilities to provide clients with access to their contracts, communications, and project progress. Ensure the chatbot can provide quick answers and assist in initiating new proposals."
+                "Title": "Dashboard and Settings Management",
+                "Description": "Design a modern dashboard to display key metrics such as the total number of contacts and messages sent. Implement a settings section where users can adjust message sending limits, invitation limits, follow-up message limits, and provide necessary inputs like OpenAI API key and Chrome browser path."
             }
         ]
     }

@@ -23,12 +23,12 @@
   {% for complexity, details in complexities.items() if complexity != 'Hourly Rate' %}
   <tr>
     <td>{{ complexity }}</td>
-    <td><input type="number" value="{{ details.hours }}" id="{{ complexity }}"></td>
+    <td><input type="text" value="{{ details.hours }}" id="{{ complexity }}"></td>
   </tr>
   {% endfor %}
   <tr>
     <th>Hourly Rate</th>
-    <td><input type="number" value="{{ complexities['Hourly Rate'].Rate }}" id="Hourly_Rate"></td>
+    <td><input type="text" value="{{ complexities['Hourly Rate'].Rate }}" id="Hourly_Rate"></td>
   </tr>
 </table>
 <button onclick="saveData()">Save</button>
@@ -41,9 +41,9 @@ function saveData() {
         const hoursInput = row.querySelector('input');
         if (hoursInput) {  // Check if the input exists
             if (complexity === 'Hourly Rate') {
-                complexities[complexity] = { "Rate": parseInt(hoursInput.value) };
+                complexities[complexity] = { "Rate": parseFloat(hoursInput.value) };
             } else {
-                complexities[complexity] = { "hours": parseInt(hoursInput.value) };
+                complexities[complexity] = { "hours": parseFloat(hoursInput.value) };
             }
         } else {
             console.error('Input not found for complexity:', complexity);

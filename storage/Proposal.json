@@ -1,65 +1,68 @@
 {
-    "ProjectTitle": "HealthHub Digital Platform",
-    "ExecutiveSummary": "The HealthHub Digital Platform is a comprehensive software solution designed to enhance healthcare delivery by integrating advanced digital tools for patients, doctors, and hospital administrative staff. The platform aims to streamline the management of patient data, improve communication and treatment efficiency, and support healthcare providers with decision-making tools. It includes features like patient onboarding, AI-powered consultations, and real-time health monitoring, all within a secure, user-friendly environment that complies with healthcare regulations.",
-    "Background": "The healthcare industry has increasingly turned to digital solutions to enhance the efficiency and quality of care. HealthHub Digital Platform responds to this need by offering a robust system that supports detailed patient health monitoring, facilitates seamless communication between doctors and patients, and provides essential tools for hospital staff. This platform is especially tailored for oncology departments initially, aiming to handle the complex needs associated with cancer treatment and management.",
+    "ProjectTitle": "LinkedIn AI Agent",
+    "ExecutiveSummary": "The LinkedIn AI Agent is a standalone desktop application designed to automate and optimize LinkedIn-related tasks. It scrapes contact information, manages conversation history, generates personalized messages, and handles follow-ups, all while providing a user-friendly interface. This tool aims to enhance professional networking efficiency using AI and NLP technologies.",
+    "Background": "In today's professional world, managing LinkedIn contacts and communications can be time-consuming. The LinkedIn AI Agent addresses this by automating tasks such as scraping contact information, generating personalized messages, and managing follow-ups. By leveraging AI and NLP, the tool aims to make LinkedIn interactions more efficient and effective.",
     "Objectives": [
-        "To provide a secure and comprehensive digital system for managing detailed patient health information.",
-        "To enhance the efficiency of healthcare delivery by providing real-time data access and communication tools for doctors and hospital staff.",
-        "To support patients in managing their health through interactive tools and assessments, improving patient engagement and treatment outcomes.",
-        "To ensure seamless integration with existing hospital systems for uninterrupted access to patient data and enhanced interoperability.",
-        "To maintain high standards of data security and compliance with health regulations such as HIPAA."
+        "Automate the scraping of first-level LinkedIn contacts and store their information locally.",
+        "Create and manage ignore lists using NLP to filter out irrelevant contacts.",
+        "Store and manage conversation history with LinkedIn contacts.",
+        "Generate personalized initial and follow-up messages using AI.",
+        "Provide a user-friendly interface for managing contacts, campaigns, and messages.",
+        "Automate follow-up messages and track pending invitations."
     ],
-    "Scope": "The project will develop a digital platform accessible via web and mobile interfaces, supporting various functionalities for different user groups. Features include secure user authentication, patient onboarding and assessment modules, AI-enhanced diagnostic and consultation tools, and real-time health monitoring and alerts. The platform will integrate with existing hospital databases and comply with healthcare regulatory requirements.",
+    "Scope": "The LinkedIn AI Agent is designed as a personal tool for automating LinkedIn tasks. It includes functionalities for scraping contact information, managing conversation history, generating personalized messages, and handling follow-ups. The software will be a standalone desktop application for Windows, with data stored locally in JSON files. Users are responsible for backing up their data.",
     "Deliverables": [
-        "A fully functional digital healthcare platform with separate access modules for patients, doctors, and hospital staff.",
-        "Patient onboarding system to collect comprehensive health data.",
-        "AI-powered tools for assisting doctors in patient treatment and diagnosis.",
-        "Real-time dashboard for hospital staff to monitor patient alerts and manage data efficiently.",
-        "Detailed documentation on system functionality, user guides, and maintenance protocols.",
-        "A secure integration framework to connect seamlessly with existing hospital systems."
+        "A standalone .exe application for Windows.",
+        "Functionality to scrape first-level LinkedIn contacts and save their information in Contacts.json.",
+        "NLP-based ignore list creation and management.",
+        "Storage of conversation history in MessageHistory.json.",
+        "UI for creating and managing campaigns, including contact filtering and system context settings.",
+        "Functionality to upload PDFs for personalized messaging.",
+        "Profile analysis using OpenAI NLP and storage of analysis results.",
+        "Generation of personalized initial and follow-up messages with approval tracking.",
+        "UI for reviewing and approving generated messages.",
+        "Creation and management of potential contact lists based on LinkedIn searches.",
+        "Automated sending of follow-up messages and tracking of pending invitations.",
+        "Integration with LinkedIn Sales Navigator for follow-up actions."
     ],
     "Milestones": {
         "Milestones": [
             {
                 "MilestoneID": "M001",
-                "MilestoneName": "System Design and Architecture Setup",
+                "MilestoneName": "Data Collection and Storage",
                 "KeyDeliverables": [
-                    "Complete system architecture designed to integrate with existing hospital systems.",
-                    "Security protocols for patient data defined, including compliance with HIPAA and GDPR.",
-                    "Design of user interfaces for patients, doctors, and hospital staff, focusing on accessibility and usability.",
-                    "Detailed specifications for AI-powered tools and real-time data processing capabilities."
+                    "Functionality to scrape first-level LinkedIn contacts and save their information in Contacts.json.",
+                    "NLP-based ignore list creation and management.",
+                    "Storage of conversation history in MessageHistory.json.",
+                    "Functionality to upload PDFs for personalized messaging."
                 ]
             },
             {
                 "MilestoneID": "M002",
-                "MilestoneName": "Development and Testing Phase",
+                "MilestoneName": "Campaign Management and Messaging",
                 "KeyDeliverables": [
-                    "Development of secure login and authentication systems for all user groups.",
-                    "Implementation of the patient onboarding module to collect health data.",
-                    "Creation of AI-powered diagnostic and consultation tools for doctors.",
-                    "Setup of the hospital staff dashboard for real-time patient monitoring.",
-                    "Integration testing with existing hospital IT infrastructure.",
-                    "Unit and integration testing of all system features."
+                    "UI for creating and managing campaigns, including contact filtering and system context settings.",
+                    "Profile analysis using OpenAI NLP and storage of analysis results.",
+                    "Generation of personalized initial and follow-up messages with approval tracking.",
+                    "UI for reviewing and approving generated messages."
                 ]
             },
             {
                 "MilestoneID": "M003",
-                "MilestoneName": "System Deployment and Initial Training",
+                "MilestoneName": "Potential Contacts and Follow-Up Automation",
                 "KeyDeliverables": [
-                    "Deployment of the digital healthcare platform in a controlled environment.",
-                    "Initial training sessions for all user groups to ensure smooth adoption.",
-                    "Feedback collection mechanisms established for continuous improvement.",
-                    "Documentation provided for system maintenance and troubleshooting."
+                    "Creation and management of potential contact lists based on LinkedIn searches.",
+                    "Automated sending of follow-up messages and tracking of pending invitations.",
+                    "Integration with LinkedIn Sales Navigator for follow-up actions."
                 ]
             },
             {
                 "MilestoneID": "M004",
-                "MilestoneName": "Post-Deployment Monitoring and Optimization",
+                "MilestoneName": "Standalone Application and User Interface",
                 "KeyDeliverables": [
-                    "Monitoring system performance and handling of real-time data processing.",
-                    "Continuous assessment of user feedback and system usage patterns.",
-                    "Regular updates and patches to enhance functionality and security.",
-                    "Ongoing training and support for users to maximize system efficiency."
+                    "A standalone .exe application for Windows.",
+                    "Modern UI with sections for Contacts, Campaigns, Potential Contacts, Message Approval, Messages, and Settings.",
+                    "User-friendly interface for task management and message approval."
                 ]
             }
         ]
@@ -68,39 +71,39 @@
         "Risks": [
             {
                 "RiskID": "R001",
-                "RiskDescription": "Data Privacy and Security Breaches",
+                "RiskDescription": "Data Loss Due to Local Storage",
                 "MitigationStrategies": [
-                    "Implement comprehensive encryption protocols for data at rest and in transit.",
-                    "Conduct regular security audits and vulnerability assessments.",
-                    "Adopt a robust access control system and perform routine security training for all users."
+                    "Educate users on the importance of regular data backups.",
+                    "Provide clear instructions on how to manually back up data using services like Google Drive.",
+                    "Implement a simple backup reminder feature within the application to prompt users to back up their data periodically."
                 ]
             },
             {
                 "RiskID": "R002",
-                "RiskDescription": "Integration with Existing Hospital Systems",
+                "RiskDescription": "Security Vulnerabilities Due to Lack of Encryption and Authentication",
                 "MitigationStrategies": [
-                    "Collaborate closely with IT departments to understand existing system architectures.",
-                    "Use middleware or APIs that are compatible with various hospital systems to ease integration.",
-                    "Plan for phased rollouts and conduct extensive integration testing."
+                    "Advise users to operate the application in a secure environment and restrict access to their computer.",
+                    "Provide guidelines on securing their local environment, such as using strong passwords and enabling system-level encryption.",
+                    "Consider offering an optional security module as a future enhancement for users who require additional protection."
                 ]
             },
             {
                 "RiskID": "R003",
-                "RiskDescription": "System Overload Due to High User Volume",
+                "RiskDescription": "Performance Issues Due to Local Execution and Data Handling",
                 "MitigationStrategies": [
-                    "Design a scalable system architecture capable of handling peak loads.",
-                    "Utilize cloud services that offer elasticity and auto-scaling features.",
-                    "Implement load balancing and distribute traffic among multiple servers."
+                    "Optimize the code for efficient data handling, especially when reading and writing JSON files.",
+                    "Implement performance monitoring within the application to identify and address bottlenecks.",
+                    "Provide users with hardware recommendations to ensure smooth operation, such as minimum RAM and CPU specifications."
                 ]
             }
         ]
     },
     "ClientInformation": {
-        "CompanyName": "Montreal Jewish Hospital",
-        "ContactPerson": "Marco Mascerella",
-        "Address": "9215 Villieu, Montreal, QC, CA H1R2J5",
-        "Email": "marco@testc.com",
-        "Phone": "5148049207"
+        "CompanyName": " RBC Dominion valeurs mobili\u00e8res Inc.",
+        "ContactPerson": "Vincent Bonnet",
+        "Address": "1501 avenue McGill College, bureau 2150, Montr\u00e9al, QC  H3A 3M8",
+        "Email": "vincent.bonnet@rbc.com",
+        "Phone": "5148408830"
     },
     "UserInformation": {
         "CompanyName": "Myte Group Inc.",
@@ -115,136 +118,60 @@
         "TeamExpertise": "Under the leadership of Ahmed Mekallach, Myte Group boasts a profound expertise uniquely blending business acumen with technical prowess. With over eight years of experience in sales, estimating, and project management, Ahmed's comprehensive understanding of business processes and keen coding skills enable him to tackle challenges efficiently and innovatively. His approach not only ensures operational excellence but also drives the development of AI-driven solutions that are both sophisticated and practical, perfectly suited to meet the intricate demands of modern businesses. This unique combination positions Myte Group as a leader in AI systems design and development, capable of delivering high-quality, customized solutions."
     },
     "Budget": {
-        "TotalEstimatedHours": 2106,
-        "TotalEstimatedCost": 105300,
+        "TotalEstimatedHours": 338.5,
+        "TotalEstimatedCost": 16925.0,
         "CostBreakdown": [
             {
-                "Stakeholder": "Administrative Staff",
+                "Stakeholder": "LinkedIn User",
                 "Details": [
                     {
-                        "Item": "Dashboard for Patient Monitoring",
-                        "TotalHours": 125,
-                        "Cost": 6250,
-                        "Description": "Develop a comprehensive dashboard that enables administrative staff to monitor real-time patient signals and alerts generated by the system based on the severity of patient symptoms detected during onboarding. This dashboard should facilitate quick identification of cases requiring immediate attention and streamline the intervention process."
+                        "Item": "Data Collection and Storage",
+                        "TotalHours": 72.0,
+                        "Cost": 3600.0,
+                        "Description": "Implement functionalities to scrape first-level LinkedIn contacts, create an ignore list using NLP, store conversation history, and upload data for personalized messaging. This includes creating a UI for managing the ignore list and storing all data in local JSON files."
                     },
                     {
-                        "Item": "Patient Information Management",
-                        "TotalHours": 117,
-                        "Cost": 5850,
-                        "Description": "Create a secure and efficient system for administrative staff to access and manage patient details such as names, email addresses, phone numbers, and medical histories. This system should support functions like searching, updating, and organizing patient information to aid in communication and care coordination."
+                        "Item": "Contact Analysis and Message Generation",
+                        "TotalHours": 42.75,
+                        "Cost": 2137.5,
+                        "Description": "Develop features to analyze LinkedIn contact profiles using OpenAI NLP, generate personalized initial and follow-up messages based on conversation history and profile analysis, and store these messages with approval tracking keys."
                     },
                     {
-                        "Item": "Communication Tools Development",
-                        "TotalHours": 108,
-                        "Cost": 5400,
-                        "Description": "Develop tools within the system to support administrative staff in scheduling appointments, managing emergency services, and facilitating other communication needs. These tools should integrate seamlessly with the existing hospital systems and enhance the overall workflow of hospital operations."
+                        "Item": "User Interface for Message Approval",
+                        "TotalHours": 39.0,
+                        "Cost": 1950.0,
+                        "Description": "Create a user-friendly interface for reviewing and approving generated messages. This UI should allow users to update the approval status of initial and follow-up messages, ensuring control over the communication being sent out."
                     },
                     {
-                        "Item": "Integration with Hospital Systems",
-                        "TotalHours": 151,
-                        "Cost": 7550,
-                        "Description": "Ensure that the new platform integrates smoothly with existing hospital infrastructure to maintain a continuous flow of data and support existing operational processes. This integration should be secure and compliant with all relevant health data protection regulations."
+                        "Item": "Campaign Management",
+                        "TotalHours": 43.75,
+                        "Cost": 2187.5,
+                        "Description": "Build functionalities for users to create and manage campaigns, filter contacts by various criteria, set system contexts for transformers, and view historical campaigns. This includes a UI for campaign creation and management."
                     },
                     {
-                        "Item": "Data Security and Access Control",
-                        "TotalHours": 138,
-                        "Cost": 6900,
-                        "Description": "Implement robust security measures, including authentication protocols and access controls, to ensure that sensitive patient data is accessed only by authorized personnel. This epic should address the need for data privacy and comply with regulatory standards such as HIPAA or GDPR."
-                    }
-                ]
-            },
-            {
-                "Stakeholder": "Doctors",
-                "Details": [
-                    {
-                        "Item": "Doctor Authentication",
-                        "TotalHours": 77,
-                        "Cost": 3850,
-                        "Description": "Develop a secure authentication system for doctors to ensure that access to the digital healthcare platform is securely managed, allowing only authorized doctors to access sensitive patient data and functionalities."
+                        "Item": "Managing Potential Contacts",
+                        "TotalHours": 31.75,
+                        "Cost": 1587.5,
+                        "Description": "Implement features to create new contact lists based on specific criteria from LinkedIn searches, invite potential contacts programmatically, and track the status of these invitations. This includes storing potential contacts in a local JSON file and recording invite dates."
                     },
                     {
-                        "Item": "Patient Data Access",
-                        "TotalHours": 92,
-                        "Cost": 4600,
-                        "Description": "Enable doctors to quickly access comprehensive patient information by scanning a QR code, which pulls up the patient's medical history, current medications, and recent assessments, ensuring they are well-prepared for consultations."
+                        "Item": "Automated Follow-Up and Outreach",
+                        "TotalHours": 45.0,
+                        "Cost": 2250.0,
+                        "Description": "Develop functionalities to send follow-up messages automatically if no response is received to the initial message after 48 hours, track pending invitations, and use LinkedIn Sales Navigator for outreach to invited contacts who haven't accepted the connection request."
                     },
                     {
-                        "Item": "AI-Powered Consultation Tools",
-                        "TotalHours": 143,
-                        "Cost": 7150,
-                        "Description": "Implement AI-powered tools that assist doctors during patient consultations by transcribing, analyzing, and documenting the interactions. This tool should allow doctors to review and finalize the consultation report before it is made available to the patient."
-                    },
-                    {
-                        "Item": "Patient Management",
-                        "TotalHours": 111,
-                        "Cost": 5550,
-                        "Description": "Provide doctors with a system to view and manage their list of patients, allowing them to easily access patient profiles, track progress, and manage their care effectively."
-                    },
-                    {
-                        "Item": "AI Chatbot for Treatment Assistance",
-                        "TotalHours": 186,
-                        "Cost": 9300,
-                        "Description": "Integrate an AI chatbot trained on hospital resources to assist doctors with treatment plans or diagnosis suggestions, leveraging data analytics to provide support in making informed medical decisions."
-                    }
-                ]
-            },
-            {
-                "Stakeholder": "Patients",
-                "Details": [
-                    {
-                        "Item": "Patient Authentication",
-                        "TotalHours": 102,
-                        "Cost": 5100,
-                        "Description": "Develop a secure authentication system to ensure that patients can securely access their health data and platform functionalities."
-                    },
-                    {
-                        "Item": "Patient Onboarding",
-                        "TotalHours": 127,
-                        "Cost": 6350,
-                        "Description": "Create an onboarding module for patients to input detailed personal health information including symptoms, medical history, and lifestyle habits."
-                    },
-                    {
-                        "Item": "Symptom Distress Screening",
-                        "TotalHours": 88,
-                        "Cost": 4400,
-                        "Description": "Implement a distress screening feature that allows patients to assess and report their symptoms and severity, with built-in notifications for severe symptoms."
-                    },
-                    {
-                        "Item": "Interactive Body Map",
-                        "TotalHours": 108,
-                        "Cost": 5400,
-                        "Description": "Develop an interactive body map tool where patients can visually indicate areas of pain or discomfort, enhancing the accuracy of symptom reporting."
-                    },
-                    {
-                        "Item": "Scheduled Health Assessments",
-                        "TotalHours": 108,
-                        "Cost": 5400,
-                        "Description": "Integrate health assessment tools such as G8 Questionnaire, Sarc-F, and QoL assessments, with reminders and notifications for follow-up."
-                    },
-                    {
-                        "Item": "AI Chat Bot for Patients",
-                        "TotalHours": 94,
-                        "Cost": 4700,
-                        "Description": "Create an AI Chat Bot that provides patients with access to their Q&A history, allows them to search health-related information, and offers guidance based on their health data."
-                    },
-                    {
-                        "Item": "Digital Health Summary",
-                        "TotalHours": 130,
-                        "Cost": 6500,
-                        "Description": "Develop a system to generate a digital summary page of the patient's health information, which can be reviewed or shared digitally whenever needed."
-                    },
-                    {
-                        "Item": "QR Code Health Data Transfer",
-                        "TotalHours": 101,
-                        "Cost": 5050,
-                        "Description": "Implement a feature allowing patients to generate a QR code that contains their medical history, enabling easy transfer to other healthcare providers."
+                        "Item": "Dashboard and Settings Management",
+                        "TotalHours": 64.25,
+                        "Cost": 3212.5,
+                        "Description": "Design a modern dashboard to display key metrics such as the total number of contacts and messages sent. Implement a settings section where users can adjust message sending limits, invitation limits, follow-up message limits, and provide necessary inputs like OpenAI API key and Chrome browser path."
                     }
                 ]
             }
         ]
     },
     "Date": {
-        "CurrentDate": "2024-05-12"
+        "CurrentDate": "2024-05-24"
     },
-    "ProposalID": "PROJ1234"
+    "ProposalID": "S2024015"
 }

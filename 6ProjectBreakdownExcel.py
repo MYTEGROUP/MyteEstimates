@@ -25,7 +25,9 @@ for stakeholder, epics in data.items():
                     'Story Description': story['Story Description'],
                     'Story Acceptance Criteria': acceptance_criteria,
                     'Task ID': task['Task ID'],
-                    'Task Description': task['Description']
+                    'Task Description': task['Description'],
+                    'Estimated Hours': task['Estimated Hours'],  # Include Estimated Hours
+                    'Cost': task['Cost']  # Include Cost
                 }
                 rows.append(row)
 

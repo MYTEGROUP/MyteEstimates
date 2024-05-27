@@ -130,8 +130,7 @@
         </div>
     </footer>
     <!-- Print Button -->
-    <button onclick="printPDF()">Print Me</button>
-
+    <button class="no-print" onclick="printPDF()">Print Me</button>
     <!-- JavaScript for Printing PDF -->
     <script>
         function printPDF() {
@@ -160,6 +159,5 @@
             xhr.send(JSON.stringify({}));
         }
     </script>
-
 </body>
 </html>
