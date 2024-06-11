@@ -67,82 +67,129 @@
 <button id="replay-btn">Replay</button> <!-- Replay button -->
 
 <script>
-    function startRecording() {
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(stream => {
-                const audioContext = new AudioContext();
-                const mediaStreamSource = audioContext.createMediaStreamSource(stream);
-                const processor = audioContext.createScriptProcessor(4096, 1, 1);
+    let audioContext;
+    let mediaStreamSource;
+    let processor;
+    let silenceStart = 0;
+    let baseAudioLevel = 0;
+    let isRecording = false;
+    let audioChunks = [];
+    let mediaRecorder;
+    let silenceTimeout;
 
-                mediaStreamSource.connect(processor);
-                processor.connect(audioContext.destination);
+    async function startRecording() {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        mediaStreamSource = audioContext.createMediaStreamSource(stream);
+        processor = audioContext.createScriptProcessor(4096, 1, 1);
 
-                const audioChunks = [];
-                let silenceStart = performance.now();
-                let isRecording = true;
+        mediaStreamSource.connect(processor);
+        processor.connect(audioContext.destination);
 
-                processor.onaudioprocess = function(event) {
-                    if (!isRecording) return;
-                    const input = event.inputBuffer.getChannelData(0);
-                    let isSilent = true;
-                    // Simple silence detection: check if amplitude is below a threshold
-                    for (let i = 0; i < input.length; i++) {
-                        if (Math.abs(input[i]) > 0.01) { // Threshold might need adjustment
-                            isSilent = false;
-                            break;
-                        }
-                    }
-                    if (isSilent) {
-                        if (performance.now() - silenceStart > 2000) { // Adjusted to 2 seconds of silence
-                            isRecording = false;
-                            mediaRecorder.stop();
-                            stream.getTracks().forEach(track => track.stop()); // Stop the audio track
-                        }
-                    } else {
-                        silenceStart = performance.now();
-                    }
-                };
+        silenceStart = performance.now();
+        isRecording = true;
+        audioChunks = [];
 
-                const mediaRecorder = new MediaRecorder(stream);
-                mediaRecorder.start();
+        // Calculate base audio level
+        baseAudioLevel = await calculateBaseAudioLevel();
 
-                mediaRecorder.addEventListener("dataavailable", event => {
-                    audioChunks.push(event.data);
-                });
+        processor.onaudioprocess = function(event) {
+            if (!isRecording) return;
 
-                mediaRecorder.addEventListener("stop", () => {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    const formData = new FormData();
-                    formData.append("audio", audioBlob, "recording.wav");
+            const input = event.inputBuffer.getChannelData(0);
+            let isSilent = true;
+            let sum = 0;
 
-                    fetch("/process_audio", { // Adjusted to match your Flask route
-                        method: "POST",
-                        body: formData,
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('answer-input').value = data.text; // Display the transcribed text
-                        document.getElementById('answer-input').style.display = 'block'; // Ensure input field is visible
-                    })
-                    .catch(error => console.error("Error:", error));
-                });
-            })
-            .catch(error => console.error("Error accessing microphone:", error));
+            // Calculate the average amplitude of the audio buffer
+            for (let i = 0; i < input.length; i++) {
+                sum += input[i] * input[i];
+            }
+            const rms = Math.sqrt(sum / input.length);
+            const db = 20 * Math.log10(rms);
+
+            if (db > baseAudioLevel + 10) {
+                isSilent = false;
+                clearTimeout(silenceTimeout); // Reset silence detection timeout
+                silenceTimeout = setTimeout(stopRecording, 1500); // Set a new timeout for 1.5 seconds of silence
+            }
+
+            const now = performance.now();
+            if (now - silenceStart >= 500) {
+                silenceStart = now;
+                transcribeAudioChunk();
+            }
+        };
+
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start(500); // Split audio into chunks of 0.5 seconds
+
+        mediaRecorder.ondataavailable = event => {
+            audioChunks.push(event.data);
+        };
+
+        mediaRecorder.onstop = () => {
+            transcribeAudioChunk(true);
+        };
+
+        // Initial silence detection setup
+        silenceTimeout = setTimeout(stopRecording, 1500);
+    }
+
+    async function calculateBaseAudioLevel() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                const input = processor.inputBuffer.getChannelData(0);
+                let sum = 0;
+                for (let i = 0; i < input.length; i++) {
+                    sum += input[i] * input[i];
+                }
+                const rms = Math.sqrt(sum / input.length);
+                const db = 20 * Math.log10(rms);
+                resolve(db);
+            }, 250);
+        });
+    }
+
+    function transcribeAudioChunk(isFinal = false) {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+        const formData = new FormData();
+        formData.append("audio", audioBlob, "recording.wav");
+
+        fetch("/process_audio", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            const inputField = document.getElementById('answer-input');
+            inputField.value += data.text + ' '; // Append transcribed text with a space
+            inputField.style.display = 'block';
+            if (isFinal) {
+                audioChunks = []; // Clear chunks after final transcription
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
+    function stopRecording() {
+        isRecording = false;
+        mediaRecorder.stop();
+        if (mediaStreamSource) {
+            mediaStreamSource.mediaStream.getTracks().forEach(track => track.stop());
+        }
     }
 
     document.getElementById('begin-btn').onclick = function() {
-        this.style.display = 'none'; // Hide the button
-        document.getElementById('question').style.display = 'block'; // Show the question
-        document.getElementById('answer-input').style.display = 'block'; // Show the input field
-        document.getElementById('submit-btn').style.display = 'inline-block'; // Show the submit button
-        document.getElementById('speak-btn').style.display = 'inline-block'; // Show the speak button
+        this.style.display = 'none';
+        document.getElementById('question').style.display = 'block';
+        document.getElementById('answer-input').style.display = 'block';
+        document.getElementById('submit-btn').style.display = 'inline-block';
+        document.getElementById('speak-btn').style.display = 'inline-block';
 
-        // Play the audio
         var audio = new Audio('/static/InitialGreeting.mp3');
         audio.play();
     };
 
-    // Bind the startRecording function to the 'Speak' button
     document.getElementById('speak-btn').addEventListener('click', startRecording);
 
     let currentAudioSource = '';
@@ -159,24 +206,16 @@
         })
         .then(response => response.json())
         .then(data => {
-            // Update the question displayed to the user
             document.getElementById('question').innerText = data.nextQuestion;
-
-            // Clear the answer input field
             document.getElementById('answer-input').value = '';
-
-            // Update currentAudioSource with the new audio file path
-            currentAudioSource = data.audioFilePath;
-
-            // Play the response audio
-            var audio = new Audio(`/serve_audio/${data.audioDir}/${data.audioFile}`);
+            currentAudioSource = `/serve_audio/${data.audioDir}/${data.audioFile}`;
+            var audio = new Audio(currentAudioSource);
             audio.play();
-            // Show the Replay button
             document.getElementById('replay-btn').style.display = 'inline-block';
         })
         .catch(error => console.error('Error:', error));
     };
-    // Functionality to replay the current audio
+
     document.getElementById('replay-btn').onclick = function() {
         if (currentAudioSource) {
             var audio = new Audio(currentAudioSource);

@@ -246,11 +246,11 @@ def main():
 
     ### Link this to a CRM of Clients
     client_info = {
-        "CompanyName": " RBC Dominion valeurs mobilières Inc.",
-        "ContactPerson": "Vincent Bonnet",
-        "Address": "1501 avenue McGill College, bureau 2150, Montréal, QC  H3A 3M8",
-        "Email": "vincent.bonnet@rbc.com",
-        "Phone": "5148408830"
+        "CompanyName": "Quebec Inc.",
+        "ContactPerson": "Marco Mascarella",
+        "Address": "none",
+        "Email": "marco.mascarella@mcgill.ca",
+        "Phone": "514 603 2327"
     }
 
     #Link this to a CRM of Users of the Tool.

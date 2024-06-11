@@ -1,40 +1,109 @@
 {
     "Stakeholder_Epics": {
-        "LinkedIn User": [
+        "Doctors": [
             {
                 "Epic ID": "E001",
-                "Title": "Data Collection and Storage",
-                "Description": "Implement functionalities to scrape first-level LinkedIn contacts, create an ignore list using NLP, store conversation history, and upload data for personalized messaging. This includes creating a UI for managing the ignore list and storing all data in local JSON files."
+                "Title": "User Authentication and Account Management",
+                "Description": "Enable doctors to register and log in with OTP mobile verification and email verification. Allow doctors to manage their profile information, including name, phone number, email, and profile picture."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Contact Analysis and Message Generation",
-                "Description": "Develop features to analyze LinkedIn contact profiles using OpenAI NLP, generate personalized initial and follow-up messages based on conversation history and profile analysis, and store these messages with approval tracking keys."
+                "Title": "Patient Management",
+                "Description": "Provide doctors with a list of patients who have granted access via QR code. Allow doctors to access detailed profiles, including visit and consultation histories, of each patient."
             },
             {
                 "Epic ID": "E003",
-                "Title": "User Interface for Message Approval",
-                "Description": "Create a user-friendly interface for reviewing and approving generated messages. This UI should allow users to update the approval status of initial and follow-up messages, ensuring control over the communication being sent out."
+                "Title": "Consultation Process",
+                "Description": "Enable doctors to start a new consultation session by scanning the patient's QR code to link the consultation to the patient. Provide AI assistance during consultations for real-time analysis and summarization. Allow doctors to generate, review, edit, and approve consultation reports, and share approved reports with patients."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Campaign Management",
-                "Description": "Build functionalities for users to create and manage campaigns, filter contacts by various criteria, set system contexts for transformers, and view historical campaigns. This includes a UI for campaign creation and management."
+                "Title": "Interactive AI for Doctor",
+                "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. Use the AI to retrieve and summarize relevant patient history to aid the doctor during consultations."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Managing Potential Contacts",
-                "Description": "Implement features to create new contact lists based on specific criteria from LinkedIn searches, invite potential contacts programmatically, and track the status of these invitations. This includes storing potential contacts in a local JSON file and recording invite dates."
+                "Title": "Patient Flags",
+                "Description": "Provide a feature for doctors to view a list of patients categorized by flags based on the patients' onboarding responses. This helps doctors prioritize and manage patient care effectively."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Automated Follow-Up and Outreach",
-                "Description": "Develop functionalities to send follow-up messages automatically if no response is received to the initial message after 48 hours, track pending invitations, and use LinkedIn Sales Navigator for outreach to invited contacts who haven't accepted the connection request."
+                "Title": "Notifications and Alerts",
+                "Description": "Send email notifications to doctors for important actions such as registration, verification, and report approvals. Ensure timely communication of critical updates and actions."
             },
             {
                 "Epic ID": "E007",
-                "Title": "Dashboard and Settings Management",
-                "Description": "Design a modern dashboard to display key metrics such as the total number of contacts and messages sent. Implement a settings section where users can adjust message sending limits, invitation limits, follow-up message limits, and provide necessary inputs like OpenAI API key and Chrome browser path."
+                "Title": "Data Security and Privacy",
+                "Description": "Implement robust access control mechanisms to protect patient data. Ensure all sensitive data is encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25 laws."
+            }
+        ],
+        "AI System": [
+            {
+                "Epic ID": "E001",
+                "Title": "AI-Driven Onboarding",
+                "Description": "Develop an AI agent to interact with patients during the onboarding process. The AI will dynamically ask questions based on the conversation context and store all responses in a structured format."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "Conversational AI for Patients",
+                "Description": "Implement a chat interface that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses and analyze conversations for emotional and physical well-being."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "AI Assistance for Doctors",
+                "Description": "Provide AI assistance for doctors during consultations to analyze and summarize conversations in real-time. The AI will help retrieve relevant patient history and generate structured consultation reports."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Transformer Model Integration",
+                "Description": "Integrate transformer models for handling patient onboarding, summarizing conversation histories, and generating consultation reports. Ensure the models are trained and optimized for these specific tasks."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Voice and Text Processing",
+                "Description": "Utilize OpenAI's API for voice-to-text, text-to-voice, and text generation functionalities. This will enable the AI to effectively interact with users and provide accurate responses."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "AI-Driven Summarization and Analysis",
+                "Description": "Implement logic for the AI to summarize long conversations and analyze them for key insights. This includes emotional and physical well-being, medical history, and other relevant factors."
+            },
+            {
+                "Epic ID": "E007",
+                "Title": "AI Prompting for Doctors",
+                "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. This will aid doctors in making informed decisions during consultations."
+            }
+        ],
+        "Patients": [
+            {
+                "Epic ID": "E001",
+                "Title": "User Authentication and Account Management",
+                "Description": "Enable patients to securely register, log in, and manage their profile information. This includes email and phone OTP verification during registration and the ability to update profile details such as name, phone number, email, and profile picture."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "AI-Guided Onboarding Process",
+                "Description": "Provide an AI-guided onboarding process where patients can start a new visit, answer dynamic questions based on conversation context, and have their responses stored in a structured format. This process will generate a patient summary that can be viewed by both the patient and the doctor."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Chat Interface with AI",
+                "Description": "Implement a chat interface on the patient dashboard that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses, analyze conversations for emotional and physical well-being, and summarize long conversations."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Viewing Historical Data",
+                "Description": "Allow patients to view their past onboarding summaries and consultation histories. This includes providing a tab for onboarding history and another for consultation history, where patients can access detailed reports of their interactions and consultations."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Profile Management and QR Code Access",
+                "Description": "Enable patients to manage their profile information and generate a QR code that doctors can scan to access the patient's visit and consultation histories. This feature will be available on the patient's profile page."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Notifications and Alerts",
+                "Description": "Send email notifications to patients for important actions such as registration, verification, and report approvals. This ensures that patients are kept informed about their account activities and medical updates."
             }
         ]
     }

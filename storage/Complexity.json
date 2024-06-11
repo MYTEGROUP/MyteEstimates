@@ -3,16 +3,16 @@
         "hours": 0.25
     },
     "Simple": {
-        "hours": 0.5
+        "hours": 0.55
     },
     "Medium": {
-        "hours": 1.25
+        "hours": 1.2
     },
     "Complex": {
-        "hours": 4.0
+        "hours": 6.0
     },
     "Very Complex": {
-        "hours": 8.0
+        "hours": 12.0
     },
     "Hourly Rate": {
         "Rate": 50.0

@@ -1,68 +1,63 @@
 {
-    "ProjectTitle": "LinkedIn AI Agent",
-    "ExecutiveSummary": "The LinkedIn AI Agent is a standalone desktop application designed to automate and optimize LinkedIn-related tasks. It scrapes contact information, manages conversation history, generates personalized messages, and handles follow-ups, all while providing a user-friendly interface. This tool aims to enhance professional networking efficiency using AI and NLP technologies.",
-    "Background": "In today's professional world, managing LinkedIn contacts and communications can be time-consuming. The LinkedIn AI Agent addresses this by automating tasks such as scraping contact information, generating personalized messages, and managing follow-ups. By leveraging AI and NLP, the tool aims to make LinkedIn interactions more efficient and effective.",
+    "ProjectTitle": "AI Health Connect",
+    "ExecutiveSummary": "AI Health Connect is a Progressive Web App (PWA) designed to revolutionize patient-doctor interactions through AI-driven onboarding, consultations, and data management. The platform aims to enhance communication, streamline data handling, and provide valuable insights using advanced AI technologies. Accessible on mobile devices and desktops, the app ensures secure, user-friendly, and efficient healthcare delivery.",
+    "Background": "The healthcare sector faces challenges in patient-doctor communication, data management, and accessibility. Traditional methods often lead to inefficiencies and gaps in patient care. AI Health Connect addresses these issues by leveraging AI for dynamic interactions, secure data storage, and real-time analysis, thereby improving healthcare outcomes and user experience.",
     "Objectives": [
-        "Automate the scraping of first-level LinkedIn contacts and store their information locally.",
-        "Create and manage ignore lists using NLP to filter out irrelevant contacts.",
-        "Store and manage conversation history with LinkedIn contacts.",
-        "Generate personalized initial and follow-up messages using AI.",
-        "Provide a user-friendly interface for managing contacts, campaigns, and messages.",
-        "Automate follow-up messages and track pending invitations."
+        "Enhance patient-doctor communication through AI-driven interactions.",
+        "Streamline data management with secure storage and easy access.",
+        "Provide AI-driven insights for better healthcare decision-making.",
+        "Ensure compliance with data security and privacy laws.",
+        "Deliver a user-friendly interface accessible on multiple devices."
     ],
-    "Scope": "The LinkedIn AI Agent is designed as a personal tool for automating LinkedIn tasks. It includes functionalities for scraping contact information, managing conversation history, generating personalized messages, and handling follow-ups. The software will be a standalone desktop application for Windows, with data stored locally in JSON files. Users are responsible for backing up their data.",
+    "Scope": "The project scope includes developing a PWA for patients and doctors, focusing on user authentication, patient-doctor interactions, AI integration, and data management. The software will be accessible on mobile devices and desktops, ensuring broad accessibility and ease of use. Key features include user authentication, AI-guided onboarding, chat interface, historical data access, QR code integration, and secure data handling.",
     "Deliverables": [
-        "A standalone .exe application for Windows.",
-        "Functionality to scrape first-level LinkedIn contacts and save their information in Contacts.json.",
-        "NLP-based ignore list creation and management.",
-        "Storage of conversation history in MessageHistory.json.",
-        "UI for creating and managing campaigns, including contact filtering and system context settings.",
-        "Functionality to upload PDFs for personalized messaging.",
-        "Profile analysis using OpenAI NLP and storage of analysis results.",
-        "Generation of personalized initial and follow-up messages with approval tracking.",
-        "UI for reviewing and approving generated messages.",
-        "Creation and management of potential contact lists based on LinkedIn searches.",
-        "Automated sending of follow-up messages and tracking of pending invitations.",
-        "Integration with LinkedIn Sales Navigator for follow-up actions."
+        "Functional PWA for patients and doctors.",
+        "Secure user authentication and data management.",
+        "AI integration for dynamic onboarding, conversation analysis, and report generation.",
+        "User-friendly interface for patient-doctor interactions.",
+        "Compliance with data security and privacy laws.",
+        "Hosting on AWS with MongoDB for database storage."
     ],
     "Milestones": {
         "Milestones": [
             {
                 "MilestoneID": "M001",
-                "MilestoneName": "Data Collection and Storage",
+                "MilestoneName": "User Authentication and Account Management",
                 "KeyDeliverables": [
-                    "Functionality to scrape first-level LinkedIn contacts and save their information in Contacts.json.",
-                    "NLP-based ignore list creation and management.",
-                    "Storage of conversation history in MessageHistory.json.",
-                    "Functionality to upload PDFs for personalized messaging."
+                    "Patient and doctor registration with email and phone OTP verification",
+                    "Login functionality for patients and doctors",
+                    "Profile management for patients and doctors",
+                    "Secure data encryption for user authentication"
                 ]
             },
             {
                 "MilestoneID": "M002",
-                "MilestoneName": "Campaign Management and Messaging",
+                "MilestoneName": "AI-Guided Onboarding Process",
                 "KeyDeliverables": [
-                    "UI for creating and managing campaigns, including contact filtering and system context settings.",
-                    "Profile analysis using OpenAI NLP and storage of analysis results.",
-                    "Generation of personalized initial and follow-up messages with approval tracking.",
-                    "UI for reviewing and approving generated messages."
+                    "AI-guided onboarding for patients",
+                    "Dynamic questioning based on conversation context",
+                    "Structured storage of patient responses",
+                    "Generation and viewing of patient summaries"
                 ]
             },
             {
                 "MilestoneID": "M003",
-                "MilestoneName": "Potential Contacts and Follow-Up Automation",
+                "MilestoneName": "Chat Interface and AI Integration",
                 "KeyDeliverables": [
-                    "Creation and management of potential contact lists based on LinkedIn searches.",
-                    "Automated sending of follow-up messages and tracking of pending invitations.",
-                    "Integration with LinkedIn Sales Navigator for follow-up actions."
+                    "Chat interface for text and voice interaction with AI",
+                    "AI access to entire conversation history",
+                    "Real-time conversation analysis and summarization",
+                    "Emotional and physical well-being analysis"
                 ]
             },
             {
                 "MilestoneID": "M004",
-                "MilestoneName": "Standalone Application and User Interface",
+                "MilestoneName": "Data Security and Compliance",
                 "KeyDeliverables": [
-                    "A standalone .exe application for Windows.",
-                    "Modern UI with sections for Contacts, Campaigns, Potential Contacts, Message Approval, Messages, and Settings.",
-                    "User-friendly interface for task management and message approval."
+                    "Encryption of data in transit and at rest",
+                    "Role-based access control for data protection",
+                    "Compliance with Canadian Laws and Quebec Loi 25",
+                    "Regular security audits and monitoring"
                 ]
             }
         ]
@@ -71,39 +66,39 @@
         "Risks": [
             {
                 "RiskID": "R001",
-                "RiskDescription": "Data Loss Due to Local Storage",
+                "RiskDescription": "Data Security and Privacy Compliance",
                 "MitigationStrategies": [
-                    "Educate users on the importance of regular data backups.",
-                    "Provide clear instructions on how to manually back up data using services like Google Drive.",
-                    "Implement a simple backup reminder feature within the application to prompt users to back up their data periodically."
+                    "Implement robust encryption for data in transit and at rest using industry-standard protocols like HTTPS and AES-256.",
+                    "Conduct regular security audits and penetration testing to identify and address vulnerabilities.",
+                    "Ensure compliance with Canadian Laws and Quebec Loi 25 by implementing strict access control mechanisms and maintaining detailed access logs."
                 ]
             },
             {
                 "RiskID": "R002",
-                "RiskDescription": "Security Vulnerabilities Due to Lack of Encryption and Authentication",
+                "RiskDescription": "AI Integration and Performance",
                 "MitigationStrategies": [
-                    "Advise users to operate the application in a secure environment and restrict access to their computer.",
-                    "Provide guidelines on securing their local environment, such as using strong passwords and enabling system-level encryption.",
-                    "Consider offering an optional security module as a future enhancement for users who require additional protection."
+                    "Optimize AI models and API calls to ensure real-time or near-real-time responses.",
+                    "Implement caching mechanisms to reduce redundant API calls and improve response times.",
+                    "Monitor AI performance and usage to identify and address any latency or rate limit issues promptly."
                 ]
             },
             {
                 "RiskID": "R003",
-                "RiskDescription": "Performance Issues Due to Local Execution and Data Handling",
+                "RiskDescription": "Cross-Platform Compatibility and User Experience",
                 "MitigationStrategies": [
-                    "Optimize the code for efficient data handling, especially when reading and writing JSON files.",
-                    "Implement performance monitoring within the application to identify and address bottlenecks.",
-                    "Provide users with hardware recommendations to ensure smooth operation, such as minimum RAM and CPU specifications."
+                    "Design the PWA with responsive design principles to ensure seamless functionality across various devices, including smartphones, tablets, and desktops.",
+                    "Conduct extensive usability testing on different platforms (Android, iOS, web browsers) to identify and fix compatibility issues.",
+                    "Follow platform-specific guidelines for both Android and iOS to ensure a consistent and intuitive user experience."
                 ]
             }
         ]
     },
     "ClientInformation": {
-        "CompanyName": " RBC Dominion valeurs mobili\u00e8res Inc.",
-        "ContactPerson": "Vincent Bonnet",
-        "Address": "1501 avenue McGill College, bureau 2150, Montr\u00e9al, QC  H3A 3M8",
-        "Email": "vincent.bonnet@rbc.com",
-        "Phone": "5148408830"
+        "CompanyName": "Quebec Inc.",
+        "ContactPerson": "Marco Mascarella",
+        "Address": "none",
+        "Email": "marco.mascarella@mcgill.ca",
+        "Phone": "514 603 2327"
     },
     "UserInformation": {
         "CompanyName": "Myte Group Inc.",
@@ -118,60 +113,148 @@
         "TeamExpertise": "Under the leadership of Ahmed Mekallach, Myte Group boasts a profound expertise uniquely blending business acumen with technical prowess. With over eight years of experience in sales, estimating, and project management, Ahmed's comprehensive understanding of business processes and keen coding skills enable him to tackle challenges efficiently and innovatively. His approach not only ensures operational excellence but also drives the development of AI-driven solutions that are both sophisticated and practical, perfectly suited to meet the intricate demands of modern businesses. This unique combination positions Myte Group as a leader in AI systems design and development, capable of delivering high-quality, customized solutions."
     },
     "Budget": {
-        "TotalEstimatedHours": 338.5,
-        "TotalEstimatedCost": 16925.0,
+        "TotalEstimatedHours": 1669.7999999999997,
+        "TotalEstimatedCost": 83490.0,
         "CostBreakdown": [
             {
-                "Stakeholder": "LinkedIn User",
+                "Stakeholder": "AI System",
                 "Details": [
                     {
-                        "Item": "Data Collection and Storage",
-                        "TotalHours": 72.0,
-                        "Cost": 3600.0,
-                        "Description": "Implement functionalities to scrape first-level LinkedIn contacts, create an ignore list using NLP, store conversation history, and upload data for personalized messaging. This includes creating a UI for managing the ignore list and storing all data in local JSON files."
+                        "Item": "AI-Driven Onboarding",
+                        "TotalHours": 123.85,
+                        "Cost": 6192.5,
+                        "Description": "Develop an AI agent to interact with patients during the onboarding process. The AI will dynamically ask questions based on the conversation context and store all responses in a structured format."
                     },
                     {
-                        "Item": "Contact Analysis and Message Generation",
-                        "TotalHours": 42.75,
-                        "Cost": 2137.5,
-                        "Description": "Develop features to analyze LinkedIn contact profiles using OpenAI NLP, generate personalized initial and follow-up messages based on conversation history and profile analysis, and store these messages with approval tracking keys."
+                        "Item": "Conversational AI for Patients",
+                        "TotalHours": 148.35,
+                        "Cost": 7417.5,
+                        "Description": "Implement a chat interface that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses and analyze conversations for emotional and physical well-being."
                     },
                     {
-                        "Item": "User Interface for Message Approval",
-                        "TotalHours": 39.0,
-                        "Cost": 1950.0,
-                        "Description": "Create a user-friendly interface for reviewing and approving generated messages. This UI should allow users to update the approval status of initial and follow-up messages, ensuring control over the communication being sent out."
+                        "Item": "AI Assistance for Doctors",
+                        "TotalHours": 123.9,
+                        "Cost": 6195.0,
+                        "Description": "Provide AI assistance for doctors during consultations to analyze and summarize conversations in real-time. The AI will help retrieve relevant patient history and generate structured consultation reports."
                     },
                     {
-                        "Item": "Campaign Management",
-                        "TotalHours": 43.75,
-                        "Cost": 2187.5,
-                        "Description": "Build functionalities for users to create and manage campaigns, filter contacts by various criteria, set system contexts for transformers, and view historical campaigns. This includes a UI for campaign creation and management."
+                        "Item": "Transformer Model Integration",
+                        "TotalHours": 148.4,
+                        "Cost": 7420.0,
+                        "Description": "Integrate transformer models for handling patient onboarding, summarizing conversation histories, and generating consultation reports. Ensure the models are trained and optimized for these specific tasks."
                     },
                     {
-                        "Item": "Managing Potential Contacts",
-                        "TotalHours": 31.75,
-                        "Cost": 1587.5,
-                        "Description": "Implement features to create new contact lists based on specific criteria from LinkedIn searches, invite potential contacts programmatically, and track the status of these invitations. This includes storing potential contacts in a local JSON file and recording invite dates."
+                        "Item": "Voice and Text Processing",
+                        "TotalHours": 70.5,
+                        "Cost": 3525.0,
+                        "Description": "Utilize OpenAI's API for voice-to-text, text-to-voice, and text generation functionalities. This will enable the AI to effectively interact with users and provide accurate responses."
                     },
                     {
-                        "Item": "Automated Follow-Up and Outreach",
-                        "TotalHours": 45.0,
-                        "Cost": 2250.0,
-                        "Description": "Develop functionalities to send follow-up messages automatically if no response is received to the initial message after 48 hours, track pending invitations, and use LinkedIn Sales Navigator for outreach to invited contacts who haven't accepted the connection request."
+                        "Item": "AI-Driven Summarization and Analysis",
+                        "TotalHours": 99.35000000000001,
+                        "Cost": 4967.5,
+                        "Description": "Implement logic for the AI to summarize long conversations and analyze them for key insights. This includes emotional and physical well-being, medical history, and other relevant factors."
                     },
                     {
-                        "Item": "Dashboard and Settings Management",
-                        "TotalHours": 64.25,
-                        "Cost": 3212.5,
-                        "Description": "Design a modern dashboard to display key metrics such as the total number of contacts and messages sent. Implement a settings section where users can adjust message sending limits, invitation limits, follow-up message limits, and provide necessary inputs like OpenAI API key and Chrome browser path."
+                        "Item": "AI Prompting for Doctors",
+                        "TotalHours": 74.1,
+                        "Cost": 3705.0,
+                        "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. This will aid doctors in making informed decisions during consultations."
+                    }
+                ]
+            },
+            {
+                "Stakeholder": "Doctors",
+                "Details": [
+                    {
+                        "Item": "User Authentication and Account Management",
+                        "TotalHours": 56.8,
+                        "Cost": 2840.0,
+                        "Description": "Enable doctors to register and log in with OTP mobile verification and email verification. Allow doctors to manage their profile information, including name, phone number, email, and profile picture."
+                    },
+                    {
+                        "Item": "Patient Management",
+                        "TotalHours": 95.04999999999998,
+                        "Cost": 4752.5,
+                        "Description": "Provide doctors with a list of patients who have granted access via QR code. Allow doctors to access detailed profiles, including visit and consultation histories, of each patient."
+                    },
+                    {
+                        "Item": "Consultation Process",
+                        "TotalHours": 53.05000000000001,
+                        "Cost": 2652.5,
+                        "Description": "Enable doctors to start a new consultation session by scanning the patient's QR code to link the consultation to the patient. Provide AI assistance during consultations for real-time analysis and summarization. Allow doctors to generate, review, edit, and approve consultation reports, and share approved reports with patients."
+                    },
+                    {
+                        "Item": "Interactive AI for Doctor",
+                        "TotalHours": 79.6,
+                        "Cost": 3980.0,
+                        "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. Use the AI to retrieve and summarize relevant patient history to aid the doctor during consultations."
+                    },
+                    {
+                        "Item": "Patient Flags",
+                        "TotalHours": 64.7,
+                        "Cost": 3235.0,
+                        "Description": "Provide a feature for doctors to view a list of patients categorized by flags based on the patients' onboarding responses. This helps doctors prioritize and manage patient care effectively."
+                    },
+                    {
+                        "Item": "Notifications and Alerts",
+                        "TotalHours": 37.05,
+                        "Cost": 1852.5,
+                        "Description": "Send email notifications to doctors for important actions such as registration, verification, and report approvals. Ensure timely communication of critical updates and actions."
+                    },
+                    {
+                        "Item": "Data Security and Privacy",
+                        "TotalHours": 83.5,
+                        "Cost": 4175.0,
+                        "Description": "Implement robust access control mechanisms to protect patient data. Ensure all sensitive data is encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25 laws."
+                    }
+                ]
+            },
+            {
+                "Stakeholder": "Patients",
+                "Details": [
+                    {
+                        "Item": "User Authentication and Account Management",
+                        "TotalHours": 61.050000000000004,
+                        "Cost": 3052.5,
+                        "Description": "Enable patients to securely register, log in, and manage their profile information. This includes email and phone OTP verification during registration and the ability to update profile details such as name, phone number, email, and profile picture."
+                    },
+                    {
+                        "Item": "AI-Guided Onboarding Process",
+                        "TotalHours": 82.8,
+                        "Cost": 4140.0,
+                        "Description": "Provide an AI-guided onboarding process where patients can start a new visit, answer dynamic questions based on conversation context, and have their responses stored in a structured format. This process will generate a patient summary that can be viewed by both the patient and the doctor."
+                    },
+                    {
+                        "Item": "Chat Interface with AI",
+                        "TotalHours": 85.5,
+                        "Cost": 4275.0,
+                        "Description": "Implement a chat interface on the patient dashboard that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses, analyze conversations for emotional and physical well-being, and summarize long conversations."
+                    },
+                    {
+                        "Item": "Viewing Historical Data",
+                        "TotalHours": 63.2,
+                        "Cost": 3160.0,
+                        "Description": "Allow patients to view their past onboarding summaries and consultation histories. This includes providing a tab for onboarding history and another for consultation history, where patients can access detailed reports of their interactions and consultations."
+                    },
+                    {
+                        "Item": "Profile Management and QR Code Access",
+                        "TotalHours": 71.8,
+                        "Cost": 3590.0,
+                        "Description": "Enable patients to manage their profile information and generate a QR code that doctors can scan to access the patient's visit and consultation histories. This feature will be available on the patient's profile page."
+                    },
+                    {
+                        "Item": "Notifications and Alerts",
+                        "TotalHours": 47.25,
+                        "Cost": 2362.5,
+                        "Description": "Send email notifications to patients for important actions such as registration, verification, and report approvals. This ensures that patients are kept informed about their account activities and medical updates."
                     }
                 ]
             }
         ]
     },
     "Date": {
-        "CurrentDate": "2024-05-24"
+        "CurrentDate": "2024-06-09"
     },
     "ProposalID": "S2024015"
 }

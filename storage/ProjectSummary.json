@@ -1,16 +1,28 @@
 {
-    "Project Vision": "### Project Vision\n\nImagine a world where your LinkedIn networking is not just automated but intelligently optimized, freeing you from the mundane while amplifying your professional reach. Introducing **LinkedIn AI Agent**, a groundbreaking standalone desktop application designed to revolutionize how you manage and expand your LinkedIn connections. \n\nHarnessing the power of AI and Natural Language Processing (NLP) from OpenAI, this innovative tool will effortlessly scrape and organize your first-level contacts, generate personalized outreach messages, and manage follow-ups\u2014all while you focus on what truly matters. With a sleek, user-friendly interface built using Tkinter, you\u2019ll have a modern dashboard at your fingertips, making it easy to navigate through contacts, campaigns, and message approvals.\n\nGone are the days of manual data entry and repetitive tasks. Our AI Agent will not only save you time but also enhance the quality of your interactions, making your networking efforts more effective and impactful. Whether you\u2019re a busy professional, a sales executive, or an entrepreneur, this tool will be your personal LinkedIn assistant, operating seamlessly on your Windows PC.\n\nStep into the future of professional networking with LinkedIn AI Agent\u2014where automation meets intelligence, and your career growth knows no bounds.",
+    "Project Vision": "### Project Vision\n\nImagine a world where healthcare is not just accessible but also intuitive, efficient, and secure. Our groundbreaking digital platform is set to revolutionize patient-doctor interactions by leveraging cutting-edge AI technologies. Envision a Progressive Web App (PWA) that seamlessly connects patients and doctors, offering real-time, AI-driven consultations and insights. \n\nFor patients, this means a user-friendly interface where they can effortlessly interact with an AI agent for onboarding, consultations, and general inquiries. This AI not only understands and responds but also summarizes conversations, providing valuable health insights. Imagine having your medical history, consultation summaries, and AI-generated health reports at your fingertips, anytime, anywhere.\n\nFor doctors, our platform is a game-changer. It offers a comprehensive dashboard to manage patient interactions, access detailed medical histories, and receive AI-assisted consultation summaries. The AI integration ensures that doctors can make informed decisions swiftly, enhancing the quality of care they provide.\n\nSecurity is paramount; our platform complies with stringent Canadian and Quebec Loi 25 laws, ensuring that all patient data is encrypted and secure. Hosted on AWS and powered by MongoDB, our platform is both scalable and reliable.\n\nJoin us in transforming healthcare into a more connected, intelligent, and secure experience. Welcome to the future of patient-doctor interactions.",
     "Business Vertical": [
-        "Professional Networking"
+        "Healthcare Technology"
     ],
     "Stakeholders": [
-        "LinkedIn User"
+        "Patients",
+        "Doctors",
+        "AI System"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "LinkedIn User",
+            "Stakeholder": "Patients",
             "Model": "Subscription",
-            "Rationale": "A subscription model is suitable for LinkedIn users who will benefit from continuous updates, maintenance, and support for the software. Users pay a recurring fee (monthly or annually) for access to the software and its ongoing improvements. This model ensures a steady revenue stream for the developer while providing users with the latest features and enhancements. The developer receives the revenue, and users pay for the value of ongoing service and updates."
+            "Rationale": "Patients would pay a recurring fee for access to the platform's services, including AI-driven onboarding, consultation summaries, and historical data management. This model ensures a steady revenue stream and allows patients to benefit from continuous access to the platform's features. The revenue is received by the platform provider."
+        },
+        {
+            "Stakeholder": "Doctors",
+            "Model": "Subscription",
+            "Rationale": "Doctors would pay a recurring fee for access to advanced features such as AI-assisted consultation tools, patient management, and real-time conversation analysis. This model provides a consistent revenue stream and ensures that doctors have ongoing access to the platform's capabilities. The revenue is received by the platform provider."
+        },
+        {
+            "Stakeholder": "AI System",
+            "Model": "Commission",
+            "Rationale": "The AI system could generate revenue through a commission-based model where a percentage of the subscription fees from patients and doctors is allocated to cover the costs of AI services and maintenance. This ensures that the AI system is financially supported while aligning its revenue with the platform's overall income. The revenue is received by the AI service provider, such as OpenAI."
         }
     ]
 }
