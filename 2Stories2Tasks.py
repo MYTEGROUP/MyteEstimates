@@ -21,14 +21,77 @@ def reset_semaphore(timer):
         timer = Timer(60, reset_semaphore, [timer])
         timer.start()
 
-def process_story(story_data, project_breakdown, all_tasks):
+# def process_story(story_data, project_breakdown, all_tasks):
+#     """
+#     Processes each story to generate tasks based on the provided acceptance criteria and other details.
+#     """
+#     stakeholder, epic, story, index = story_data
+#     tasks_json = generate_tasks_for_story(
+#         story['Description'], story['AcceptanceCriteria'], epic['Description'], stakeholder, project_breakdown
+#     )
+#     tasks = json.loads(tasks_json)['Tasks']
+#     all_tasks.append({
+#         "Stakeholder": stakeholder,
+#         "Epic ID": epic['Epic ID'],
+#         "Epic Title": epic['Title'],
+#         "Epic Description": epic['Description'],
+#         "Story ID": story['Story ID'],
+#         "Story Title": story['Title'],  # Include Story Title in the output
+#         "Story Description": story['Description'],
+#         "Story Acceptance Criteria": story['AcceptanceCriteria'],
+#         "Tasks": tasks,
+#         "Story Index": index
+#     })
+#
+# def task_processor(task_queue, project_breakdown, all_tasks):
+#     """
+#     Thread function to process tasks from the queue.
+#     """
+#     while not task_queue.empty():
+#         story_data = task_queue.get()
+#         rate_limit_semaphore.acquire()
+#         try:
+#             process_story(story_data, project_breakdown, all_tasks)
+#         finally:
+#             task_queue.task_done()
+#             rate_limit_semaphore.release()
+#
+# def generate_tasks_for_story(story, acceptance_criteria, epic, stakeholder,project_breakdown):
+#
+#     """
+#     Generates detailed tasks for a given story in JSON format.
+#     """
+#
+#     system_context = (
+#         "As a Software Product Architect, your task is to decompose the user story and its acceptance criteria into detailed, actionable tasks suitable for a development team. "
+#         "Provide tasks that are specific, measurable, achievable, and relevant that can be packaged into a function on python with clear inputs and outputs in the description. "
+#         "Your response should be based specifically on the provided project context: the story, its acceptance criteria, the epic it's under, "
+#         "the stakeholder the epic is under, the list of stakeholders, epics, stories. Do not provide a time estimate in the task description."
+#         "Consider the following Tech Stack : (Python / Flask -- AWS services for databases -- OpenAI API For any NLP Transformer needs -- Desktop Application focus for Windows)"
+#     )
+#
+#     assistant_context = ("Structure each task in a JSON format with key 'Tasks' and then a list of descriptions for each task. "
+#                          "Follow this structure: {'Tasks': [{'Description': 'Task Description'},{'Description': 'Task Description'},{..},..]}")
+#
+#
+#     initial_prompt = (
+#         f"Given the project breakdown so far : [{project_breakdown}] ]"
+#         f"Focused on stakeholder [{stakeholder}],epic [{epic}], story [{story}], and its acceptance criteria [{acceptance_criteria}]. "
+#         "Decompose the story into actionable tasks that are SMART and align with the acceptance criteria. "
+#         "Structure each task in a JSON format with key 'Description'. Do not provide a time estimate in the task description."
+#     )
+#     tasks = generate_text_json(system_context, assistant_context, initial_prompt)
+#
+#     return tasks
+
+#without project_breakdown:
+def process_story(story_data, all_tasks):
     """
     Processes each story to generate tasks based on the provided acceptance criteria and other details.
     """
     stakeholder, epic, story, index = story_data
     tasks_json = generate_tasks_for_story(
-        story['Description'], story['AcceptanceCriteria'], epic['Description'], stakeholder, project_breakdown
-    )
+        story['Description'], story['AcceptanceCriteria'], epic['Description'], stakeholder)
     tasks = json.loads(tasks_json)['Tasks']
     all_tasks.append({
         "Stakeholder": stakeholder,
@@ -43,7 +106,7 @@ def process_story(story_data, project_breakdown, all_tasks):
         "Story Index": index
     })
 
-def task_processor(task_queue, project_breakdown, all_tasks):
+def task_processor(task_queue, all_tasks):
     """
     Thread function to process tasks from the queue.
     """
@@ -51,12 +114,12 @@ def task_processor(task_queue, project_breakdown, all_tasks):
         story_data = task_queue.get()
         rate_limit_semaphore.acquire()
         try:
-            process_story(story_data, project_breakdown, all_tasks)
+            process_story(story_data, all_tasks)
         finally:
             task_queue.task_done()
             rate_limit_semaphore.release()
 
-def generate_tasks_for_story(story, acceptance_criteria, epic, stakeholder,project_breakdown):
+def generate_tasks_for_story(story, acceptance_criteria, epic, stakeholder):
 
     """
     Generates detailed tasks for a given story in JSON format.
@@ -75,15 +138,15 @@ def generate_tasks_for_story(story, acceptance_criteria, epic, stakeholder,proje
 
 
     initial_prompt = (
-        f"Given the project breakdown so far : [{project_breakdown}] ]"
-        f"Focused on stakeholder [{stakeholder}],epic [{epic}], story [{story}], and its acceptance criteria [{acceptance_criteria}]. "
-        "Decompose the story into actionable tasks that are SMART and align with the acceptance criteria. "
+        f"Given the stakeholder [{stakeholder}],epic [{epic}], story [{story}], and acceptance criteria [{acceptance_criteria}], "
+        "decompose the story into actionable tasks that are SMART and align with the acceptance criteria. "
+        "Each task description should describe a functions inputs , transformation and outputs if any. "
+        "Together, these functions accomplish specifically the requirements of the story for the epic/stakeholder."
         "Structure each task in a JSON format with key 'Description'. Do not provide a time estimate in the task description."
     )
     tasks = generate_text_json(system_context, assistant_context, initial_prompt)
 
     return tasks
-
 
 def main():
     """
@@ -107,9 +170,15 @@ def main():
                 print(f"Processing {epic['Title']}")
                 task_queue.put((stakeholder, epic, story, index))
 
+    # # Start threads to process tasks
+    # for _ in range(10):  # Number of threads
+    #     thread = threading.Thread(target=task_processor, args=(task_queue, project_breakdown, all_tasks))
+    #     threads.append(thread)
+    #     thread.start()
+
     # Start threads to process tasks
     for _ in range(10):  # Number of threads
-        thread = threading.Thread(target=task_processor, args=(task_queue, project_breakdown, all_tasks))
+        thread = threading.Thread(target=task_processor, args=(task_queue, all_tasks))
         threads.append(thread)
         thread.start()
 

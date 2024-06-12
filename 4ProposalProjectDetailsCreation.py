@@ -246,11 +246,11 @@ def main():
 
     ### Link this to a CRM of Clients
     client_info = {
-        "CompanyName": "Quebec Inc.",
-        "ContactPerson": "Marco Mascarella",
-        "Address": "none",
-        "Email": "marco.mascarella@mcgill.ca",
-        "Phone": "514 603 2327"
+        "CompanyName": "Confidential",
+        "ContactPerson": "Confidential",
+        "Address": "Confidential",
+        "Email": "Confidential",
+        "Phone": "Confidential"
     }
 
     #Link this to a CRM of Users of the Tool.
@@ -278,7 +278,7 @@ def main():
     update_proposal_json('storage/ProjectBreakdown1.json', 'storage/Proposal.json')
     add_current_date_to_proposal(file_path)
     # Add Proposal ID to Proposal.json
-    proposal_id = "S2024015"  # Example hardcoded Proposal ID
+    proposal_id = "S2024016"  # Example hardcoded Proposal ID
     add_proposal_id_to_json('storage/Proposal.json', proposal_id)
 
 if __name__ == "__main__":

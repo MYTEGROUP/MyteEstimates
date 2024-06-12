@@ -1,63 +1,60 @@
 {
-    "ProjectTitle": "AI Health Connect",
-    "ExecutiveSummary": "AI Health Connect is a Progressive Web App (PWA) designed to revolutionize patient-doctor interactions through AI-driven onboarding, consultations, and data management. The platform aims to enhance communication, streamline data handling, and provide valuable insights using advanced AI technologies. Accessible on mobile devices and desktops, the app ensures secure, user-friendly, and efficient healthcare delivery.",
-    "Background": "The healthcare sector faces challenges in patient-doctor communication, data management, and accessibility. Traditional methods often lead to inefficiencies and gaps in patient care. AI Health Connect addresses these issues by leveraging AI for dynamic interactions, secure data storage, and real-time analysis, thereby improving healthcare outcomes and user experience.",
+    "ProjectTitle": "HealthConnect AI",
+    "ExecutiveSummary": "HealthConnect AI is a comprehensive digital platform designed to enhance patient-doctor interactions through advanced AI technologies. This Progressive Web App (PWA) aims to streamline the onboarding process, facilitate secure communication, and provide real-time insights and summaries during consultations. The platform ensures data security and compliance with Canadian Laws and Quebec Loi 25, making it a reliable and user-friendly solution for both patients and doctors.",
+    "Background": "In today's fast-paced world, efficient and secure communication between patients and doctors is crucial. Traditional methods often fall short in providing timely and accurate information, leading to delays in diagnosis and treatment. HealthConnect AI addresses these challenges by leveraging AI to enhance patient-doctor interactions, streamline data management, and provide valuable insights. This platform is designed to be accessible on various devices, ensuring convenience and ease of use for all users.",
     "Objectives": [
         "Enhance patient-doctor communication through AI-driven interactions.",
-        "Streamline data management with secure storage and easy access.",
-        "Provide AI-driven insights for better healthcare decision-making.",
-        "Ensure compliance with data security and privacy laws.",
-        "Deliver a user-friendly interface accessible on multiple devices."
+        "Ensure secure and efficient data management and storage.",
+        "Provide real-time insights and summaries during consultations.",
+        "Comply with Canadian Laws and Quebec Loi 25 for data security and privacy.",
+        "Create a user-friendly interface accessible on multiple devices."
     ],
-    "Scope": "The project scope includes developing a PWA for patients and doctors, focusing on user authentication, patient-doctor interactions, AI integration, and data management. The software will be accessible on mobile devices and desktops, ensuring broad accessibility and ease of use. Key features include user authentication, AI-guided onboarding, chat interface, historical data access, QR code integration, and secure data handling.",
+    "Scope": "The scope of HealthConnect AI includes developing a Progressive Web App (PWA) for both patients and doctors, focusing on user authentication, patient-doctor interactions, AI integration, and data management. The software will be accessible on mobile devices (Android and iOS) and web browsers. Key features include user authentication, patient and doctor dashboards, AI-guided onboarding, real-time consultation assistance, and secure data storage. The project will ensure compliance with relevant data security and privacy laws.",
     "Deliverables": [
-        "Functional PWA for patients and doctors.",
-        "Secure user authentication and data management.",
-        "AI integration for dynamic onboarding, conversation analysis, and report generation.",
-        "User-friendly interface for patient-doctor interactions.",
-        "Compliance with data security and privacy laws.",
-        "Hosting on AWS with MongoDB for database storage."
+        "Functional PWA for patients and doctors with secure user authentication.",
+        "Patient dashboard with AI-guided onboarding, chat interface, and historical data access.",
+        "Doctor dashboard with patient management, consultation process, and AI assistance.",
+        "Integration of OpenAI APIs for voice-to-text, text-to-voice, and text generation.",
+        "Secure data storage and management using MongoDB and AWS hosting.",
+        "Email notifications for registration, verification, and report approvals.",
+        "Compliance with Canadian Laws and Quebec Loi 25 for data security and privacy."
     ],
     "Milestones": {
         "Milestones": [
             {
                 "MilestoneID": "M001",
-                "MilestoneName": "User Authentication and Account Management",
+                "MilestoneName": "Functional PWA Development",
                 "KeyDeliverables": [
-                    "Patient and doctor registration with email and phone OTP verification",
-                    "Login functionality for patients and doctors",
-                    "Profile management for patients and doctors",
-                    "Secure data encryption for user authentication"
+                    "Functional PWA for patients and doctors with secure user authentication.",
+                    "Patient dashboard with AI-guided onboarding, chat interface, and historical data access.",
+                    "Doctor dashboard with patient management, consultation process, and AI assistance."
                 ]
             },
             {
                 "MilestoneID": "M002",
-                "MilestoneName": "AI-Guided Onboarding Process",
+                "MilestoneName": "AI Integration and Interaction",
                 "KeyDeliverables": [
-                    "AI-guided onboarding for patients",
-                    "Dynamic questioning based on conversation context",
-                    "Structured storage of patient responses",
-                    "Generation and viewing of patient summaries"
+                    "Integration of OpenAI APIs for voice-to-text, text-to-voice, and text generation.",
+                    "AI-guided onboarding process for patients.",
+                    "AI assistance during consultations for doctors."
                 ]
             },
             {
                 "MilestoneID": "M003",
-                "MilestoneName": "Chat Interface and AI Integration",
+                "MilestoneName": "Data Management and Security",
                 "KeyDeliverables": [
-                    "Chat interface for text and voice interaction with AI",
-                    "AI access to entire conversation history",
-                    "Real-time conversation analysis and summarization",
-                    "Emotional and physical well-being analysis"
+                    "Secure data storage and management using MongoDB and AWS hosting.",
+                    "Compliance with Canadian Laws and Quebec Loi 25 for data security and privacy.",
+                    "Role-based access control and encryption of data in transit and at rest."
                 ]
             },
             {
                 "MilestoneID": "M004",
-                "MilestoneName": "Data Security and Compliance",
+                "MilestoneName": "Notification System Implementation",
                 "KeyDeliverables": [
-                    "Encryption of data in transit and at rest",
-                    "Role-based access control for data protection",
-                    "Compliance with Canadian Laws and Quebec Loi 25",
-                    "Regular security audits and monitoring"
+                    "Email notifications for registration, verification, and report approvals.",
+                    "Notification settings management for patients.",
+                    "Logging and monitoring of notification delivery and access."
                 ]
             }
         ]
@@ -68,37 +65,37 @@
                 "RiskID": "R001",
                 "RiskDescription": "Data Security and Privacy Compliance",
                 "MitigationStrategies": [
-                    "Implement robust encryption for data in transit and at rest using industry-standard protocols like HTTPS and AES-256.",
+                    "Implement robust encryption for data in transit and at rest using industry-standard algorithms.",
                     "Conduct regular security audits and penetration testing to identify and address vulnerabilities.",
-                    "Ensure compliance with Canadian Laws and Quebec Loi 25 by implementing strict access control mechanisms and maintaining detailed access logs."
+                    "Ensure compliance with Canadian Laws and Quebec Loi 25 by integrating legal requirements into the development process and maintaining up-to-date documentation."
                 ]
             },
             {
                 "RiskID": "R002",
                 "RiskDescription": "AI Integration and Performance",
                 "MitigationStrategies": [
-                    "Optimize AI models and API calls to ensure real-time or near-real-time responses.",
-                    "Implement caching mechanisms to reduce redundant API calls and improve response times.",
-                    "Monitor AI performance and usage to identify and address any latency or rate limit issues promptly."
+                    "Optimize AI models and APIs to ensure real-time or near-real-time responses.",
+                    "Implement fallback mechanisms to handle API rate limits and latency issues, such as caching frequently accessed data.",
+                    "Conduct extensive testing with various user scenarios to ensure the AI performs reliably and efficiently under different conditions."
                 ]
             },
             {
                 "RiskID": "R003",
                 "RiskDescription": "Cross-Platform Compatibility and User Experience",
                 "MitigationStrategies": [
-                    "Design the PWA with responsive design principles to ensure seamless functionality across various devices, including smartphones, tablets, and desktops.",
-                    "Conduct extensive usability testing on different platforms (Android, iOS, web browsers) to identify and fix compatibility issues.",
-                    "Follow platform-specific guidelines for both Android and iOS to ensure a consistent and intuitive user experience."
+                    "Adopt responsive design principles to ensure a seamless user experience across different devices and screen sizes.",
+                    "Conduct usability testing on both Android and iOS devices, as well as web browsers, to identify and address any compatibility issues.",
+                    "Implement accessibility features to ensure the platform is usable by individuals with disabilities, including screen reader support and high-contrast modes."
                 ]
             }
         ]
     },
     "ClientInformation": {
-        "CompanyName": "Quebec Inc.",
-        "ContactPerson": "Marco Mascarella",
-        "Address": "none",
-        "Email": "marco.mascarella@mcgill.ca",
-        "Phone": "514 603 2327"
+        "CompanyName": "Confidential",
+        "ContactPerson": "Confidential",
+        "Address": "Confidential",
+        "Email": "Confidential",
+        "Phone": "Confidential"
     },
     "UserInformation": {
         "CompanyName": "Myte Group Inc.",
@@ -113,56 +110,9 @@
         "TeamExpertise": "Under the leadership of Ahmed Mekallach, Myte Group boasts a profound expertise uniquely blending business acumen with technical prowess. With over eight years of experience in sales, estimating, and project management, Ahmed's comprehensive understanding of business processes and keen coding skills enable him to tackle challenges efficiently and innovatively. His approach not only ensures operational excellence but also drives the development of AI-driven solutions that are both sophisticated and practical, perfectly suited to meet the intricate demands of modern businesses. This unique combination positions Myte Group as a leader in AI systems design and development, capable of delivering high-quality, customized solutions."
     },
     "Budget": {
-        "TotalEstimatedHours": 1669.7999999999997,
-        "TotalEstimatedCost": 83490.0,
+        "TotalEstimatedHours": 881.3499999999999,
+        "TotalEstimatedCost": 44067.5,
         "CostBreakdown": [
-            {
-                "Stakeholder": "AI System",
-                "Details": [
-                    {
-                        "Item": "AI-Driven Onboarding",
-                        "TotalHours": 123.85,
-                        "Cost": 6192.5,
-                        "Description": "Develop an AI agent to interact with patients during the onboarding process. The AI will dynamically ask questions based on the conversation context and store all responses in a structured format."
-                    },
-                    {
-                        "Item": "Conversational AI for Patients",
-                        "TotalHours": 148.35,
-                        "Cost": 7417.5,
-                        "Description": "Implement a chat interface that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses and analyze conversations for emotional and physical well-being."
-                    },
-                    {
-                        "Item": "AI Assistance for Doctors",
-                        "TotalHours": 123.9,
-                        "Cost": 6195.0,
-                        "Description": "Provide AI assistance for doctors during consultations to analyze and summarize conversations in real-time. The AI will help retrieve relevant patient history and generate structured consultation reports."
-                    },
-                    {
-                        "Item": "Transformer Model Integration",
-                        "TotalHours": 148.4,
-                        "Cost": 7420.0,
-                        "Description": "Integrate transformer models for handling patient onboarding, summarizing conversation histories, and generating consultation reports. Ensure the models are trained and optimized for these specific tasks."
-                    },
-                    {
-                        "Item": "Voice and Text Processing",
-                        "TotalHours": 70.5,
-                        "Cost": 3525.0,
-                        "Description": "Utilize OpenAI's API for voice-to-text, text-to-voice, and text generation functionalities. This will enable the AI to effectively interact with users and provide accurate responses."
-                    },
-                    {
-                        "Item": "AI-Driven Summarization and Analysis",
-                        "TotalHours": 99.35000000000001,
-                        "Cost": 4967.5,
-                        "Description": "Implement logic for the AI to summarize long conversations and analyze them for key insights. This includes emotional and physical well-being, medical history, and other relevant factors."
-                    },
-                    {
-                        "Item": "AI Prompting for Doctors",
-                        "TotalHours": 74.1,
-                        "Cost": 3705.0,
-                        "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. This will aid doctors in making informed decisions during consultations."
-                    }
-                ]
-            },
             {
                 "Stakeholder": "Doctors",
                 "Details": [
@@ -254,7 +204,7 @@
         ]
     },
     "Date": {
-        "CurrentDate": "2024-06-09"
+        "CurrentDate": "2024-06-12"
     },
-    "ProposalID": "S2024015"
+    "ProposalID": "S2024016"
 }
