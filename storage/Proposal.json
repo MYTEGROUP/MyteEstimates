@@ -1,60 +1,63 @@
 {
-    "ProjectTitle": "HealthConnect AI",
-    "ExecutiveSummary": "HealthConnect AI is a comprehensive digital platform designed to enhance patient-doctor interactions through advanced AI technologies. This Progressive Web App (PWA) aims to streamline the onboarding process, facilitate secure communication, and provide real-time insights and summaries during consultations. The platform ensures data security and compliance with Canadian Laws and Quebec Loi 25, making it a reliable and user-friendly solution for both patients and doctors.",
-    "Background": "In today's fast-paced world, efficient and secure communication between patients and doctors is crucial. Traditional methods often fall short in providing timely and accurate information, leading to delays in diagnosis and treatment. HealthConnect AI addresses these challenges by leveraging AI to enhance patient-doctor interactions, streamline data management, and provide valuable insights. This platform is designed to be accessible on various devices, ensuring convenience and ease of use for all users.",
+    "ProjectTitle": "SmartHire AI",
+    "ExecutiveSummary": "SmartHire AI is an innovative platform designed to revolutionize the CV screening and interview process for HR managers and job applicants. By leveraging AI technology, the platform aims to automate the initial stages of recruitment, making it easier to filter out unqualified candidates and conduct personalized digital interviews. This will save time for HR managers, improve the quality of candidates selected for interviews, and provide a more transparent and efficient application experience for job seekers.",
+    "Background": "In today's competitive job market, HR managers face the challenge of sifting through a large number of CVs, many of which are generated using AI and may not accurately reflect a candidate's true qualifications. This makes it difficult to identify genuinely interested and qualified candidates. Additionally, the traditional interview process is time-consuming and often lacks transparency. SmartHire AI aims to address these issues by automating CV screening and conducting digital interviews using AI technology.",
     "Objectives": [
-        "Enhance patient-doctor communication through AI-driven interactions.",
-        "Ensure secure and efficient data management and storage.",
-        "Provide real-time insights and summaries during consultations.",
-        "Comply with Canadian Laws and Quebec Loi 25 for data security and privacy.",
-        "Create a user-friendly interface accessible on multiple devices."
+        "Automate the CV screening process to filter out unqualified candidates.",
+        "Conduct personalized digital interviews using AI technology.",
+        "Provide transparent feedback to job applicants about their application status.",
+        "Notify HR managers about candidates who pass the screening and interview stages.",
+        "Integrate with Google APIs for email notifications and calendar scheduling."
     ],
-    "Scope": "The scope of HealthConnect AI includes developing a Progressive Web App (PWA) for both patients and doctors, focusing on user authentication, patient-doctor interactions, AI integration, and data management. The software will be accessible on mobile devices (Android and iOS) and web browsers. Key features include user authentication, patient and doctor dashboards, AI-guided onboarding, real-time consultation assistance, and secure data storage. The project will ensure compliance with relevant data security and privacy laws.",
+    "Scope": "The scope of SmartHire AI includes developing a comprehensive platform that automates the initial stages of the hiring process. The platform will feature a job applicant portal for CV uploads, application tracking, and digital interviews, as well as an HR manager portal for job posting creation, AI interview setup, and application statistics review. The platform will be a progressive web app compatible with tablets and iPads on both Android and iOS, and all data will be stored locally on the client's systems.",
     "Deliverables": [
-        "Functional PWA for patients and doctors with secure user authentication.",
-        "Patient dashboard with AI-guided onboarding, chat interface, and historical data access.",
-        "Doctor dashboard with patient management, consultation process, and AI assistance.",
-        "Integration of OpenAI APIs for voice-to-text, text-to-voice, and text generation.",
-        "Secure data storage and management using MongoDB and AWS hosting.",
-        "Email notifications for registration, verification, and report approvals.",
-        "Compliance with Canadian Laws and Quebec Loi 25 for data security and privacy."
+        "Job Applicant Portal: Allows applicants to upload CVs, track application status, and participate in digital interviews.",
+        "HR Manager Portal: Enables HR managers to create job postings, customize AI interview questions, and review application statistics.",
+        "AI-Powered CV Screening: Automatically filters CVs based on job requirements.",
+        "AI-Powered Digital Interviews: Conducts interviews using a combination of pre-recorded and real-time customized questions.",
+        "Email Notifications: Uses Google API to send email notifications to HR managers and applicants.",
+        "Progressive Web App: Ensures compatibility with tablets and iPads on both Android and iOS.",
+        "Local Data Storage: Stores all data locally on the client's systems to ensure data security."
     ],
     "Milestones": {
         "Milestones": [
             {
-                "MilestoneID": "M001",
-                "MilestoneName": "Functional PWA Development",
+                "MilestoneID": "M1",
+                "MilestoneName": "Job Applicant Portal Development",
                 "KeyDeliverables": [
-                    "Functional PWA for patients and doctors with secure user authentication.",
-                    "Patient dashboard with AI-guided onboarding, chat interface, and historical data access.",
-                    "Doctor dashboard with patient management, consultation process, and AI assistance."
+                    "Profile Creation and Management: Allow job applicants to create and manage their profiles, including uploading CVs.",
+                    "Job Application: Enable applicants to apply for different job postings through the portal.",
+                    "Application Status Tracking: Implement functionality for applicants to track the status of their applications.",
+                    "Interview Participation: Develop the digital interview feature for applicants who pass the CV screening."
                 ]
             },
             {
-                "MilestoneID": "M002",
-                "MilestoneName": "AI Integration and Interaction",
+                "MilestoneID": "M2",
+                "MilestoneName": "HR Manager Portal Development",
                 "KeyDeliverables": [
-                    "Integration of OpenAI APIs for voice-to-text, text-to-voice, and text generation.",
-                    "AI-guided onboarding process for patients.",
-                    "AI assistance during consultations for doctors."
+                    "Job Posting Creation: Allow HR managers to create new job postings with detailed job descriptions.",
+                    "AI Agent Customization: Enable HR managers to customize AI interview questions based on job requirements.",
+                    "Application Review: Implement statistics and review functionalities for HR managers to monitor the number of applicants and their progress.",
+                    "Interview Scheduling: Integrate with Google Calendar API to schedule interviews with approved candidates."
                 ]
             },
             {
-                "MilestoneID": "M003",
-                "MilestoneName": "Data Management and Security",
+                "MilestoneID": "M3",
+                "MilestoneName": "AI-Powered CV Screening and Digital Interviews",
                 "KeyDeliverables": [
-                    "Secure data storage and management using MongoDB and AWS hosting.",
-                    "Compliance with Canadian Laws and Quebec Loi 25 for data security and privacy.",
-                    "Role-based access control and encryption of data in transit and at rest."
+                    "AI-Powered CV Screening: Implement the AI system to automatically filter CVs based on job requirements.",
+                    "AI-Powered Digital Interviews: Develop the AI system to conduct interviews using a combination of pre-recorded and real-time customized questions.",
+                    "Feedback Mechanism: Provide reasons for rejection at both the CV screening and interview stages to ensure transparency."
                 ]
             },
             {
-                "MilestoneID": "M004",
-                "MilestoneName": "Notification System Implementation",
+                "MilestoneID": "M4",
+                "MilestoneName": "System Integration and Testing",
                 "KeyDeliverables": [
-                    "Email notifications for registration, verification, and report approvals.",
-                    "Notification settings management for patients.",
-                    "Logging and monitoring of notification delivery and access."
+                    "Email Notifications: Integrate Google API to send email notifications to HR managers and applicants.",
+                    "Progressive Web App: Ensure the platform is a PWA compatible with tablets and iPads on both Android and iOS.",
+                    "Local Data Storage: Implement local data storage to ensure data security.",
+                    "System Testing: Conduct comprehensive testing to ensure all functionalities work seamlessly and meet performance criteria."
                 ]
             }
         ]
@@ -63,39 +66,39 @@
         "Risks": [
             {
                 "RiskID": "R001",
-                "RiskDescription": "Data Security and Privacy Compliance",
+                "RiskDescription": "Data Security and Privacy: Since the platform will store sensitive personal data locally, there is a risk of data breaches or unauthorized access.",
                 "MitigationStrategies": [
-                    "Implement robust encryption for data in transit and at rest using industry-standard algorithms.",
-                    "Conduct regular security audits and penetration testing to identify and address vulnerabilities.",
-                    "Ensure compliance with Canadian Laws and Quebec Loi 25 by integrating legal requirements into the development process and maintaining up-to-date documentation."
+                    "Implement robust encryption for data storage and transmission.",
+                    "Set up secure access controls and user authentication mechanisms.",
+                    "Conduct regular security audits and vulnerability assessments."
                 ]
             },
             {
                 "RiskID": "R002",
-                "RiskDescription": "AI Integration and Performance",
+                "RiskDescription": "AI Accuracy and Fairness: The AI system used for CV screening and digital interviews may not accurately assess candidates, leading to potential biases or incorrect rejections.",
                 "MitigationStrategies": [
-                    "Optimize AI models and APIs to ensure real-time or near-real-time responses.",
-                    "Implement fallback mechanisms to handle API rate limits and latency issues, such as caching frequently accessed data.",
-                    "Conduct extensive testing with various user scenarios to ensure the AI performs reliably and efficiently under different conditions."
+                    "Regularly train and update the AI models with diverse and representative data.",
+                    "Implement a feedback loop where HR managers can review and correct AI decisions.",
+                    "Conduct bias testing and audits to ensure fairness in AI decision-making."
                 ]
             },
             {
                 "RiskID": "R003",
-                "RiskDescription": "Cross-Platform Compatibility and User Experience",
+                "RiskDescription": "System Scalability: As the platform grows, it may face challenges in handling an increasing number of job postings and applicants efficiently.",
                 "MitigationStrategies": [
-                    "Adopt responsive design principles to ensure a seamless user experience across different devices and screen sizes.",
-                    "Conduct usability testing on both Android and iOS devices, as well as web browsers, to identify and address any compatibility issues.",
-                    "Implement accessibility features to ensure the platform is usable by individuals with disabilities, including screen reader support and high-contrast modes."
+                    "Design the system architecture with scalability in mind, leveraging AWS's scalable infrastructure.",
+                    "Implement performance optimization techniques to handle high loads.",
+                    "Conduct load testing to identify and address potential bottlenecks."
                 ]
             }
         ]
     },
     "ClientInformation": {
-        "CompanyName": "Confidential",
-        "ContactPerson": "Confidential",
-        "Address": "Confidential",
-        "Email": "Confidential",
-        "Phone": "Confidential"
+        "CompanyName": "Questionz",
+        "ContactPerson": "Paul Lafleur",
+        "Address": "275 Lakeshore Dr Pointe-Claire, QC H9S 4L1",
+        "Email": "paul.lafleur@questionz.ca",
+        "Phone": "5149709691"
     },
     "UserInformation": {
         "CompanyName": "Myte Group Inc.",
@@ -110,101 +113,119 @@
         "TeamExpertise": "Under the leadership of Ahmed Mekallach, Myte Group boasts a profound expertise uniquely blending business acumen with technical prowess. With over eight years of experience in sales, estimating, and project management, Ahmed's comprehensive understanding of business processes and keen coding skills enable him to tackle challenges efficiently and innovatively. His approach not only ensures operational excellence but also drives the development of AI-driven solutions that are both sophisticated and practical, perfectly suited to meet the intricate demands of modern businesses. This unique combination positions Myte Group as a leader in AI systems design and development, capable of delivering high-quality, customized solutions."
     },
     "Budget": {
-        "TotalEstimatedHours": 881.3499999999999,
-        "TotalEstimatedCost": 44067.5,
+        "TotalEstimatedHours": 1373.75,
+        "TotalEstimatedCost": 68687.5,
         "CostBreakdown": [
             {
-                "Stakeholder": "Doctors",
+                "Stakeholder": "HR Managers",
                 "Details": [
                     {
-                        "Item": "User Authentication and Account Management",
-                        "TotalHours": 56.8,
-                        "Cost": 2840.0,
-                        "Description": "Enable doctors to register and log in with OTP mobile verification and email verification. Allow doctors to manage their profile information, including name, phone number, email, and profile picture."
+                        "Item": "Job Posting Creation and Management",
+                        "TotalHours": 81.5,
+                        "Cost": 4075.0,
+                        "Description": "Enable HR managers to create, edit, and manage job postings. This includes specifying job requirements, descriptions, and other relevant details to attract suitable candidates."
                     },
                     {
-                        "Item": "Patient Management",
-                        "TotalHours": 95.04999999999998,
-                        "Cost": 4752.5,
-                        "Description": "Provide doctors with a list of patients who have granted access via QR code. Allow doctors to access detailed profiles, including visit and consultation histories, of each patient."
+                        "Item": "AI-Powered CV Screening",
+                        "TotalHours": 99.25,
+                        "Cost": 4962.5,
+                        "Description": "Implement an AI system to automatically screen CVs based on predefined job requirements. The system should filter out unsuitable candidates and provide reasons for rejection."
                     },
                     {
-                        "Item": "Consultation Process",
-                        "TotalHours": 53.05000000000001,
-                        "Cost": 2652.5,
-                        "Description": "Enable doctors to start a new consultation session by scanning the patient's QR code to link the consultation to the patient. Provide AI assistance during consultations for real-time analysis and summarization. Allow doctors to generate, review, edit, and approve consultation reports, and share approved reports with patients."
+                        "Item": "Customizable AI Interview Setup",
+                        "TotalHours": 80.75,
+                        "Cost": 4037.5,
+                        "Description": "Allow HR managers to customize the AI interview process by specifying the types of questions to be asked. This includes a mix of pre-recorded and real-time questions tailored to the job description."
                     },
                     {
-                        "Item": "Interactive AI for Doctor",
-                        "TotalHours": 79.6,
-                        "Cost": 3980.0,
-                        "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. Use the AI to retrieve and summarize relevant patient history to aid the doctor during consultations."
+                        "Item": "Candidate Application Tracking",
+                        "TotalHours": 86.0,
+                        "Cost": 4300.0,
+                        "Description": "Provide a dashboard for HR managers to track the status of job applications. This includes viewing statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview."
                     },
                     {
-                        "Item": "Patient Flags",
-                        "TotalHours": 64.7,
-                        "Cost": 3235.0,
-                        "Description": "Provide a feature for doctors to view a list of patients categorized by flags based on the patients' onboarding responses. This helps doctors prioritize and manage patient care effectively."
+                        "Item": "Interview Scheduling Integration",
+                        "TotalHours": 75.5,
+                        "Cost": 3775.0,
+                        "Description": "Integrate with the Google Calendar API to allow HR managers to schedule in-person interviews with approved candidates. This includes sending email notifications and creating calendar events."
                     },
                     {
-                        "Item": "Notifications and Alerts",
-                        "TotalHours": 37.05,
-                        "Cost": 1852.5,
-                        "Description": "Send email notifications to doctors for important actions such as registration, verification, and report approvals. Ensure timely communication of critical updates and actions."
+                        "Item": "Automated Notifications",
+                        "TotalHours": 65.5,
+                        "Cost": 3275.0,
+                        "Description": "Set up automated email notifications to inform HR managers when a candidate passes the CV screening and digital interview stages. This ensures timely action on qualified candidates."
                     },
                     {
-                        "Item": "Data Security and Privacy",
-                        "TotalHours": 83.5,
-                        "Cost": 4175.0,
-                        "Description": "Implement robust access control mechanisms to protect patient data. Ensure all sensitive data is encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25 laws."
+                        "Item": "Review and Approve AI-Generated Job Descriptions",
+                        "TotalHours": 97.5,
+                        "Cost": 4875.0,
+                        "Description": "Enable HR managers to review and approve job descriptions generated by the AI system. This ensures that the job postings are accurate and aligned with the company's requirements."
+                    },
+                    {
+                        "Item": "Detailed Feedback Mechanism",
+                        "TotalHours": 88.0,
+                        "Cost": 4400.0,
+                        "Description": "Implement a system to provide detailed feedback on why candidates were rejected at both the CV screening and interview stages. This feedback should be accessible to both HR managers and candidates."
+                    },
+                    {
+                        "Item": "In-App Notifications",
+                        "TotalHours": 102.0,
+                        "Cost": 5100.0,
+                        "Description": "Develop an in-app notification system to keep HR managers informed about important updates and candidate statuses within the platform."
+                    },
+                    {
+                        "Item": "Local Data Storage and Security",
+                        "TotalHours": 113.75,
+                        "Cost": 5687.5,
+                        "Description": "Ensure that all data, including CVs and interview responses, are stored locally on the client's systems. Implement basic security measures to protect sensitive information."
                     }
                 ]
             },
             {
-                "Stakeholder": "Patients",
+                "Stakeholder": "Job Applicants",
                 "Details": [
                     {
-                        "Item": "User Authentication and Account Management",
-                        "TotalHours": 61.050000000000004,
-                        "Cost": 3052.5,
-                        "Description": "Enable patients to securely register, log in, and manage their profile information. This includes email and phone OTP verification during registration and the ability to update profile details such as name, phone number, email, and profile picture."
+                        "Item": "Profile Creation and Management",
+                        "TotalHours": 82.5,
+                        "Cost": 4125.0,
+                        "Description": "Allow job applicants to create and manage their profiles, including uploading their CVs and updating personal information."
                     },
                     {
-                        "Item": "AI-Guided Onboarding Process",
-                        "TotalHours": 82.8,
-                        "Cost": 4140.0,
-                        "Description": "Provide an AI-guided onboarding process where patients can start a new visit, answer dynamic questions based on conversation context, and have their responses stored in a structured format. This process will generate a patient summary that can be viewed by both the patient and the doctor."
+                        "Item": "Job Application Submission",
+                        "TotalHours": 89.5,
+                        "Cost": 4475.0,
+                        "Description": "Enable job applicants to browse job postings and submit applications directly through the portal."
                     },
                     {
-                        "Item": "Chat Interface with AI",
-                        "TotalHours": 85.5,
-                        "Cost": 4275.0,
-                        "Description": "Implement a chat interface on the patient dashboard that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses, analyze conversations for emotional and physical well-being, and summarize long conversations."
+                        "Item": "Application Status Tracking",
+                        "TotalHours": 79.5,
+                        "Cost": 3975.0,
+                        "Description": "Provide job applicants with the ability to track the status of their applications, including whether their CV has been approved or rejected."
                     },
                     {
-                        "Item": "Viewing Historical Data",
-                        "TotalHours": 63.2,
-                        "Cost": 3160.0,
-                        "Description": "Allow patients to view their past onboarding summaries and consultation histories. This includes providing a tab for onboarding history and another for consultation history, where patients can access detailed reports of their interactions and consultations."
+                        "Item": "Digital Interview Participation",
+                        "TotalHours": 75.25,
+                        "Cost": 3762.5,
+                        "Description": "Facilitate digital interviews for applicants who pass the initial CV screening, conducted by an AI system with personalized questions."
                     },
                     {
-                        "Item": "Profile Management and QR Code Access",
-                        "TotalHours": 71.8,
-                        "Cost": 3590.0,
-                        "Description": "Enable patients to manage their profile information and generate a QR code that doctors can scan to access the patient's visit and consultation histories. This feature will be available on the patient's profile page."
+                        "Item": "Feedback and Notifications",
+                        "TotalHours": 84.0,
+                        "Cost": 4200.0,
+                        "Description": "Notify job applicants about the status of their CV screening and interview results, including reasons for rejection to ensure transparency."
                     },
                     {
-                        "Item": "Notifications and Alerts",
-                        "TotalHours": 47.25,
-                        "Cost": 2362.5,
-                        "Description": "Send email notifications to patients for important actions such as registration, verification, and report approvals. This ensures that patients are kept informed about their account activities and medical updates."
+                        "Item": "Progressive Web App Compatibility",
+                        "TotalHours": 73.25,
+                        "Cost": 3662.5,
+                        "Description": "Ensure the job applicant portal is a Progressive Web App (PWA) compatible with tablets and iPads on both Android and iOS."
                     }
                 ]
             }
         ]
     },
     "Date": {
-        "CurrentDate": "2024-06-12"
+        "CurrentDate": "2024-06-26"
     },
-    "ProposalID": "S2024016"
+    "ProposalID": "S2024017"
 }

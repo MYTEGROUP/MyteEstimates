@@ -1,0 +1,8 @@
+{
+    "conversation": [
+        {
+            "role": "Business Analyst",
+            "message": "Hey, glad you're here with us! Can you start by telling us what you plan to build as a platform?"
+        }
+    ]
+}

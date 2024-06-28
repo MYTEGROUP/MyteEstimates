@@ -1,28 +1,22 @@
 {
-    "Project Vision": "### Project Vision\n\nImagine a world where healthcare is not just accessible but also intuitive, efficient, and secure. Our groundbreaking digital platform is set to revolutionize patient-doctor interactions by leveraging cutting-edge AI technologies. Envision a Progressive Web App (PWA) that seamlessly connects patients and doctors, offering real-time, AI-driven consultations and insights. \n\nFor patients, this means a user-friendly interface where they can effortlessly interact with an AI agent for onboarding, consultations, and general inquiries. This AI not only understands and responds but also summarizes conversations, providing valuable health insights. Imagine having your medical history, consultation summaries, and AI-generated health reports at your fingertips, anytime, anywhere.\n\nFor doctors, our platform is a game-changer. It offers a comprehensive dashboard to manage patient interactions, access detailed medical histories, and receive AI-assisted consultation summaries. The AI integration ensures that doctors can make informed decisions swiftly, enhancing the quality of care they provide.\n\nSecurity is paramount; our platform complies with stringent Canadian and Quebec Loi 25 laws, ensuring that all patient data is encrypted and secure. Hosted on AWS and powered by MongoDB, our platform is both scalable and reliable.\n\nJoin us in transforming healthcare into a more connected, intelligent, and secure experience. Welcome to the future of patient-doctor interactions.",
+    "Project Vision": "### Project Vision\n\nImagine a world where the hiring process is swift, transparent, and remarkably efficient. Our groundbreaking CV screening and interview platform is set to revolutionize the recruitment landscape for both job applicants and HR managers. Leveraging the power of AI, our platform meticulously filters through CVs, distinguishing genuine talent from the noise of mass applications. No more sifting through endless piles of resumes\u2014our AI does it for you, pinpointing the best candidates with unparalleled accuracy.\n\nBut we don't stop there. Our AI-driven digital interviews delve deeper, asking personalized questions and analyzing responses to ensure only the most suitable candidates make it through. This not only saves precious time but also elevates the quality of hires, aligning perfectly with your company's needs.\n\nTransparency is at our core. Applicants receive clear, actionable feedback at every stage, transforming the often opaque hiring process into a journey of continuous improvement. HR managers are kept in the loop with real-time notifications and seamless integration with Google APIs for effortless scheduling.\n\nDesigned as a Progressive Web App, our platform is accessible on any device, ensuring a smooth, user-friendly experience. Hosted on AWS but securely storing data locally, we combine the best of both worlds\u2014scalability and security.\n\nJoin us in redefining recruitment. Embrace the future of hiring with our innovative platform, where efficiency meets excellence.",
     "Business Vertical": [
-        "Healthcare Technology"
+        "Human Resources"
     ],
     "Stakeholders": [
-        "Patients",
-        "Doctors",
-        "AI System"
+        "Job Applicants",
+        "HR Managers"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "Patients",
-            "Model": "Subscription",
-            "Rationale": "Patients would pay a recurring fee for access to the platform's services, including AI-driven onboarding, consultation summaries, and historical data management. This model ensures a steady revenue stream and allows patients to benefit from continuous access to the platform's features. The revenue is received by the platform provider."
+            "Stakeholder": "Job Applicants",
+            "Model": "Direct Payment",
+            "Rationale": "Job applicants pay a one-time fee or a small fee per application to upload their CVs and participate in the digital interview process. This model ensures that only serious candidates apply, reducing the number of mass applications. The revenue is received by the platform provider."
         },
         {
-            "Stakeholder": "Doctors",
+            "Stakeholder": "HR Managers",
             "Model": "Subscription",
-            "Rationale": "Doctors would pay a recurring fee for access to advanced features such as AI-assisted consultation tools, patient management, and real-time conversation analysis. This model provides a consistent revenue stream and ensures that doctors have ongoing access to the platform's capabilities. The revenue is received by the platform provider."
-        },
-        {
-            "Stakeholder": "AI System",
-            "Model": "Commission",
-            "Rationale": "The AI system could generate revenue through a commission-based model where a percentage of the subscription fees from patients and doctors is allocated to cover the costs of AI services and maintenance. This ensures that the AI system is financially supported while aligning its revenue with the platform's overall income. The revenue is received by the AI service provider, such as OpenAI."
+            "Rationale": "HR managers pay a recurring subscription fee for access to the platform's features, including job posting creation, AI-driven CV screening, digital interviews, and detailed analytics. This model provides consistent revenue for the platform provider and ensures HR managers have continuous access to the service."
         }
     ]
 }

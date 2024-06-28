@@ -82,7 +82,7 @@ def StakeHolders(Project_Requirements):
         "Streamline the list the the core primary users."
     )
 
-    assistant_context = "You need to respond in JSON format. The expected format is {'Stakeholders': ['User Role 1', 'User Role 2', 'User Role 3']}. Each role should be described concisely, using no more than five words."
+    assistant_context = "You need to respond in JSON format. Use this format to output your response strickly: {'Stakeholders': ['User Role 1', 'User Role 2', 'User Role 3']}. Each role should be described concisely, using no more than five words."
     initial_prompt = (
         f"Based solely on the detailed project requirements provided in the description: '{Project_Requirements}', identify the primary users of the system. "
         "Describe the users interaction with the system comprehensively, covering all tasks they perform. Provide your response in JSON format, using the key 'Stakeholders'."

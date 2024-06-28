@@ -1,0 +1,38 @@
+{
+    "clients": [
+        {
+            "ClientID": "C123",
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "phone": "555-1234",
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "Anystate",
+                "zip": "12345",
+                "country": "USA"
+            },
+            "company": {
+                "name": "Doe Industries",
+                "website": "http://www.doeindustries.com"
+            }
+        },
+        {
+            "ClientID": "C456",
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone": "555-5678",
+            "address": {
+                "street": "456 Elm St",
+                "city": "Othertown",
+                "state": "Otherstate",
+                "zip": "67890",
+                "country": "USA"
+            },
+            "company": {
+                "name": "Smith Enterprises",
+                "website": "http://www.smithenterprises.com"
+            }
+        }
+    ]
+}

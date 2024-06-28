@@ -122,4 +122,4 @@ def update_data():
         return jsonify({'success': False, 'message': str(e)}), 500  # Return a JSON error response
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port= 9005)

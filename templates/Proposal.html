@@ -90,7 +90,7 @@
         </section>
        <section class="budget">
             <h2>Budget</h2>
-            <p>Total Estimated Hours: {{ data['Budget']['TotalEstimatedHours'] }}</p>
+            <p>Total Estimated Hours: {{ '%.2f' % data['Budget']['TotalEstimatedHours'] }}</p>
             <p>Total Estimated Cost: ${{ data['Budget']['TotalEstimatedCost'] }}</p>
        <section class="Project Breakdown">
             <h2>Project Breakdown</h2>
@@ -110,7 +110,7 @@
                     <tr>
                         <td>{{ detail['Item'] }}</td>
                         <td>{{ detail['Description'] }}</td>
-                        <td>{{ detail['TotalHours'] }}</td>
+                        <td>{{ '%.2f' % detail['TotalHours'] }}</td>
                         <td>${{ detail['Cost'] }}</td>
                     </tr>
                     {% endfor %}

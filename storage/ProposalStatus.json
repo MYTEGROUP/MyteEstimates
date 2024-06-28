@@ -1,0 +1,17 @@
+{
+    "User_Id": "001",
+    "Proposal_ID": "001",
+    "Client_ID": "001",
+    "proposal_status": "started",
+    "ba_phase": false,
+    "vision_phase": false,
+    "business_verticle_phase": false,
+    "Stakeholder_phase": false,
+    "Epics_Phase": false,
+    "Stories_Phase": false,
+    "Tasks_Phase": false,
+    "Estimate_Phase": false,
+    "ProposalPdf_phase": false,
+    "ExcelPhase": false,
+    "Email_Sent_Phase": false
+}

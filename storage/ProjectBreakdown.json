@@ -1,1436 +1,1211 @@
 {
-    "Doctors": [
+    "Job Applicants": [
         {
             "Epic ID": "E001",
-            "Title": "User Authentication and Account Management",
-            "Description": "Enable doctors to register and log in with OTP mobile verification and email verification. Allow doctors to manage their profile information, including name, phone number, email, and profile picture.",
+            "Title": "Profile Creation and Management",
+            "Description": "Allow job applicants to create and manage their profiles, including uploading their CVs and updating personal information.",
             "User Stories": [
                 {
-                    "Title": "Doctor Registration",
-                    "Description": "As a doctor, I want to register with my name, email, phone number, and password so that I can create an account on the platform.",
+                    "Title": "Create Profile",
+                    "Description": "As a job applicant, I want to create a profile so that I can manage my job applications and personal information.",
                     "AcceptanceCriteria": [
-                        "Given that I am a doctor, when I provide my name, email, phone number, and password, then I should be able to create an account.",
-                        "Given that I have registered, when I submit my details, then I should receive an email and OTP for verification."
+                        "Given a new user, when they visit the platform, then they should see an option to create a new profile.",
+                        "When the user fills in their personal information and submits the form, then a new profile should be created and stored locally.",
+                        "The user should receive a confirmation message upon successful profile creation."
                     ],
                     "Story ID": "S001"
                 },
                 {
-                    "Title": "Email Verification",
-                    "Description": "As a doctor, I want to verify my email address so that I can confirm my account registration.",
+                    "Title": "Upload CV",
+                    "Description": "As a job applicant, I want to upload my CV so that it can be screened by the AI system.",
                     "AcceptanceCriteria": [
-                        "Given that I have registered, when I receive an email with a verification link, then I should be able to click the link to verify my email address.",
-                        "Given that I click the verification link, when my email is verified, then I should receive a confirmation message."
+                        "Given a logged-in user, when they navigate to their profile page, then they should see an option to upload their CV.",
+                        "When the user uploads a CV file, then the system should store the CV locally and confirm the upload.",
+                        "The system should notify the user if the CV upload was successful or if there were any errors."
                     ],
                     "Story ID": "S002"
                 },
                 {
-                    "Title": "OTP Mobile Verification",
-                    "Description": "As a doctor, I want to verify my phone number using an OTP so that I can secure my account.",
+                    "Title": "Update Personal Information",
+                    "Description": "As a job applicant, I want to update my personal information so that my profile is always current.",
                     "AcceptanceCriteria": [
-                        "Given that I have registered, when I receive an OTP on my mobile phone, then I should be able to enter the OTP on the platform.",
-                        "Given that I enter the correct OTP, when I submit it, then my phone number should be verified."
+                        "Given a logged-in user, when they navigate to their profile page, then they should see an option to edit their personal information.",
+                        "When the user updates their personal information and submits the form, then the changes should be saved and reflected in their profile.",
+                        "The user should receive a confirmation message upon successful update of their personal information."
                     ],
                     "Story ID": "S003"
                 },
                 {
-                    "Title": "Doctor Login",
-                    "Description": "As a doctor, I want to log in using my registered email and password so that I can access my account.",
+                    "Title": "Track Application Status",
+                    "Description": "As a job applicant, I want to track the status of my job applications so that I know where I stand in the hiring process.",
                     "AcceptanceCriteria": [
-                        "Given that I have registered and verified my account, when I enter my email and password, then I should be able to log in.",
-                        "Given that I enter incorrect login details, when I attempt to log in, then I should receive an error message."
+                        "Given a logged-in user, when they navigate to their profile page, then they should see a section for tracking the status of their job applications.",
+                        "The application status should display whether the application is pending, approved, or rejected.",
+                        "The user should receive notifications about any changes in the status of their applications."
                     ],
                     "Story ID": "S004"
                 },
                 {
-                    "Title": "Profile Management",
-                    "Description": "As a doctor, I want to manage my profile information, including name, phone number, email, and profile picture, so that I can keep my account details up to date.",
+                    "Title": "Receive Feedback on CV Screening",
+                    "Description": "As a job applicant, I want to receive feedback on my CV screening so that I understand why my application was accepted or rejected.",
                     "AcceptanceCriteria": [
-                        "Given that I am logged in, when I navigate to the profile management section, then I should be able to view my current profile information.",
-                        "Given that I am in the profile management section, when I update my name, phone number, email, or profile picture, then the changes should be saved and reflected in my profile."
+                        "Given a logged-in user, when their CV is screened by the AI system, then they should receive a notification about the result.",
+                        "If the CV is rejected, the user should see specific reasons for the rejection in their profile.",
+                        "If the CV is accepted, the user should see a notification about proceeding to the next step (digital interview)."
                     ],
                     "Story ID": "S005"
                 },
                 {
-                    "Title": "Password Reset",
-                    "Description": "As a doctor, I want to reset my password if I forget it so that I can regain access to my account.",
+                    "Title": "Participate in Digital Interview",
+                    "Description": "As a job applicant, I want to participate in a digital interview so that I can proceed further in the job application process.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the login page, when I click the 'Forgot Password' link, then I should be prompted to enter my registered email.",
-                        "Given that I enter my registered email, when I submit it, then I should receive a password reset link via email.",
-                        "Given that I receive the password reset link, when I click the link and enter a new password, then my password should be updated, and I should be able to log in with the new password."
+                        "Given a logged-in user whose CV has been accepted, when they navigate to their profile page, then they should see an option to start the digital interview.",
+                        "The digital interview should present a combination of pre-recorded and real-time questions customized to the job description.",
+                        "The user should receive feedback on their interview performance, including reasons for rejection if applicable."
                     ],
                     "Story ID": "S006"
+                },
+                {
+                    "Title": "Receive Notifications",
+                    "Description": "As a job applicant, I want to receive notifications about my application status and interview results so that I am always informed.",
+                    "AcceptanceCriteria": [
+                        "Given a logged-in user, when there is a change in the status of their application or interview result, then they should receive a notification.",
+                        "Notifications should be visible within the app and sent via email using the Google API.",
+                        "The user should be able to view the details of the notification in their profile."
+                    ],
+                    "Story ID": "S007"
                 }
             ]
         },
         {
             "Epic ID": "E002",
-            "Title": "Patient Management",
-            "Description": "Provide doctors with a list of patients who have granted access via QR code. Allow doctors to access detailed profiles, including visit and consultation histories, of each patient.",
+            "Title": "Job Application Submission",
+            "Description": "Enable job applicants to browse job postings and submit applications directly through the portal.",
             "User Stories": [
                 {
-                    "Title": "View List of Patients",
-                    "Description": "As a doctor, I want to view a list of patients who have granted access via QR code so that I can easily manage and access their profiles.",
+                    "Title": "Browse Job Postings",
+                    "Description": "As a job applicant, I want to browse available job postings so that I can find and apply for positions that match my skills and interests.",
                     "AcceptanceCriteria": [
-                        "Given that I am logged in as a doctor, when I navigate to the patient management section, I should see a list of patients who have granted access via QR code.",
-                        "Each patient entry in the list should display the patient's name and a brief summary of their latest visit.",
-                        "The list should be sortable by patient name and date of last visit."
-                    ],
-                    "Story ID": "S007"
-                },
-                {
-                    "Title": "Access Detailed Patient Profiles",
-                    "Description": "As a doctor, I want to access detailed profiles of patients so that I can review their medical history and provide better care.",
-                    "AcceptanceCriteria": [
-                        "Given that I am logged in as a doctor, when I click on a patient from the list, I should be taken to a detailed profile page of that patient.",
-                        "The profile page should display the patient's personal information, visit history, and consultation history.",
-                        "The profile page should allow me to navigate back to the list of patients."
+                        "Given I am logged into the portal, when I navigate to the job postings section, I should see a list of available job postings.",
+                        "Each job posting should display the job title, company name, location, and a brief description.",
+                        "I should be able to filter job postings by criteria such as job title, location, and company."
                     ],
                     "Story ID": "S008"
                 },
                 {
-                    "Title": "View Visit History",
-                    "Description": "As a doctor, I want to view the visit history of a patient so that I can understand their past medical interactions and conditions.",
+                    "Title": "View Job Posting Details",
+                    "Description": "As a job applicant, I want to view the details of a job posting so that I can understand the job requirements and responsibilities.",
                     "AcceptanceCriteria": [
-                        "Given that I am on a patient's profile page, when I click on the 'Visit History' tab, I should see a chronological list of all past visits.",
-                        "Each visit entry should include the date, summary of the visit, and any relevant notes or observations.",
-                        "I should be able to click on each visit entry to view more detailed information."
+                        "Given I am browsing job postings, when I click on a job title, I should be taken to a page with detailed information about the job.",
+                        "The job details page should include the job title, company name, location, job description, requirements, and application deadline."
                     ],
                     "Story ID": "S009"
                 },
                 {
-                    "Title": "View Consultation History",
-                    "Description": "As a doctor, I want to view the consultation history of a patient so that I can review past consultations and their outcomes.",
+                    "Title": "Create and Manage Profile",
+                    "Description": "As a job applicant, I want to create and manage my profile so that I can easily apply for jobs and track my application status.",
                     "AcceptanceCriteria": [
-                        "Given that I am on a patient's profile page, when I click on the 'Consultation History' tab, I should see a chronological list of all past consultations.",
-                        "Each consultation entry should include the date, summary of the consultation, and any generated reports.",
-                        "I should be able to click on each consultation entry to view more detailed information."
+                        "Given I am logged into the portal, when I navigate to my profile section, I should be able to create or update my profile.",
+                        "My profile should include personal information, contact details, and an option to upload my CV.",
+                        "I should be able to save changes to my profile and see a confirmation message."
                     ],
                     "Story ID": "S010"
                 },
                 {
-                    "Title": "Start New Consultation",
-                    "Description": "As a doctor, I want to start a new consultation by scanning a patient's QR code so that the consultation is linked to the correct patient.",
+                    "Title": "Upload CV",
+                    "Description": "As a job applicant, I want to upload my CV so that it can be screened by the AI system during the application process.",
                     "AcceptanceCriteria": [
-                        "Given that I am logged in as a doctor, when I click on the 'Start New Consultation' button, I should be prompted to scan a patient's QR code.",
-                        "Upon scanning the QR code, the system should link the consultation to the correct patient and take me to a new consultation page.",
-                        "The new consultation page should allow me to input notes, access patient history, and generate a consultation report."
+                        "Given I am logged into the portal, when I navigate to my profile section, I should see an option to upload my CV.",
+                        "I should be able to upload a CV file in formats such as PDF or DOCX.",
+                        "After uploading, I should see a confirmation message that my CV has been successfully uploaded."
                     ],
                     "Story ID": "S011"
                 },
                 {
-                    "Title": "AI-Assisted Consultation",
-                    "Description": "As a doctor, I want AI assistance during consultations so that I can receive real-time analysis and summarization of the conversation.",
+                    "Title": "Submit Job Application",
+                    "Description": "As a job applicant, I want to submit my application for a job posting so that I can be considered for the position.",
                     "AcceptanceCriteria": [
-                        "Given that I am in a consultation session, the AI should provide real-time analysis and summarization of the conversation.",
-                        "The AI should prompt for specific patient information or insights based on the conversation context.",
-                        "The AI should generate a draft consultation report that I can review, edit, and approve."
+                        "Given I am viewing a job posting, when I click the 'Apply' button, I should be prompted to confirm my application.",
+                        "Upon confirmation, my application should be submitted, and I should see a confirmation message.",
+                        "My application status should be updated to 'Submitted' in my profile."
                     ],
                     "Story ID": "S012"
                 },
                 {
-                    "Title": "Approve and Share Consultation Reports",
-                    "Description": "As a doctor, I want to approve and share consultation reports with patients so that they have access to the outcomes of their consultations.",
+                    "Title": "Track Application Status",
+                    "Description": "As a job applicant, I want to track the status of my job applications so that I know where I am in the hiring process.",
                     "AcceptanceCriteria": [
-                        "Given that I have completed a consultation, the system should generate a consultation report.",
-                        "I should be able to review, edit, and approve the consultation report.",
-                        "Once approved, the report should be shared with the patient and stored in their consultation history."
+                        "Given I am logged into the portal, when I navigate to my profile section, I should see a list of my submitted applications.",
+                        "Each application should display its current status (e.g., Submitted, Under Review, Rejected, Interview Scheduled).",
+                        "I should receive notifications when the status of my application changes."
                     ],
                     "Story ID": "S013"
+                },
+                {
+                    "Title": "Receive Feedback on Application",
+                    "Description": "As a job applicant, I want to receive feedback on my application so that I understand why I was accepted or rejected.",
+                    "AcceptanceCriteria": [
+                        "Given my application status changes to 'Rejected', I should receive a notification with the reason for rejection.",
+                        "The feedback should be visible in my profile under the specific job application.",
+                        "If my application is accepted, I should receive a notification with the next steps."
+                    ],
+                    "Story ID": "S014"
+                },
+                {
+                    "Title": "Participate in Digital Interview",
+                    "Description": "As a job applicant, I want to participate in a digital interview so that I can be evaluated for the job position.",
+                    "AcceptanceCriteria": [
+                        "Given my application status changes to 'Interview Scheduled', I should receive a notification with the interview details.",
+                        "I should be able to access the digital interview through the portal at the scheduled time.",
+                        "The interview should include a combination of pre-recorded and real-time questions."
+                    ],
+                    "Story ID": "S015"
+                },
+                {
+                    "Title": "Receive Interview Results",
+                    "Description": "As a job applicant, I want to receive the results of my digital interview so that I know if I have been selected for an in-person interview.",
+                    "AcceptanceCriteria": [
+                        "Given I have completed the digital interview, I should receive a notification with the interview results.",
+                        "If I am selected for an in-person interview, I should receive details about the next steps.",
+                        "If I am not selected, I should receive feedback on why I was not chosen."
+                    ],
+                    "Story ID": "S016"
                 }
             ]
         },
         {
             "Epic ID": "E003",
-            "Title": "Consultation Process",
-            "Description": "Enable doctors to start a new consultation session by scanning the patient's QR code to link the consultation to the patient. Provide AI assistance during consultations for real-time analysis and summarization. Allow doctors to generate, review, edit, and approve consultation reports, and share approved reports with patients.",
+            "Title": "Application Status Tracking",
+            "Description": "Provide job applicants with the ability to track the status of their applications, including whether their CV has been approved or rejected.",
             "User Stories": [
                 {
-                    "Title": "Start New Consultation by Scanning QR Code",
-                    "Description": "As a doctor, I want to start a new consultation session by scanning the patient's QR code so that I can link the consultation to the patient's profile.",
+                    "Title": "User Profile Creation",
+                    "Description": "As a job applicant, I want to create and manage my profile so that I can upload my CV and apply for job postings.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the doctor dashboard, when I click on 'Start New Consultation', then I should be prompted to scan the patient's QR code.",
-                        "When the QR code is successfully scanned, then the consultation session should be linked to the patient's profile.",
-                        "If the QR code is invalid, then I should receive an error message indicating the issue."
-                    ],
-                    "Story ID": "S014"
-                },
-                {
-                    "Title": "AI Assistance During Consultation",
-                    "Description": "As a doctor, I want AI assistance during consultations for real-time analysis and summarization so that I can make informed decisions quickly.",
-                    "AcceptanceCriteria": [
-                        "Given I am in an active consultation session, when I interact with the patient, then the AI should provide real-time analysis and summarization of the conversation.",
-                        "When the AI detects key medical information, then it should highlight and summarize this information for my review.",
-                        "If the AI is unable to provide analysis, then I should receive a notification indicating the issue."
-                    ],
-                    "Story ID": "S015"
-                },
-                {
-                    "Title": "Generate Consultation Report",
-                    "Description": "As a doctor, I want to generate a consultation report automatically from the AI analysis so that I can save time on documentation.",
-                    "AcceptanceCriteria": [
-                        "Given I have completed a consultation session, when I click on 'Generate Report', then the AI should create a structured report based on the consultation.",
-                        "The generated report should include key points, summaries, and any flagged issues discussed during the consultation.",
-                        "If the report generation fails, then I should receive an error message indicating the issue."
-                    ],
-                    "Story ID": "S016"
-                },
-                {
-                    "Title": "Review and Edit Consultation Report",
-                    "Description": "As a doctor, I want to review and edit the consultation report generated by the AI so that I can ensure its accuracy before approval.",
-                    "AcceptanceCriteria": [
-                        "Given a consultation report has been generated, when I click on 'Review Report', then I should be able to view the report in detail.",
-                        "When I click on 'Edit Report', then I should be able to make changes to the report content.",
-                        "If I make changes, then the system should save the edited report and notify me of the successful update."
+                        "Given I am a job applicant, when I visit the platform, then I should be able to create a new profile by providing my personal information and uploading my CV.",
+                        "Given I have created a profile, when I log in, then I should be able to view and update my profile information."
                     ],
                     "Story ID": "S017"
                 },
                 {
-                    "Title": "Approve and Share Consultation Report",
-                    "Description": "As a doctor, I want to approve the consultation report and share it with the patient so that the patient can have access to their medical information.",
+                    "Title": "Job Application Submission",
+                    "Description": "As a job applicant, I want to apply for job postings so that I can be considered for employment opportunities.",
                     "AcceptanceCriteria": [
-                        "Given I have reviewed and edited the consultation report, when I click on 'Approve Report', then the report should be marked as approved.",
-                        "When the report is approved, then it should be automatically shared with the patient via their profile.",
-                        "If the sharing process fails, then I should receive an error message indicating the issue."
+                        "Given I am logged into my profile, when I browse job postings, then I should be able to select a job and submit my application.",
+                        "Given I have submitted an application, when I view my profile, then I should see a confirmation that my application has been submitted."
                     ],
                     "Story ID": "S018"
+                },
+                {
+                    "Title": "Application Status Tracking",
+                    "Description": "As a job applicant, I want to track the status of my applications so that I know if my CV has been approved or rejected.",
+                    "AcceptanceCriteria": [
+                        "Given I have submitted an application, when I log into my profile, then I should see the current status of my application (e.g., pending, approved, rejected).",
+                        "Given my CV has been approved or rejected, when I view the application status, then I should see the reason for the approval or rejection."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Notification of Application Status",
+                    "Description": "As a job applicant, I want to receive notifications about the status of my application so that I am informed of any updates.",
+                    "AcceptanceCriteria": [
+                        "Given I have submitted an application, when there is a change in the status of my application, then I should receive an in-app notification.",
+                        "Given my CV has been approved or rejected, when the status changes, then I should receive an email notification with the updated status and reason."
+                    ],
+                    "Story ID": "S020"
+                },
+                {
+                    "Title": "Digital Interview Participation",
+                    "Description": "As a job applicant, I want to participate in a digital interview if my CV is approved so that I can be further evaluated for the job.",
+                    "AcceptanceCriteria": [
+                        "Given my CV has been approved, when I log into my profile, then I should be prompted to schedule and participate in a digital interview.",
+                        "Given I have completed the digital interview, when I view my application status, then I should see the interview results and feedback."
+                    ],
+                    "Story ID": "S021"
+                },
+                {
+                    "Title": "Feedback on Rejection",
+                    "Description": "As a job applicant, I want to receive feedback on why my CV or interview was rejected so that I can improve my future applications.",
+                    "AcceptanceCriteria": [
+                        "Given my CV has been rejected, when I view the application status, then I should see specific reasons for the rejection.",
+                        "Given I have completed a digital interview and it was rejected, when I view the interview results, then I should see specific reasons for the rejection."
+                    ],
+                    "Story ID": "S022"
                 }
             ]
         },
         {
             "Epic ID": "E004",
-            "Title": "Interactive AI for Doctor",
-            "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. Use the AI to retrieve and summarize relevant patient history to aid the doctor during consultations.",
+            "Title": "Digital Interview Participation",
+            "Description": "Facilitate digital interviews for applicants who pass the initial CV screening, conducted by an AI system with personalized questions.",
             "User Stories": [
                 {
-                    "Title": "Prompt AI for Specific Patient Information",
-                    "Description": "As a doctor, I want to prompt the AI to retrieve specific information from a patient's conversation history so that I can quickly access relevant details during consultations.",
+                    "Title": "Upload CV",
+                    "Description": "As a job applicant, I want to upload my CV to the platform so that it can be screened by the AI system.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the doctor dashboard, when I select a patient, then I should see an option to prompt the AI for specific information.",
-                        "When I enter a query, the AI should retrieve and display the relevant information from the patient's conversation history.",
-                        "The retrieved information should be accurate and relevant to the query entered."
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "AI Summarization of Patient History",
-                    "Description": "As a doctor, I want the AI to summarize a patient's conversation history so that I can get a quick overview of the patient's past interactions and medical history.",
-                    "AcceptanceCriteria": [
-                        "Given I am viewing a patient's profile, when I click on the 'Summarize History' button, then the AI should generate a summary of the patient's conversation history.",
-                        "The summary should include key points such as symptoms, medical conditions, and any other relevant information.",
-                        "The summary should be concise and easy to read."
-                    ],
-                    "Story ID": "S020"
-                },
-                {
-                    "Title": "Real-Time AI Assistance During Consultations",
-                    "Description": "As a doctor, I want the AI to provide real-time assistance during consultations so that I can make more informed decisions based on the patient's conversation history.",
-                    "AcceptanceCriteria": [
-                        "Given I am in a consultation session, when I ask the AI for specific insights, then the AI should provide real-time responses based on the patient's conversation history.",
-                        "The AI should be able to handle multiple queries during the consultation without significant delays.",
-                        "The information provided by the AI should be accurate and relevant to the ongoing consultation."
-                    ],
-                    "Story ID": "S021"
-                },
-                {
-                    "Title": "Access AI-Generated Patient Summaries",
-                    "Description": "As a doctor, I want to access AI-generated summaries of patient histories so that I can review them before or during consultations.",
-                    "AcceptanceCriteria": [
-                        "Given I am on the doctor dashboard, when I select a patient, then I should see an option to view AI-generated summaries of the patient's history.",
-                        "The summaries should be up-to-date and include all relevant information from the patient's conversation history.",
-                        "I should be able to download or print the summaries for offline review."
-                    ],
-                    "Story ID": "S022"
-                },
-                {
-                    "Title": "AI-Driven Insights for Patient Management",
-                    "Description": "As a doctor, I want the AI to provide insights based on patient conversation histories so that I can better manage my patients and prioritize their needs.",
-                    "AcceptanceCriteria": [
-                        "Given I am viewing the patient list, when I click on a patient flagged by the AI, then I should see detailed insights and recommendations based on the patient's conversation history.",
-                        "The AI should categorize patients based on the urgency and type of their medical needs.",
-                        "The insights provided should help me prioritize consultations and follow-up actions."
+                        "Given I am a registered user, when I navigate to the CV upload section, then I should be able to upload my CV in PDF or DOC format.",
+                        "Given I have uploaded my CV, when the upload is complete, then I should receive a confirmation message."
                     ],
                     "Story ID": "S023"
+                },
+                {
+                    "Title": "Track Application Status",
+                    "Description": "As a job applicant, I want to track the status of my application so that I know if I have passed the CV screening.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into my profile, when I navigate to the application status section, then I should see the current status of my application (e.g., 'Under Review', 'Approved', 'Rejected').",
+                        "Given my application status changes, when I log in, then I should see the updated status."
+                    ],
+                    "Story ID": "S024"
+                },
+                {
+                    "Title": "Receive CV Screening Feedback",
+                    "Description": "As a job applicant, I want to receive feedback on my CV screening so that I understand why my CV was approved or rejected.",
+                    "AcceptanceCriteria": [
+                        "Given my CV has been screened, when I check my application status, then I should see a detailed reason for approval or rejection."
+                    ],
+                    "Story ID": "S025"
+                },
+                {
+                    "Title": "Participate in Digital Interview",
+                    "Description": "As a job applicant, I want to participate in a digital interview conducted by an AI system so that I can proceed to the next stage of the hiring process.",
+                    "AcceptanceCriteria": [
+                        "Given my CV has been approved, when I navigate to the interview section, then I should be able to start the digital interview.",
+                        "Given I am in the digital interview, when I answer a question, then the AI system should provide the next question based on my response."
+                    ],
+                    "Story ID": "S026"
+                },
+                {
+                    "Title": "Receive Interview Feedback",
+                    "Description": "As a job applicant, I want to receive feedback on my digital interview so that I understand why I was approved or rejected.",
+                    "AcceptanceCriteria": [
+                        "Given I have completed the digital interview, when I check my application status, then I should see a detailed reason for approval or rejection."
+                    ],
+                    "Story ID": "S027"
+                },
+                {
+                    "Title": "Receive Notifications",
+                    "Description": "As a job applicant, I want to receive notifications about the status of my application and interview results so that I am kept informed throughout the process.",
+                    "AcceptanceCriteria": [
+                        "Given my application status changes, when the status is updated, then I should receive an in-app notification.",
+                        "Given my interview results are available, when the results are updated, then I should receive an in-app notification."
+                    ],
+                    "Story ID": "S028"
+                },
+                {
+                    "Title": "View Interview Schedule",
+                    "Description": "As a job applicant, I want to view the schedule for my digital interview so that I can prepare accordingly.",
+                    "AcceptanceCriteria": [
+                        "Given my CV has been approved, when I navigate to the interview section, then I should see the scheduled date and time for my digital interview."
+                    ],
+                    "Story ID": "S029"
+                },
+                {
+                    "Title": "Access Help and Support",
+                    "Description": "As a job applicant, I want to access help and support so that I can resolve any issues or questions I have about the application process.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into my profile, when I navigate to the help and support section, then I should see contact information and FAQs.",
+                        "Given I have a question, when I submit a support request, then I should receive a confirmation message and a response within a specified time frame."
+                    ],
+                    "Story ID": "S030"
                 }
             ]
         },
         {
             "Epic ID": "E005",
-            "Title": "Patient Flags",
-            "Description": "Provide a feature for doctors to view a list of patients categorized by flags based on the patients' onboarding responses. This helps doctors prioritize and manage patient care effectively.",
+            "Title": "Feedback and Notifications",
+            "Description": "Notify job applicants about the status of their CV screening and interview results, including reasons for rejection to ensure transparency.",
             "User Stories": [
                 {
-                    "Title": "View Patient Flags Dashboard",
-                    "Description": "As a doctor, I want to view a dashboard that lists patients categorized by flags based on their onboarding responses so that I can quickly prioritize and manage patient care.",
+                    "Title": "Receive CV Screening Status Notification",
+                    "Description": "As a job applicant, I want to receive a notification about the status of my CV screening so that I am informed whether my CV has been approved or rejected.",
                     "AcceptanceCriteria": [
-                        "Given that I am logged in as a doctor, when I navigate to the patient flags dashboard, I should see a list of patients categorized by different flags.",
-                        "Each flag category should be clearly labeled and patients should be listed under their respective categories.",
-                        "The dashboard should be accessible from the main doctor dashboard."
+                        "Given that I have submitted my CV, when the CV screening is complete, then I should receive a notification about the status of my CV screening.",
+                        "The notification should clearly state whether my CV has been approved or rejected."
                     ],
-                    "Story ID": "S024"
+                    "Story ID": "S031"
                 },
                 {
-                    "Title": "Filter Patients by Flag Category",
-                    "Description": "As a doctor, I want to filter the list of patients by specific flag categories so that I can focus on a particular group of patients.",
+                    "Title": "View Reasons for CV Rejection",
+                    "Description": "As a job applicant, I want to view the reasons for the rejection of my CV so that I can understand why my application was not successful.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the patient flags dashboard, when I select a specific flag category, I should only see patients who fall under that category.",
-                        "The filter should be easy to apply and remove, allowing for quick changes between categories."
+                        "Given that my CV has been rejected, when I view the notification, then I should see a detailed reason for the rejection.",
+                        "The reason should be clear, specific, and relevant to the job requirements."
                     ],
-                    "Story ID": "S025"
+                    "Story ID": "S032"
                 },
                 {
-                    "Title": "View Detailed Patient Information from Flags Dashboard",
-                    "Description": "As a doctor, I want to click on a patient from the flags dashboard to view their detailed profile and historical data so that I can make informed decisions about their care.",
+                    "Title": "Receive Digital Interview Invitation",
+                    "Description": "As a job applicant, I want to receive a notification inviting me to a digital interview if my CV is approved so that I can proceed to the next stage of the application process.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the patient flags dashboard, when I click on a patient's name, I should be redirected to their detailed profile page.",
-                        "The profile page should include the patient's visit history, consultation history, and any relevant notes or summaries."
+                        "Given that my CV has been approved, when the system schedules a digital interview, then I should receive a notification inviting me to the interview.",
+                        "The notification should include the date, time, and instructions for the digital interview."
                     ],
-                    "Story ID": "S026"
+                    "Story ID": "S033"
                 },
                 {
-                    "Title": "Update Patient Flags Based on New Onboarding Responses",
-                    "Description": "As a doctor, I want patient flags to be automatically updated based on new onboarding responses so that the categorization remains accurate and up-to-date.",
+                    "Title": "Receive Digital Interview Results Notification",
+                    "Description": "As a job applicant, I want to receive a notification about the results of my digital interview so that I know whether I have passed or failed.",
                     "AcceptanceCriteria": [
-                        "Given that a patient completes a new onboarding process, when their responses are submitted, their flag category should be updated accordingly.",
-                        "The updated flag should reflect on the patient flags dashboard in real-time."
+                        "Given that I have completed the digital interview, when the interview results are available, then I should receive a notification about the results.",
+                        "The notification should clearly state whether I have passed or failed the interview."
                     ],
-                    "Story ID": "S027"
+                    "Story ID": "S034"
                 },
                 {
-                    "Title": "Notification for Critical Flags",
-                    "Description": "As a doctor, I want to receive notifications for patients who are flagged as critical based on their onboarding responses so that I can address urgent cases promptly.",
+                    "Title": "View Reasons for Interview Rejection",
+                    "Description": "As a job applicant, I want to view the reasons for the rejection of my interview so that I can understand why I was not selected for the next stage.",
                     "AcceptanceCriteria": [
-                        "Given that a patient is flagged as critical, when I log in to the platform, I should receive a notification highlighting the critical flag.",
-                        "The notification should include the patient's name and a brief summary of the critical issue."
+                        "Given that I have failed the digital interview, when I view the notification, then I should see a detailed reason for the rejection.",
+                        "The reason should be clear, specific, and relevant to the job requirements."
                     ],
-                    "Story ID": "S028"
+                    "Story ID": "S035"
                 },
                 {
-                    "Title": "Export Patient Flags Report",
-                    "Description": "As a doctor, I want to export a report of patients categorized by flags so that I can review and share the information offline or with other healthcare professionals.",
+                    "Title": "Track Application Status",
+                    "Description": "As a job applicant, I want to track the status of my application so that I am always informed about where I am in the recruitment process.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the patient flags dashboard, when I click on the export button, I should be able to download a report in PDF or CSV format.",
-                        "The report should include all patients and their respective flag categories, along with any relevant notes or summaries."
+                        "Given that I have submitted my application, when I log into the portal, then I should see the current status of my application.",
+                        "The status should be updated in real-time to reflect the latest stage of the process."
                     ],
-                    "Story ID": "S029"
+                    "Story ID": "S036"
+                },
+                {
+                    "Title": "Receive Instant Notifications",
+                    "Description": "As a job applicant, I want to receive instant notifications about any updates to my application status so that I can respond promptly.",
+                    "AcceptanceCriteria": [
+                        "Given that there is an update to my application status, when the update occurs, then I should receive an instant notification.",
+                        "The notification should be delivered via email and in-app notification."
+                    ],
+                    "Story ID": "S037"
                 }
             ]
         },
         {
             "Epic ID": "E006",
-            "Title": "Notifications and Alerts",
-            "Description": "Send email notifications to doctors for important actions such as registration, verification, and report approvals. Ensure timely communication of critical updates and actions.",
+            "Title": "Progressive Web App Compatibility",
+            "Description": "Ensure the job applicant portal is a Progressive Web App (PWA) compatible with tablets and iPads on both Android and iOS.",
             "User Stories": [
                 {
-                    "Title": "Email Notification for Doctor Registration",
-                    "Description": "As a doctor, I want to receive an email notification upon successful registration so that I am informed that my account has been created.",
+                    "Title": "Responsive Design for Tablets and iPads",
+                    "Description": "As a job applicant, I want the portal to have a responsive design so that I can easily navigate and use the platform on my tablet or iPad.",
                     "AcceptanceCriteria": [
-                        "Given a doctor has successfully registered, when the registration process is completed, then an email notification is sent to the doctor's registered email address.",
-                        "The email should include a welcome message and a confirmation of successful registration."
+                        "The portal should automatically adjust its layout and elements to fit different screen sizes and orientations of tablets and iPads.",
+                        "All functionalities, including CV upload, application tracking, and interview participation, should be fully accessible and usable on tablets and iPads.",
+                        "The user interface should be intuitive and touch-friendly, with appropriately sized buttons and input fields."
+                    ],
+                    "Story ID": "S038"
+                },
+                {
+                    "Title": "Offline Access",
+                    "Description": "As a job applicant, I want to access certain features of the portal offline so that I can continue my application process even without an internet connection.",
+                    "AcceptanceCriteria": [
+                        "The portal should allow users to view previously loaded job postings and application status offline.",
+                        "Users should be able to fill out application forms and upload CVs offline, with the data being synced once an internet connection is re-established.",
+                        "A notification should inform users when they are offline and when their data has been successfully synced."
+                    ],
+                    "Story ID": "S039"
+                },
+                {
+                    "Title": "Push Notifications",
+                    "Description": "As a job applicant, I want to receive push notifications on my tablet or iPad so that I am promptly informed about the status of my application and interview results.",
+                    "AcceptanceCriteria": [
+                        "The portal should send push notifications for important updates, such as application approval, interview scheduling, and feedback.",
+                        "Notifications should be clear and provide direct links to the relevant sections of the portal.",
+                        "Users should have the option to enable or disable push notifications through the portal settings."
+                    ],
+                    "Story ID": "S040"
+                },
+                {
+                    "Title": "Smooth Installation and Updates",
+                    "Description": "As a job applicant, I want the portal to be easy to install and update on my tablet or iPad so that I always have access to the latest features and improvements.",
+                    "AcceptanceCriteria": [
+                        "The portal should provide a simple installation process that adds the PWA to the home screen of tablets and iPads.",
+                        "Updates to the PWA should be automatically applied in the background without requiring user intervention.",
+                        "Users should be notified when a new update has been applied and what changes have been made."
+                    ],
+                    "Story ID": "S041"
+                },
+                {
+                    "Title": "Secure Data Storage",
+                    "Description": "As a job applicant, I want my data to be securely stored on my device so that my personal information is protected.",
+                    "AcceptanceCriteria": [
+                        "All data stored locally on the device should be encrypted to prevent unauthorized access.",
+                        "The portal should use secure methods for data transmission between the device and the server.",
+                        "Users should be informed about how their data is being stored and protected."
+                    ],
+                    "Story ID": "S042"
+                },
+                {
+                    "Title": "Seamless User Experience",
+                    "Description": "As a job applicant, I want a seamless user experience on my tablet or iPad so that I can complete my application process without any technical issues.",
+                    "AcceptanceCriteria": [
+                        "The portal should load quickly and perform smoothly on tablets and iPads.",
+                        "All interactive elements should be responsive and provide immediate feedback to user actions.",
+                        "Any errors or issues encountered should be clearly communicated to the user with guidance on how to resolve them."
+                    ],
+                    "Story ID": "S043"
+                }
+            ]
+        }
+    ],
+    "HR Managers": [
+        {
+            "Epic ID": "E001",
+            "Title": "Job Posting Creation and Management",
+            "Description": "Enable HR managers to create, edit, and manage job postings. This includes specifying job requirements, descriptions, and other relevant details to attract suitable candidates.",
+            "User Stories": [
+                {
+                    "Title": "Create Job Posting",
+                    "Description": "As an HR Manager, I want to create a new job posting so that I can attract suitable candidates for open positions.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access a 'Create Job Posting' form from the HR portal.",
+                        "Form includes fields for job title, job description, job requirements, and other relevant details.",
+                        "HR Manager can save the job posting, which then becomes visible to job applicants."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "Edit Job Posting",
+                    "Description": "As an HR Manager, I want to edit an existing job posting so that I can update the job requirements and descriptions as needed.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access a list of existing job postings from the HR portal.",
+                        "HR Manager can select a job posting to edit.",
+                        "Form pre-populates with existing job details, allowing for modifications.",
+                        "HR Manager can save changes, which update the job posting visible to job applicants."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Delete Job Posting",
+                    "Description": "As an HR Manager, I want to delete a job posting so that I can remove outdated or filled positions from the job listings.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access a list of existing job postings from the HR portal.",
+                        "HR Manager can select a job posting to delete.",
+                        "System prompts for confirmation before deleting the job posting.",
+                        "Deleted job posting is no longer visible to job applicants."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "View Job Posting Statistics",
+                    "Description": "As an HR Manager, I want to view statistics for each job posting so that I can monitor the number of applicants and their progress through the screening process.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access a 'Job Posting Statistics' section from the HR portal.",
+                        "Statistics include the number of applicants, number of applicants who passed CV screening, and number of applicants who passed the digital interview.",
+                        "Statistics are updated in real-time or at regular intervals."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "Customize AI Interview Questions",
+                    "Description": "As an HR Manager, I want to customize the AI interview questions for each job posting so that the interview process is tailored to the specific job requirements.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access a 'Customize AI Interview Questions' section from the HR portal.",
+                        "HR Manager can select a job posting and specify the types of questions to be asked by the AI.",
+                        "HR Manager can review and approve the customized questions.",
+                        "Customized questions are used by the AI during the digital interview process."
+                    ],
+                    "Story ID": "S005"
+                },
+                {
+                    "Title": "Receive Notifications for Approved Candidates",
+                    "Description": "As an HR Manager, I want to receive email notifications when a candidate passes the screening and interview process so that I can act promptly to schedule in-person interviews.",
+                    "AcceptanceCriteria": [
+                        "HR Manager receives an email notification when a candidate passes the CV screening.",
+                        "HR Manager receives an email notification when a candidate passes the digital interview.",
+                        "Email notifications include candidate details and a link to schedule an in-person interview."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "Schedule In-Person Interviews",
+                    "Description": "As an HR Manager, I want to schedule in-person interviews with approved candidates so that I can proceed with the final stages of the hiring process.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access a 'Schedule Interview' section from the HR portal.",
+                        "HR Manager can select an approved candidate and choose a date and time for the interview.",
+                        "System integrates with Google Calendar API to create a calendar event and send an email invite to the candidate and HR Manager.",
+                        "Scheduled interview details are visible in the HR portal."
+                    ],
+                    "Story ID": "S007"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "AI-Powered CV Screening",
+            "Description": "Implement an AI system to automatically screen CVs based on predefined job requirements. The system should filter out unsuitable candidates and provide reasons for rejection.",
+            "User Stories": [
+                {
+                    "Title": "Create Job Posting",
+                    "Description": "As an HR Manager, I want to create job postings with detailed job descriptions so that I can attract suitable candidates for open positions.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can create a new job posting with fields for job title, description, requirements, and other relevant details.",
+                        "The job posting is saved and displayed in the HR Manager portal.",
+                        "HR Manager receives a confirmation notification upon successful creation of a job posting."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "Customize AI Interview Questions",
+                    "Description": "As an HR Manager, I want to customize the AI interview questions based on the job description so that the interview process is relevant and effective.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can select and customize interview questions for each job posting.",
+                        "Customized questions are saved and used by the AI system during digital interviews.",
+                        "HR Manager receives a confirmation notification upon successful customization of interview questions."
+                    ],
+                    "Story ID": "S009"
+                },
+                {
+                    "Title": "Review CV Screening Results",
+                    "Description": "As an HR Manager, I want to review the results of the AI-powered CV screening so that I can understand which candidates meet the job requirements.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can view a list of candidates who have passed or failed the CV screening.",
+                        "Each candidate's CV is displayed with reasons for rejection if applicable.",
+                        "HR Manager can filter and sort the list of candidates based on screening results."
+                    ],
+                    "Story ID": "S010"
+                },
+                {
+                    "Title": "Receive Notifications for Qualified Candidates",
+                    "Description": "As an HR Manager, I want to receive email notifications when a candidate passes the CV screening and digital interview so that I can take prompt action.",
+                    "AcceptanceCriteria": [
+                        "HR Manager receives an email notification when a candidate passes the CV screening.",
+                        "HR Manager receives an email notification when a candidate passes the digital interview.",
+                        "Notifications include candidate details and a link to their application."
+                    ],
+                    "Story ID": "S011"
+                },
+                {
+                    "Title": "View Application Statistics",
+                    "Description": "As an HR Manager, I want to view statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview so that I can monitor the effectiveness of the recruitment process.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can view a dashboard with statistics on the number of job applicants.",
+                        "Dashboard displays the number of candidates who passed the CV screening and digital interview.",
+                        "Statistics are updated in real-time as candidates progress through the screening and interview stages."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "Schedule In-Person Interviews",
+                    "Description": "As an HR Manager, I want to schedule in-person interviews with candidates who have passed the digital interview so that I can proceed with the next stage of the hiring process.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can select a candidate and schedule an in-person interview using the Google Calendar API.",
+                        "HR Manager can choose a date and time for the interview and send an invitation to the candidate.",
+                        "HR Manager receives a confirmation notification upon successful scheduling of the interview."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "Provide Feedback to Applicants",
+                    "Description": "As an HR Manager, I want the system to provide feedback to applicants about the status of their application and reasons for rejection so that the process is transparent and informative.",
+                    "AcceptanceCriteria": [
+                        "Applicants receive notifications about the status of their application (e.g., approved, rejected).",
+                        "Notifications include detailed reasons for rejection at both the CV screening and interview stages.",
+                        "HR Manager can view the feedback provided to applicants in the HR Manager portal."
+                    ],
+                    "Story ID": "S014"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Customizable AI Interview Setup",
+            "Description": "Allow HR managers to customize the AI interview process by specifying the types of questions to be asked. This includes a mix of pre-recorded and real-time questions tailored to the job description.",
+            "User Stories": [
+                {
+                    "Title": "Create Job Posting",
+                    "Description": "As an HR Manager, I want to create a job posting with detailed job descriptions so that I can attract suitable candidates.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access the job posting creation form.",
+                        "HR Manager can input job title, description, and requirements.",
+                        "HR Manager can save and publish the job posting."
+                    ],
+                    "Story ID": "S015"
+                },
+                {
+                    "Title": "Customize AI Interview Questions",
+                    "Description": "As an HR Manager, I want to customize the AI interview questions based on the job description so that the interview process is relevant to the job role.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access the AI interview customization interface.",
+                        "HR Manager can input and edit pre-recorded questions.",
+                        "HR Manager can specify real-time questions based on candidate responses.",
+                        "HR Manager can save and apply the customized questions to the interview process."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "Review and Approve AI-Generated Interview Questions",
+                    "Description": "As an HR Manager, I want to review and approve AI-generated interview questions so that I ensure the questions are appropriate and relevant.",
+                    "AcceptanceCriteria": [
+                        "HR Manager receives a list of AI-generated interview questions.",
+                        "HR Manager can approve or edit each question.",
+                        "HR Manager can save the final list of approved questions."
+                    ],
+                    "Story ID": "S017"
+                },
+                {
+                    "Title": "View Interview Statistics",
+                    "Description": "As an HR Manager, I want to view statistics on the number of applicants who have begun the interview process so that I can monitor the progress and effectiveness of the interview process.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access the interview statistics dashboard.",
+                        "Dashboard displays the number of applicants who have started the interview process.",
+                        "Dashboard displays the number of applicants who have passed the interview process."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Receive Notifications for Approved Candidates",
+                    "Description": "As an HR Manager, I want to receive email notifications when a candidate is approved by the AI system so that I can act promptly to schedule in-person interviews.",
+                    "AcceptanceCriteria": [
+                        "HR Manager receives an email notification when a candidate passes the AI interview.",
+                        "Email contains candidate details and a link to schedule an in-person interview."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Schedule In-Person Interviews",
+                    "Description": "As an HR Manager, I want to schedule in-person interviews with approved candidates using the Google Calendar API so that I can efficiently manage interview appointments.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can access the interview scheduling interface.",
+                        "HR Manager can select a date and time for the interview.",
+                        "HR Manager can send calendar invites to the candidate and interviewers.",
+                        "Interview details are automatically added to the Google Calendar."
+                    ],
+                    "Story ID": "S020"
+                },
+                {
+                    "Title": "Provide Feedback to Candidates",
+                    "Description": "As an HR Manager, I want the system to provide feedback to candidates on their interview performance so that candidates understand the reasons for their approval or rejection.",
+                    "AcceptanceCriteria": [
+                        "System generates feedback based on AI interview analysis.",
+                        "Feedback is sent to candidates via email.",
+                        "Feedback is stored in the system for HR review."
+                    ],
+                    "Story ID": "S021"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E004",
+            "Title": "Candidate Application Tracking",
+            "Description": "Provide a dashboard for HR managers to track the status of job applications. This includes viewing statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview.",
+            "User Stories": [
+                {
+                    "Title": "View Total Number of Applicants",
+                    "Description": "As an HR Manager, I want to view the total number of applicants for each job posting so that I can understand the volume of interest in the position.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see the total number of applicants for each job posting.",
+                        "The total number of applicants should be displayed in a clear and readable format."
+                    ],
+                    "Story ID": "S022"
+                },
+                {
+                    "Title": "View Number of Applicants Who Passed CV Screening",
+                    "Description": "As an HR Manager, I want to view the number of applicants who passed the CV screening so that I can assess the effectiveness of the initial filtering process.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see the number of applicants who passed the CV screening for each job posting.",
+                        "The number of applicants who passed the CV screening should be displayed in a clear and readable format."
+                    ],
+                    "Story ID": "S023"
+                },
+                {
+                    "Title": "View Number of Applicants Who Passed Digital Interview",
+                    "Description": "As an HR Manager, I want to view the number of applicants who passed the digital interview so that I can identify candidates who are ready for in-person interviews.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see the number of applicants who passed the digital interview for each job posting.",
+                        "The number of applicants who passed the digital interview should be displayed in a clear and readable format."
+                    ],
+                    "Story ID": "S024"
+                },
+                {
+                    "Title": "Filter Applicants by Job Posting",
+                    "Description": "As an HR Manager, I want to filter the applicant statistics by specific job postings so that I can focus on the data relevant to each position.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should be able to filter the statistics by selecting a specific job posting.",
+                        "The dashboard should update to show the filtered statistics for the selected job posting."
+                    ],
+                    "Story ID": "S025"
+                },
+                {
+                    "Title": "Receive Notifications for Qualified Candidates",
+                    "Description": "As an HR Manager, I want to receive notifications when candidates pass the CV screening and digital interview so that I can promptly review and take action on qualified candidates.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when a candidate passes the CV screening, then I should receive an email notification.",
+                        "Given I am logged into the HR Manager portal, when a candidate passes the digital interview, then I should receive an email notification.",
+                        "The notifications should include the candidate's name, the job posting they applied for, and a link to their application details."
+                    ],
+                    "Story ID": "S026"
+                },
+                {
+                    "Title": "View Detailed Applicant Statistics",
+                    "Description": "As an HR Manager, I want to view detailed statistics about the applicants, including the reasons for rejection, so that I can understand the screening and interview outcomes.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see detailed statistics including the reasons for rejection at both the CV screening and digital interview stages.",
+                        "The detailed statistics should be displayed in a clear and readable format, with options to view more in-depth information if needed."
+                    ],
+                    "Story ID": "S027"
+                },
+                {
+                    "Title": "Export Applicant Data",
+                    "Description": "As an HR Manager, I want to export the applicant data to a CSV file so that I can analyze it further or share it with other stakeholders.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see an option to export the applicant data to a CSV file.",
+                        "The exported CSV file should include all relevant applicant statistics and details."
+                    ],
+                    "Story ID": "S028"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E005",
+            "Title": "Interview Scheduling Integration",
+            "Description": "Integrate with the Google Calendar API to allow HR managers to schedule in-person interviews with approved candidates. This includes sending email notifications and creating calendar events.",
+            "User Stories": [
+                {
+                    "Title": "Create Calendar Event for Approved Candidate",
+                    "Description": "As an HR Manager, I want to create a calendar event for an approved candidate so that I can schedule an in-person interview.",
+                    "AcceptanceCriteria": [
+                        "Given an approved candidate, when I click on the 'Schedule Interview' button, then a calendar event creation form should appear.",
+                        "The form should allow me to select a date, time, and location for the interview.",
+                        "The form should allow me to add additional participants (e.g., interviewers).",
+                        "When I submit the form, a calendar event should be created in Google Calendar."
+                    ],
+                    "Story ID": "S029"
+                },
+                {
+                    "Title": "Send Email Notification for Scheduled Interview",
+                    "Description": "As an HR Manager, I want to send an email notification to the candidate and interviewers when an interview is scheduled so that everyone is informed about the interview details.",
+                    "AcceptanceCriteria": [
+                        "Given a scheduled interview, when the calendar event is created, then an email notification should be sent to the candidate and all participants.",
+                        "The email should include the interview date, time, location, and any additional instructions.",
+                        "The email should be sent using the Gmail Google API."
                     ],
                     "Story ID": "S030"
                 },
                 {
-                    "Title": "Email Notification for Doctor Verification",
-                    "Description": "As a doctor, I want to receive an email notification upon successful account verification so that I am informed that my account is now verified.",
+                    "Title": "View Scheduled Interviews",
+                    "Description": "As an HR Manager, I want to view a list of all scheduled interviews so that I can manage my interview schedule effectively.",
                     "AcceptanceCriteria": [
-                        "Given a doctor has successfully verified their account, when the verification process is completed, then an email notification is sent to the doctor's registered email address.",
-                        "The email should include a confirmation of successful verification and any next steps if applicable."
+                        "Given the HR Manager portal, when I navigate to the 'Scheduled Interviews' section, then I should see a list of all upcoming interviews.",
+                        "Each interview entry should display the candidate's name, interview date, time, location, and participants.",
+                        "I should be able to click on an entry to view more details or edit the interview."
                     ],
                     "Story ID": "S031"
                 },
                 {
-                    "Title": "Email Notification for Report Approval",
-                    "Description": "As a doctor, I want to receive an email notification when a consultation report is approved so that I am informed of the report's status.",
+                    "Title": "Edit Scheduled Interview",
+                    "Description": "As an HR Manager, I want to edit the details of a scheduled interview so that I can make necessary changes if needed.",
                     "AcceptanceCriteria": [
-                        "Given a consultation report has been approved, when the approval process is completed, then an email notification is sent to the doctor's registered email address.",
-                        "The email should include details of the approved report, including patient name, consultation date, and a summary of the report."
+                        "Given a scheduled interview, when I click on the 'Edit' button, then I should be able to modify the date, time, location, and participants.",
+                        "When I save the changes, the calendar event in Google Calendar should be updated accordingly.",
+                        "An email notification should be sent to the candidate and participants informing them of the changes."
                     ],
                     "Story ID": "S032"
                 },
                 {
-                    "Title": "Email Notification for Critical Updates",
-                    "Description": "As a doctor, I want to receive email notifications for critical updates and actions so that I am always informed of important changes or actions required.",
+                    "Title": "Cancel Scheduled Interview",
+                    "Description": "As an HR Manager, I want to cancel a scheduled interview so that I can inform the candidate and participants if the interview is no longer needed.",
                     "AcceptanceCriteria": [
-                        "Given a critical update or action is required, when the update or action is identified, then an email notification is sent to the doctor's registered email address.",
-                        "The email should include details of the critical update or action required, including any deadlines or steps needed to address the update."
+                        "Given a scheduled interview, when I click on the 'Cancel' button, then I should be prompted to confirm the cancellation.",
+                        "Upon confirmation, the calendar event should be removed from Google Calendar.",
+                        "An email notification should be sent to the candidate and participants informing them of the cancellation."
                     ],
                     "Story ID": "S033"
                 },
                 {
-                    "Title": "Email Notification for New Patient Registration",
-                    "Description": "As a doctor, I want to receive an email notification when a new patient registers and associates with me so that I am aware of new patients under my care.",
+                    "Title": "Receive Notifications for Interview Scheduling Actions",
+                    "Description": "As an HR Manager, I want to receive notifications for actions related to interview scheduling so that I am aware of any changes or updates.",
                     "AcceptanceCriteria": [
-                        "Given a new patient has registered and associated with a doctor, when the association process is completed, then an email notification is sent to the doctor's registered email address.",
-                        "The email should include the patient's name, registration date, and any initial information provided by the patient."
+                        "Given any action related to interview scheduling (creation, update, cancellation), when the action is performed, then I should receive an in-app notification.",
+                        "The notification should include details of the action performed (e.g., interview scheduled, interview updated, interview canceled)."
                     ],
                     "Story ID": "S034"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E006",
+            "Title": "Automated Notifications",
+            "Description": "Set up automated email notifications to inform HR managers when a candidate passes the CV screening and digital interview stages. This ensures timely action on qualified candidates.",
+            "User Stories": [
+                {
+                    "Title": "Receive Notification for CV Screening Pass",
+                    "Description": "As an HR Manager, I want to receive an email notification when a candidate passes the CV screening stage so that I can promptly review and take further action on qualified candidates.",
+                    "AcceptanceCriteria": [
+                        "Given a candidate passes the CV screening stage, when the system processes the result, then an email notification is sent to the HR Manager.",
+                        "The email notification should include the candidate's name, the job position applied for, and a link to the candidate's profile for further review."
+                    ],
+                    "Story ID": "S035"
+                },
+                {
+                    "Title": "Receive Notification for Digital Interview Pass",
+                    "Description": "As an HR Manager, I want to receive an email notification when a candidate passes the digital interview stage so that I can promptly schedule an in-person interview or take further action.",
+                    "AcceptanceCriteria": [
+                        "Given a candidate passes the digital interview stage, when the system processes the result, then an email notification is sent to the HR Manager.",
+                        "The email notification should include the candidate's name, the job position applied for, a summary of the interview results, and a link to schedule an in-person interview."
+                    ],
+                    "Story ID": "S036"
+                },
+                {
+                    "Title": "View Notification History",
+                    "Description": "As an HR Manager, I want to view a history of all notifications sent regarding candidate progress so that I can keep track of all actions taken and pending tasks.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the notifications section, then I can see a list of all notifications sent regarding candidate progress.",
+                        "The notification history should include the candidate's name, the job position applied for, the stage passed (CV screening or digital interview), and the date/time the notification was sent."
+                    ],
+                    "Story ID": "S037"
+                },
+                {
+                    "Title": "Customize Notification Settings",
+                    "Description": "As an HR Manager, I want to customize my notification settings so that I can choose how and when I receive notifications about candidate progress.",
+                    "AcceptanceCriteria": [
+                        "Given I am logged into the HR Manager portal, when I navigate to the notification settings section, then I can customize my notification preferences.",
+                        "The settings should allow me to choose between email notifications, in-app notifications, or both.",
+                        "The settings should allow me to specify the frequency of notifications (e.g., instant, daily summary)."
+                    ],
+                    "Story ID": "S038"
+                },
+                {
+                    "Title": "Notification for Rejected Candidates",
+                    "Description": "As an HR Manager, I want to receive notifications when a candidate is rejected at any stage so that I can review the reasons and ensure the process is fair and transparent.",
+                    "AcceptanceCriteria": [
+                        "Given a candidate is rejected at the CV screening or digital interview stage, when the system processes the result, then an email notification is sent to the HR Manager.",
+                        "The email notification should include the candidate's name, the job position applied for, the stage at which they were rejected, and the reasons for rejection."
+                    ],
+                    "Story ID": "S039"
+                },
+                {
+                    "Title": "In-App Notifications for Candidate Progress",
+                    "Description": "As an HR Manager, I want to receive in-app notifications for candidate progress so that I can stay updated while using the platform.",
+                    "AcceptanceCriteria": [
+                        "Given a candidate passes the CV screening or digital interview stage, when the system processes the result, then an in-app notification is displayed to the HR Manager.",
+                        "The in-app notification should include the candidate's name, the job position applied for, and the stage passed."
+                    ],
+                    "Story ID": "S040"
                 }
             ]
         },
         {
             "Epic ID": "E007",
-            "Title": "Data Security and Privacy",
-            "Description": "Implement robust access control mechanisms to protect patient data. Ensure all sensitive data is encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25 laws.",
+            "Title": "Review and Approve AI-Generated Job Descriptions",
+            "Description": "Enable HR managers to review and approve job descriptions generated by the AI system. This ensures that the job postings are accurate and aligned with the company's requirements.",
             "User Stories": [
                 {
-                    "Title": "Doctor Account Security",
-                    "Description": "As a doctor, I want my account to be secured with OTP and email verification so that I can ensure that only I have access to my account.",
+                    "Title": "Review AI-Generated Job Descriptions",
+                    "Description": "As an HR Manager, I want to review AI-generated job descriptions so that I can ensure they are accurate and aligned with the company's requirements.",
                     "AcceptanceCriteria": [
-                        "Doctors must verify their email during registration.",
-                        "Doctors must verify their phone number using OTP during registration.",
-                        "Doctors must log in using their registered email and password."
-                    ],
-                    "Story ID": "S035"
-                },
-                {
-                    "Title": "Secure Data Access",
-                    "Description": "As a doctor, I want to access patient data securely so that I can ensure the confidentiality and integrity of the information.",
-                    "AcceptanceCriteria": [
-                        "All patient data must be encrypted in transit using HTTPS.",
-                        "All patient data must be encrypted at rest in the database.",
-                        "Access to patient data should be restricted to authorized users only."
-                    ],
-                    "Story ID": "S036"
-                },
-                {
-                    "Title": "Role-Based Access Control",
-                    "Description": "As a doctor, I want role-based access control mechanisms so that only authorized personnel can access specific data and functionalities.",
-                    "AcceptanceCriteria": [
-                        "Doctors can only access patient data for patients who have shared their QR code.",
-                        "Doctors can only view and edit consultation reports for their patients.",
-                        "Access logs should be maintained to track who accessed what data and when."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Secure Consultation Reports",
-                    "Description": "As a doctor, I want consultation reports to be securely stored and accessed so that patient information remains confidential.",
-                    "AcceptanceCriteria": [
-                        "Consultation reports must be encrypted at rest in the database.",
-                        "Only the doctor who conducted the consultation and the patient can access the consultation report.",
-                        "Consultation reports should be accessible only after the doctor has approved them."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Data Encryption Compliance",
-                    "Description": "As a doctor, I want the platform to comply with Canadian Laws and Quebec Loi 25 laws so that I can be assured that patient data is handled legally and securely.",
-                    "AcceptanceCriteria": [
-                        "All sensitive data must be encrypted in transit and at rest.",
-                        "The platform must provide documentation proving compliance with Canadian Laws and Quebec Loi 25 laws.",
-                        "Regular audits should be conducted to ensure ongoing compliance."
-                    ],
-                    "Story ID": "S039"
-                },
-                {
-                    "Title": "Secure QR Code Access",
-                    "Description": "As a doctor, I want to securely scan patient QR codes to access their profiles and histories so that I can ensure that only authorized access is granted.",
-                    "AcceptanceCriteria": [
-                        "QR codes must be securely generated and encrypted.",
-                        "Only authorized doctors can scan and access patient data using QR codes.",
-                        "Access logs should record each instance of QR code scanning and data access."
-                    ],
-                    "Story ID": "S040"
-                },
-                {
-                    "Title": "Notification of Data Access",
-                    "Description": "As a doctor, I want to receive notifications when patient data is accessed so that I can monitor and ensure data security.",
-                    "AcceptanceCriteria": [
-                        "Doctors receive email notifications when patient data is accessed.",
-                        "Notifications include details of who accessed the data and when.",
-                        "Doctors can review access logs through their dashboard."
-                    ],
-                    "Story ID": "S041"
-                }
-            ]
-        }
-    ],
-    "AI System": [
-        {
-            "Epic ID": "E001",
-            "Title": "AI-Driven Onboarding",
-            "Description": "Develop an AI agent to interact with patients during the onboarding process. The AI will dynamically ask questions based on the conversation context and store all responses in a structured format.",
-            "User Stories": [
-                {
-                    "Title": "Initialize AI Agent",
-                    "Description": "As a developer, I want to initialize an AI agent so that it can interact with patients during the onboarding process.",
-                    "AcceptanceCriteria": [
-                        "AI agent is successfully initialized and ready to interact with patients.",
-                        "AI agent can be invoked via API endpoints."
-                    ],
-                    "Story ID": "S001"
-                },
-                {
-                    "Title": "Dynamic Question Generation",
-                    "Description": "As an AI system, I want to generate dynamic questions based on the conversation context so that the onboarding process is personalized for each patient.",
-                    "AcceptanceCriteria": [
-                        "AI agent generates relevant questions based on the patient's previous responses.",
-                        "Questions are contextually appropriate and follow a logical flow."
-                    ],
-                    "Story ID": "S002"
-                },
-                {
-                    "Title": "Store Responses in Structured Format",
-                    "Description": "As an AI system, I want to store all patient responses in a structured format so that the data can be easily retrieved and analyzed later.",
-                    "AcceptanceCriteria": [
-                        "All patient responses are stored in a structured format in the database.",
-                        "Data storage follows the defined schema and is accessible via API."
-                    ],
-                    "Story ID": "S003"
-                },
-                {
-                    "Title": "Conversation Context Management",
-                    "Description": "As an AI system, I want to maintain the context of the conversation so that I can provide relevant and coherent responses throughout the onboarding process.",
-                    "AcceptanceCriteria": [
-                        "AI agent maintains the context of the conversation across multiple interactions.",
-                        "Context management is robust and handles edge cases such as interruptions or topic changes."
-                    ],
-                    "Story ID": "S004"
-                },
-                {
-                    "Title": "Voice and Text Interaction",
-                    "Description": "As an AI system, I want to support both voice and text interactions so that patients can choose their preferred mode of communication.",
-                    "AcceptanceCriteria": [
-                        "AI agent can handle voice input and convert it to text using OpenAI API.",
-                        "AI agent can respond in both text and voice formats."
-                    ],
-                    "Story ID": "S005"
-                },
-                {
-                    "Title": "Conversation Summarization",
-                    "Description": "As an AI system, I want to summarize long conversations so that key information is easily accessible for both patients and doctors.",
-                    "AcceptanceCriteria": [
-                        "AI agent generates accurate and concise summaries of long conversations.",
-                        "Summaries are stored in the database and accessible via API."
-                    ],
-                    "Story ID": "S006"
-                },
-                {
-                    "Title": "Emotional and Physical Well-being Analysis",
-                    "Description": "As an AI system, I want to analyze conversations for emotional and physical well-being so that I can provide insights to doctors.",
-                    "AcceptanceCriteria": [
-                        "AI agent analyzes conversations for indicators of emotional and physical well-being.",
-                        "Analysis results are stored in the database and accessible via API."
-                    ],
-                    "Story ID": "S007"
-                },
-                {
-                    "Title": "Secure Data Transmission",
-                    "Description": "As an AI system, I want to ensure that all data transmitted during the onboarding process is encrypted so that patient information remains secure.",
-                    "AcceptanceCriteria": [
-                        "All data in transit is encrypted using industry-standard protocols.",
-                        "Encryption is verified through security tests and audits."
-                    ],
-                    "Story ID": "S008"
-                },
-                {
-                    "Title": "Integration with Backend Systems",
-                    "Description": "As a developer, I want to integrate the AI agent with backend systems so that patient data can be stored and retrieved efficiently.",
-                    "AcceptanceCriteria": [
-                        "AI agent is integrated with the backend database (MongoDB).",
-                        "API endpoints for data storage and retrieval are functional and tested."
-                    ],
-                    "Story ID": "S009"
-                },
-                {
-                    "Title": "Compliance with Data Privacy Laws",
-                    "Description": "As an AI system, I want to comply with Canadian and Quebec Loi 25 data privacy laws so that patient information is handled legally and ethically.",
-                    "AcceptanceCriteria": [
-                        "Data handling processes comply with Canadian and Quebec Loi 25 laws.",
-                        "Regular audits and reviews are conducted to ensure ongoing compliance."
-                    ],
-                    "Story ID": "S010"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E002",
-            "Title": "Conversational AI for Patients",
-            "Description": "Implement a chat interface that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses and analyze conversations for emotional and physical well-being.",
-            "User Stories": [
-                {
-                    "Title": "Text-Based Chat Interface",
-                    "Description": "As a patient, I want to interact with an AI agent via a text-based chat interface so that I can ask questions and receive responses in real-time.",
-                    "AcceptanceCriteria": [
-                        "The chat interface should be accessible from the patient dashboard.",
-                        "Patients should be able to type messages and receive text responses from the AI agent.",
-                        "The AI agent should have access to the entire conversation history to provide informed responses."
-                    ],
-                    "Story ID": "S011"
-                },
-                {
-                    "Title": "Voice-Based Chat Interface",
-                    "Description": "As a patient, I want to interact with an AI agent via a voice-based chat interface so that I can communicate more naturally.",
-                    "AcceptanceCriteria": [
-                        "The voice chat interface should be accessible from the patient dashboard.",
-                        "Patients should be able to speak to the AI agent and receive voice responses.",
-                        "The AI agent should convert voice input to text and text responses to voice using OpenAI API."
-                    ],
-                    "Story ID": "S012"
-                },
-                {
-                    "Title": "Conversation History Access",
-                    "Description": "As an AI system, I want to access the entire conversation history so that I can provide informed responses to patients.",
-                    "AcceptanceCriteria": [
-                        "The AI system should be able to retrieve and store all past conversations with the patient.",
-                        "The AI system should use the conversation history to generate context-aware responses.",
-                        "The conversation history should be encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25."
-                    ],
-                    "Story ID": "S013"
-                },
-                {
-                    "Title": "Emotional and Physical Well-being Analysis",
-                    "Description": "As an AI system, I want to analyze conversations for emotional and physical well-being so that I can provide relevant insights and support.",
-                    "AcceptanceCriteria": [
-                        "The AI system should analyze text and voice inputs for emotional cues using sentiment analysis.",
-                        "The AI system should identify keywords and phrases related to physical well-being.",
-                        "The analysis results should be stored securely and be accessible to both patients and doctors."
-                    ],
-                    "Story ID": "S014"
-                },
-                {
-                    "Title": "Conversation Summarization",
-                    "Description": "As an AI system, I want to summarize long conversations so that I can provide concise and relevant information to patients and doctors.",
-                    "AcceptanceCriteria": [
-                        "The AI system should summarize conversations that exceed a predefined word count.",
-                        "The summaries should capture key points and important information from the conversation.",
-                        "Summarized conversations should be stored in the database and accessible to patients and doctors."
-                    ],
-                    "Story ID": "S015"
-                },
-                {
-                    "Title": "Real-Time Response Generation",
-                    "Description": "As an AI system, I want to generate real-time responses during patient interactions so that I can maintain an engaging and helpful conversation flow.",
-                    "AcceptanceCriteria": [
-                        "The AI system should respond to patient queries within a few seconds.",
-                        "Responses should be contextually relevant and based on the conversation history.",
-                        "The AI system should handle multiple simultaneous conversations efficiently."
-                    ],
-                    "Story ID": "S016"
-                },
-                {
-                    "Title": "Data Security and Privacy",
-                    "Description": "As an AI system, I want to ensure data security and privacy so that patient information is protected.",
-                    "AcceptanceCriteria": [
-                        "All data in transit and at rest should be encrypted.",
-                        "Access to conversation data should be restricted to authorized users only.",
-                        "The system should comply with Canadian Laws and Quebec Loi 25 regarding data security and privacy."
-                    ],
-                    "Story ID": "S017"
-                },
-                {
-                    "Title": "AI Model Integration",
-                    "Description": "As an AI system, I want to integrate transformer models for conversation analysis and response generation so that I can provide advanced conversational capabilities.",
-                    "AcceptanceCriteria": [
-                        "The AI system should use transformer models for understanding and generating text.",
-                        "The models should be trained to handle patient onboarding, conversation analysis, and report generation.",
-                        "The integration should be optimized for real-time performance."
-                    ],
-                    "Story ID": "S018"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E003",
-            "Title": "AI Assistance for Doctors",
-            "Description": "Provide AI assistance for doctors during consultations to analyze and summarize conversations in real-time. The AI will help retrieve relevant patient history and generate structured consultation reports.",
-            "User Stories": [
-                {
-                    "Title": "Real-Time Conversation Analysis",
-                    "Description": "As an AI System, I want to analyze doctor-patient conversations in real-time so that I can provide immediate insights and summaries to assist the doctor.",
-                    "AcceptanceCriteria": [
-                        "The AI system should be able to process live audio or text input from consultations.",
-                        "The AI system should generate real-time summaries of the ongoing conversation.",
-                        "The AI system should highlight key points and important information during the conversation."
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "Retrieve Relevant Patient History",
-                    "Description": "As an AI System, I want to retrieve relevant patient history during consultations so that I can provide contextually accurate information to the doctor.",
-                    "AcceptanceCriteria": [
-                        "The AI system should access the patient's historical data from the database.",
-                        "The AI system should identify and retrieve relevant information based on the current conversation context.",
-                        "The AI system should present the retrieved information in a concise and understandable format for the doctor."
-                    ],
-                    "Story ID": "S020"
-                },
-                {
-                    "Title": "Generate Structured Consultation Reports",
-                    "Description": "As an AI System, I want to generate structured consultation reports so that doctors can review, edit, and approve them easily.",
-                    "AcceptanceCriteria": [
-                        "The AI system should compile a structured report based on the conversation analysis and retrieved patient history.",
-                        "The report should include sections for key points, diagnosis, treatment plan, and follow-up actions.",
-                        "The report should be editable by the doctor before final approval.",
-                        "The final approved report should be stored in the database and shared with the patient."
-                    ],
-                    "Story ID": "S021"
-                },
-                {
-                    "Title": "AI Prompting for Specific Information",
-                    "Description": "As an AI System, I want to allow doctors to prompt me for specific patient information or insights so that I can provide targeted assistance during consultations.",
-                    "AcceptanceCriteria": [
-                        "The AI system should recognize and respond to specific prompts from the doctor.",
-                        "The AI system should retrieve and present the requested information accurately and promptly.",
-                        "The AI system should log all prompts and responses for future reference."
-                    ],
-                    "Story ID": "S022"
-                },
-                {
-                    "Title": "Voice-to-Text and Text-to-Voice Integration",
-                    "Description": "As an AI System, I want to convert voice inputs to text and vice versa so that I can facilitate seamless communication between the doctor and the patient.",
-                    "AcceptanceCriteria": [
-                        "The AI system should accurately convert live voice inputs to text in real-time.",
-                        "The AI system should convert text responses to voice outputs when required.",
-                        "The system should handle different accents and speech patterns effectively."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "Summarize Long Conversations",
-                    "Description": "As an AI System, I want to summarize long conversations so that doctors can quickly review the main points without going through the entire conversation.",
-                    "AcceptanceCriteria": [
-                        "The AI system should identify and extract key points from long conversations.",
-                        "The summary should be concise and cover all critical aspects of the conversation.",
-                        "The summary should be stored in the database and accessible to both the doctor and the patient."
-                    ],
-                    "Story ID": "S024"
-                },
-                {
-                    "Title": "Emotional and Physical Well-being Analysis",
-                    "Description": "As an AI System, I want to analyze conversations for emotional and physical well-being so that I can provide insights into the patient's overall health status.",
-                    "AcceptanceCriteria": [
-                        "The AI system should analyze the tone, sentiment, and content of the conversation.",
-                        "The system should identify indicators of emotional and physical well-being.",
-                        "The insights should be presented to the doctor in a clear and actionable format."
-                    ],
-                    "Story ID": "S025"
-                },
-                {
-                    "Title": "Secure Data Handling",
-                    "Description": "As an AI System, I want to ensure secure data handling so that patient information is protected in compliance with Canadian Laws and Quebec Loi 25 laws.",
-                    "AcceptanceCriteria": [
-                        "All data in transit and at rest should be encrypted.",
-                        "Access to patient data should be restricted to authorized users only.",
-                        "The system should log all access and modifications to patient data for audit purposes."
-                    ],
-                    "Story ID": "S026"
-                },
-                {
-                    "Title": "AI Model Training and Updates",
-                    "Description": "As an AI System, I want to continuously train and update my models so that I can improve the accuracy and relevance of my analyses and summaries.",
-                    "AcceptanceCriteria": [
-                        "The AI system should have a mechanism for periodic model training and updates.",
-                        "The training data should include diverse and representative samples to improve model performance.",
-                        "The system should validate and test new models before deploying them in the live environment."
-                    ],
-                    "Story ID": "S027"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E004",
-            "Title": "Transformer Model Integration",
-            "Description": "Integrate transformer models for handling patient onboarding, summarizing conversation histories, and generating consultation reports. Ensure the models are trained and optimized for these specific tasks.",
-            "User Stories": [
-                {
-                    "Title": "Train Transformer Model for Patient Onboarding",
-                    "Description": "As an AI System, I want to train a transformer model specifically for patient onboarding so that it can dynamically interact with patients and collect relevant information.",
-                    "AcceptanceCriteria": [
-                        "The transformer model should be trained on a dataset containing various patient onboarding scenarios.",
-                        "The model should be able to ask dynamic questions based on the patient's responses.",
-                        "The model should store all collected data in a structured format in the database.",
-                        "The model should be able to handle both text and voice inputs."
-                    ],
-                    "Story ID": "S028"
-                },
-                {
-                    "Title": "Optimize Transformer Model for Conversation Summarization",
-                    "Description": "As an AI System, I want to optimize the transformer model for summarizing patient-doctor conversations so that it can generate concise and accurate summaries.",
-                    "AcceptanceCriteria": [
-                        "The transformer model should be trained on a dataset of patient-doctor conversations.",
-                        "The model should be able to identify key points and generate a summary of the conversation.",
-                        "The summary should be stored in the database and accessible to both patients and doctors.",
-                        "The model should handle conversations of varying lengths and complexities."
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "Generate Consultation Reports Using Transformer Model",
-                    "Description": "As an AI System, I want to generate consultation reports using the transformer model so that doctors can review, edit, and approve them for sharing with patients.",
-                    "AcceptanceCriteria": [
-                        "The transformer model should be trained on a dataset of consultation reports.",
-                        "The model should generate a structured report based on the consultation conversation.",
-                        "The report should be editable by the doctor before approval.",
-                        "Once approved, the report should be stored in the database and shared with the patient."
-                    ],
-                    "Story ID": "S030"
-                },
-                {
-                    "Title": "Integrate Voice-to-Text and Text-to-Voice Capabilities",
-                    "Description": "As an AI System, I want to integrate voice-to-text and text-to-voice capabilities using OpenAI API so that patients and doctors can interact with the AI using voice commands.",
-                    "AcceptanceCriteria": [
-                        "The system should convert voice inputs to text using OpenAI API.",
-                        "The system should convert text responses to voice using OpenAI API.",
-                        "The voice interactions should be seamless and have minimal latency.",
-                        "The system should handle different accents and speech patterns accurately."
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Store and Retrieve Conversation Histories",
-                    "Description": "As an AI System, I want to store and retrieve conversation histories so that I can provide informed responses based on past interactions.",
-                    "AcceptanceCriteria": [
-                        "All patient-AI and doctor-AI conversations should be stored in the database.",
-                        "The system should retrieve relevant conversation histories when needed.",
-                        "The retrieved histories should be used to provide context-aware responses.",
-                        "The system should ensure data security and privacy compliance."
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "Analyze Conversations for Emotional and Physical Well-being",
-                    "Description": "As an AI System, I want to analyze conversations for emotional and physical well-being so that I can provide valuable insights to doctors.",
-                    "AcceptanceCriteria": [
-                        "The transformer model should be trained to detect emotional and physical cues from conversations.",
-                        "The system should generate insights based on the analysis of these cues.",
-                        "The insights should be presented to doctors in a summarized format.",
-                        "The system should continuously improve its analysis capabilities through ongoing training."
-                    ],
-                    "Story ID": "S033"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E005",
-            "Title": "Voice and Text Processing",
-            "Description": "Utilize OpenAI's API for voice-to-text, text-to-voice, and text generation functionalities. This will enable the AI to effectively interact with users and provide accurate responses.",
-            "User Stories": [
-                {
-                    "Title": "Voice-to-Text Conversion",
-                    "Description": "As an AI System, I want to convert user voice inputs to text using OpenAI's API so that I can process and understand user queries accurately.",
-                    "AcceptanceCriteria": [
-                        "Given a voice input from the user, when the AI system receives the input, then it should convert the voice to text using OpenAI's API.",
-                        "The converted text should be accurate and reflect the user's spoken words.",
-                        "The system should handle different accents and speech patterns effectively."
-                    ],
-                    "Story ID": "S034"
-                },
-                {
-                    "Title": "Text-to-Voice Conversion",
-                    "Description": "As an AI System, I want to convert text responses to voice using OpenAI's API so that I can provide audible feedback to users.",
-                    "AcceptanceCriteria": [
-                        "Given a text response generated by the AI, when the AI system processes the text, then it should convert the text to voice using OpenAI's API.",
-                        "The voice output should be clear and understandable.",
-                        "The system should support multiple languages and adjust the voice tone based on the context of the response."
-                    ],
-                    "Story ID": "S035"
-                },
-                {
-                    "Title": "Text Generation for User Queries",
-                    "Description": "As an AI System, I want to generate text responses to user queries using OpenAI's API so that I can provide relevant and accurate information.",
-                    "AcceptanceCriteria": [
-                        "Given a user query in text form, when the AI system processes the query, then it should generate a relevant and accurate text response using OpenAI's API.",
-                        "The generated response should be contextually appropriate and address the user's query effectively.",
-                        "The system should be able to handle follow-up questions and maintain context throughout the conversation."
-                    ],
-                    "Story ID": "S036"
-                },
-                {
-                    "Title": "Contextual Understanding and Response Generation",
-                    "Description": "As an AI System, I want to maintain context throughout a conversation using OpenAI's API so that I can provide coherent and contextually relevant responses.",
-                    "AcceptanceCriteria": [
-                        "Given a series of user queries, when the AI system processes each query, then it should maintain the context of the conversation using OpenAI's API.",
-                        "The responses should be coherent and relevant to the ongoing conversation.",
-                        "The system should be able to reference previous parts of the conversation to provide more informed responses."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Error Handling for API Integration",
-                    "Description": "As an AI System, I want to handle errors and exceptions from OpenAI's API gracefully so that I can ensure a smooth user experience.",
-                    "AcceptanceCriteria": [
-                        "Given an error or exception from OpenAI's API, when the AI system encounters the error, then it should handle the error gracefully and provide a fallback response to the user.",
-                        "The system should log the error details for further analysis and debugging.",
-                        "The user should be informed of any issues in a user-friendly manner without exposing technical details."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Performance Optimization for API Calls",
-                    "Description": "As an AI System, I want to optimize the performance of API calls to OpenAI so that I can provide quick and responsive interactions.",
-                    "AcceptanceCriteria": [
-                        "Given a user query or input, when the AI system makes an API call to OpenAI, then the response time should be minimized to ensure a quick interaction.",
-                        "The system should implement caching mechanisms where appropriate to reduce redundant API calls.",
-                        "The performance of the system should be monitored and optimized continuously to handle high volumes of user interactions efficiently."
-                    ],
-                    "Story ID": "S039"
-                },
-                {
-                    "Title": "Security and Privacy for API Data",
-                    "Description": "As an AI System, I want to ensure the security and privacy of data exchanged with OpenAI's API so that I can comply with data protection regulations.",
-                    "AcceptanceCriteria": [
-                        "Given a user query or input, when the AI system sends data to OpenAI's API, then the data should be encrypted in transit.",
-                        "The system should ensure that no sensitive user data is exposed or logged during the API interactions.",
-                        "The AI system should comply with relevant data protection regulations, including Canadian Laws and Quebec Loi 25."
-                    ],
-                    "Story ID": "S040"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E006",
-            "Title": "AI-Driven Summarization and Analysis",
-            "Description": "Implement logic for the AI to summarize long conversations and analyze them for key insights. This includes emotional and physical well-being, medical history, and other relevant factors.",
-            "User Stories": [
-                {
-                    "Title": "Summarize Long Conversations",
-                    "Description": "As an AI System, I want to summarize long conversations so that users can quickly understand the key points and insights from their interactions.",
-                    "AcceptanceCriteria": [
-                        "Given a conversation exceeding a predefined word count, when the AI processes the conversation, then it should generate a concise summary highlighting the main points.",
-                        "The summary should include key topics discussed, important questions asked, and any significant responses.",
-                        "The summary should be generated in real-time or near-real-time to ensure timely access for users."
+                        "Given an AI-generated job description, when I access the HR Manager portal, then I should be able to view the full job description.",
+                        "Given an AI-generated job description, when I review it, then I should see all relevant details including job title, responsibilities, qualifications, and any other necessary information."
                     ],
                     "Story ID": "S041"
                 },
                 {
-                    "Title": "Analyze Emotional Well-being",
-                    "Description": "As an AI System, I want to analyze conversations for emotional well-being so that I can provide insights into the user's emotional state.",
+                    "Title": "Edit AI-Generated Job Descriptions",
+                    "Description": "As an HR Manager, I want to edit AI-generated job descriptions so that I can make necessary adjustments to meet specific job requirements.",
                     "AcceptanceCriteria": [
-                        "Given a conversation, when the AI processes the text, then it should identify and categorize emotional tones such as happiness, sadness, anger, and anxiety.",
-                        "The AI should provide a summary of the emotional states detected throughout the conversation.",
-                        "The emotional analysis should be accurate and validated against a predefined set of emotional indicators."
+                        "Given an AI-generated job description, when I access the HR Manager portal, then I should have the option to edit any part of the job description.",
+                        "Given an edited job description, when I save the changes, then the updated job description should be stored and displayed correctly."
                     ],
                     "Story ID": "S042"
                 },
                 {
-                    "Title": "Analyze Physical Well-being",
-                    "Description": "As an AI System, I want to analyze conversations for physical well-being so that I can provide insights into the user's physical health status.",
+                    "Title": "Approve AI-Generated Job Descriptions",
+                    "Description": "As an HR Manager, I want to approve AI-generated job descriptions so that they can be posted for job applicants to see.",
                     "AcceptanceCriteria": [
-                        "Given a conversation, when the AI processes the text, then it should identify mentions of physical symptoms, conditions, and health concerns.",
-                        "The AI should provide a summary of the physical health indicators detected throughout the conversation.",
-                        "The physical well-being analysis should be accurate and validated against a predefined set of health indicators."
+                        "Given an AI-generated job description, when I review and approve it, then the job description should be marked as approved and ready for posting.",
+                        "Given an approved job description, when I confirm the approval, then the job description should be available for job applicants to view and apply."
                     ],
                     "Story ID": "S043"
                 },
                 {
-                    "Title": "Extract Medical History",
-                    "Description": "As an AI System, I want to extract relevant medical history from conversations so that I can provide a comprehensive overview of the user's health background.",
+                    "Title": "Reject AI-Generated Job Descriptions",
+                    "Description": "As an HR Manager, I want to reject AI-generated job descriptions so that only suitable job descriptions are posted.",
                     "AcceptanceCriteria": [
-                        "Given a conversation, when the AI processes the text, then it should identify and extract information related to past medical conditions, treatments, and medications.",
-                        "The extracted medical history should be organized in a structured format for easy access and review.",
-                        "The AI should ensure that the extracted medical history is accurate and relevant to the user's health context."
+                        "Given an AI-generated job description, when I review and reject it, then the job description should be marked as rejected and not posted.",
+                        "Given a rejected job description, when I provide feedback, then the system should store the feedback for future reference and improvements."
                     ],
                     "Story ID": "S044"
                 },
                 {
-                    "Title": "Generate Key Insights",
-                    "Description": "As an AI System, I want to generate key insights from analyzed conversations so that users can gain valuable information about their health and well-being.",
+                    "Title": "Track Job Description Approval Status",
+                    "Description": "As an HR Manager, I want to track the approval status of AI-generated job descriptions so that I can monitor which descriptions are pending, approved, or rejected.",
                     "AcceptanceCriteria": [
-                        "Given a conversation, when the AI processes the text, then it should generate a set of key insights based on emotional, physical, and medical history analysis.",
-                        "The key insights should be presented in a clear and concise manner, highlighting important findings and recommendations.",
-                        "The AI should ensure that the key insights are actionable and relevant to the user's health context."
+                        "Given the HR Manager portal, when I access the job description section, then I should see a list of all AI-generated job descriptions with their current approval status (pending, approved, rejected).",
+                        "Given a job description, when I view its status, then I should see the history of actions taken (e.g., reviewed, edited, approved, rejected) along with timestamps."
                     ],
                     "Story ID": "S045"
                 },
                 {
-                    "Title": "Real-time Analysis and Summarization",
-                    "Description": "As an AI System, I want to perform real-time analysis and summarization of conversations so that users can receive immediate feedback and insights.",
+                    "Title": "Receive Notifications for Job Description Approvals",
+                    "Description": "As an HR Manager, I want to receive notifications when a new AI-generated job description is ready for review so that I can promptly approve or reject it.",
                     "AcceptanceCriteria": [
-                        "Given an ongoing conversation, when the AI processes the text in real-time, then it should continuously analyze and update the summary and insights.",
-                        "The real-time analysis should be efficient and not cause significant delays in the conversation flow.",
-                        "The AI should ensure that the real-time analysis is accurate and provides meaningful insights as the conversation progresses."
+                        "Given a new AI-generated job description, when it is ready for review, then I should receive an email notification.",
+                        "Given a new AI-generated job description, when it is ready for review, then I should also receive an in-app notification within the HR Manager portal."
                     ],
                     "Story ID": "S046"
                 },
                 {
-                    "Title": "Store and Retrieve Summarized Data",
-                    "Description": "As an AI System, I want to store and retrieve summarized conversation data so that users can access their conversation summaries and insights at any time.",
+                    "Title": "Provide Feedback on AI-Generated Job Descriptions",
+                    "Description": "As an HR Manager, I want to provide feedback on AI-generated job descriptions so that the AI system can improve future job descriptions.",
                     "AcceptanceCriteria": [
-                        "Given a summarized conversation, when the AI stores the data, then it should ensure that the summary and insights are securely saved in the database.",
-                        "The stored data should be easily retrievable by users through their dashboards or profiles.",
-                        "The AI should ensure that the stored data is encrypted and complies with data security and privacy regulations."
+                        "Given an AI-generated job description, when I review it, then I should have the option to provide feedback on its accuracy and relevance.",
+                        "Given provided feedback, when I submit it, then the feedback should be stored and used to improve future AI-generated job descriptions."
                     ],
                     "Story ID": "S047"
                 }
             ]
         },
         {
-            "Epic ID": "E007",
-            "Title": "AI Prompting for Doctors",
-            "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. This will aid doctors in making informed decisions during consultations.",
+            "Epic ID": "E008",
+            "Title": "Detailed Feedback Mechanism",
+            "Description": "Implement a system to provide detailed feedback on why candidates were rejected at both the CV screening and interview stages. This feedback should be accessible to both HR managers and candidates.",
             "User Stories": [
                 {
-                    "Title": "AI Prompt for Patient Medical History",
-                    "Description": "As a doctor, I want to prompt the AI to retrieve the patient's medical history so that I can quickly review past medical conditions and treatments.",
+                    "Title": "View Rejection Feedback for CV Screening",
+                    "Description": "As an HR Manager, I want to view detailed feedback on why a candidate's CV was rejected so that I can understand the reasons behind the AI's decision.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for medical history, then the AI retrieves and displays a summary of the patient's past medical conditions and treatments.",
-                        "The AI should provide a concise summary of the patient's medical history within 5 seconds of the prompt."
+                        "Given a candidate's CV is rejected, when I access the candidate's profile, then I should see a detailed explanation of why the CV was rejected.",
+                        "The feedback should include specific criteria that the CV did not meet."
                     ],
                     "Story ID": "S048"
                 },
                 {
-                    "Title": "AI Prompt for Recent Conversations",
-                    "Description": "As a doctor, I want to prompt the AI to retrieve recent conversations with the patient so that I can understand the patient's current concerns and context.",
+                    "Title": "View Rejection Feedback for Digital Interviews",
+                    "Description": "As an HR Manager, I want to view detailed feedback on why a candidate was rejected after the digital interview so that I can understand the reasons behind the AI's decision.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for recent conversations, then the AI retrieves and displays the last three conversations with the patient.",
-                        "The AI should highlight key points and concerns from the recent conversations."
+                        "Given a candidate is rejected after the digital interview, when I access the candidate's interview results, then I should see a detailed explanation of why the candidate was rejected.",
+                        "The feedback should include specific points from the interview that led to the rejection."
                     ],
                     "Story ID": "S049"
                 },
                 {
-                    "Title": "AI Summarization of Patient Onboarding",
-                    "Description": "As a doctor, I want to prompt the AI to summarize the patient's onboarding information so that I can quickly understand the patient's initial health status and concerns.",
+                    "Title": "Receive Notifications for Rejected Candidates",
+                    "Description": "As an HR Manager, I want to receive notifications when a candidate is rejected at any stage so that I can stay informed about the status of applicants.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for onboarding summary, then the AI retrieves and displays a summary of the patient's onboarding responses.",
-                        "The AI should include key health metrics and initial concerns raised during onboarding."
+                        "Given a candidate is rejected at the CV screening stage, when the rejection occurs, then I should receive an email notification with the rejection reason.",
+                        "Given a candidate is rejected after the digital interview, when the rejection occurs, then I should receive an email notification with the rejection reason."
                     ],
                     "Story ID": "S050"
                 },
                 {
-                    "Title": "AI Retrieval of Consultation History",
-                    "Description": "As a doctor, I want to prompt the AI to retrieve the patient's consultation history so that I can review previous consultations and their outcomes.",
+                    "Title": "Access Rejection Feedback History",
+                    "Description": "As an HR Manager, I want to access the history of rejection feedback for all candidates so that I can analyze patterns and improve the screening process.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for consultation history, then the AI retrieves and displays a list of past consultations with summaries.",
-                        "The AI should provide links to detailed consultation reports for further review."
+                        "Given I am on the HR Manager portal, when I navigate to the rejection feedback history section, then I should see a list of all candidates who were rejected along with their feedback.",
+                        "The history should be searchable and filterable by date, job posting, and rejection reason."
                     ],
                     "Story ID": "S051"
                 },
                 {
-                    "Title": "AI Insights on Patient's Emotional Well-being",
-                    "Description": "As a doctor, I want to prompt the AI to provide insights on the patient's emotional well-being based on conversation history so that I can address any mental health concerns.",
+                    "Title": "Customize Rejection Feedback Criteria",
+                    "Description": "As an HR Manager, I want to customize the criteria used for providing rejection feedback so that the feedback is relevant to the specific job requirements.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for emotional well-being insights, then the AI analyzes conversation history and provides a summary of the patient's emotional state.",
-                        "The AI should flag any significant changes or concerns in the patient's emotional well-being."
+                        "Given I am creating or editing a job posting, when I specify the job requirements, then I should be able to customize the criteria for CV screening and interview feedback.",
+                        "The customized criteria should be used by the AI to generate rejection feedback."
                     ],
                     "Story ID": "S052"
                 },
                 {
-                    "Title": "AI Analysis of Patient's Physical Symptoms",
-                    "Description": "As a doctor, I want to prompt the AI to analyze the patient's conversation history for physical symptoms so that I can identify any recurring or new symptoms.",
+                    "Title": "Review and Approve Rejection Feedback",
+                    "Description": "As an HR Manager, I want to review and approve the rejection feedback generated by the AI before it is sent to candidates so that I can ensure its accuracy and appropriateness.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for physical symptoms analysis, then the AI scans the conversation history and lists any mentioned symptoms.",
-                        "The AI should categorize symptoms by frequency and severity."
+                        "Given a candidate is rejected, when the AI generates feedback, then I should receive a notification to review the feedback.",
+                        "When I review the feedback, then I should have the option to approve, edit, or reject the feedback before it is sent to the candidate."
                     ],
                     "Story ID": "S053"
                 },
                 {
-                    "Title": "AI Generation of Patient Summary Report",
-                    "Description": "As a doctor, I want to prompt the AI to generate a comprehensive summary report of the patient's health so that I can have a holistic view of the patient's condition.",
+                    "Title": "Generate Rejection Feedback Reports",
+                    "Description": "As an HR Manager, I want to generate reports on rejection feedback so that I can analyze the effectiveness of the screening and interview process.",
                     "AcceptanceCriteria": [
-                        "Given a patient is selected, when the doctor prompts the AI for a summary report, then the AI compiles data from medical history, recent conversations, onboarding, and consultations into a single report.",
-                        "The report should be generated within 10 seconds and be available for download or printing."
+                        "Given I am on the HR Manager portal, when I navigate to the reports section, then I should be able to generate a report on rejection feedback.",
+                        "The report should include metrics such as the number of rejections, common rejection reasons, and trends over time."
                     ],
                     "Story ID": "S054"
                 }
             ]
-        }
-    ],
-    "Patients": [
+        },
         {
-            "Epic ID": "E001",
-            "Title": "User Authentication and Account Management",
-            "Description": "Enable patients to securely register, log in, and manage their profile information. This includes email and phone OTP verification during registration and the ability to update profile details such as name, phone number, email, and profile picture.",
+            "Epic ID": "E009",
+            "Title": "In-App Notifications",
+            "Description": "Develop an in-app notification system to keep HR managers informed about important updates and candidate statuses within the platform.",
             "User Stories": [
                 {
-                    "Title": "Patient Registration with Email and Phone OTP Verification",
-                    "Description": "As a patient, I want to register an account using my name, email, phone number, and password, so that I can securely access the platform.",
+                    "Title": "Receive Notification for Candidate Passing CV Screening",
+                    "Description": "As an HR Manager, I want to receive a notification when a candidate passes the CV screening so that I can promptly review and take further action.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the registration page, when I enter my name, email, phone number, and password, then I should be able to submit the form.",
-                        "Given that I have submitted the registration form, when I receive an OTP on my phone, then I should be able to enter the OTP to verify my phone number.",
-                        "Given that I have submitted the registration form, when I receive an email with a verification link, then I should be able to click the link to verify my email."
+                        "HR Manager receives a notification immediately after a candidate passes the CV screening.",
+                        "Notification includes candidate's name, position applied for, and a link to the candidate's profile.",
+                        "Notification is visible in the HR Manager's in-app notification center."
                     ],
-                    "Story ID": "S001"
+                    "Story ID": "S055"
                 },
                 {
-                    "Title": "Patient Login",
-                    "Description": "As a patient, I want to log in using my registered email and password so that I can access my account.",
+                    "Title": "Receive Notification for Candidate Passing Digital Interview",
+                    "Description": "As an HR Manager, I want to receive a notification when a candidate passes the digital interview so that I can schedule an in-person interview.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the login page, when I enter my registered email and password, then I should be able to submit the form to log in.",
-                        "Given that I have entered valid credentials, when I click the login button, then I should be redirected to my dashboard.",
-                        "Given that I have entered invalid credentials, when I click the login button, then I should see an error message indicating incorrect email or password."
+                        "HR Manager receives a notification immediately after a candidate passes the digital interview.",
+                        "Notification includes candidate's name, position applied for, and a link to the candidate's interview results.",
+                        "Notification is visible in the HR Manager's in-app notification center."
                     ],
-                    "Story ID": "S002"
+                    "Story ID": "S056"
                 },
                 {
-                    "Title": "Patient Profile Management - View Profile",
-                    "Description": "As a patient, I want to view my profile information so that I can see my current details.",
+                    "Title": "View All Notifications in Notification Center",
+                    "Description": "As an HR Manager, I want to view all my notifications in a centralized notification center so that I can easily manage and track candidate statuses.",
                     "AcceptanceCriteria": [
-                        "Given that I am logged in, when I navigate to the profile page, then I should see my current name, phone number, email, and profile picture."
+                        "HR Manager can access a notification center from the main dashboard.",
+                        "Notification center displays a list of all notifications with timestamps.",
+                        "Notifications are categorized by type (e.g., CV screening, digital interview)."
                     ],
-                    "Story ID": "S003"
+                    "Story ID": "S057"
                 },
                 {
-                    "Title": "Patient Profile Management - Update Name",
-                    "Description": "As a patient, I want to update my name so that my profile reflects my current information.",
+                    "Title": "Mark Notifications as Read or Unread",
+                    "Description": "As an HR Manager, I want to mark notifications as read or unread so that I can keep track of which updates I have already reviewed.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the profile page, when I edit the name field, then I should be able to save the changes.",
-                        "Given that I have saved the changes, when I refresh the profile page, then I should see the updated name."
+                        "HR Manager can mark individual notifications as read or unread.",
+                        "Read notifications are visually distinguished from unread notifications.",
+                        "HR Manager can filter notifications to show only unread ones."
                     ],
-                    "Story ID": "S004"
+                    "Story ID": "S058"
                 },
                 {
-                    "Title": "Patient Profile Management - Update Phone Number",
-                    "Description": "As a patient, I want to update my phone number so that my profile reflects my current contact information.",
+                    "Title": "Receive Summary Notification for Daily Updates",
+                    "Description": "As an HR Manager, I want to receive a daily summary notification of all important updates so that I can stay informed without constantly checking the platform.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the profile page, when I edit the phone number field, then I should be able to save the changes.",
-                        "Given that I have saved the changes, when I refresh the profile page, then I should see the updated phone number.",
-                        "Given that I have updated my phone number, when I save the changes, then I should receive an OTP to verify the new phone number."
+                        "HR Manager receives a daily summary notification at a configurable time.",
+                        "Summary includes the number of candidates who passed CV screening and digital interviews.",
+                        "Summary includes links to detailed views for each candidate."
                     ],
-                    "Story ID": "S005"
+                    "Story ID": "S059"
                 },
                 {
-                    "Title": "Patient Profile Management - Update Email",
-                    "Description": "As a patient, I want to update my email so that my profile reflects my current contact information.",
+                    "Title": "Configure Notification Preferences",
+                    "Description": "As an HR Manager, I want to configure my notification preferences so that I only receive updates that are relevant to me.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the profile page, when I edit the email field, then I should be able to save the changes.",
-                        "Given that I have saved the changes, when I refresh the profile page, then I should see the updated email.",
-                        "Given that I have updated my email, when I save the changes, then I should receive a verification email to confirm the new email address."
+                        "HR Manager can access a settings page to configure notification preferences.",
+                        "HR Manager can choose to enable or disable notifications for different types of updates (e.g., CV screening, digital interview).",
+                        "HR Manager can set preferences for receiving notifications via email or in-app."
                     ],
-                    "Story ID": "S006"
+                    "Story ID": "S060"
                 },
                 {
-                    "Title": "Patient Profile Management - Update Profile Picture",
-                    "Description": "As a patient, I want to update my profile picture so that my profile reflects my current appearance.",
+                    "Title": "Receive Email Notifications for Important Updates",
+                    "Description": "As an HR Manager, I want to receive email notifications for important updates so that I can stay informed even when I am not logged into the platform.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the profile page, when I upload a new profile picture, then I should be able to save the changes.",
-                        "Given that I have saved the changes, when I refresh the profile page, then I should see the updated profile picture."
+                        "HR Manager receives email notifications for candidates passing CV screening and digital interviews.",
+                        "Email notifications include candidate's name, position applied for, and a link to the candidate's profile.",
+                        "HR Manager can configure email notification preferences in the settings."
                     ],
-                    "Story ID": "S007"
+                    "Story ID": "S061"
+                },
+                {
+                    "Title": "View Notification Details",
+                    "Description": "As an HR Manager, I want to view detailed information about a notification so that I can understand the context and take appropriate action.",
+                    "AcceptanceCriteria": [
+                        "HR Manager can click on a notification to view detailed information.",
+                        "Detailed view includes candidate's name, position applied for, and relevant status updates.",
+                        "Detailed view includes links to the candidate's profile and interview results."
+                    ],
+                    "Story ID": "S062"
                 }
             ]
         },
         {
-            "Epic ID": "E002",
-            "Title": "AI-Guided Onboarding Process",
-            "Description": "Provide an AI-guided onboarding process where patients can start a new visit, answer dynamic questions based on conversation context, and have their responses stored in a structured format. This process will generate a patient summary that can be viewed by both the patient and the doctor.",
+            "Epic ID": "E010",
+            "Title": "Local Data Storage and Security",
+            "Description": "Ensure that all data, including CVs and interview responses, are stored locally on the client's systems. Implement basic security measures to protect sensitive information.",
             "User Stories": [
                 {
-                    "Title": "Start New Visit",
-                    "Description": "As a patient, I want to start a new visit so that I can go through the AI-guided onboarding process.",
+                    "Title": "Local Data Storage Setup",
+                    "Description": "As an HR Manager, I want the system to store all CVs and interview responses locally on our systems so that we can ensure data security and compliance with our internal policies.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the platform, when I click on the 'Start New Visit' button, then the AI-guided onboarding process should begin.",
-                        "The AI should greet me and explain the onboarding process.",
-                        "The AI should ask initial questions to gather basic information."
+                        "All data, including CVs and interview responses, must be stored on local servers.",
+                        "No data should be stored on the cloud.",
+                        "The system should provide confirmation that data is being stored locally."
                     ],
-                    "Story ID": "S008"
+                    "Story ID": "S063"
                 },
                 {
-                    "Title": "Dynamic Questioning",
-                    "Description": "As a patient, I want the AI to ask me dynamic questions based on the conversation context so that the onboarding process feels personalized and relevant.",
+                    "Title": "Data Encryption",
+                    "Description": "As an HR Manager, I want all stored data to be encrypted so that sensitive information is protected from unauthorized access.",
                     "AcceptanceCriteria": [
-                        "Given I am in the onboarding process, when I provide an answer, then the AI should ask follow-up questions based on my previous responses.",
-                        "The AI should be able to handle various types of responses and adjust its questions accordingly."
+                        "All CVs and interview responses must be encrypted at rest.",
+                        "The system should use industry-standard encryption algorithms.",
+                        "Access to encryption keys should be restricted to authorized personnel only."
                     ],
-                    "Story ID": "S009"
+                    "Story ID": "S064"
                 },
                 {
-                    "Title": "Store Responses",
-                    "Description": "As a patient, I want my responses during the onboarding process to be stored in a structured format so that they can be used to generate a patient summary.",
+                    "Title": "Access Control Management",
+                    "Description": "As an HR Manager, I want to manage who has access to the stored data so that only authorized personnel can view or modify sensitive information.",
                     "AcceptanceCriteria": [
-                        "Given I am answering questions during the onboarding process, when I submit a response, then the response should be stored in a structured format in the database.",
-                        "All responses should be securely stored and encrypted."
+                        "The system should allow HR Managers to assign and revoke access permissions.",
+                        "Only authorized users should be able to access CVs and interview responses.",
+                        "Audit logs should be maintained to track access to sensitive data."
                     ],
-                    "Story ID": "S010"
+                    "Story ID": "S065"
                 },
                 {
-                    "Title": "Generate Patient Summary",
-                    "Description": "As a patient, I want a summary of my onboarding responses to be generated so that I can review it and share it with my doctor.",
+                    "Title": "Data Backup and Recovery",
+                    "Description": "As an HR Manager, I want the system to have a data backup and recovery mechanism so that we can restore data in case of accidental deletion or system failure.",
                     "AcceptanceCriteria": [
-                        "Given I have completed the onboarding process, when the AI finishes asking questions, then a patient summary should be generated based on my responses.",
-                        "The summary should be clear, concise, and include all relevant information gathered during the onboarding."
+                        "The system should automatically back up data at regular intervals.",
+                        "Backups should be stored securely and be easily retrievable.",
+                        "The system should provide a recovery process to restore data from backups."
                     ],
-                    "Story ID": "S011"
+                    "Story ID": "S066"
                 },
                 {
-                    "Title": "View Patient Summary",
-                    "Description": "As a patient, I want to view my generated patient summary so that I can understand the information that will be shared with my doctor.",
+                    "Title": "User Authentication",
+                    "Description": "As an HR Manager, I want a secure user authentication system so that only authorized users can access the platform.",
                     "AcceptanceCriteria": [
-                        "Given I have completed the onboarding process and a summary has been generated, when I navigate to the 'Visit History' tab, then I should be able to view my patient summary.",
-                        "The summary should be easily accessible and readable."
+                        "The system should support multi-factor authentication (MFA).",
+                        "Users should be required to log in with a username and password.",
+                        "The system should lock accounts after multiple failed login attempts."
                     ],
-                    "Story ID": "S012"
+                    "Story ID": "S067"
                 },
                 {
-                    "Title": "Edit Profile Information",
-                    "Description": "As a patient, I want to manage my profile information so that my details are always up-to-date.",
+                    "Title": "Audit Logging",
+                    "Description": "As an HR Manager, I want the system to maintain audit logs of all data access and modifications so that we can track and review any unauthorized activities.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the platform, when I navigate to the 'Profile Page', then I should be able to view and edit my profile information.",
-                        "Changes to my profile should be saved and reflected immediately."
+                        "The system should log all access to CVs and interview responses.",
+                        "Logs should include details such as user ID, timestamp, and action performed.",
+                        "Audit logs should be tamper-proof and stored securely."
                     ],
-                    "Story ID": "S013"
+                    "Story ID": "S068"
                 },
                 {
-                    "Title": "QR Code for Doctor Access",
-                    "Description": "As a patient, I want to have a QR code that doctors can scan to access my visit and consultation histories so that I can easily share my medical information.",
+                    "Title": "Data Anonymization for Testing",
+                    "Description": "As an HR Manager, I want the system to anonymize data for testing purposes so that we can test the platform without exposing sensitive information.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the platform, when I navigate to the 'Profile Page', then I should see a QR code.",
-                        "When a doctor scans the QR code, they should be able to access my visit and consultation histories."
+                        "The system should provide a feature to anonymize CVs and interview responses.",
+                        "Anonymized data should be used in test environments only.",
+                        "The system should ensure that anonymized data cannot be traced back to the original individuals."
                     ],
-                    "Story ID": "S014"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E003",
-            "Title": "Chat Interface with AI",
-            "Description": "Implement a chat interface on the patient dashboard that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses, analyze conversations for emotional and physical well-being, and summarize long conversations.",
-            "User Stories": [
-                {
-                    "Title": "Chat Interface Access",
-                    "Description": "As a patient, I want to access the chat interface from my dashboard so that I can interact with the AI agent easily.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged in, when I navigate to my dashboard, then I should see a chat icon at the bottom right corner.",
-                        "When I click on the chat icon, then the chat interface should open, allowing me to start a conversation with the AI agent."
-                    ],
-                    "Story ID": "S015"
+                    "Story ID": "S069"
                 },
                 {
-                    "Title": "Text Interaction with AI",
-                    "Description": "As a patient, I want to interact with the AI agent via text so that I can ask questions and receive responses.",
+                    "Title": "Security Training for Users",
+                    "Description": "As an HR Manager, I want to provide security training for all users so that they understand how to handle sensitive information securely.",
                     "AcceptanceCriteria": [
-                        "Given the chat interface is open, when I type a message and press send, then the AI agent should respond with a relevant answer.",
-                        "The AI agent should have access to my conversation history to provide informed responses."
+                        "The system should include a security training module for users.",
+                        "Training should cover best practices for data security and privacy.",
+                        "Users should be required to complete the training before accessing the platform."
                     ],
-                    "Story ID": "S016"
+                    "Story ID": "S070"
                 },
                 {
-                    "Title": "Voice Interaction with AI",
-                    "Description": "As a patient, I want to interact with the AI agent via voice so that I can communicate more naturally.",
+                    "Title": "Regular Security Audits",
+                    "Description": "As an HR Manager, I want the system to undergo regular security audits so that we can identify and address any vulnerabilities.",
                     "AcceptanceCriteria": [
-                        "Given the chat interface is open, when I click on the microphone icon and speak, then the AI agent should convert my speech to text and respond accordingly.",
-                        "The AI agent should have access to my conversation history to provide informed responses."
+                        "The system should be audited by a third-party security firm at regular intervals.",
+                        "Audit reports should be reviewed and any identified issues should be addressed promptly.",
+                        "The system should provide a mechanism to track and resolve security issues."
                     ],
-                    "Story ID": "S017"
-                },
-                {
-                    "Title": "Conversation History Access",
-                    "Description": "As a patient, I want the AI agent to have access to my entire conversation history so that it can provide more accurate and informed responses.",
-                    "AcceptanceCriteria": [
-                        "Given I have previous conversations with the AI, when I start a new conversation, then the AI should be able to reference my past interactions to provide contextually relevant responses."
-                    ],
-                    "Story ID": "S018"
-                },
-                {
-                    "Title": "Conversation Summarization",
-                    "Description": "As a patient, I want the AI agent to summarize long conversations so that I can easily review the key points.",
-                    "AcceptanceCriteria": [
-                        "Given a conversation exceeds a certain length, when I request a summary, then the AI agent should provide a concise summary of the main points discussed.",
-                        "The summary should be stored in the database for future reference."
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "Emotional and Physical Well-being Analysis",
-                    "Description": "As a patient, I want the AI agent to analyze my conversations for emotional and physical well-being so that I can receive insights into my health.",
-                    "AcceptanceCriteria": [
-                        "Given I have a conversation with the AI, when the conversation ends, then the AI should analyze the text for emotional and physical well-being indicators.",
-                        "The analysis results should be displayed to me and stored in the database for future reference."
-                    ],
-                    "Story ID": "S020"
-                },
-                {
-                    "Title": "Data Storage",
-                    "Description": "As a patient, I want all my conversations and summaries to be stored securely so that I can access them later.",
-                    "AcceptanceCriteria": [
-                        "Given I have a conversation with the AI, when the conversation ends, then the entire conversation and any generated summaries should be stored in the database.",
-                        "The stored data should be encrypted to comply with Canadian Laws and Quebec Loi 25 laws."
-                    ],
-                    "Story ID": "S021"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E004",
-            "Title": "Viewing Historical Data",
-            "Description": "Allow patients to view their past onboarding summaries and consultation histories. This includes providing a tab for onboarding history and another for consultation history, where patients can access detailed reports of their interactions and consultations.",
-            "User Stories": [
-                {
-                    "Title": "View Onboarding History Tab",
-                    "Description": "As a patient, I want to access a tab for onboarding history so that I can view summaries of my past onboarding sessions.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged in, when I navigate to the dashboard, then I should see a tab labeled 'Onboarding History'.",
-                        "When I click on the 'Onboarding History' tab, I should see a list of my past onboarding sessions.",
-                        "Each onboarding session should display a summary including the date and key details of the session."
-                    ],
-                    "Story ID": "S022"
-                },
-                {
-                    "Title": "View Detailed Onboarding Summary",
-                    "Description": "As a patient, I want to view detailed reports of my past onboarding sessions so that I can review the information collected during those sessions.",
-                    "AcceptanceCriteria": [
-                        "Given I am on the 'Onboarding History' tab, when I click on a specific onboarding session, then I should see a detailed report of that session.",
-                        "The detailed report should include all questions asked and my responses during the onboarding session."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "View Consultation History Tab",
-                    "Description": "As a patient, I want to access a tab for consultation history so that I can view summaries of my past consultations with doctors.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged in, when I navigate to the dashboard, then I should see a tab labeled 'Consultation History'.",
-                        "When I click on the 'Consultation History' tab, I should see a list of my past consultations.",
-                        "Each consultation should display a summary including the date and key details of the consultation."
-                    ],
-                    "Story ID": "S024"
-                },
-                {
-                    "Title": "View Detailed Consultation Report",
-                    "Description": "As a patient, I want to view detailed reports of my past consultations so that I can review the information discussed during those consultations.",
-                    "AcceptanceCriteria": [
-                        "Given I am on the 'Consultation History' tab, when I click on a specific consultation, then I should see a detailed report of that consultation.",
-                        "The detailed report should include the doctor's notes, AI-generated summaries, and any other relevant information from the consultation."
-                    ],
-                    "Story ID": "S025"
-                },
-                {
-                    "Title": "Secure Access to Historical Data",
-                    "Description": "As a patient, I want to ensure that my historical data is securely accessible so that my privacy is maintained.",
-                    "AcceptanceCriteria": [
-                        "All data should be encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25 laws.",
-                        "Access to historical data should be restricted to authenticated users only.",
-                        "Sensitive information should not be displayed in URL parameters or other insecure methods."
-                    ],
-                    "Story ID": "S026"
-                },
-                {
-                    "Title": "User-Friendly Interface for Historical Data",
-                    "Description": "As a patient, I want a user-friendly interface for viewing my historical data so that I can easily navigate and understand the information.",
-                    "AcceptanceCriteria": [
-                        "The interface should be modern, sleek, and minimalistic.",
-                        "Tabs for 'Onboarding History' and 'Consultation History' should be clearly labeled and easily accessible from the dashboard.",
-                        "Summaries and detailed reports should be presented in a clear and organized manner."
-                    ],
-                    "Story ID": "S027"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E005",
-            "Title": "Profile Management and QR Code Access",
-            "Description": "Enable patients to manage their profile information and generate a QR code that doctors can scan to access the patient's visit and consultation histories. This feature will be available on the patient's profile page.",
-            "User Stories": [
-                {
-                    "Title": "Patient Profile Management",
-                    "Description": "As a patient, I want to manage my profile information (name, phone number, email, and profile picture) so that I can keep my contact details up-to-date and personalize my account.",
-                    "AcceptanceCriteria": [
-                        "Patients can view their current profile information.",
-                        "Patients can edit and save changes to their name, phone number, email, and profile picture.",
-                        "Changes to profile information are updated in the database and reflected immediately."
-                    ],
-                    "Story ID": "S028"
-                },
-                {
-                    "Title": "Generate QR Code for Profile",
-                    "Description": "As a patient, I want to generate a QR code on my profile page so that doctors can scan it to access my visit and consultation histories.",
-                    "AcceptanceCriteria": [
-                        "Patients can generate a unique QR code from their profile page.",
-                        "The QR code links to the patient's visit and consultation histories.",
-                        "The QR code is updated in real-time if any changes are made to the patient's visit or consultation histories."
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "View Visit History",
-                    "Description": "As a patient, I want to view my visit history so that I can keep track of my past medical visits and summaries.",
-                    "AcceptanceCriteria": [
-                        "Patients can access a 'Visit History' tab from their profile page.",
-                        "The 'Visit History' tab displays a list of past visits with summaries.",
-                        "Each visit summary includes the date, AI-generated summary, and any relevant notes."
-                    ],
-                    "Story ID": "S030"
-                },
-                {
-                    "Title": "View Consultation History",
-                    "Description": "As a patient, I want to view my consultation history so that I can review past consultations with my doctors.",
-                    "AcceptanceCriteria": [
-                        "Patients can access a 'Consultation History' tab from their profile page.",
-                        "The 'Consultation History' tab displays a list of past consultations.",
-                        "Each consultation entry includes the date, doctor's name, and a summary of the consultation."
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Secure Data Access via QR Code",
-                    "Description": "As a patient, I want to ensure that only authorized doctors can access my visit and consultation histories via the QR code so that my medical information remains private and secure.",
-                    "AcceptanceCriteria": [
-                        "QR code access is restricted to authorized doctors who have scanned the code.",
-                        "Doctors must log in to their accounts to access the patient's information via the QR code.",
-                        "Patients receive a notification when their QR code is scanned and accessed by a doctor."
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "Profile Page Navigation",
-                    "Description": "As a patient, I want an intuitive profile page layout so that I can easily navigate to manage my profile, view visit history, and view consultation history.",
-                    "AcceptanceCriteria": [
-                        "The profile page includes clearly labeled sections for 'Profile Management', 'Visit History', and 'Consultation History'.",
-                        "Navigation between sections is smooth and user-friendly.",
-                        "The profile page design is consistent with the modern, sleek, and minimalistic UI guidelines."
-                    ],
-                    "Story ID": "S033"
-                },
-                {
-                    "Title": "Update Notification Settings",
-                    "Description": "As a patient, I want to manage my notification settings so that I can control how and when I receive updates about my profile and medical histories.",
-                    "AcceptanceCriteria": [
-                        "Patients can access notification settings from their profile page.",
-                        "Patients can choose to receive notifications via email, SMS, or both.",
-                        "Changes to notification settings are saved and applied immediately."
-                    ],
-                    "Story ID": "S034"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E006",
-            "Title": "Notifications and Alerts",
-            "Description": "Send email notifications to patients for important actions such as registration, verification, and report approvals. This ensures that patients are kept informed about their account activities and medical updates.",
-            "User Stories": [
-                {
-                    "Title": "Email Notification for Registration",
-                    "Description": "As a patient, I want to receive an email notification upon successful registration so that I am aware that my account has been created.",
-                    "AcceptanceCriteria": [
-                        "Given a patient has successfully registered, when the registration process is complete, then an email notification is sent to the patient's registered email address.",
-                        "The email should include a welcome message and confirmation of successful registration."
-                    ],
-                    "Story ID": "S035"
-                },
-                {
-                    "Title": "Email Notification for Email Verification",
-                    "Description": "As a patient, I want to receive an email notification with a verification link so that I can verify my email address.",
-                    "AcceptanceCriteria": [
-                        "Given a patient has registered, when the registration process is complete, then an email notification containing a verification link is sent to the patient's registered email address.",
-                        "The email should include instructions on how to verify the email address."
-                    ],
-                    "Story ID": "S036"
-                },
-                {
-                    "Title": "Email Notification for Phone OTP Verification",
-                    "Description": "As a patient, I want to receive an email notification confirming my phone number verification so that I know my phone number has been successfully verified.",
-                    "AcceptanceCriteria": [
-                        "Given a patient has successfully verified their phone number using OTP, when the verification is complete, then an email notification is sent to the patient's registered email address.",
-                        "The email should include a message confirming the successful verification of the phone number."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Email Notification for Report Approval",
-                    "Description": "As a patient, I want to receive an email notification when a consultation report is approved by the doctor so that I am informed about the status of my medical reports.",
-                    "AcceptanceCriteria": [
-                        "Given a doctor has approved a consultation report, when the approval process is complete, then an email notification is sent to the patient's registered email address.",
-                        "The email should include details of the approved report and instructions on how to view it."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Email Notification for Account Activity",
-                    "Description": "As a patient, I want to receive email notifications for any significant account activities so that I am kept informed about my account status.",
-                    "AcceptanceCriteria": [
-                        "Given any significant account activity occurs (e.g., password change, profile update), when the activity is completed, then an email notification is sent to the patient's registered email address.",
-                        "The email should include details of the activity and any necessary follow-up actions."
-                    ],
-                    "Story ID": "S039"
+                    "Story ID": "S071"
                 }
             ]
         }

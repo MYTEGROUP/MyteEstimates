@@ -170,7 +170,7 @@ def main():
                 print(f"Processing {epic['Title']}")
                 task_queue.put((stakeholder, epic, story, index))
 
-    # # Start threads to process tasks
+    # # Start threads to process tasks using the project breakdown.
     # for _ in range(10):  # Number of threads
     #     thread = threading.Thread(target=task_processor, args=(task_queue, project_breakdown, all_tasks))
     #     threads.append(thread)

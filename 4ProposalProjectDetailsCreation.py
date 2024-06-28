@@ -63,7 +63,7 @@ def ProposalCreateDetails(ProjectBreakdown, ProjectRequirements):
 
     jsonformat = """
     {
-        "ProjectTitle": "Maximum 3 Words",
+        "ProjectTitle": "Maximum 3 Words - Something Catchy and Modern",
         "ExecutiveSummary": "",
         "Background": "",
         "Objectives": [
@@ -114,7 +114,7 @@ def ProposalMilestones(ProjectBreakdown, ProjectRequirements,GlobalDeliverables)
         "as well as the project requirements. You Create the Project Milestones and Deliverables inspired by the project deliverables established."
         "You be detailed, and use simple high school level. You must ENSURE that every detail is represented from the ProjectBreakdown and ProjectRequirements.")
     assistant_context = f"Respond in json format like this: {jsonformat} :"
-    initial_prompt = f"Here are the project Epics, Stories, and Tasks: {ProjectBreakdown} and the project requirements: {ProjectRequirements}. We have Evaluated these Global Deliverables {GlobalDeliverables}. Provide your response per your instructions and in the format instructed. Limit yourself to 4 Milestones."
+    initial_prompt = f"Here are the project Epics, Stories, and Tasks: {ProjectBreakdown} and the project requirements: {ProjectRequirements}. We have Evaluated these Global Deliverables {GlobalDeliverables}. Provide your response per your instructions and in the format instructed. Limit yourself to 4 Milestones. A milestone should be testable by the client and serve as a means to unlock funds."
 
     milestones = generate_text_json(system_context, assistant_context, initial_prompt)
     print(f"{milestones}")
@@ -220,7 +220,7 @@ def add_proposal_id_to_json(file_path, proposal_id):
 def main():
 
     # Read contents of ProjectBreakdown1.json and Project_Requirements.json
-    project_breakdown = read_json('storage/ProjectBreakdown1.json')
+    project_breakdown = read_json('storage/Initial_Client_Requirements.json')
     project_requirements = read_json('storage/Project_Requirements.json')
 
     # Pass the contents to ProposalCreateDetails function
@@ -246,11 +246,11 @@ def main():
 
     ### Link this to a CRM of Clients
     client_info = {
-        "CompanyName": "Confidential",
-        "ContactPerson": "Confidential",
-        "Address": "Confidential",
-        "Email": "Confidential",
-        "Phone": "Confidential"
+        "CompanyName": "Questionz",
+        "ContactPerson": "Paul Lafleur",
+        "Address": "275 Lakeshore Dr Pointe-Claire, QC H9S 4L1",
+        "Email": "paul.lafleur@questionz.ca",
+        "Phone": "5149709691"
     }
 
     #Link this to a CRM of Users of the Tool.
@@ -278,7 +278,7 @@ def main():
     update_proposal_json('storage/ProjectBreakdown1.json', 'storage/Proposal.json')
     add_current_date_to_proposal(file_path)
     # Add Proposal ID to Proposal.json
-    proposal_id = "S2024016"  # Example hardcoded Proposal ID
+    proposal_id = "S2024017"  # Example hardcoded Proposal ID
     add_proposal_id_to_json('storage/Proposal.json', proposal_id)
 
 if __name__ == "__main__":

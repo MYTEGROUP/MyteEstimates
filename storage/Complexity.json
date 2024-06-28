@@ -3,13 +3,13 @@
         "hours": 0.25
     },
     "Simple": {
-        "hours": 0.55
+        "hours": 0.75
     },
     "Medium": {
-        "hours": 1.2
+        "hours": 2.0
     },
     "Complex": {
-        "hours": 6.0
+        "hours": 8.0
     },
     "Very Complex": {
         "hours": 12.0

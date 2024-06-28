@@ -3,6 +3,10 @@ import json
 import os
 import threading
 from queue import Queue
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 def load_complexity_hours(file_path):
     """
@@ -200,7 +204,7 @@ def read_and_process_json(file_path, complexity_file_path):
         data = json.load(file)
 
     threads = []
-    num_worker_threads = 30
+    num_worker_threads = 10
 
     for i in range(num_worker_threads):
         t = threading.Thread(target=worker)

@@ -1,0 +1,12 @@
+{
+    "proposals": [
+        {
+            "ProposalID": "P123",
+            "ClientID": "C456",
+            "UserID": "U789",
+            "proposal_title": null,
+            "proposal": null,
+
+        }
+    ]
+}

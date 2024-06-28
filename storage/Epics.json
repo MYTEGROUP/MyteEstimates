@@ -1,109 +1,87 @@
 {
     "Stakeholder_Epics": {
-        "Doctors": [
+        "Job Applicants": [
             {
                 "Epic ID": "E001",
-                "Title": "User Authentication and Account Management",
-                "Description": "Enable doctors to register and log in with OTP mobile verification and email verification. Allow doctors to manage their profile information, including name, phone number, email, and profile picture."
+                "Title": "Profile Creation and Management",
+                "Description": "Allow job applicants to create and manage their profiles, including uploading their CVs and updating personal information."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Patient Management",
-                "Description": "Provide doctors with a list of patients who have granted access via QR code. Allow doctors to access detailed profiles, including visit and consultation histories, of each patient."
+                "Title": "Job Application Submission",
+                "Description": "Enable job applicants to browse job postings and submit applications directly through the portal."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Consultation Process",
-                "Description": "Enable doctors to start a new consultation session by scanning the patient's QR code to link the consultation to the patient. Provide AI assistance during consultations for real-time analysis and summarization. Allow doctors to generate, review, edit, and approve consultation reports, and share approved reports with patients."
+                "Title": "Application Status Tracking",
+                "Description": "Provide job applicants with the ability to track the status of their applications, including whether their CV has been approved or rejected."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Interactive AI for Doctor",
-                "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. Use the AI to retrieve and summarize relevant patient history to aid the doctor during consultations."
+                "Title": "Digital Interview Participation",
+                "Description": "Facilitate digital interviews for applicants who pass the initial CV screening, conducted by an AI system with personalized questions."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Patient Flags",
-                "Description": "Provide a feature for doctors to view a list of patients categorized by flags based on the patients' onboarding responses. This helps doctors prioritize and manage patient care effectively."
+                "Title": "Feedback and Notifications",
+                "Description": "Notify job applicants about the status of their CV screening and interview results, including reasons for rejection to ensure transparency."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Notifications and Alerts",
-                "Description": "Send email notifications to doctors for important actions such as registration, verification, and report approvals. Ensure timely communication of critical updates and actions."
+                "Title": "Progressive Web App Compatibility",
+                "Description": "Ensure the job applicant portal is a Progressive Web App (PWA) compatible with tablets and iPads on both Android and iOS."
+            }
+        ],
+        "HR Managers": [
+            {
+                "Epic ID": "E001",
+                "Title": "Job Posting Creation and Management",
+                "Description": "Enable HR managers to create, edit, and manage job postings. This includes specifying job requirements, descriptions, and other relevant details to attract suitable candidates."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "AI-Powered CV Screening",
+                "Description": "Implement an AI system to automatically screen CVs based on predefined job requirements. The system should filter out unsuitable candidates and provide reasons for rejection."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Customizable AI Interview Setup",
+                "Description": "Allow HR managers to customize the AI interview process by specifying the types of questions to be asked. This includes a mix of pre-recorded and real-time questions tailored to the job description."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Candidate Application Tracking",
+                "Description": "Provide a dashboard for HR managers to track the status of job applications. This includes viewing statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Interview Scheduling Integration",
+                "Description": "Integrate with the Google Calendar API to allow HR managers to schedule in-person interviews with approved candidates. This includes sending email notifications and creating calendar events."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Automated Notifications",
+                "Description": "Set up automated email notifications to inform HR managers when a candidate passes the CV screening and digital interview stages. This ensures timely action on qualified candidates."
             },
             {
                 "Epic ID": "E007",
-                "Title": "Data Security and Privacy",
-                "Description": "Implement robust access control mechanisms to protect patient data. Ensure all sensitive data is encrypted in transit and at rest to comply with Canadian Laws and Quebec Loi 25 laws."
-            }
-        ],
-        "AI System": [
-            {
-                "Epic ID": "E001",
-                "Title": "AI-Driven Onboarding",
-                "Description": "Develop an AI agent to interact with patients during the onboarding process. The AI will dynamically ask questions based on the conversation context and store all responses in a structured format."
+                "Title": "Review and Approve AI-Generated Job Descriptions",
+                "Description": "Enable HR managers to review and approve job descriptions generated by the AI system. This ensures that the job postings are accurate and aligned with the company's requirements."
             },
             {
-                "Epic ID": "E002",
-                "Title": "Conversational AI for Patients",
-                "Description": "Implement a chat interface that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses and analyze conversations for emotional and physical well-being."
+                "Epic ID": "E008",
+                "Title": "Detailed Feedback Mechanism",
+                "Description": "Implement a system to provide detailed feedback on why candidates were rejected at both the CV screening and interview stages. This feedback should be accessible to both HR managers and candidates."
             },
             {
-                "Epic ID": "E003",
-                "Title": "AI Assistance for Doctors",
-                "Description": "Provide AI assistance for doctors during consultations to analyze and summarize conversations in real-time. The AI will help retrieve relevant patient history and generate structured consultation reports."
+                "Epic ID": "E009",
+                "Title": "In-App Notifications",
+                "Description": "Develop an in-app notification system to keep HR managers informed about important updates and candidate statuses within the platform."
             },
             {
-                "Epic ID": "E004",
-                "Title": "Transformer Model Integration",
-                "Description": "Integrate transformer models for handling patient onboarding, summarizing conversation histories, and generating consultation reports. Ensure the models are trained and optimized for these specific tasks."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Voice and Text Processing",
-                "Description": "Utilize OpenAI's API for voice-to-text, text-to-voice, and text generation functionalities. This will enable the AI to effectively interact with users and provide accurate responses."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "AI-Driven Summarization and Analysis",
-                "Description": "Implement logic for the AI to summarize long conversations and analyze them for key insights. This includes emotional and physical well-being, medical history, and other relevant factors."
-            },
-            {
-                "Epic ID": "E007",
-                "Title": "AI Prompting for Doctors",
-                "Description": "Allow doctors to prompt the AI agent associated with a patient to retrieve specific information or insights from the patient's conversation history. This will aid doctors in making informed decisions during consultations."
-            }
-        ],
-        "Patients": [
-            {
-                "Epic ID": "E001",
-                "Title": "User Authentication and Account Management",
-                "Description": "Enable patients to securely register, log in, and manage their profile information. This includes email and phone OTP verification during registration and the ability to update profile details such as name, phone number, email, and profile picture."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "AI-Guided Onboarding Process",
-                "Description": "Provide an AI-guided onboarding process where patients can start a new visit, answer dynamic questions based on conversation context, and have their responses stored in a structured format. This process will generate a patient summary that can be viewed by both the patient and the doctor."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Chat Interface with AI",
-                "Description": "Implement a chat interface on the patient dashboard that allows patients to interact with an AI agent via text or voice. The AI will have access to the entire conversation history to provide informed responses, analyze conversations for emotional and physical well-being, and summarize long conversations."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Viewing Historical Data",
-                "Description": "Allow patients to view their past onboarding summaries and consultation histories. This includes providing a tab for onboarding history and another for consultation history, where patients can access detailed reports of their interactions and consultations."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Profile Management and QR Code Access",
-                "Description": "Enable patients to manage their profile information and generate a QR code that doctors can scan to access the patient's visit and consultation histories. This feature will be available on the patient's profile page."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Notifications and Alerts",
-                "Description": "Send email notifications to patients for important actions such as registration, verification, and report approvals. This ensures that patients are kept informed about their account activities and medical updates."
+                "Epic ID": "E010",
+                "Title": "Local Data Storage and Security",
+                "Description": "Ensure that all data, including CVs and interview responses, are stored locally on the client's systems. Implement basic security measures to protect sensitive information."
             }
         ]
     }
