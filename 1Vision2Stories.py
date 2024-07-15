@@ -340,6 +340,73 @@ def XXXX(Variable):
     XXX = generate_text(system_context, assistant_context, initial_prompt)
     return XXX
 
+
+def edit_epics(epics_json):
+    """Opens a popup window to edit, delete, or add epics from epics_json."""
+    root = tk.Tk()
+    root.title("Edit Epics")
+
+    # Extract epics from JSON
+    epics_data = json.loads(epics_json)
+
+    # Dictionary to store text variables for editing
+    epic_vars = {}
+
+    # Function to save changes and close the popup
+    def save_changes():
+        updated_epics = {}
+        for stakeholder, epics in epic_vars.items():
+            updated_epics[stakeholder] = []
+            for var in epics:
+                if var[0].get() and var[1].get():
+                    updated_epics[stakeholder].append({
+                        "Epic ID": var[2],
+                        "Title": var[0].get(),
+                        "Description": var[1].get()
+                    })
+        nonlocal epics_json
+        epics_json = json.dumps({"Stakeholder_Epics": updated_epics}, indent=4)
+        root.destroy()
+
+    # Function to add a new epic
+    def add_epic(stakeholder):
+        new_title = tk.StringVar()
+        new_description = tk.StringVar()
+        epic_frame = tk.Frame(root)
+        epic_frame.pack(fill="x", padx=10, pady=5)
+        tk.Entry(epic_frame, textvariable=new_title, width=30).pack(side="left", padx=5)
+        tk.Entry(epic_frame, textvariable=new_description, width=50).pack(side="left", padx=5)
+        epic_vars[stakeholder].append((new_title, new_description, f"E{len(epic_vars[stakeholder]) + 1:03d}"))
+
+    # Create frames for each stakeholder and their epics
+    for stakeholder, epics in epics_data['Stakeholder_Epics'].items():
+        stakeholder_frame = tk.Frame(root, relief="solid", borderwidth=1)
+        stakeholder_frame.pack(fill="x", padx=10, pady=10)
+        tk.Label(stakeholder_frame, text=f"Stakeholder: {stakeholder}", font=("Arial", 14)).pack(anchor="w", padx=5,
+                                                                                                 pady=5)
+
+        epic_vars[stakeholder] = []
+
+        for epic in epics:
+            title_var = tk.StringVar(value=epic["Title"])
+            desc_var = tk.StringVar(value=epic["Description"])
+            epic_frame = tk.Frame(stakeholder_frame)
+            epic_frame.pack(fill="x", padx=10, pady=5)
+            tk.Entry(epic_frame, textvariable=title_var, width=30).pack(side="left", padx=5)
+            tk.Entry(epic_frame, textvariable=desc_var, width=50).pack(side="left", padx=5)
+            epic_vars[stakeholder].append((title_var, desc_var, epic["Epic ID"]))
+
+        tk.Button(stakeholder_frame, text="Add Epic", command=lambda s=stakeholder: add_epic(s)).pack(anchor="w",
+                                                                                                      padx=5, pady=5)
+
+    # Button to confirm changes
+    confirm_button = tk.Button(root, text="Confirm Changes", command=save_changes)
+    confirm_button.pack(pady=10)
+
+    root.mainloop()
+
+    return epics_json
+
 def main():
     def get_description():
         # This function now merely closes the GUI
@@ -458,6 +525,15 @@ def main():
 
     print("Epics for each stakeholder have been successfully compiled and saved.")
 
+    # Edit Epics before proceeding to create stories
+    with open('storage/Epics.json', 'r') as file:
+        epics_json = file.read()
+
+    epics_json = edit_epics(epics_json)
+
+    # Save the updated epics
+    with open('storage/Epics.json', 'w') as file:
+        file.write(epics_json)
 
    #Logic to create the Stories for each epic/Stakeholder
 

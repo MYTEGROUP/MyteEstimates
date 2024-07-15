@@ -1,22 +1,31 @@
 {
-    "Project Vision": "### Project Vision\n\nImagine a world where the hiring process is swift, transparent, and remarkably efficient. Our groundbreaking CV screening and interview platform is set to revolutionize the recruitment landscape for both job applicants and HR managers. Leveraging the power of AI, our platform meticulously filters through CVs, distinguishing genuine talent from the noise of mass applications. No more sifting through endless piles of resumes\u2014our AI does it for you, pinpointing the best candidates with unparalleled accuracy.\n\nBut we don't stop there. Our AI-driven digital interviews delve deeper, asking personalized questions and analyzing responses to ensure only the most suitable candidates make it through. This not only saves precious time but also elevates the quality of hires, aligning perfectly with your company's needs.\n\nTransparency is at our core. Applicants receive clear, actionable feedback at every stage, transforming the often opaque hiring process into a journey of continuous improvement. HR managers are kept in the loop with real-time notifications and seamless integration with Google APIs for effortless scheduling.\n\nDesigned as a Progressive Web App, our platform is accessible on any device, ensuring a smooth, user-friendly experience. Hosted on AWS but securely storing data locally, we combine the best of both worlds\u2014scalability and security.\n\nJoin us in redefining recruitment. Embrace the future of hiring with our innovative platform, where efficiency meets excellence.",
+    "Project Vision": "### Project Vision\n\nImagine a world where creating engaging social media content is no longer a daunting task but an effortless, enjoyable experience. Our **AI-Powered Social Media Planning Platform** is designed to revolutionize the way business owners, social media managers, content creators, and solopreneurs plan and generate content. This innovative tool harnesses the power of artificial intelligence to transform your ideas and expertise into captivating, well-structured social media scripts, ready to boost your online presence and engagement.\n\nWith a sleek, user-friendly interface, our platform operates entirely on your local machine, ensuring your data remains secure and accessible. Simply interact with our conversational AI, which prompts you with insightful questions to extract your unique perspectives. Watch as the AI crafts 90-second scripts, complete with scene descriptions, hooks, arcs, and calls to action, all optimized for maximum impact.\n\nGone are the days of struggling with content planning. Our platform supports multiple languages, allowing you to reach a global audience effortlessly. Export your scripts for review and editing, ensuring they align perfectly with your vision before going live. Embrace the future of social media content creation with our cutting-edge platform, and let your creativity shine like never before.",
     "Business Vertical": [
-        "Human Resources"
+        "Social Media Management"
     ],
     "Stakeholders": [
-        "Job Applicants",
-        "HR Managers"
+        "Solopreneurs"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "Job Applicants",
-            "Model": "Direct Payment",
-            "Rationale": "Job applicants pay a one-time fee or a small fee per application to upload their CVs and participate in the digital interview process. This model ensures that only serious candidates apply, reducing the number of mass applications. The revenue is received by the platform provider."
+            "Stakeholder": "Solopreneurs",
+            "Model": "Subscription",
+            "Rationale": "Solopreneurs will benefit from a subscription model as it provides continuous access to the AI-driven social media planning platform. They pay a recurring fee for ongoing access to the tool's features, including AI script generation, campaign management, and multi-language support. The revenue is received by the platform provider, ensuring a steady income stream and allowing for continuous updates and improvements to the software."
         },
         {
-            "Stakeholder": "HR Managers",
+            "Stakeholder": "Social Media Managers",
             "Model": "Subscription",
-            "Rationale": "HR managers pay a recurring subscription fee for access to the platform's features, including job posting creation, AI-driven CV screening, digital interviews, and detailed analytics. This model provides consistent revenue for the platform provider and ensures HR managers have continuous access to the service."
+            "Rationale": "Social media managers require consistent access to the platform to plan and generate content regularly. A subscription model allows them to budget for the tool as a recurring expense, ensuring they always have access to the latest features and updates. The platform provider receives the revenue, which supports ongoing development and maintenance."
+        },
+        {
+            "Stakeholder": "Content Creators",
+            "Model": "Subscription",
+            "Rationale": "Content creators will find value in a subscription model as it provides them with continuous access to the AI-driven content generation features. They pay a recurring fee to use the platform for creating and managing their social media scripts. The platform provider benefits from a predictable revenue stream, which funds further enhancements and customer support."
+        },
+        {
+            "Stakeholder": "Business Owners",
+            "Model": "Subscription",
+            "Rationale": "Business owners need a reliable tool for consistent social media content creation. A subscription model ensures they have uninterrupted access to the platform's capabilities, including AI script generation and campaign management. They pay a recurring fee, and the platform provider receives the revenue, enabling sustained development and service improvements."
         }
     ]
 }

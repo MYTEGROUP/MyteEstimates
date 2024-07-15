@@ -1,1211 +1,749 @@
 {
-    "Job Applicants": [
+    "Solopreneurs": [
         {
             "Epic ID": "E001",
-            "Title": "Profile Creation and Management",
-            "Description": "Allow job applicants to create and manage their profiles, including uploading their CVs and updating personal information.",
+            "Title": "Conversational System for Ideation",
+            "Description": "Develop a chat-like interface where solopreneurs can interact with an AI system. The AI will prompt users with questions to gather their views, opinions, and knowledge about their business or expertise.",
             "User Stories": [
                 {
-                    "Title": "Create Profile",
-                    "Description": "As a job applicant, I want to create a profile so that I can manage my job applications and personal information.",
+                    "Title": "User Login and API Key Input",
+                    "Description": "As a solopreneur, I want to input my OpenAI API key so that I can use the AI functionalities of the platform.",
                     "AcceptanceCriteria": [
-                        "Given a new user, when they visit the platform, then they should see an option to create a new profile.",
-                        "When the user fills in their personal information and submits the form, then a new profile should be created and stored locally.",
-                        "The user should receive a confirmation message upon successful profile creation."
+                        "Given I am on the dashboard, when I click on the 'Settings' button, then I should see an input field for the OpenAI API key.",
+                        "Given I have entered a valid API key, when I click 'Save', then the system should store the API key locally and confirm the key is valid."
                     ],
                     "Story ID": "S001"
                 },
                 {
-                    "Title": "Upload CV",
-                    "Description": "As a job applicant, I want to upload my CV so that it can be screened by the AI system.",
+                    "Title": "Create New Campaign",
+                    "Description": "As a solopreneur, I want to create a new campaign so that I can start generating scripts for my social media content.",
                     "AcceptanceCriteria": [
-                        "Given a logged-in user, when they navigate to their profile page, then they should see an option to upload their CV.",
-                        "When the user uploads a CV file, then the system should store the CV locally and confirm the upload.",
-                        "The system should notify the user if the CV upload was successful or if there were any errors."
+                        "Given I am on the dashboard, when I click on the 'Create New Campaign' button, then I should be taken to a new screen where I can start a conversational session with the AI."
                     ],
                     "Story ID": "S002"
                 },
                 {
-                    "Title": "Update Personal Information",
-                    "Description": "As a job applicant, I want to update my personal information so that my profile is always current.",
+                    "Title": "Conversational Interface",
+                    "Description": "As a solopreneur, I want to interact with the AI through a chat-like interface so that I can provide my views, opinions, and knowledge about my business.",
                     "AcceptanceCriteria": [
-                        "Given a logged-in user, when they navigate to their profile page, then they should see an option to edit their personal information.",
-                        "When the user updates their personal information and submits the form, then the changes should be saved and reflected in their profile.",
-                        "The user should receive a confirmation message upon successful update of their personal information."
+                        "Given I am in a new campaign, when I start the session, then I should see a chat window where the AI prompts me with questions.",
+                        "Given the AI asks a question, when I type my response, then the response should appear in the chat window in a different color from the AI's text."
                     ],
                     "Story ID": "S003"
                 },
                 {
-                    "Title": "Track Application Status",
-                    "Description": "As a job applicant, I want to track the status of my job applications so that I know where I stand in the hiring process.",
+                    "Title": "Upload Text Files",
+                    "Description": "As a solopreneur, I want to upload text files to the platform so that the AI can use this additional information to generate better scripts.",
                     "AcceptanceCriteria": [
-                        "Given a logged-in user, when they navigate to their profile page, then they should see a section for tracking the status of their job applications.",
-                        "The application status should display whether the application is pending, approved, or rejected.",
-                        "The user should receive notifications about any changes in the status of their applications."
+                        "Given I am in a new campaign, when I click on the 'Upload Text File' button, then I should be able to select and upload a text file.",
+                        "Given I have uploaded a text file, when the upload is complete, then the system should confirm the file has been successfully added to the AI's knowledge base."
                     ],
                     "Story ID": "S004"
                 },
                 {
-                    "Title": "Receive Feedback on CV Screening",
-                    "Description": "As a job applicant, I want to receive feedback on my CV screening so that I understand why my application was accepted or rejected.",
+                    "Title": "AI Script Generation",
+                    "Description": "As a solopreneur, I want the AI to generate scripts based on my inputs so that I can have ready-to-use content for my social media.",
                     "AcceptanceCriteria": [
-                        "Given a logged-in user, when their CV is screened by the AI system, then they should receive a notification about the result.",
-                        "If the CV is rejected, the user should see specific reasons for the rejection in their profile.",
-                        "If the CV is accepted, the user should see a notification about proceeding to the next step (digital interview)."
+                        "Given I have provided sufficient input through the chat interface, when I click 'Generate Scripts', then the AI should create scripts that include a hook, body, and conclusion.",
+                        "Given the AI has generated scripts, when I view the scripts, then they should be formatted properly with scene descriptions."
                     ],
                     "Story ID": "S005"
                 },
                 {
-                    "Title": "Participate in Digital Interview",
-                    "Description": "As a job applicant, I want to participate in a digital interview so that I can proceed further in the job application process.",
+                    "Title": "Review and Edit Scripts",
+                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can make any necessary adjustments before using them.",
                     "AcceptanceCriteria": [
-                        "Given a logged-in user whose CV has been accepted, when they navigate to their profile page, then they should see an option to start the digital interview.",
-                        "The digital interview should present a combination of pre-recorded and real-time questions customized to the job description.",
-                        "The user should receive feedback on their interview performance, including reasons for rejection if applicable."
+                        "Given the AI has generated scripts, when I click on a script, then I should be able to view and edit the content.",
+                        "Given I have made edits to a script, when I click 'Save', then the changes should be saved locally."
                     ],
                     "Story ID": "S006"
                 },
                 {
-                    "Title": "Receive Notifications",
-                    "Description": "As a job applicant, I want to receive notifications about my application status and interview results so that I am always informed.",
+                    "Title": "Export Scripts",
+                    "Description": "As a solopreneur, I want to export the generated scripts into a document format so that I can review and share them easily.",
                     "AcceptanceCriteria": [
-                        "Given a logged-in user, when there is a change in the status of their application or interview result, then they should receive a notification.",
-                        "Notifications should be visible within the app and sent via email using the Google API.",
-                        "The user should be able to view the details of the notification in their profile."
+                        "Given I am viewing a generated script, when I click 'Export', then I should be able to save the script as a Word or PDF document.",
+                        "Given I have exported a script, when I open the document, then it should be properly formatted and include all the content from the script."
                     ],
                     "Story ID": "S007"
+                },
+                {
+                    "Title": "Multi-language Support",
+                    "Description": "As a solopreneur, I want the AI to support multiple languages so that I can generate scripts in my preferred language.",
+                    "AcceptanceCriteria": [
+                        "Given I am interacting with the AI, when I provide input in a specific language, then the AI should detect the language and generate scripts in the same language.",
+                        "Given I have set a language preference, when the AI generates scripts, then the scripts should be in the selected language."
+                    ],
+                    "Story ID": "S008"
                 }
             ]
         },
         {
             "Epic ID": "E002",
-            "Title": "Job Application Submission",
-            "Description": "Enable job applicants to browse job postings and submit applications directly through the portal.",
+            "Title": "AI Script Generation",
+            "Description": "Implement an AI system that uses gathered information to generate 90-second scripts, including scene descriptions. Ensure the scripts have a proper hook, arc, and finish to maximize engagement on social media platforms.",
             "User Stories": [
                 {
-                    "Title": "Browse Job Postings",
-                    "Description": "As a job applicant, I want to browse available job postings so that I can find and apply for positions that match my skills and interests.",
+                    "Title": "Conversational System for Gathering Information",
+                    "Description": "As a solopreneur, I want a conversational system that prompts me with questions to gather my views, opinions, and expertise so that the AI can generate relevant and personalized scripts.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the portal, when I navigate to the job postings section, I should see a list of available job postings.",
-                        "Each job posting should display the job title, company name, location, and a brief description.",
-                        "I should be able to filter job postings by criteria such as job title, location, and company."
-                    ],
-                    "Story ID": "S008"
-                },
-                {
-                    "Title": "View Job Posting Details",
-                    "Description": "As a job applicant, I want to view the details of a job posting so that I can understand the job requirements and responsibilities.",
-                    "AcceptanceCriteria": [
-                        "Given I am browsing job postings, when I click on a job title, I should be taken to a page with detailed information about the job.",
-                        "The job details page should include the job title, company name, location, job description, requirements, and application deadline."
+                        "The system should display a chat-like interface where the AI prompts the user with questions.",
+                        "The user should be able to respond by typing or speaking, with responses transcribed into text.",
+                        "The system should store user responses locally in JSON files."
                     ],
                     "Story ID": "S009"
                 },
                 {
-                    "Title": "Create and Manage Profile",
-                    "Description": "As a job applicant, I want to create and manage my profile so that I can easily apply for jobs and track my application status.",
+                    "Title": "Upload Text Files to Train AI",
+                    "Description": "As a solopreneur, I want to upload text files to the system so that the AI can use this additional information to generate more accurate and relevant scripts.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the portal, when I navigate to my profile section, I should be able to create or update my profile.",
-                        "My profile should include personal information, contact details, and an option to upload my CV.",
-                        "I should be able to save changes to my profile and see a confirmation message."
+                        "The system should allow users to upload text files through the interface.",
+                        "Uploaded text files should be processed and stored locally in JSON files.",
+                        "The AI should incorporate the information from the uploaded text files when generating scripts."
                     ],
                     "Story ID": "S010"
                 },
                 {
-                    "Title": "Upload CV",
-                    "Description": "As a job applicant, I want to upload my CV so that it can be screened by the AI system during the application process.",
+                    "Title": "AI Script Generation",
+                    "Description": "As a solopreneur, I want the AI to generate 90-second scripts based on the gathered information so that I can create engaging social media content.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the portal, when I navigate to my profile section, I should see an option to upload my CV.",
-                        "I should be able to upload a CV file in formats such as PDF or DOCX.",
-                        "After uploading, I should see a confirmation message that my CV has been successfully uploaded."
+                        "The AI should generate scripts that are 90 seconds long.",
+                        "Scripts should include scene descriptions.",
+                        "Each script should have a proper hook, arc, and finish to maximize engagement."
                     ],
                     "Story ID": "S011"
                 },
                 {
-                    "Title": "Submit Job Application",
-                    "Description": "As a job applicant, I want to submit my application for a job posting so that I can be considered for the position.",
+                    "Title": "Review and Edit Generated Scripts",
+                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can ensure they meet my standards before using them.",
                     "AcceptanceCriteria": [
-                        "Given I am viewing a job posting, when I click the 'Apply' button, I should be prompted to confirm my application.",
-                        "Upon confirmation, my application should be submitted, and I should see a confirmation message.",
-                        "My application status should be updated to 'Submitted' in my profile."
+                        "The system should display generated scripts in a readable format.",
+                        "Users should be able to edit the scripts directly within the interface.",
+                        "Edited scripts should be saved locally in JSON files."
                     ],
                     "Story ID": "S012"
                 },
                 {
-                    "Title": "Track Application Status",
-                    "Description": "As a job applicant, I want to track the status of my job applications so that I know where I am in the hiring process.",
+                    "Title": "Export Scripts to Document Format",
+                    "Description": "As a solopreneur, I want to export the generated scripts into a structured document format so that I can review and share them easily.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into the portal, when I navigate to my profile section, I should see a list of my submitted applications.",
-                        "Each application should display its current status (e.g., Submitted, Under Review, Rejected, Interview Scheduled).",
-                        "I should receive notifications when the status of my application changes."
+                        "The system should allow users to export scripts to Word or PDF format.",
+                        "Exported documents should include the script text and scene descriptions.",
+                        "The exported document should maintain the structure and formatting of the original script."
                     ],
                     "Story ID": "S013"
                 },
                 {
-                    "Title": "Receive Feedback on Application",
-                    "Description": "As a job applicant, I want to receive feedback on my application so that I understand why I was accepted or rejected.",
+                    "Title": "Language Detection and Support",
+                    "Description": "As a solopreneur, I want the AI to support multiple languages based on my input so that I can generate scripts in different languages.",
                     "AcceptanceCriteria": [
-                        "Given my application status changes to 'Rejected', I should receive a notification with the reason for rejection.",
-                        "The feedback should be visible in my profile under the specific job application.",
-                        "If my application is accepted, I should receive a notification with the next steps."
+                        "The AI should automatically detect the language of the user's input.",
+                        "The AI should generate scripts in the detected language.",
+                        "Users should have the option to set a preferred language for script generation."
                     ],
                     "Story ID": "S014"
                 },
                 {
-                    "Title": "Participate in Digital Interview",
-                    "Description": "As a job applicant, I want to participate in a digital interview so that I can be evaluated for the job position.",
+                    "Title": "Input OpenAI API Key",
+                    "Description": "As a solopreneur, I want to input my own OpenAI API key so that I can use the AI functionalities of the platform.",
                     "AcceptanceCriteria": [
-                        "Given my application status changes to 'Interview Scheduled', I should receive a notification with the interview details.",
-                        "I should be able to access the digital interview through the portal at the scheduled time.",
-                        "The interview should include a combination of pre-recorded and real-time questions."
+                        "The system should provide a field for users to input their OpenAI API key.",
+                        "The system should validate the API key before allowing access to AI functionalities.",
+                        "The API key should be stored securely and used for all AI-related operations."
                     ],
                     "Story ID": "S015"
-                },
-                {
-                    "Title": "Receive Interview Results",
-                    "Description": "As a job applicant, I want to receive the results of my digital interview so that I know if I have been selected for an in-person interview.",
-                    "AcceptanceCriteria": [
-                        "Given I have completed the digital interview, I should receive a notification with the interview results.",
-                        "If I am selected for an in-person interview, I should receive details about the next steps.",
-                        "If I am not selected, I should receive feedback on why I was not chosen."
-                    ],
-                    "Story ID": "S016"
                 }
             ]
         },
         {
             "Epic ID": "E003",
-            "Title": "Application Status Tracking",
-            "Description": "Provide job applicants with the ability to track the status of their applications, including whether their CV has been approved or rejected.",
+            "Title": "Campaign Management",
+            "Description": "Create a feature that allows solopreneurs to create and manage campaigns. Each campaign will have a series of generated scripts that users can review and edit before finalizing.",
             "User Stories": [
                 {
-                    "Title": "User Profile Creation",
-                    "Description": "As a job applicant, I want to create and manage my profile so that I can upload my CV and apply for job postings.",
+                    "Title": "Create New Campaign",
+                    "Description": "As a solopreneur, I want to create a new campaign so that I can start generating scripts for my social media content.",
                     "AcceptanceCriteria": [
-                        "Given I am a job applicant, when I visit the platform, then I should be able to create a new profile by providing my personal information and uploading my CV.",
-                        "Given I have created a profile, when I log in, then I should be able to view and update my profile information."
+                        "Given I am on the dashboard, when I click the 'Create a New Campaign' button, then I should be taken to a new campaign setup screen.",
+                        "The setup screen should prompt me to enter the campaign name and description."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "Conversational System for Input",
+                    "Description": "As a solopreneur, I want to interact with a conversational system that prompts me with questions so that I can provide my views and knowledge for script generation.",
+                    "AcceptanceCriteria": [
+                        "Given I am in the campaign setup, when I start the conversational system, then the AI should prompt me with relevant questions.",
+                        "The system should allow me to respond by typing or speaking, with responses transcribed into text."
                     ],
                     "Story ID": "S017"
                 },
                 {
-                    "Title": "Job Application Submission",
-                    "Description": "As a job applicant, I want to apply for job postings so that I can be considered for employment opportunities.",
+                    "Title": "Upload Text Files for AI Training",
+                    "Description": "As a solopreneur, I want to upload text files to the system so that the AI can use this additional context to generate more accurate scripts.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into my profile, when I browse job postings, then I should be able to select a job and submit my application.",
-                        "Given I have submitted an application, when I view my profile, then I should see a confirmation that my application has been submitted."
+                        "Given I am in the campaign setup, when I click the 'Upload Text Files' button, then I should be able to select and upload text files from my computer.",
+                        "The system should confirm the successful upload of the files."
                     ],
                     "Story ID": "S018"
                 },
                 {
-                    "Title": "Application Status Tracking",
-                    "Description": "As a job applicant, I want to track the status of my applications so that I know if my CV has been approved or rejected.",
+                    "Title": "Generate Scripts",
+                    "Description": "As a solopreneur, I want the AI to generate scripts based on my input so that I can have ready-to-use content for my social media campaigns.",
                     "AcceptanceCriteria": [
-                        "Given I have submitted an application, when I log into my profile, then I should see the current status of my application (e.g., pending, approved, rejected).",
-                        "Given my CV has been approved or rejected, when I view the application status, then I should see the reason for the approval or rejection."
+                        "Given I have provided input through the conversational system, when I click the 'Generate Scripts' button, then the AI should create a series of scripts.",
+                        "Each script should be 90 seconds long and include descriptions of scenes, hooks, arcs, and calls to action."
                     ],
                     "Story ID": "S019"
                 },
                 {
-                    "Title": "Notification of Application Status",
-                    "Description": "As a job applicant, I want to receive notifications about the status of my application so that I am informed of any updates.",
+                    "Title": "Review and Edit Scripts",
+                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can ensure they meet my requirements before finalizing.",
                     "AcceptanceCriteria": [
-                        "Given I have submitted an application, when there is a change in the status of my application, then I should receive an in-app notification.",
-                        "Given my CV has been approved or rejected, when the status changes, then I should receive an email notification with the updated status and reason."
+                        "Given the AI has generated scripts, when I navigate to the 'Review Scripts' section, then I should see a list of all generated scripts.",
+                        "I should be able to click on any script to view and edit its content."
                     ],
                     "Story ID": "S020"
                 },
                 {
-                    "Title": "Digital Interview Participation",
-                    "Description": "As a job applicant, I want to participate in a digital interview if my CV is approved so that I can be further evaluated for the job.",
+                    "Title": "Export Scripts",
+                    "Description": "As a solopreneur, I want to export the generated scripts into a document format so that I can review and get feedback on them before filming.",
                     "AcceptanceCriteria": [
-                        "Given my CV has been approved, when I log into my profile, then I should be prompted to schedule and participate in a digital interview.",
-                        "Given I have completed the digital interview, when I view my application status, then I should see the interview results and feedback."
+                        "Given I am in the 'Review Scripts' section, when I click the 'Export' button, then I should be able to export the scripts into a Word or PDF document.",
+                        "The exported document should be properly formatted and include all script details."
                     ],
                     "Story ID": "S021"
                 },
                 {
-                    "Title": "Feedback on Rejection",
-                    "Description": "As a job applicant, I want to receive feedback on why my CV or interview was rejected so that I can improve my future applications.",
+                    "Title": "Manage Existing Campaigns",
+                    "Description": "As a solopreneur, I want to view and manage my existing campaigns so that I can keep track of my content planning and progress.",
                     "AcceptanceCriteria": [
-                        "Given my CV has been rejected, when I view the application status, then I should see specific reasons for the rejection.",
-                        "Given I have completed a digital interview and it was rejected, when I view the interview results, then I should see specific reasons for the rejection."
+                        "Given I am on the dashboard, when I click the 'View Existing Campaigns' button, then I should see a list of all my campaigns.",
+                        "Each campaign should display its name, description, and status (e.g., in progress, completed)."
                     ],
                     "Story ID": "S022"
+                },
+                {
+                    "Title": "Set Language Preference",
+                    "Description": "As a solopreneur, I want to set my language preference so that the AI generates scripts in the language I prefer.",
+                    "AcceptanceCriteria": [
+                        "Given I am in the campaign setup, when I select a language from the language settings, then the AI should generate scripts in the selected language.",
+                        "The system should remember my language preference for future campaigns."
+                    ],
+                    "Story ID": "S023"
+                },
+                {
+                    "Title": "Input API Key",
+                    "Description": "As a solopreneur, I want to input my OpenAI API key so that the AI functionalities can be activated.",
+                    "AcceptanceCriteria": [
+                        "Given I am in the settings, when I enter my OpenAI API key and click 'Save', then the system should validate and store the key.",
+                        "The system should notify me if the API key is valid or invalid."
+                    ],
+                    "Story ID": "S024"
                 }
             ]
         },
         {
             "Epic ID": "E004",
-            "Title": "Digital Interview Participation",
-            "Description": "Facilitate digital interviews for applicants who pass the initial CV screening, conducted by an AI system with personalized questions.",
+            "Title": "Content Extraction and Formatting",
+            "Description": "Develop functionality to allow users to export generated scripts into structured document formats (e.g., Word or PDF) for review and feedback.",
             "User Stories": [
                 {
-                    "Title": "Upload CV",
-                    "Description": "As a job applicant, I want to upload my CV to the platform so that it can be screened by the AI system.",
+                    "Title": "Export Script to Word Document",
+                    "Description": "As a Solopreneur, I want to export the generated scripts to a Word document so that I can review and edit them easily.",
                     "AcceptanceCriteria": [
-                        "Given I am a registered user, when I navigate to the CV upload section, then I should be able to upload my CV in PDF or DOC format.",
-                        "Given I have uploaded my CV, when the upload is complete, then I should receive a confirmation message."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "Track Application Status",
-                    "Description": "As a job applicant, I want to track the status of my application so that I know if I have passed the CV screening.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into my profile, when I navigate to the application status section, then I should see the current status of my application (e.g., 'Under Review', 'Approved', 'Rejected').",
-                        "Given my application status changes, when I log in, then I should see the updated status."
-                    ],
-                    "Story ID": "S024"
-                },
-                {
-                    "Title": "Receive CV Screening Feedback",
-                    "Description": "As a job applicant, I want to receive feedback on my CV screening so that I understand why my CV was approved or rejected.",
-                    "AcceptanceCriteria": [
-                        "Given my CV has been screened, when I check my application status, then I should see a detailed reason for approval or rejection."
+                        "Given a generated script, when the user selects the 'Export to Word' option, then the script should be saved as a .docx file.",
+                        "The exported Word document should include the script's title, content, and scene descriptions in a structured format.",
+                        "The document should be saved to a user-specified location on the local machine."
                     ],
                     "Story ID": "S025"
                 },
                 {
-                    "Title": "Participate in Digital Interview",
-                    "Description": "As a job applicant, I want to participate in a digital interview conducted by an AI system so that I can proceed to the next stage of the hiring process.",
+                    "Title": "Export Script to PDF",
+                    "Description": "As a Solopreneur, I want to export the generated scripts to a PDF document so that I can share them for feedback without editing.",
                     "AcceptanceCriteria": [
-                        "Given my CV has been approved, when I navigate to the interview section, then I should be able to start the digital interview.",
-                        "Given I am in the digital interview, when I answer a question, then the AI system should provide the next question based on my response."
+                        "Given a generated script, when the user selects the 'Export to PDF' option, then the script should be saved as a .pdf file.",
+                        "The exported PDF should include the script's title, content, and scene descriptions in a structured format.",
+                        "The document should be saved to a user-specified location on the local machine."
                     ],
                     "Story ID": "S026"
                 },
                 {
-                    "Title": "Receive Interview Feedback",
-                    "Description": "As a job applicant, I want to receive feedback on my digital interview so that I understand why I was approved or rejected.",
+                    "Title": "Preview Exported Document",
+                    "Description": "As a Solopreneur, I want to preview the exported document before saving it so that I can ensure it is formatted correctly.",
                     "AcceptanceCriteria": [
-                        "Given I have completed the digital interview, when I check my application status, then I should see a detailed reason for approval or rejection."
+                        "Given a generated script, when the user selects the 'Preview' option, then a preview of the document should be displayed.",
+                        "The preview should show the script's title, content, and scene descriptions in the same format as the exported document.",
+                        "The user should have the option to go back and make changes before finalizing the export."
                     ],
                     "Story ID": "S027"
                 },
                 {
-                    "Title": "Receive Notifications",
-                    "Description": "As a job applicant, I want to receive notifications about the status of my application and interview results so that I am kept informed throughout the process.",
+                    "Title": "Select Export Format",
+                    "Description": "As a Solopreneur, I want to choose between exporting the script as a Word document or a PDF so that I can use the format that best suits my needs.",
                     "AcceptanceCriteria": [
-                        "Given my application status changes, when the status is updated, then I should receive an in-app notification.",
-                        "Given my interview results are available, when the results are updated, then I should receive an in-app notification."
+                        "Given a generated script, when the user selects the 'Export' option, then they should be prompted to choose between 'Export to Word' and 'Export to PDF'.",
+                        "The user should be able to select their preferred format and proceed with the export process."
                     ],
                     "Story ID": "S028"
                 },
                 {
-                    "Title": "View Interview Schedule",
-                    "Description": "As a job applicant, I want to view the schedule for my digital interview so that I can prepare accordingly.",
+                    "Title": "Customize Export Path",
+                    "Description": "As a Solopreneur, I want to specify the location where the exported document will be saved so that I can organize my files effectively.",
                     "AcceptanceCriteria": [
-                        "Given my CV has been approved, when I navigate to the interview section, then I should see the scheduled date and time for my digital interview."
+                        "Given a generated script, when the user selects the 'Export' option, then they should be prompted to choose a save location on their local machine.",
+                        "The exported document should be saved to the specified location."
                     ],
                     "Story ID": "S029"
                 },
                 {
-                    "Title": "Access Help and Support",
-                    "Description": "As a job applicant, I want to access help and support so that I can resolve any issues or questions I have about the application process.",
+                    "Title": "Include Metadata in Exported Document",
+                    "Description": "As a Solopreneur, I want the exported document to include metadata such as the creation date and campaign name so that I can keep track of my content.",
                     "AcceptanceCriteria": [
-                        "Given I am logged into my profile, when I navigate to the help and support section, then I should see contact information and FAQs.",
-                        "Given I have a question, when I submit a support request, then I should receive a confirmation message and a response within a specified time frame."
+                        "Given a generated script, when the user exports the document, then the document should include metadata such as the creation date, campaign name, and any relevant tags.",
+                        "The metadata should be displayed in a designated section of the document, such as a header or footer."
                     ],
                     "Story ID": "S030"
+                },
+                {
+                    "Title": "Format Script with Proper Sections",
+                    "Description": "As a Solopreneur, I want the exported document to have clearly defined sections for the hook, body, and conclusion so that the script is easy to follow.",
+                    "AcceptanceCriteria": [
+                        "Given a generated script, when the user exports the document, then the script should be divided into sections for the hook, body, and conclusion.",
+                        "Each section should be clearly labeled and formatted to enhance readability."
+                    ],
+                    "Story ID": "S031"
                 }
             ]
         },
         {
             "Epic ID": "E005",
-            "Title": "Feedback and Notifications",
-            "Description": "Notify job applicants about the status of their CV screening and interview results, including reasons for rejection to ensure transparency.",
+            "Title": "Multi-language Support",
+            "Description": "Ensure the platform supports multiple languages based on user input. The AI should automatically detect the language of the user's input and generate scripts in that language.",
             "User Stories": [
                 {
-                    "Title": "Receive CV Screening Status Notification",
-                    "Description": "As a job applicant, I want to receive a notification about the status of my CV screening so that I am informed whether my CV has been approved or rejected.",
+                    "Title": "Language Detection",
+                    "Description": "As a solopreneur, I want the AI to automatically detect the language of my input so that I can generate scripts in my preferred language without manually selecting it.",
                     "AcceptanceCriteria": [
-                        "Given that I have submitted my CV, when the CV screening is complete, then I should receive a notification about the status of my CV screening.",
-                        "The notification should clearly state whether my CV has been approved or rejected."
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "View Reasons for CV Rejection",
-                    "Description": "As a job applicant, I want to view the reasons for the rejection of my CV so that I can understand why my application was not successful.",
-                    "AcceptanceCriteria": [
-                        "Given that my CV has been rejected, when I view the notification, then I should see a detailed reason for the rejection.",
-                        "The reason should be clear, specific, and relevant to the job requirements."
+                        "Given a text input in any language, when the user submits the input, then the AI should detect the language accurately.",
+                        "The detected language should be displayed to the user for confirmation."
                     ],
                     "Story ID": "S032"
                 },
                 {
-                    "Title": "Receive Digital Interview Invitation",
-                    "Description": "As a job applicant, I want to receive a notification inviting me to a digital interview if my CV is approved so that I can proceed to the next stage of the application process.",
+                    "Title": "Script Generation in Detected Language",
+                    "Description": "As a solopreneur, I want the AI to generate scripts in the detected language so that I can create content that is relevant to my audience.",
                     "AcceptanceCriteria": [
-                        "Given that my CV has been approved, when the system schedules a digital interview, then I should receive a notification inviting me to the interview.",
-                        "The notification should include the date, time, and instructions for the digital interview."
+                        "Given the detected language, when the AI generates a script, then the script should be in the same language as the input.",
+                        "The script should include proper hooks, arcs, and calls to action in the detected language."
                     ],
                     "Story ID": "S033"
                 },
                 {
-                    "Title": "Receive Digital Interview Results Notification",
-                    "Description": "As a job applicant, I want to receive a notification about the results of my digital interview so that I know whether I have passed or failed.",
+                    "Title": "Language Preference Setting",
+                    "Description": "As a solopreneur, I want to set my language preference so that the AI can generate scripts in my preferred language even if my input is in another language.",
                     "AcceptanceCriteria": [
-                        "Given that I have completed the digital interview, when the interview results are available, then I should receive a notification about the results.",
-                        "The notification should clearly state whether I have passed or failed the interview."
+                        "Given a language preference setting, when the user selects a preferred language, then the AI should generate scripts in the selected language regardless of the input language.",
+                        "The language preference should be saved and applied to all future script generations."
                     ],
                     "Story ID": "S034"
                 },
                 {
-                    "Title": "View Reasons for Interview Rejection",
-                    "Description": "As a job applicant, I want to view the reasons for the rejection of my interview so that I can understand why I was not selected for the next stage.",
+                    "Title": "Language Confirmation and Override",
+                    "Description": "As a solopreneur, I want to confirm or override the detected language before the script is generated so that I can ensure the script is in the correct language.",
                     "AcceptanceCriteria": [
-                        "Given that I have failed the digital interview, when I view the notification, then I should see a detailed reason for the rejection.",
-                        "The reason should be clear, specific, and relevant to the job requirements."
+                        "Given a detected language, when the AI displays the detected language, then the user should have the option to confirm or select a different language.",
+                        "If the user selects a different language, the AI should generate the script in the newly selected language."
                     ],
                     "Story ID": "S035"
                 },
                 {
-                    "Title": "Track Application Status",
-                    "Description": "As a job applicant, I want to track the status of my application so that I am always informed about where I am in the recruitment process.",
+                    "Title": "Multi-language Script Review",
+                    "Description": "As a solopreneur, I want to review and edit the generated scripts in multiple languages so that I can ensure the content meets my standards before publishing.",
                     "AcceptanceCriteria": [
-                        "Given that I have submitted my application, when I log into the portal, then I should see the current status of my application.",
-                        "The status should be updated in real-time to reflect the latest stage of the process."
+                        "Given a generated script in any language, when the user reviews the script, then the user should be able to edit the script in the same language.",
+                        "The platform should support text editing features for multiple languages, including special characters and language-specific formatting."
                     ],
                     "Story ID": "S036"
                 },
                 {
-                    "Title": "Receive Instant Notifications",
-                    "Description": "As a job applicant, I want to receive instant notifications about any updates to my application status so that I can respond promptly.",
+                    "Title": "Language-specific Script Templates",
+                    "Description": "As a solopreneur, I want the AI to use language-specific templates for script generation so that the scripts are culturally and linguistically appropriate.",
                     "AcceptanceCriteria": [
-                        "Given that there is an update to my application status, when the update occurs, then I should receive an instant notification.",
-                        "The notification should be delivered via email and in-app notification."
+                        "Given a detected or selected language, when the AI generates a script, then it should use templates that are tailored to the cultural and linguistic norms of that language.",
+                        "The templates should include language-specific hooks, arcs, and calls to action."
                     ],
                     "Story ID": "S037"
+                },
+                {
+                    "Title": "Language-specific Error Handling",
+                    "Description": "As a solopreneur, I want the platform to handle errors in multiple languages so that I can understand and resolve issues without language barriers.",
+                    "AcceptanceCriteria": [
+                        "Given an error occurs, when the platform displays an error message, then the message should be in the detected or selected language.",
+                        "The error message should provide clear instructions for resolving the issue in the user's language."
+                    ],
+                    "Story ID": "S038"
                 }
             ]
         },
         {
             "Epic ID": "E006",
-            "Title": "Progressive Web App Compatibility",
-            "Description": "Ensure the job applicant portal is a Progressive Web App (PWA) compatible with tablets and iPads on both Android and iOS.",
+            "Title": "API Key Management",
+            "Description": "Implement a feature that allows users to input their own OpenAI API key to use the AI functionalities, ensuring the system is tied to the user's own account.",
             "User Stories": [
                 {
-                    "Title": "Responsive Design for Tablets and iPads",
-                    "Description": "As a job applicant, I want the portal to have a responsive design so that I can easily navigate and use the platform on my tablet or iPad.",
+                    "Title": "API Key Input Field",
+                    "Description": "As a solopreneur, I want to have an input field to enter my OpenAI API key so that I can enable the AI functionalities tied to my own account.",
                     "AcceptanceCriteria": [
-                        "The portal should automatically adjust its layout and elements to fit different screen sizes and orientations of tablets and iPads.",
-                        "All functionalities, including CV upload, application tracking, and interview participation, should be fully accessible and usable on tablets and iPads.",
-                        "The user interface should be intuitive and touch-friendly, with appropriately sized buttons and input fields."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Offline Access",
-                    "Description": "As a job applicant, I want to access certain features of the portal offline so that I can continue my application process even without an internet connection.",
-                    "AcceptanceCriteria": [
-                        "The portal should allow users to view previously loaded job postings and application status offline.",
-                        "Users should be able to fill out application forms and upload CVs offline, with the data being synced once an internet connection is re-established.",
-                        "A notification should inform users when they are offline and when their data has been successfully synced."
+                        "Given that I am on the settings page, when I navigate to the API key section, then I should see an input field labeled 'OpenAI API Key'.",
+                        "When I enter my API key into the input field and click 'Save', then the system should store the key locally and confirm that the key has been saved successfully.",
+                        "If the entered API key is invalid or missing, then the system should display an error message indicating that a valid API key is required."
                     ],
                     "Story ID": "S039"
                 },
                 {
-                    "Title": "Push Notifications",
-                    "Description": "As a job applicant, I want to receive push notifications on my tablet or iPad so that I am promptly informed about the status of my application and interview results.",
+                    "Title": "API Key Validation",
+                    "Description": "As a solopreneur, I want the system to validate my OpenAI API key upon entry so that I can be sure the key is correct and functional.",
                     "AcceptanceCriteria": [
-                        "The portal should send push notifications for important updates, such as application approval, interview scheduling, and feedback.",
-                        "Notifications should be clear and provide direct links to the relevant sections of the portal.",
-                        "Users should have the option to enable or disable push notifications through the portal settings."
+                        "Given that I have entered my API key and clicked 'Save', when the system validates the key, then it should make a test call to the OpenAI API to confirm the key's validity.",
+                        "If the API key is valid, then the system should store the key and display a success message.",
+                        "If the API key is invalid, then the system should display an error message and prompt me to enter a valid key."
                     ],
                     "Story ID": "S040"
                 },
                 {
-                    "Title": "Smooth Installation and Updates",
-                    "Description": "As a job applicant, I want the portal to be easy to install and update on my tablet or iPad so that I always have access to the latest features and improvements.",
+                    "Title": "API Key Storage",
+                    "Description": "As a solopreneur, I want my OpenAI API key to be stored securely on my local machine so that it can be used for future AI interactions without re-entering it.",
                     "AcceptanceCriteria": [
-                        "The portal should provide a simple installation process that adds the PWA to the home screen of tablets and iPads.",
-                        "Updates to the PWA should be automatically applied in the background without requiring user intervention.",
-                        "Users should be notified when a new update has been applied and what changes have been made."
+                        "Given that I have entered a valid API key, when I click 'Save', then the system should store the key in a secure, encrypted format on my local machine.",
+                        "When I restart the application, then the system should automatically retrieve and use the stored API key without requiring me to re-enter it."
                     ],
                     "Story ID": "S041"
                 },
                 {
-                    "Title": "Secure Data Storage",
-                    "Description": "As a job applicant, I want my data to be securely stored on my device so that my personal information is protected.",
+                    "Title": "API Key Update",
+                    "Description": "As a solopreneur, I want to be able to update my OpenAI API key at any time so that I can change it if needed.",
                     "AcceptanceCriteria": [
-                        "All data stored locally on the device should be encrypted to prevent unauthorized access.",
-                        "The portal should use secure methods for data transmission between the device and the server.",
-                        "Users should be informed about how their data is being stored and protected."
+                        "Given that I am on the settings page, when I navigate to the API key section, then I should see my current API key (masked for security) and an option to update it.",
+                        "When I enter a new API key and click 'Save', then the system should validate and store the new key, replacing the old one.",
+                        "If the new API key is invalid, then the system should display an error message and retain the old key until a valid new key is provided."
                     ],
                     "Story ID": "S042"
                 },
                 {
-                    "Title": "Seamless User Experience",
-                    "Description": "As a job applicant, I want a seamless user experience on my tablet or iPad so that I can complete my application process without any technical issues.",
+                    "Title": "API Key Error Handling",
+                    "Description": "As a solopreneur, I want the system to handle errors gracefully if there are issues with my OpenAI API key so that I can understand and resolve the problem quickly.",
                     "AcceptanceCriteria": [
-                        "The portal should load quickly and perform smoothly on tablets and iPads.",
-                        "All interactive elements should be responsive and provide immediate feedback to user actions.",
-                        "Any errors or issues encountered should be clearly communicated to the user with guidance on how to resolve them."
+                        "Given that I have entered an API key, when the system encounters an error while validating or using the key, then it should display a clear and informative error message.",
+                        "The error message should include possible reasons for the error (e.g., invalid key, network issues) and steps to resolve it (e.g., re-enter the key, check internet connection)."
                     ],
                     "Story ID": "S043"
-                }
-            ]
-        }
-    ],
-    "HR Managers": [
-        {
-            "Epic ID": "E001",
-            "Title": "Job Posting Creation and Management",
-            "Description": "Enable HR managers to create, edit, and manage job postings. This includes specifying job requirements, descriptions, and other relevant details to attract suitable candidates.",
-            "User Stories": [
-                {
-                    "Title": "Create Job Posting",
-                    "Description": "As an HR Manager, I want to create a new job posting so that I can attract suitable candidates for open positions.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a 'Create Job Posting' form from the HR portal.",
-                        "Form includes fields for job title, job description, job requirements, and other relevant details.",
-                        "HR Manager can save the job posting, which then becomes visible to job applicants."
-                    ],
-                    "Story ID": "S001"
                 },
                 {
-                    "Title": "Edit Job Posting",
-                    "Description": "As an HR Manager, I want to edit an existing job posting so that I can update the job requirements and descriptions as needed.",
+                    "Title": "API Key Usage Notification",
+                    "Description": "As a solopreneur, I want to be notified when my OpenAI API key is being used so that I am aware of the system's activities.",
                     "AcceptanceCriteria": [
-                        "HR Manager can access a list of existing job postings from the HR portal.",
-                        "HR Manager can select a job posting to edit.",
-                        "Form pre-populates with existing job details, allowing for modifications.",
-                        "HR Manager can save changes, which update the job posting visible to job applicants."
+                        "Given that I have entered a valid API key, when the system makes a call to the OpenAI API, then it should display a brief notification indicating that the API key is being used.",
+                        "The notification should include information about the action being performed (e.g., generating a script) and should disappear after a few seconds."
                     ],
-                    "Story ID": "S002"
-                },
-                {
-                    "Title": "Delete Job Posting",
-                    "Description": "As an HR Manager, I want to delete a job posting so that I can remove outdated or filled positions from the job listings.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a list of existing job postings from the HR portal.",
-                        "HR Manager can select a job posting to delete.",
-                        "System prompts for confirmation before deleting the job posting.",
-                        "Deleted job posting is no longer visible to job applicants."
-                    ],
-                    "Story ID": "S003"
-                },
-                {
-                    "Title": "View Job Posting Statistics",
-                    "Description": "As an HR Manager, I want to view statistics for each job posting so that I can monitor the number of applicants and their progress through the screening process.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a 'Job Posting Statistics' section from the HR portal.",
-                        "Statistics include the number of applicants, number of applicants who passed CV screening, and number of applicants who passed the digital interview.",
-                        "Statistics are updated in real-time or at regular intervals."
-                    ],
-                    "Story ID": "S004"
-                },
-                {
-                    "Title": "Customize AI Interview Questions",
-                    "Description": "As an HR Manager, I want to customize the AI interview questions for each job posting so that the interview process is tailored to the specific job requirements.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a 'Customize AI Interview Questions' section from the HR portal.",
-                        "HR Manager can select a job posting and specify the types of questions to be asked by the AI.",
-                        "HR Manager can review and approve the customized questions.",
-                        "Customized questions are used by the AI during the digital interview process."
-                    ],
-                    "Story ID": "S005"
-                },
-                {
-                    "Title": "Receive Notifications for Approved Candidates",
-                    "Description": "As an HR Manager, I want to receive email notifications when a candidate passes the screening and interview process so that I can act promptly to schedule in-person interviews.",
-                    "AcceptanceCriteria": [
-                        "HR Manager receives an email notification when a candidate passes the CV screening.",
-                        "HR Manager receives an email notification when a candidate passes the digital interview.",
-                        "Email notifications include candidate details and a link to schedule an in-person interview."
-                    ],
-                    "Story ID": "S006"
-                },
-                {
-                    "Title": "Schedule In-Person Interviews",
-                    "Description": "As an HR Manager, I want to schedule in-person interviews with approved candidates so that I can proceed with the final stages of the hiring process.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a 'Schedule Interview' section from the HR portal.",
-                        "HR Manager can select an approved candidate and choose a date and time for the interview.",
-                        "System integrates with Google Calendar API to create a calendar event and send an email invite to the candidate and HR Manager.",
-                        "Scheduled interview details are visible in the HR portal."
-                    ],
-                    "Story ID": "S007"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E002",
-            "Title": "AI-Powered CV Screening",
-            "Description": "Implement an AI system to automatically screen CVs based on predefined job requirements. The system should filter out unsuitable candidates and provide reasons for rejection.",
-            "User Stories": [
-                {
-                    "Title": "Create Job Posting",
-                    "Description": "As an HR Manager, I want to create job postings with detailed job descriptions so that I can attract suitable candidates for open positions.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can create a new job posting with fields for job title, description, requirements, and other relevant details.",
-                        "The job posting is saved and displayed in the HR Manager portal.",
-                        "HR Manager receives a confirmation notification upon successful creation of a job posting."
-                    ],
-                    "Story ID": "S008"
-                },
-                {
-                    "Title": "Customize AI Interview Questions",
-                    "Description": "As an HR Manager, I want to customize the AI interview questions based on the job description so that the interview process is relevant and effective.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can select and customize interview questions for each job posting.",
-                        "Customized questions are saved and used by the AI system during digital interviews.",
-                        "HR Manager receives a confirmation notification upon successful customization of interview questions."
-                    ],
-                    "Story ID": "S009"
-                },
-                {
-                    "Title": "Review CV Screening Results",
-                    "Description": "As an HR Manager, I want to review the results of the AI-powered CV screening so that I can understand which candidates meet the job requirements.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can view a list of candidates who have passed or failed the CV screening.",
-                        "Each candidate's CV is displayed with reasons for rejection if applicable.",
-                        "HR Manager can filter and sort the list of candidates based on screening results."
-                    ],
-                    "Story ID": "S010"
-                },
-                {
-                    "Title": "Receive Notifications for Qualified Candidates",
-                    "Description": "As an HR Manager, I want to receive email notifications when a candidate passes the CV screening and digital interview so that I can take prompt action.",
-                    "AcceptanceCriteria": [
-                        "HR Manager receives an email notification when a candidate passes the CV screening.",
-                        "HR Manager receives an email notification when a candidate passes the digital interview.",
-                        "Notifications include candidate details and a link to their application."
-                    ],
-                    "Story ID": "S011"
-                },
-                {
-                    "Title": "View Application Statistics",
-                    "Description": "As an HR Manager, I want to view statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview so that I can monitor the effectiveness of the recruitment process.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can view a dashboard with statistics on the number of job applicants.",
-                        "Dashboard displays the number of candidates who passed the CV screening and digital interview.",
-                        "Statistics are updated in real-time as candidates progress through the screening and interview stages."
-                    ],
-                    "Story ID": "S012"
-                },
-                {
-                    "Title": "Schedule In-Person Interviews",
-                    "Description": "As an HR Manager, I want to schedule in-person interviews with candidates who have passed the digital interview so that I can proceed with the next stage of the hiring process.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can select a candidate and schedule an in-person interview using the Google Calendar API.",
-                        "HR Manager can choose a date and time for the interview and send an invitation to the candidate.",
-                        "HR Manager receives a confirmation notification upon successful scheduling of the interview."
-                    ],
-                    "Story ID": "S013"
-                },
-                {
-                    "Title": "Provide Feedback to Applicants",
-                    "Description": "As an HR Manager, I want the system to provide feedback to applicants about the status of their application and reasons for rejection so that the process is transparent and informative.",
-                    "AcceptanceCriteria": [
-                        "Applicants receive notifications about the status of their application (e.g., approved, rejected).",
-                        "Notifications include detailed reasons for rejection at both the CV screening and interview stages.",
-                        "HR Manager can view the feedback provided to applicants in the HR Manager portal."
-                    ],
-                    "Story ID": "S014"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E003",
-            "Title": "Customizable AI Interview Setup",
-            "Description": "Allow HR managers to customize the AI interview process by specifying the types of questions to be asked. This includes a mix of pre-recorded and real-time questions tailored to the job description.",
-            "User Stories": [
-                {
-                    "Title": "Create Job Posting",
-                    "Description": "As an HR Manager, I want to create a job posting with detailed job descriptions so that I can attract suitable candidates.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access the job posting creation form.",
-                        "HR Manager can input job title, description, and requirements.",
-                        "HR Manager can save and publish the job posting."
-                    ],
-                    "Story ID": "S015"
-                },
-                {
-                    "Title": "Customize AI Interview Questions",
-                    "Description": "As an HR Manager, I want to customize the AI interview questions based on the job description so that the interview process is relevant to the job role.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access the AI interview customization interface.",
-                        "HR Manager can input and edit pre-recorded questions.",
-                        "HR Manager can specify real-time questions based on candidate responses.",
-                        "HR Manager can save and apply the customized questions to the interview process."
-                    ],
-                    "Story ID": "S016"
-                },
-                {
-                    "Title": "Review and Approve AI-Generated Interview Questions",
-                    "Description": "As an HR Manager, I want to review and approve AI-generated interview questions so that I ensure the questions are appropriate and relevant.",
-                    "AcceptanceCriteria": [
-                        "HR Manager receives a list of AI-generated interview questions.",
-                        "HR Manager can approve or edit each question.",
-                        "HR Manager can save the final list of approved questions."
-                    ],
-                    "Story ID": "S017"
-                },
-                {
-                    "Title": "View Interview Statistics",
-                    "Description": "As an HR Manager, I want to view statistics on the number of applicants who have begun the interview process so that I can monitor the progress and effectiveness of the interview process.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access the interview statistics dashboard.",
-                        "Dashboard displays the number of applicants who have started the interview process.",
-                        "Dashboard displays the number of applicants who have passed the interview process."
-                    ],
-                    "Story ID": "S018"
-                },
-                {
-                    "Title": "Receive Notifications for Approved Candidates",
-                    "Description": "As an HR Manager, I want to receive email notifications when a candidate is approved by the AI system so that I can act promptly to schedule in-person interviews.",
-                    "AcceptanceCriteria": [
-                        "HR Manager receives an email notification when a candidate passes the AI interview.",
-                        "Email contains candidate details and a link to schedule an in-person interview."
-                    ],
-                    "Story ID": "S019"
-                },
-                {
-                    "Title": "Schedule In-Person Interviews",
-                    "Description": "As an HR Manager, I want to schedule in-person interviews with approved candidates using the Google Calendar API so that I can efficiently manage interview appointments.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access the interview scheduling interface.",
-                        "HR Manager can select a date and time for the interview.",
-                        "HR Manager can send calendar invites to the candidate and interviewers.",
-                        "Interview details are automatically added to the Google Calendar."
-                    ],
-                    "Story ID": "S020"
-                },
-                {
-                    "Title": "Provide Feedback to Candidates",
-                    "Description": "As an HR Manager, I want the system to provide feedback to candidates on their interview performance so that candidates understand the reasons for their approval or rejection.",
-                    "AcceptanceCriteria": [
-                        "System generates feedback based on AI interview analysis.",
-                        "Feedback is sent to candidates via email.",
-                        "Feedback is stored in the system for HR review."
-                    ],
-                    "Story ID": "S021"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E004",
-            "Title": "Candidate Application Tracking",
-            "Description": "Provide a dashboard for HR managers to track the status of job applications. This includes viewing statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview.",
-            "User Stories": [
-                {
-                    "Title": "View Total Number of Applicants",
-                    "Description": "As an HR Manager, I want to view the total number of applicants for each job posting so that I can understand the volume of interest in the position.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see the total number of applicants for each job posting.",
-                        "The total number of applicants should be displayed in a clear and readable format."
-                    ],
-                    "Story ID": "S022"
-                },
-                {
-                    "Title": "View Number of Applicants Who Passed CV Screening",
-                    "Description": "As an HR Manager, I want to view the number of applicants who passed the CV screening so that I can assess the effectiveness of the initial filtering process.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see the number of applicants who passed the CV screening for each job posting.",
-                        "The number of applicants who passed the CV screening should be displayed in a clear and readable format."
-                    ],
-                    "Story ID": "S023"
-                },
-                {
-                    "Title": "View Number of Applicants Who Passed Digital Interview",
-                    "Description": "As an HR Manager, I want to view the number of applicants who passed the digital interview so that I can identify candidates who are ready for in-person interviews.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see the number of applicants who passed the digital interview for each job posting.",
-                        "The number of applicants who passed the digital interview should be displayed in a clear and readable format."
-                    ],
-                    "Story ID": "S024"
-                },
-                {
-                    "Title": "Filter Applicants by Job Posting",
-                    "Description": "As an HR Manager, I want to filter the applicant statistics by specific job postings so that I can focus on the data relevant to each position.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should be able to filter the statistics by selecting a specific job posting.",
-                        "The dashboard should update to show the filtered statistics for the selected job posting."
-                    ],
-                    "Story ID": "S025"
-                },
-                {
-                    "Title": "Receive Notifications for Qualified Candidates",
-                    "Description": "As an HR Manager, I want to receive notifications when candidates pass the CV screening and digital interview so that I can promptly review and take action on qualified candidates.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when a candidate passes the CV screening, then I should receive an email notification.",
-                        "Given I am logged into the HR Manager portal, when a candidate passes the digital interview, then I should receive an email notification.",
-                        "The notifications should include the candidate's name, the job posting they applied for, and a link to their application details."
-                    ],
-                    "Story ID": "S026"
-                },
-                {
-                    "Title": "View Detailed Applicant Statistics",
-                    "Description": "As an HR Manager, I want to view detailed statistics about the applicants, including the reasons for rejection, so that I can understand the screening and interview outcomes.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see detailed statistics including the reasons for rejection at both the CV screening and digital interview stages.",
-                        "The detailed statistics should be displayed in a clear and readable format, with options to view more in-depth information if needed."
-                    ],
-                    "Story ID": "S027"
-                },
-                {
-                    "Title": "Export Applicant Data",
-                    "Description": "As an HR Manager, I want to export the applicant data to a CSV file so that I can analyze it further or share it with other stakeholders.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the dashboard, then I should see an option to export the applicant data to a CSV file.",
-                        "The exported CSV file should include all relevant applicant statistics and details."
-                    ],
-                    "Story ID": "S028"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E005",
-            "Title": "Interview Scheduling Integration",
-            "Description": "Integrate with the Google Calendar API to allow HR managers to schedule in-person interviews with approved candidates. This includes sending email notifications and creating calendar events.",
-            "User Stories": [
-                {
-                    "Title": "Create Calendar Event for Approved Candidate",
-                    "Description": "As an HR Manager, I want to create a calendar event for an approved candidate so that I can schedule an in-person interview.",
-                    "AcceptanceCriteria": [
-                        "Given an approved candidate, when I click on the 'Schedule Interview' button, then a calendar event creation form should appear.",
-                        "The form should allow me to select a date, time, and location for the interview.",
-                        "The form should allow me to add additional participants (e.g., interviewers).",
-                        "When I submit the form, a calendar event should be created in Google Calendar."
-                    ],
-                    "Story ID": "S029"
-                },
-                {
-                    "Title": "Send Email Notification for Scheduled Interview",
-                    "Description": "As an HR Manager, I want to send an email notification to the candidate and interviewers when an interview is scheduled so that everyone is informed about the interview details.",
-                    "AcceptanceCriteria": [
-                        "Given a scheduled interview, when the calendar event is created, then an email notification should be sent to the candidate and all participants.",
-                        "The email should include the interview date, time, location, and any additional instructions.",
-                        "The email should be sent using the Gmail Google API."
-                    ],
-                    "Story ID": "S030"
-                },
-                {
-                    "Title": "View Scheduled Interviews",
-                    "Description": "As an HR Manager, I want to view a list of all scheduled interviews so that I can manage my interview schedule effectively.",
-                    "AcceptanceCriteria": [
-                        "Given the HR Manager portal, when I navigate to the 'Scheduled Interviews' section, then I should see a list of all upcoming interviews.",
-                        "Each interview entry should display the candidate's name, interview date, time, location, and participants.",
-                        "I should be able to click on an entry to view more details or edit the interview."
-                    ],
-                    "Story ID": "S031"
-                },
-                {
-                    "Title": "Edit Scheduled Interview",
-                    "Description": "As an HR Manager, I want to edit the details of a scheduled interview so that I can make necessary changes if needed.",
-                    "AcceptanceCriteria": [
-                        "Given a scheduled interview, when I click on the 'Edit' button, then I should be able to modify the date, time, location, and participants.",
-                        "When I save the changes, the calendar event in Google Calendar should be updated accordingly.",
-                        "An email notification should be sent to the candidate and participants informing them of the changes."
-                    ],
-                    "Story ID": "S032"
-                },
-                {
-                    "Title": "Cancel Scheduled Interview",
-                    "Description": "As an HR Manager, I want to cancel a scheduled interview so that I can inform the candidate and participants if the interview is no longer needed.",
-                    "AcceptanceCriteria": [
-                        "Given a scheduled interview, when I click on the 'Cancel' button, then I should be prompted to confirm the cancellation.",
-                        "Upon confirmation, the calendar event should be removed from Google Calendar.",
-                        "An email notification should be sent to the candidate and participants informing them of the cancellation."
-                    ],
-                    "Story ID": "S033"
-                },
-                {
-                    "Title": "Receive Notifications for Interview Scheduling Actions",
-                    "Description": "As an HR Manager, I want to receive notifications for actions related to interview scheduling so that I am aware of any changes or updates.",
-                    "AcceptanceCriteria": [
-                        "Given any action related to interview scheduling (creation, update, cancellation), when the action is performed, then I should receive an in-app notification.",
-                        "The notification should include details of the action performed (e.g., interview scheduled, interview updated, interview canceled)."
-                    ],
-                    "Story ID": "S034"
-                }
-            ]
-        },
-        {
-            "Epic ID": "E006",
-            "Title": "Automated Notifications",
-            "Description": "Set up automated email notifications to inform HR managers when a candidate passes the CV screening and digital interview stages. This ensures timely action on qualified candidates.",
-            "User Stories": [
-                {
-                    "Title": "Receive Notification for CV Screening Pass",
-                    "Description": "As an HR Manager, I want to receive an email notification when a candidate passes the CV screening stage so that I can promptly review and take further action on qualified candidates.",
-                    "AcceptanceCriteria": [
-                        "Given a candidate passes the CV screening stage, when the system processes the result, then an email notification is sent to the HR Manager.",
-                        "The email notification should include the candidate's name, the job position applied for, and a link to the candidate's profile for further review."
-                    ],
-                    "Story ID": "S035"
-                },
-                {
-                    "Title": "Receive Notification for Digital Interview Pass",
-                    "Description": "As an HR Manager, I want to receive an email notification when a candidate passes the digital interview stage so that I can promptly schedule an in-person interview or take further action.",
-                    "AcceptanceCriteria": [
-                        "Given a candidate passes the digital interview stage, when the system processes the result, then an email notification is sent to the HR Manager.",
-                        "The email notification should include the candidate's name, the job position applied for, a summary of the interview results, and a link to schedule an in-person interview."
-                    ],
-                    "Story ID": "S036"
-                },
-                {
-                    "Title": "View Notification History",
-                    "Description": "As an HR Manager, I want to view a history of all notifications sent regarding candidate progress so that I can keep track of all actions taken and pending tasks.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the notifications section, then I can see a list of all notifications sent regarding candidate progress.",
-                        "The notification history should include the candidate's name, the job position applied for, the stage passed (CV screening or digital interview), and the date/time the notification was sent."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Customize Notification Settings",
-                    "Description": "As an HR Manager, I want to customize my notification settings so that I can choose how and when I receive notifications about candidate progress.",
-                    "AcceptanceCriteria": [
-                        "Given I am logged into the HR Manager portal, when I navigate to the notification settings section, then I can customize my notification preferences.",
-                        "The settings should allow me to choose between email notifications, in-app notifications, or both.",
-                        "The settings should allow me to specify the frequency of notifications (e.g., instant, daily summary)."
-                    ],
-                    "Story ID": "S038"
-                },
-                {
-                    "Title": "Notification for Rejected Candidates",
-                    "Description": "As an HR Manager, I want to receive notifications when a candidate is rejected at any stage so that I can review the reasons and ensure the process is fair and transparent.",
-                    "AcceptanceCriteria": [
-                        "Given a candidate is rejected at the CV screening or digital interview stage, when the system processes the result, then an email notification is sent to the HR Manager.",
-                        "The email notification should include the candidate's name, the job position applied for, the stage at which they were rejected, and the reasons for rejection."
-                    ],
-                    "Story ID": "S039"
-                },
-                {
-                    "Title": "In-App Notifications for Candidate Progress",
-                    "Description": "As an HR Manager, I want to receive in-app notifications for candidate progress so that I can stay updated while using the platform.",
-                    "AcceptanceCriteria": [
-                        "Given a candidate passes the CV screening or digital interview stage, when the system processes the result, then an in-app notification is displayed to the HR Manager.",
-                        "The in-app notification should include the candidate's name, the job position applied for, and the stage passed."
-                    ],
-                    "Story ID": "S040"
+                    "Story ID": "S044"
                 }
             ]
         },
         {
             "Epic ID": "E007",
-            "Title": "Review and Approve AI-Generated Job Descriptions",
-            "Description": "Enable HR managers to review and approve job descriptions generated by the AI system. This ensures that the job postings are accurate and aligned with the company's requirements.",
+            "Title": "Local Data Storage",
+            "Description": "Store all user data, including inputs and generated scripts, locally in JSON files within a specified storage directory. Ensure efficient management of local storage for quick access and retrieval of data.",
             "User Stories": [
                 {
-                    "Title": "Review AI-Generated Job Descriptions",
-                    "Description": "As an HR Manager, I want to review AI-generated job descriptions so that I can ensure they are accurate and aligned with the company's requirements.",
+                    "Title": "Create Storage Directory",
+                    "Description": "As a solopreneur, I want to specify a storage directory for all my data so that I can easily manage and locate my files.",
                     "AcceptanceCriteria": [
-                        "Given an AI-generated job description, when I access the HR Manager portal, then I should be able to view the full job description.",
-                        "Given an AI-generated job description, when I review it, then I should see all relevant details including job title, responsibilities, qualifications, and any other necessary information."
-                    ],
-                    "Story ID": "S041"
-                },
-                {
-                    "Title": "Edit AI-Generated Job Descriptions",
-                    "Description": "As an HR Manager, I want to edit AI-generated job descriptions so that I can make necessary adjustments to meet specific job requirements.",
-                    "AcceptanceCriteria": [
-                        "Given an AI-generated job description, when I access the HR Manager portal, then I should have the option to edit any part of the job description.",
-                        "Given an edited job description, when I save the changes, then the updated job description should be stored and displayed correctly."
-                    ],
-                    "Story ID": "S042"
-                },
-                {
-                    "Title": "Approve AI-Generated Job Descriptions",
-                    "Description": "As an HR Manager, I want to approve AI-generated job descriptions so that they can be posted for job applicants to see.",
-                    "AcceptanceCriteria": [
-                        "Given an AI-generated job description, when I review and approve it, then the job description should be marked as approved and ready for posting.",
-                        "Given an approved job description, when I confirm the approval, then the job description should be available for job applicants to view and apply."
-                    ],
-                    "Story ID": "S043"
-                },
-                {
-                    "Title": "Reject AI-Generated Job Descriptions",
-                    "Description": "As an HR Manager, I want to reject AI-generated job descriptions so that only suitable job descriptions are posted.",
-                    "AcceptanceCriteria": [
-                        "Given an AI-generated job description, when I review and reject it, then the job description should be marked as rejected and not posted.",
-                        "Given a rejected job description, when I provide feedback, then the system should store the feedback for future reference and improvements."
-                    ],
-                    "Story ID": "S044"
-                },
-                {
-                    "Title": "Track Job Description Approval Status",
-                    "Description": "As an HR Manager, I want to track the approval status of AI-generated job descriptions so that I can monitor which descriptions are pending, approved, or rejected.",
-                    "AcceptanceCriteria": [
-                        "Given the HR Manager portal, when I access the job description section, then I should see a list of all AI-generated job descriptions with their current approval status (pending, approved, rejected).",
-                        "Given a job description, when I view its status, then I should see the history of actions taken (e.g., reviewed, edited, approved, rejected) along with timestamps."
+                        "Given the application is installed, when I launch it for the first time, then I should be prompted to specify a storage directory.",
+                        "When I specify the storage directory, then all subsequent data should be stored in that directory."
                     ],
                     "Story ID": "S045"
                 },
                 {
-                    "Title": "Receive Notifications for Job Description Approvals",
-                    "Description": "As an HR Manager, I want to receive notifications when a new AI-generated job description is ready for review so that I can promptly approve or reject it.",
+                    "Title": "Save User Inputs Locally",
+                    "Description": "As a solopreneur, I want my inputs during the conversational process to be saved locally in JSON files so that I can have a record of my responses.",
                     "AcceptanceCriteria": [
-                        "Given a new AI-generated job description, when it is ready for review, then I should receive an email notification.",
-                        "Given a new AI-generated job description, when it is ready for review, then I should also receive an in-app notification within the HR Manager portal."
+                        "Given I am interacting with the AI system, when I provide responses, then those responses should be saved in a JSON file in the specified storage directory.",
+                        "The JSON file should be named uniquely to avoid overwriting existing data."
                     ],
                     "Story ID": "S046"
                 },
                 {
-                    "Title": "Provide Feedback on AI-Generated Job Descriptions",
-                    "Description": "As an HR Manager, I want to provide feedback on AI-generated job descriptions so that the AI system can improve future job descriptions.",
+                    "Title": "Save Generated Scripts Locally",
+                    "Description": "As a solopreneur, I want the AI-generated scripts to be saved locally in JSON files so that I can review and edit them later.",
                     "AcceptanceCriteria": [
-                        "Given an AI-generated job description, when I review it, then I should have the option to provide feedback on its accuracy and relevance.",
-                        "Given provided feedback, when I submit it, then the feedback should be stored and used to improve future AI-generated job descriptions."
+                        "Given the AI has generated a script, when the script is finalized, then it should be saved in a JSON file in the specified storage directory.",
+                        "The JSON file should include metadata such as the date of creation and campaign name."
                     ],
                     "Story ID": "S047"
+                },
+                {
+                    "Title": "Efficient Data Retrieval",
+                    "Description": "As a solopreneur, I want to quickly access and retrieve my stored data so that I can efficiently manage my content creation process.",
+                    "AcceptanceCriteria": [
+                        "Given I have multiple JSON files in the storage directory, when I open the application, then I should see a list of available campaigns and scripts.",
+                        "When I select a campaign or script, then the corresponding JSON file should be quickly loaded and displayed."
+                    ],
+                    "Story ID": "S048"
+                },
+                {
+                    "Title": "Organize Data by Campaign",
+                    "Description": "As a solopreneur, I want my data to be organized by campaign so that I can easily navigate through different projects.",
+                    "AcceptanceCriteria": [
+                        "Given I am creating a new campaign, when I save data, then it should be stored in a subdirectory named after the campaign within the specified storage directory.",
+                        "Each campaign subdirectory should contain all related JSON files for that campaign."
+                    ],
+                    "Story ID": "S049"
+                },
+                {
+                    "Title": "Backup Data Manually",
+                    "Description": "As a solopreneur, I want to be able to manually backup my data so that I can ensure its safety and recover it if needed.",
+                    "AcceptanceCriteria": [
+                        "Given I have data stored locally, when I want to backup my data, then I should be able to copy the storage directory to an external storage solution like Google Drive or a USB drive.",
+                        "The application should provide a reminder to backup data periodically."
+                    ],
+                    "Story ID": "S050"
+                },
+                {
+                    "Title": "View Storage Usage",
+                    "Description": "As a solopreneur, I want to view the storage usage of my data so that I can manage my local storage effectively.",
+                    "AcceptanceCriteria": [
+                        "Given I have data stored locally, when I open the application, then I should see an overview of the storage usage including the size of each campaign and total storage used.",
+                        "The storage overview should be updated in real-time as new data is added."
+                    ],
+                    "Story ID": "S051"
                 }
             ]
         },
         {
             "Epic ID": "E008",
-            "Title": "Detailed Feedback Mechanism",
-            "Description": "Implement a system to provide detailed feedback on why candidates were rejected at both the CV screening and interview stages. This feedback should be accessible to both HR managers and candidates.",
+            "Title": "Script Review and Editing",
+            "Description": "Provide a user-friendly interface for solopreneurs to review and edit AI-generated scripts before finalizing them for use.",
             "User Stories": [
                 {
-                    "Title": "View Rejection Feedback for CV Screening",
-                    "Description": "As an HR Manager, I want to view detailed feedback on why a candidate's CV was rejected so that I can understand the reasons behind the AI's decision.",
+                    "Title": "View AI-Generated Scripts",
+                    "Description": "As a solopreneur, I want to view the AI-generated scripts so that I can review them before making any edits.",
                     "AcceptanceCriteria": [
-                        "Given a candidate's CV is rejected, when I access the candidate's profile, then I should see a detailed explanation of why the CV was rejected.",
-                        "The feedback should include specific criteria that the CV did not meet."
-                    ],
-                    "Story ID": "S048"
-                },
-                {
-                    "Title": "View Rejection Feedback for Digital Interviews",
-                    "Description": "As an HR Manager, I want to view detailed feedback on why a candidate was rejected after the digital interview so that I can understand the reasons behind the AI's decision.",
-                    "AcceptanceCriteria": [
-                        "Given a candidate is rejected after the digital interview, when I access the candidate's interview results, then I should see a detailed explanation of why the candidate was rejected.",
-                        "The feedback should include specific points from the interview that led to the rejection."
-                    ],
-                    "Story ID": "S049"
-                },
-                {
-                    "Title": "Receive Notifications for Rejected Candidates",
-                    "Description": "As an HR Manager, I want to receive notifications when a candidate is rejected at any stage so that I can stay informed about the status of applicants.",
-                    "AcceptanceCriteria": [
-                        "Given a candidate is rejected at the CV screening stage, when the rejection occurs, then I should receive an email notification with the rejection reason.",
-                        "Given a candidate is rejected after the digital interview, when the rejection occurs, then I should receive an email notification with the rejection reason."
-                    ],
-                    "Story ID": "S050"
-                },
-                {
-                    "Title": "Access Rejection Feedback History",
-                    "Description": "As an HR Manager, I want to access the history of rejection feedback for all candidates so that I can analyze patterns and improve the screening process.",
-                    "AcceptanceCriteria": [
-                        "Given I am on the HR Manager portal, when I navigate to the rejection feedback history section, then I should see a list of all candidates who were rejected along with their feedback.",
-                        "The history should be searchable and filterable by date, job posting, and rejection reason."
-                    ],
-                    "Story ID": "S051"
-                },
-                {
-                    "Title": "Customize Rejection Feedback Criteria",
-                    "Description": "As an HR Manager, I want to customize the criteria used for providing rejection feedback so that the feedback is relevant to the specific job requirements.",
-                    "AcceptanceCriteria": [
-                        "Given I am creating or editing a job posting, when I specify the job requirements, then I should be able to customize the criteria for CV screening and interview feedback.",
-                        "The customized criteria should be used by the AI to generate rejection feedback."
+                        "Given that I have logged into the platform, when I navigate to the campaign dashboard, I should see a list of AI-generated scripts.",
+                        "Each script should be displayed with a title and a brief summary.",
+                        "I should be able to click on a script to view its full content."
                     ],
                     "Story ID": "S052"
                 },
                 {
-                    "Title": "Review and Approve Rejection Feedback",
-                    "Description": "As an HR Manager, I want to review and approve the rejection feedback generated by the AI before it is sent to candidates so that I can ensure its accuracy and appropriateness.",
+                    "Title": "Edit AI-Generated Scripts",
+                    "Description": "As a solopreneur, I want to edit the AI-generated scripts so that I can make necessary changes before finalizing them.",
                     "AcceptanceCriteria": [
-                        "Given a candidate is rejected, when the AI generates feedback, then I should receive a notification to review the feedback.",
-                        "When I review the feedback, then I should have the option to approve, edit, or reject the feedback before it is sent to the candidate."
+                        "Given that I am viewing an AI-generated script, when I click the 'Edit' button, I should be able to modify the script content.",
+                        "I should be able to edit the text directly within the platform.",
+                        "There should be an 'Undo' button to revert changes made during the current editing session.",
+                        "I should be able to save my changes by clicking a 'Save' button."
                     ],
                     "Story ID": "S053"
                 },
                 {
-                    "Title": "Generate Rejection Feedback Reports",
-                    "Description": "As an HR Manager, I want to generate reports on rejection feedback so that I can analyze the effectiveness of the screening and interview process.",
+                    "Title": "Highlight Changes",
+                    "Description": "As a solopreneur, I want to see the changes I have made to the AI-generated scripts so that I can easily identify my edits.",
                     "AcceptanceCriteria": [
-                        "Given I am on the HR Manager portal, when I navigate to the reports section, then I should be able to generate a report on rejection feedback.",
-                        "The report should include metrics such as the number of rejections, common rejection reasons, and trends over time."
+                        "Given that I am editing a script, when I make changes, the modified text should be highlighted.",
+                        "There should be a legend or key explaining the highlight colors (e.g., additions in green, deletions in red)."
                     ],
                     "Story ID": "S054"
+                },
+                {
+                    "Title": "Add Comments to Scripts",
+                    "Description": "As a solopreneur, I want to add comments to specific parts of the scripts so that I can note down my thoughts or feedback.",
+                    "AcceptanceCriteria": [
+                        "Given that I am viewing or editing a script, when I select a portion of the text, I should see an option to add a comment.",
+                        "I should be able to type my comment in a text box and save it.",
+                        "The commented text should be highlighted, and the comment should be viewable on hover or click."
+                    ],
+                    "Story ID": "S055"
+                },
+                {
+                    "Title": "Track Script Versions",
+                    "Description": "As a solopreneur, I want to track different versions of the scripts so that I can revert to previous versions if needed.",
+                    "AcceptanceCriteria": [
+                        "Given that I am viewing a script, I should see a 'Version History' button.",
+                        "When I click the 'Version History' button, I should see a list of previous versions with timestamps.",
+                        "I should be able to select a previous version to view its content.",
+                        "I should have the option to revert to a selected previous version."
+                    ],
+                    "Story ID": "S056"
+                },
+                {
+                    "Title": "Export Finalized Scripts",
+                    "Description": "As a solopreneur, I want to export the finalized scripts so that I can share them or use them for filming.",
+                    "AcceptanceCriteria": [
+                        "Given that I have finalized a script, I should see an 'Export' button.",
+                        "When I click the 'Export' button, I should be able to choose a file format (e.g., Word, PDF).",
+                        "The exported file should be properly formatted and include all my edits and comments."
+                    ],
+                    "Story ID": "S057"
+                },
+                {
+                    "Title": "Search Within Scripts",
+                    "Description": "As a solopreneur, I want to search for specific keywords or phrases within the scripts so that I can quickly find relevant content.",
+                    "AcceptanceCriteria": [
+                        "Given that I am viewing or editing scripts, I should see a 'Search' bar.",
+                        "When I type a keyword or phrase into the 'Search' bar and press 'Enter', the platform should highlight all instances of the keyword or phrase within the scripts.",
+                        "I should be able to navigate through the search results using 'Next' and 'Previous' buttons."
+                    ],
+                    "Story ID": "S058"
+                },
+                {
+                    "Title": "Provide Feedback on AI Suggestions",
+                    "Description": "As a solopreneur, I want to provide feedback on the AI-generated scripts so that the system can improve over time.",
+                    "AcceptanceCriteria": [
+                        "Given that I am viewing an AI-generated script, I should see a 'Feedback' button.",
+                        "When I click the 'Feedback' button, I should be able to rate the script and provide comments.",
+                        "The feedback should be saved and associated with the specific script."
+                    ],
+                    "Story ID": "S059"
                 }
             ]
         },
         {
             "Epic ID": "E009",
-            "Title": "In-App Notifications",
-            "Description": "Develop an in-app notification system to keep HR managers informed about important updates and candidate statuses within the platform.",
+            "Title": "User Interface Design",
+            "Description": "Design a simple, full-screen interface with a dashboard that includes buttons for creating new campaigns and viewing existing ones. The conversational system should resemble a chat window for intuitive user interaction.",
             "User Stories": [
                 {
-                    "Title": "Receive Notification for Candidate Passing CV Screening",
-                    "Description": "As an HR Manager, I want to receive a notification when a candidate passes the CV screening so that I can promptly review and take further action.",
+                    "Title": "Create New Campaign Button",
+                    "Description": "As a solopreneur, I want a button to create a new campaign on the dashboard so that I can easily start planning my social media content.",
                     "AcceptanceCriteria": [
-                        "HR Manager receives a notification immediately after a candidate passes the CV screening.",
-                        "Notification includes candidate's name, position applied for, and a link to the candidate's profile.",
-                        "Notification is visible in the HR Manager's in-app notification center."
-                    ],
-                    "Story ID": "S055"
-                },
-                {
-                    "Title": "Receive Notification for Candidate Passing Digital Interview",
-                    "Description": "As an HR Manager, I want to receive a notification when a candidate passes the digital interview so that I can schedule an in-person interview.",
-                    "AcceptanceCriteria": [
-                        "HR Manager receives a notification immediately after a candidate passes the digital interview.",
-                        "Notification includes candidate's name, position applied for, and a link to the candidate's interview results.",
-                        "Notification is visible in the HR Manager's in-app notification center."
-                    ],
-                    "Story ID": "S056"
-                },
-                {
-                    "Title": "View All Notifications in Notification Center",
-                    "Description": "As an HR Manager, I want to view all my notifications in a centralized notification center so that I can easily manage and track candidate statuses.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a notification center from the main dashboard.",
-                        "Notification center displays a list of all notifications with timestamps.",
-                        "Notifications are categorized by type (e.g., CV screening, digital interview)."
-                    ],
-                    "Story ID": "S057"
-                },
-                {
-                    "Title": "Mark Notifications as Read or Unread",
-                    "Description": "As an HR Manager, I want to mark notifications as read or unread so that I can keep track of which updates I have already reviewed.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can mark individual notifications as read or unread.",
-                        "Read notifications are visually distinguished from unread notifications.",
-                        "HR Manager can filter notifications to show only unread ones."
-                    ],
-                    "Story ID": "S058"
-                },
-                {
-                    "Title": "Receive Summary Notification for Daily Updates",
-                    "Description": "As an HR Manager, I want to receive a daily summary notification of all important updates so that I can stay informed without constantly checking the platform.",
-                    "AcceptanceCriteria": [
-                        "HR Manager receives a daily summary notification at a configurable time.",
-                        "Summary includes the number of candidates who passed CV screening and digital interviews.",
-                        "Summary includes links to detailed views for each candidate."
-                    ],
-                    "Story ID": "S059"
-                },
-                {
-                    "Title": "Configure Notification Preferences",
-                    "Description": "As an HR Manager, I want to configure my notification preferences so that I only receive updates that are relevant to me.",
-                    "AcceptanceCriteria": [
-                        "HR Manager can access a settings page to configure notification preferences.",
-                        "HR Manager can choose to enable or disable notifications for different types of updates (e.g., CV screening, digital interview).",
-                        "HR Manager can set preferences for receiving notifications via email or in-app."
+                        "Given the dashboard is displayed, when the user clicks the 'Create New Campaign' button, then a new campaign creation process should start.",
+                        "The button should be prominently displayed and easily accessible on the dashboard.",
+                        "The button should be labeled 'Create New Campaign'."
                     ],
                     "Story ID": "S060"
                 },
                 {
-                    "Title": "Receive Email Notifications for Important Updates",
-                    "Description": "As an HR Manager, I want to receive email notifications for important updates so that I can stay informed even when I am not logged into the platform.",
+                    "Title": "View Existing Campaigns Button",
+                    "Description": "As a solopreneur, I want a button to view existing campaigns on the dashboard so that I can easily access and manage my ongoing campaigns.",
                     "AcceptanceCriteria": [
-                        "HR Manager receives email notifications for candidates passing CV screening and digital interviews.",
-                        "Email notifications include candidate's name, position applied for, and a link to the candidate's profile.",
-                        "HR Manager can configure email notification preferences in the settings."
+                        "Given the dashboard is displayed, when the user clicks the 'View Existing Campaigns' button, then a list of existing campaigns should be shown.",
+                        "The button should be prominently displayed and easily accessible on the dashboard.",
+                        "The button should be labeled 'View Existing Campaigns'."
                     ],
                     "Story ID": "S061"
                 },
                 {
-                    "Title": "View Notification Details",
-                    "Description": "As an HR Manager, I want to view detailed information about a notification so that I can understand the context and take appropriate action.",
+                    "Title": "Campaign Cards Display",
+                    "Description": "As a solopreneur, I want to see campaign cards with key details on the dashboard so that I can quickly understand the status and content of each campaign.",
                     "AcceptanceCriteria": [
-                        "HR Manager can click on a notification to view detailed information.",
-                        "Detailed view includes candidate's name, position applied for, and relevant status updates.",
-                        "Detailed view includes links to the candidate's profile and interview results."
+                        "Given the user is viewing existing campaigns, when the campaigns are displayed, then each campaign should be represented by a card.",
+                        "Each card should display the campaign title, creation date, and a brief summary of the scripts generated.",
+                        "The cards should be clickable to access detailed views of the campaigns."
                     ],
                     "Story ID": "S062"
+                },
+                {
+                    "Title": "Conversational System Interface",
+                    "Description": "As a solopreneur, I want the conversational system to resemble a chat window so that I can interact with the AI in an intuitive and familiar way.",
+                    "AcceptanceCriteria": [
+                        "Given the user starts a new campaign, when the conversational system is displayed, then it should resemble a chat window.",
+                        "The AI's text should be displayed in one color and the user's text in another color.",
+                        "The chat window should have a text input field and a submit button for user responses."
+                    ],
+                    "Story ID": "S063"
+                },
+                {
+                    "Title": "Start Recording Button",
+                    "Description": "As a solopreneur, I want a button to start recording my responses so that I can provide verbal input to the AI.",
+                    "AcceptanceCriteria": [
+                        "Given the user is in the conversational system, when the user clicks the 'Start Recording' button, then the system should start recording the user's verbal input.",
+                        "The button should be labeled 'Start Recording'.",
+                        "The recorded input should be transcribed into text and displayed in the chat window."
+                    ],
+                    "Story ID": "S064"
+                },
+                {
+                    "Title": "Submit Response Button",
+                    "Description": "As a solopreneur, I want a button to submit my text responses so that the AI can analyze my input and provide the next question.",
+                    "AcceptanceCriteria": [
+                        "Given the user has entered a response in the text input field, when the user clicks the 'Submit' button, then the system should analyze the input and display the next question from the AI.",
+                        "The button should be labeled 'Submit'.",
+                        "The submitted response should be displayed in the chat window."
+                    ],
+                    "Story ID": "S065"
+                },
+                {
+                    "Title": "Script Review and Edit",
+                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can ensure the content meets my standards before finalizing.",
+                    "AcceptanceCriteria": [
+                        "Given the AI has generated scripts, when the user views the scripts, then there should be an option to edit the scripts.",
+                        "The edited scripts should be saved and updated in the campaign.",
+                        "There should be a clear 'Edit' button next to each script."
+                    ],
+                    "Story ID": "S066"
+                },
+                {
+                    "Title": "Export Scripts",
+                    "Description": "As a solopreneur, I want to export the generated scripts into a structured document format so that I can review and make further edits outside the platform.",
+                    "AcceptanceCriteria": [
+                        "Given the user has reviewed the scripts, when the user clicks the 'Export' button, then the scripts should be exported into a Word or PDF document.",
+                        "The exported document should be properly formatted with the script content and scene descriptions.",
+                        "The button should be labeled 'Export'."
+                    ],
+                    "Story ID": "S067"
                 }
             ]
         },
         {
             "Epic ID": "E010",
-            "Title": "Local Data Storage and Security",
-            "Description": "Ensure that all data, including CVs and interview responses, are stored locally on the client's systems. Implement basic security measures to protect sensitive information.",
+            "Title": "Data Backup Responsibility",
+            "Description": "Inform users about their responsibility for backing up their data manually, as the platform will not include built-in backup or data recovery features.",
             "User Stories": [
                 {
-                    "Title": "Local Data Storage Setup",
-                    "Description": "As an HR Manager, I want the system to store all CVs and interview responses locally on our systems so that we can ensure data security and compliance with our internal policies.",
+                    "Title": "Display Backup Responsibility Notification",
+                    "Description": "As a solopreneur, I want to see a notification informing me about my responsibility for data backup so that I am aware that the platform does not include built-in backup or data recovery features.",
                     "AcceptanceCriteria": [
-                        "All data, including CVs and interview responses, must be stored on local servers.",
-                        "No data should be stored on the cloud.",
-                        "The system should provide confirmation that data is being stored locally."
-                    ],
-                    "Story ID": "S063"
-                },
-                {
-                    "Title": "Data Encryption",
-                    "Description": "As an HR Manager, I want all stored data to be encrypted so that sensitive information is protected from unauthorized access.",
-                    "AcceptanceCriteria": [
-                        "All CVs and interview responses must be encrypted at rest.",
-                        "The system should use industry-standard encryption algorithms.",
-                        "Access to encryption keys should be restricted to authorized personnel only."
-                    ],
-                    "Story ID": "S064"
-                },
-                {
-                    "Title": "Access Control Management",
-                    "Description": "As an HR Manager, I want to manage who has access to the stored data so that only authorized personnel can view or modify sensitive information.",
-                    "AcceptanceCriteria": [
-                        "The system should allow HR Managers to assign and revoke access permissions.",
-                        "Only authorized users should be able to access CVs and interview responses.",
-                        "Audit logs should be maintained to track access to sensitive data."
-                    ],
-                    "Story ID": "S065"
-                },
-                {
-                    "Title": "Data Backup and Recovery",
-                    "Description": "As an HR Manager, I want the system to have a data backup and recovery mechanism so that we can restore data in case of accidental deletion or system failure.",
-                    "AcceptanceCriteria": [
-                        "The system should automatically back up data at regular intervals.",
-                        "Backups should be stored securely and be easily retrievable.",
-                        "The system should provide a recovery process to restore data from backups."
-                    ],
-                    "Story ID": "S066"
-                },
-                {
-                    "Title": "User Authentication",
-                    "Description": "As an HR Manager, I want a secure user authentication system so that only authorized users can access the platform.",
-                    "AcceptanceCriteria": [
-                        "The system should support multi-factor authentication (MFA).",
-                        "Users should be required to log in with a username and password.",
-                        "The system should lock accounts after multiple failed login attempts."
-                    ],
-                    "Story ID": "S067"
-                },
-                {
-                    "Title": "Audit Logging",
-                    "Description": "As an HR Manager, I want the system to maintain audit logs of all data access and modifications so that we can track and review any unauthorized activities.",
-                    "AcceptanceCriteria": [
-                        "The system should log all access to CVs and interview responses.",
-                        "Logs should include details such as user ID, timestamp, and action performed.",
-                        "Audit logs should be tamper-proof and stored securely."
+                        "Given that I am using the platform for the first time, when I launch the application, then I should see a notification informing me about the need to manually back up my data.",
+                        "Given that I am using the platform, when I navigate to the settings or help section, then I should see a persistent message about the responsibility for data backup."
                     ],
                     "Story ID": "S068"
                 },
                 {
-                    "Title": "Data Anonymization for Testing",
-                    "Description": "As an HR Manager, I want the system to anonymize data for testing purposes so that we can test the platform without exposing sensitive information.",
+                    "Title": "Provide Backup Instructions",
+                    "Description": "As a solopreneur, I want detailed instructions on how to manually back up my data so that I can ensure my data is safe.",
                     "AcceptanceCriteria": [
-                        "The system should provide a feature to anonymize CVs and interview responses.",
-                        "Anonymized data should be used in test environments only.",
-                        "The system should ensure that anonymized data cannot be traced back to the original individuals."
+                        "Given that I am in the settings or help section, when I click on the 'Backup Instructions' link, then I should see a detailed guide on how to back up my data using common methods like Google Drive or USB storage.",
+                        "Given that I am viewing the backup instructions, when I follow the steps provided, then I should be able to successfully back up my data."
                     ],
                     "Story ID": "S069"
                 },
                 {
-                    "Title": "Security Training for Users",
-                    "Description": "As an HR Manager, I want to provide security training for all users so that they understand how to handle sensitive information securely.",
+                    "Title": "Reminder for Regular Data Backup",
+                    "Description": "As a solopreneur, I want periodic reminders to back up my data so that I do not forget to perform regular backups.",
                     "AcceptanceCriteria": [
-                        "The system should include a security training module for users.",
-                        "Training should cover best practices for data security and privacy.",
-                        "Users should be required to complete the training before accessing the platform."
+                        "Given that I am using the platform, when a week has passed since my last backup, then I should receive a reminder notification to back up my data.",
+                        "Given that I receive a backup reminder, when I click on the notification, then I should be directed to the backup instructions page."
                     ],
                     "Story ID": "S070"
                 },
                 {
-                    "Title": "Regular Security Audits",
-                    "Description": "As an HR Manager, I want the system to undergo regular security audits so that we can identify and address any vulnerabilities.",
+                    "Title": "Backup Status Indicator",
+                    "Description": "As a solopreneur, I want to see an indicator of my last backup date so that I can easily track when I last backed up my data.",
                     "AcceptanceCriteria": [
-                        "The system should be audited by a third-party security firm at regular intervals.",
-                        "Audit reports should be reviewed and any identified issues should be addressed promptly.",
-                        "The system should provide a mechanism to track and resolve security issues."
+                        "Given that I am on the dashboard, when I look at the backup status section, then I should see the date of my last backup.",
+                        "Given that I have not backed up my data for more than a month, when I view the backup status section, then I should see a warning message indicating that my data is overdue for backup."
                     ],
                     "Story ID": "S071"
+                },
+                {
+                    "Title": "Export Data for Backup",
+                    "Description": "As a solopreneur, I want to be able to export my data in a structured format so that I can easily back it up manually.",
+                    "AcceptanceCriteria": [
+                        "Given that I am in the settings or data management section, when I click on the 'Export Data' button, then I should be able to download my data in a structured format (e.g., JSON or CSV).",
+                        "Given that I have exported my data, when I open the exported file, then I should see all my data organized in a readable and structured manner."
+                    ],
+                    "Story ID": "S072"
                 }
             ]
         }

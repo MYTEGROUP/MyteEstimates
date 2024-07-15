@@ -1,87 +1,55 @@
 {
     "Stakeholder_Epics": {
-        "Job Applicants": [
+        "Solopreneurs": [
             {
                 "Epic ID": "E001",
-                "Title": "Profile Creation and Management",
-                "Description": "Allow job applicants to create and manage their profiles, including uploading their CVs and updating personal information."
+                "Title": "Conversational System for Ideation",
+                "Description": "Develop a chat-like interface where solopreneurs can interact with an AI system. The AI will prompt users with questions to gather their views, opinions, and knowledge about their business or expertise."
             },
             {
                 "Epic ID": "E002",
-                "Title": "Job Application Submission",
-                "Description": "Enable job applicants to browse job postings and submit applications directly through the portal."
+                "Title": "AI Script Generation",
+                "Description": "Implement an AI system that uses gathered information to generate 90-second scripts, including scene descriptions. Ensure the scripts have a proper hook, arc, and finish to maximize engagement on social media platforms."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Application Status Tracking",
-                "Description": "Provide job applicants with the ability to track the status of their applications, including whether their CV has been approved or rejected."
+                "Title": "Campaign Management",
+                "Description": "Create a feature that allows solopreneurs to create and manage campaigns. Each campaign will have a series of generated scripts that users can review and edit before finalizing."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Digital Interview Participation",
-                "Description": "Facilitate digital interviews for applicants who pass the initial CV screening, conducted by an AI system with personalized questions."
+                "Title": "Content Extraction and Formatting",
+                "Description": "Develop functionality to allow users to export generated scripts into structured document formats (e.g., Word or PDF) for review and feedback."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Feedback and Notifications",
-                "Description": "Notify job applicants about the status of their CV screening and interview results, including reasons for rejection to ensure transparency."
+                "Title": "Multi-language Support",
+                "Description": "Ensure the platform supports multiple languages based on user input. The AI should automatically detect the language of the user's input and generate scripts in that language."
             },
             {
                 "Epic ID": "E006",
-                "Title": "Progressive Web App Compatibility",
-                "Description": "Ensure the job applicant portal is a Progressive Web App (PWA) compatible with tablets and iPads on both Android and iOS."
-            }
-        ],
-        "HR Managers": [
-            {
-                "Epic ID": "E001",
-                "Title": "Job Posting Creation and Management",
-                "Description": "Enable HR managers to create, edit, and manage job postings. This includes specifying job requirements, descriptions, and other relevant details to attract suitable candidates."
-            },
-            {
-                "Epic ID": "E002",
-                "Title": "AI-Powered CV Screening",
-                "Description": "Implement an AI system to automatically screen CVs based on predefined job requirements. The system should filter out unsuitable candidates and provide reasons for rejection."
-            },
-            {
-                "Epic ID": "E003",
-                "Title": "Customizable AI Interview Setup",
-                "Description": "Allow HR managers to customize the AI interview process by specifying the types of questions to be asked. This includes a mix of pre-recorded and real-time questions tailored to the job description."
-            },
-            {
-                "Epic ID": "E004",
-                "Title": "Candidate Application Tracking",
-                "Description": "Provide a dashboard for HR managers to track the status of job applications. This includes viewing statistics on the number of applicants, those who passed the CV screening, and those who passed the digital interview."
-            },
-            {
-                "Epic ID": "E005",
-                "Title": "Interview Scheduling Integration",
-                "Description": "Integrate with the Google Calendar API to allow HR managers to schedule in-person interviews with approved candidates. This includes sending email notifications and creating calendar events."
-            },
-            {
-                "Epic ID": "E006",
-                "Title": "Automated Notifications",
-                "Description": "Set up automated email notifications to inform HR managers when a candidate passes the CV screening and digital interview stages. This ensures timely action on qualified candidates."
+                "Title": "API Key Management",
+                "Description": "Implement a feature that allows users to input their own OpenAI API key to use the AI functionalities, ensuring the system is tied to the user's own account."
             },
             {
                 "Epic ID": "E007",
-                "Title": "Review and Approve AI-Generated Job Descriptions",
-                "Description": "Enable HR managers to review and approve job descriptions generated by the AI system. This ensures that the job postings are accurate and aligned with the company's requirements."
+                "Title": "Local Data Storage",
+                "Description": "Store all user data, including inputs and generated scripts, locally in JSON files within a specified storage directory. Ensure efficient management of local storage for quick access and retrieval of data."
             },
             {
                 "Epic ID": "E008",
-                "Title": "Detailed Feedback Mechanism",
-                "Description": "Implement a system to provide detailed feedback on why candidates were rejected at both the CV screening and interview stages. This feedback should be accessible to both HR managers and candidates."
+                "Title": "Script Review and Editing",
+                "Description": "Provide a user-friendly interface for solopreneurs to review and edit AI-generated scripts before finalizing them for use."
             },
             {
                 "Epic ID": "E009",
-                "Title": "In-App Notifications",
-                "Description": "Develop an in-app notification system to keep HR managers informed about important updates and candidate statuses within the platform."
+                "Title": "User Interface Design",
+                "Description": "Design a simple, full-screen interface with a dashboard that includes buttons for creating new campaigns and viewing existing ones. The conversational system should resemble a chat window for intuitive user interaction."
             },
             {
                 "Epic ID": "E010",
-                "Title": "Local Data Storage and Security",
-                "Description": "Ensure that all data, including CVs and interview responses, are stored locally on the client's systems. Implement basic security measures to protect sensitive information."
+                "Title": "Data Backup Responsibility",
+                "Description": "Inform users about their responsibility for backing up their data manually, as the platform will not include built-in backup or data recovery features."
             }
         ]
     }
