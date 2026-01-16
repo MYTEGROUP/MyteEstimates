@@ -3,11 +3,24 @@ from weasyprint import HTML, CSS
 import io
 import json
 import os
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
 
 app = Flask(__name__)
 
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
+
+def get_proposal_dir():
+    base_path = get_base_path()
+    return os.path.join(base_path, 'Proposal')
+
 def load_data():
-    with open('storage/Proposal.json', 'r') as file:
+    storage_dir = get_storage_dir()
+    with open(os.path.join(storage_dir, 'Proposal.json'), 'r') as file:
         return json.load(file)
 
 @app.route('/')
@@ -35,11 +48,14 @@ def print_pdf():
     pdf = html.write_pdf(stylesheets=[css])
 
     # Save PDF to the Proposal directory
-    proposal_directory = 'Proposal'
+    proposal_directory = get_proposal_dir()
     if not os.path.exists(proposal_directory):
         os.makedirs(proposal_directory)
 
-    pdf_filename = f"{proposal_directory}/{data['UserInformation']['CompanyName']} - {data['ProjectTitle']} - Proposal - {data['Date']['CurrentDate']}.pdf"
+    pdf_filename = os.path.join(
+        proposal_directory,
+        f"{data['UserInformation']['CompanyName']} - {data['ProjectTitle']} - Proposal - {data['Date']['CurrentDate']}.pdf"
+    )
     with open(pdf_filename, 'wb') as pdf_file:
         pdf_file.write(pdf)
 

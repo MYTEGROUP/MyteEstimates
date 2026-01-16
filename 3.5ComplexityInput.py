@@ -1,11 +1,19 @@
 from flask import Flask, render_template, request, jsonify
 import json
 import os
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
 
 app = Flask(__name__)
 
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
+
 # Path to the Complexity.json file
-COMPLEXITY_FILE_PATH = os.path.join(app.root_path, 'storage', 'Complexity.json')
+COMPLEXITY_FILE_PATH = os.path.join(get_storage_dir(), 'Complexity.json')
 
 
 @app.route('/')

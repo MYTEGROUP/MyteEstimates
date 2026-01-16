@@ -33,26 +33,28 @@ def display_instructions(root):
     ]
 
     def save_api_key():
-        """Save the API key into a JSON file."""
+        """Save the API key into the .env file."""
         clipboard_content = root.clipboard_get()  # Use the passed-in root Tk instance
 
-        preferences_file_path = os.path.join(get_base_path(), 'storage', 'User_Preferences.json')
-        os.makedirs(os.path.dirname(preferences_file_path), exist_ok=True)  # Ensure 'storageLinkedIN' directory exists
+        env_path = os.path.join(get_base_path(), '.env')
+
+        lines = []
+        if os.path.exists(env_path):
+            with open(env_path, 'r', encoding='utf-8') as f:
+                lines = f.read().splitlines()
+
+        updated = False
+        for i, line in enumerate(lines):
+            if line.strip().startswith('OPENAI_API_KEY='):
+                lines[i] = f'OPENAI_API_KEY={clipboard_content}'
+                updated = True
+                break
+        if not updated:
+            lines.append(f'OPENAI_API_KEY={clipboard_content}')
 
         try:
-            if os.path.exists(preferences_file_path):
-                with open(preferences_file_path, 'r') as f:
-                    preferences = json.load(f)
-            else:
-                preferences = {}
-        except JSONDecodeError:
-            preferences = {}
-
-        preferences['openai_api_key'] = clipboard_content
-
-        try:
-            with open(preferences_file_path, 'w', encoding='utf-8') as f:
-                json.dump(preferences, f, indent=4, ensure_ascii=False)
+            with open(env_path, 'w', encoding='utf-8') as f:
+                f.write("\n".join(lines) + "\n")
             messagebox.showinfo("Success", "API key saved successfully.")
         except Exception as e:
             messagebox.showerror("Error", f"Failed to save API key: {e}")

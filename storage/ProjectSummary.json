@@ -1,31 +1,46 @@
 {
-    "Project Vision": "### Project Vision\n\nImagine a world where creating engaging social media content is no longer a daunting task but an effortless, enjoyable experience. Our **AI-Powered Social Media Planning Platform** is designed to revolutionize the way business owners, social media managers, content creators, and solopreneurs plan and generate content. This innovative tool harnesses the power of artificial intelligence to transform your ideas and expertise into captivating, well-structured social media scripts, ready to boost your online presence and engagement.\n\nWith a sleek, user-friendly interface, our platform operates entirely on your local machine, ensuring your data remains secure and accessible. Simply interact with our conversational AI, which prompts you with insightful questions to extract your unique perspectives. Watch as the AI crafts 90-second scripts, complete with scene descriptions, hooks, arcs, and calls to action, all optimized for maximum impact.\n\nGone are the days of struggling with content planning. Our platform supports multiple languages, allowing you to reach a global audience effortlessly. Export your scripts for review and editing, ensuring they align perfectly with your vision before going live. Embrace the future of social media content creation with our cutting-edge platform, and let your creativity shine like never before.",
+    "Project Vision": "Introducing a groundbreaking software solution designed to revolutionize how ideas are transformed into actionable plans: the Intent-to-Execution Platform. Imagine a world where the CREATOR, our primary user, can effortlessly articulate their vision through speech and watch it seamlessly evolve into structured proposals, all from the comfort of their local Windows system.\n\nThis innovative tool harnesses the power of AI to transcribe spoken intents, ask clarifying questions, and convert these inputs into detailed execution plans. With a user-friendly voice intake UI and integration with the OpenAI API, the platform ensures that even the most complex ideas are captured and organized into requirements, epics, stories, and tasks.\n\nDesigned for environments where internet access may be limited, this self-contained, offline solution prioritizes data privacy and local storage. It empowers users to manage their creative process without the need for constant connectivity, while still benefiting from AI-driven insights.\n\nThe Intent-to-Execution Platform is more than just a tool; it's a catalyst for innovation, enabling individuals and businesses to streamline proposal creation and bring their ideas to life with unprecedented ease. Embrace the future of proposal generation and unlock the potential of your spoken vision today.",
     "Business Vertical": [
-        "Social Media Management"
+        "Project Management"
     ],
     "Stakeholders": [
-        "Solopreneurs"
+        "CREATOR: Inputs spoken intents",
+        "CREATOR: Edits transcriptions",
+        "CREATOR: Manages API key onboarding",
+        "CREATOR: Reviews AI-driven prompts",
+        "CREATOR: Converts intents to proposals",
+        "CREATOR: Exports outputs to formats"
     ],
     "Revenue Models": [
         {
-            "Stakeholder": "Solopreneurs",
-            "Model": "Subscription",
-            "Rationale": "Solopreneurs will benefit from a subscription model as it provides continuous access to the AI-driven social media planning platform. They pay a recurring fee for ongoing access to the tool's features, including AI script generation, campaign management, and multi-language support. The revenue is received by the platform provider, ensuring a steady income stream and allowing for continuous updates and improvements to the software."
+            "Stakeholder": "CREATOR: Inputs spoken intents",
+            "Model": "Direct Payment",
+            "Rationale": "The CREATOR pays a one-time fee for the software, which allows them to input spoken intents and use the voice intake UI. The payment covers the cost of the software development and maintenance, and the revenue is received by the software developer or company."
         },
         {
-            "Stakeholder": "Social Media Managers",
-            "Model": "Subscription",
-            "Rationale": "Social media managers require consistent access to the platform to plan and generate content regularly. A subscription model allows them to budget for the tool as a recurring expense, ensuring they always have access to the latest features and updates. The platform provider receives the revenue, which supports ongoing development and maintenance."
+            "Stakeholder": "CREATOR: Edits transcriptions",
+            "Model": "Included in Direct Payment",
+            "Rationale": "Editing transcriptions is a core functionality of the software and is included in the initial purchase price. This ensures that the CREATOR can fully utilize the software's capabilities without additional costs."
         },
         {
-            "Stakeholder": "Content Creators",
+            "Stakeholder": "CREATOR: Manages API key onboarding",
             "Model": "Subscription",
-            "Rationale": "Content creators will find value in a subscription model as it provides them with continuous access to the AI-driven content generation features. They pay a recurring fee to use the platform for creating and managing their social media scripts. The platform provider benefits from a predictable revenue stream, which funds further enhancements and customer support."
+            "Rationale": "The CREATOR pays a subscription fee for access to the OpenAI API, which is necessary for AI-driven functionalities. The subscription fee is paid to OpenAI, and it covers ongoing access to AI services and updates."
         },
         {
-            "Stakeholder": "Business Owners",
-            "Model": "Subscription",
-            "Rationale": "Business owners need a reliable tool for consistent social media content creation. A subscription model ensures they have uninterrupted access to the platform's capabilities, including AI script generation and campaign management. They pay a recurring fee, and the platform provider receives the revenue, enabling sustained development and service improvements."
+            "Stakeholder": "CREATOR: Reviews AI-driven prompts",
+            "Model": "Included in Subscription",
+            "Rationale": "Reviewing AI-driven prompts is part of the AI functionalities provided through the OpenAI API subscription. This ensures the CREATOR receives continuous AI support as part of their subscription plan."
+        },
+        {
+            "Stakeholder": "CREATOR: Converts intents to proposals",
+            "Model": "Included in Direct Payment",
+            "Rationale": "Converting intents to proposals is a fundamental feature of the software and is included in the initial purchase. This allows the CREATOR to use the full suite of tools without additional charges."
+        },
+        {
+            "Stakeholder": "CREATOR: Exports outputs to formats",
+            "Model": "Included in Direct Payment",
+            "Rationale": "Exporting outputs to formats like PDF or Excel is included in the software's capabilities, covered by the initial purchase price. This ensures the CREATOR can fully utilize the software's output features without incurring extra costs."
         }
     ]
 }

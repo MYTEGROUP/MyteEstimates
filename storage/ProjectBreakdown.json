@@ -1,749 +1,2096 @@
 {
-    "Solopreneurs": [
+    "CREATOR: Inputs spoken intents": [
         {
             "Epic ID": "E001",
-            "Title": "Conversational System for Ideation",
-            "Description": "Develop a chat-like interface where solopreneurs can interact with an AI system. The AI will prompt users with questions to gather their views, opinions, and knowledge about their business or expertise.",
+            "Title": "Voice Intake and Transcription",
+            "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision. The system will transcribe audio input live into an editable text area, enabling the CREATOR to stop, edit, and submit their responses.",
             "User Stories": [
                 {
-                    "Title": "User Login and API Key Input",
-                    "Description": "As a solopreneur, I want to input my OpenAI API key so that I can use the AI functionalities of the platform.",
+                    "Title": "Voice Input for Vision Capture",
+                    "Description": "As a CREATOR, I want to speak my vision into the system so that it can be transcribed into text for further editing and submission.",
                     "AcceptanceCriteria": [
-                        "Given I am on the dashboard, when I click on the 'Settings' button, then I should see an input field for the OpenAI API key.",
-                        "Given I have entered a valid API key, when I click 'Save', then the system should store the API key locally and confirm the key is valid."
+                        "The system must allow the CREATOR to initiate voice input through the desktop UI.",
+                        "The audio input should be transcribed live into a text area.",
+                        "The transcription should be accurate and reflect the spoken words of the CREATOR."
                     ],
                     "Story ID": "S001"
                 },
                 {
-                    "Title": "Create New Campaign",
-                    "Description": "As a solopreneur, I want to create a new campaign so that I can start generating scripts for my social media content.",
+                    "Title": "Editable Transcription Area",
+                    "Description": "As a CREATOR, I want to edit the transcribed text so that I can make corrections or changes before submission.",
                     "AcceptanceCriteria": [
-                        "Given I am on the dashboard, when I click on the 'Create New Campaign' button, then I should be taken to a new screen where I can start a conversational session with the AI."
+                        "The transcribed text should be displayed in an editable text area.",
+                        "The CREATOR must be able to make changes to the text easily.",
+                        "The system should save the changes made by the CREATOR."
                     ],
                     "Story ID": "S002"
                 },
                 {
-                    "Title": "Conversational Interface",
-                    "Description": "As a solopreneur, I want to interact with the AI through a chat-like interface so that I can provide my views, opinions, and knowledge about my business.",
+                    "Title": "Pause and Resume Voice Input",
+                    "Description": "As a CREATOR, I want to pause and resume my voice input so that I can control the transcription process as needed.",
                     "AcceptanceCriteria": [
-                        "Given I am in a new campaign, when I start the session, then I should see a chat window where the AI prompts me with questions.",
-                        "Given the AI asks a question, when I type my response, then the response should appear in the chat window in a different color from the AI's text."
+                        "The system should provide a pause button to temporarily stop the transcription.",
+                        "The CREATOR should be able to resume the voice input from where it was paused.",
+                        "The transcription should continue accurately after resuming."
                     ],
                     "Story ID": "S003"
                 },
                 {
-                    "Title": "Upload Text Files",
-                    "Description": "As a solopreneur, I want to upload text files to the platform so that the AI can use this additional information to generate better scripts.",
+                    "Title": "Submit Edited Responses",
+                    "Description": "As a CREATOR, I want to submit my edited responses so that they can be processed into structured proposals.",
                     "AcceptanceCriteria": [
-                        "Given I am in a new campaign, when I click on the 'Upload Text File' button, then I should be able to select and upload a text file.",
-                        "Given I have uploaded a text file, when the upload is complete, then the system should confirm the file has been successfully added to the AI's knowledge base."
+                        "The system should provide a submit button for the CREATOR to finalize their response.",
+                        "Upon submission, the system should confirm that the response has been successfully received.",
+                        "The submitted response should be stored locally for further processing."
                     ],
                     "Story ID": "S004"
                 },
                 {
-                    "Title": "AI Script Generation",
-                    "Description": "As a solopreneur, I want the AI to generate scripts based on my inputs so that I can have ready-to-use content for my social media.",
+                    "Title": "Visual Feedback for API Key Status",
+                    "Description": "As a CREATOR, I want to see a visual indication of the API key status so that I know if the system is ready for AI processing.",
                     "AcceptanceCriteria": [
-                        "Given I have provided sufficient input through the chat interface, when I click 'Generate Scripts', then the AI should create scripts that include a hook, body, and conclusion.",
-                        "Given the AI has generated scripts, when I view the scripts, then they should be formatted properly with scene descriptions."
+                        "The UI should display a red/green indicator to show the presence of a valid API key.",
+                        "The indicator should turn green when a valid API key is stored locally.",
+                        "The indicator should turn red if the API key is missing or invalid."
                     ],
                     "Story ID": "S005"
-                },
-                {
-                    "Title": "Review and Edit Scripts",
-                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can make any necessary adjustments before using them.",
-                    "AcceptanceCriteria": [
-                        "Given the AI has generated scripts, when I click on a script, then I should be able to view and edit the content.",
-                        "Given I have made edits to a script, when I click 'Save', then the changes should be saved locally."
-                    ],
-                    "Story ID": "S006"
-                },
-                {
-                    "Title": "Export Scripts",
-                    "Description": "As a solopreneur, I want to export the generated scripts into a document format so that I can review and share them easily.",
-                    "AcceptanceCriteria": [
-                        "Given I am viewing a generated script, when I click 'Export', then I should be able to save the script as a Word or PDF document.",
-                        "Given I have exported a script, when I open the document, then it should be properly formatted and include all the content from the script."
-                    ],
-                    "Story ID": "S007"
-                },
-                {
-                    "Title": "Multi-language Support",
-                    "Description": "As a solopreneur, I want the AI to support multiple languages so that I can generate scripts in my preferred language.",
-                    "AcceptanceCriteria": [
-                        "Given I am interacting with the AI, when I provide input in a specific language, then the AI should detect the language and generate scripts in the same language.",
-                        "Given I have set a language preference, when the AI generates scripts, then the scripts should be in the selected language."
-                    ],
-                    "Story ID": "S008"
                 }
             ]
         },
         {
             "Epic ID": "E002",
-            "Title": "AI Script Generation",
-            "Description": "Implement an AI system that uses gathered information to generate 90-second scripts, including scene descriptions. Ensure the scripts have a proper hook, arc, and finish to maximize engagement on social media platforms.",
+            "Title": "API Key Management",
+            "Description": "Implement a user-friendly path within the UI for the CREATOR to obtain and manage an OpenAI API key. The system will store the key locally and indicate its presence with a red/green state, ensuring seamless integration with AI functionalities.",
             "User Stories": [
                 {
-                    "Title": "Conversational System for Gathering Information",
-                    "Description": "As a solopreneur, I want a conversational system that prompts me with questions to gather my views, opinions, and expertise so that the AI can generate relevant and personalized scripts.",
+                    "Title": "API Key Acquisition Guide",
+                    "Description": "As a CREATOR, I want a clear guide within the UI to obtain an OpenAI API key so that I can easily set up the necessary credentials for AI integration.",
                     "AcceptanceCriteria": [
-                        "The system should display a chat-like interface where the AI prompts the user with questions.",
-                        "The user should be able to respond by typing or speaking, with responses transcribed into text.",
-                        "The system should store user responses locally in JSON files."
+                        "The UI provides a step-by-step guide on how to obtain an OpenAI API key.",
+                        "The guide includes links to the OpenAI website and instructions on navigating their API key generation process.",
+                        "The guide is accessible from the main dashboard of the application."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "API Key Input Field",
+                    "Description": "As a CREATOR, I want a designated input field to enter my OpenAI API key so that I can securely store it within the application.",
+                    "AcceptanceCriteria": [
+                        "The UI includes a clearly labeled input field for entering the OpenAI API key.",
+                        "The input field is designed to mask the key for security purposes.",
+                        "The system validates the entered key format before accepting it."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "Local Storage of API Key",
+                    "Description": "As a CREATOR, I want my OpenAI API key to be stored locally so that it is securely saved for future use without needing to re-enter it.",
+                    "AcceptanceCriteria": [
+                        "The system securely stores the API key on the local machine.",
+                        "The stored key is encrypted to prevent unauthorized access.",
+                        "The key is automatically retrieved for AI calls without requiring re-entry."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "API Key Presence Indicator",
+                    "Description": "As a CREATOR, I want a visual indicator of my API key's presence so that I can quickly verify if the key is set up correctly.",
+                    "AcceptanceCriteria": [
+                        "The UI displays a green indicator when a valid API key is stored.",
+                        "The UI displays a red indicator when no API key is present or if the key is invalid.",
+                        "The indicator is prominently displayed on the main dashboard."
                     ],
                     "Story ID": "S009"
                 },
                 {
-                    "Title": "Upload Text Files to Train AI",
-                    "Description": "As a solopreneur, I want to upload text files to the system so that the AI can use this additional information to generate more accurate and relevant scripts.",
+                    "Title": "API Key Management Interface",
+                    "Description": "As a CREATOR, I want an interface to manage my API key so that I can update or delete it as needed.",
                     "AcceptanceCriteria": [
-                        "The system should allow users to upload text files through the interface.",
-                        "Uploaded text files should be processed and stored locally in JSON files.",
-                        "The AI should incorporate the information from the uploaded text files when generating scripts."
+                        "The UI provides options to update the existing API key.",
+                        "The UI allows the CREATOR to delete the stored API key.",
+                        "Changes to the API key are reflected immediately in the system's status indicator."
                     ],
                     "Story ID": "S010"
-                },
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Conversational Requirements Capture",
+            "Description": "Design a system that uses AI-driven prompts to ask clarifying questions and capture the necessary information from the CREATOR. Responses will be logged in a local conversation log, with the AI generating questions until sufficient data is collected.",
+            "User Stories": [
                 {
-                    "Title": "AI Script Generation",
-                    "Description": "As a solopreneur, I want the AI to generate 90-second scripts based on the gathered information so that I can create engaging social media content.",
+                    "Title": "Voice Input for Intent Capture",
+                    "Description": "As a CREATOR, I want to input my intent through voice so that the system can transcribe it into text for further processing.",
                     "AcceptanceCriteria": [
-                        "The AI should generate scripts that are 90 seconds long.",
-                        "Scripts should include scene descriptions.",
-                        "Each script should have a proper hook, arc, and finish to maximize engagement."
+                        "The system provides a voice input interface on a local Windows desktop.",
+                        "The system transcribes spoken words into text in real-time.",
+                        "The CREATOR can stop, edit, and submit the transcribed text."
                     ],
                     "Story ID": "S011"
                 },
                 {
-                    "Title": "Review and Edit Generated Scripts",
-                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can ensure they meet my standards before using them.",
+                    "Title": "AI-Driven Clarifying Questions",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on my input so that it can gather all necessary information for proposal generation.",
                     "AcceptanceCriteria": [
-                        "The system should display generated scripts in a readable format.",
-                        "Users should be able to edit the scripts directly within the interface.",
-                        "Edited scripts should be saved locally in JSON files."
+                        "The system generates AI-driven questions based on the CREATOR's input.",
+                        "Questions are relevant and aim to fill gaps in the provided information.",
+                        "The CREATOR can respond to questions, and responses are logged."
                     ],
                     "Story ID": "S012"
                 },
                 {
-                    "Title": "Export Scripts to Document Format",
-                    "Description": "As a solopreneur, I want to export the generated scripts into a structured document format so that I can review and share them easily.",
+                    "Title": "Local Conversation Log",
+                    "Description": "As a CREATOR, I want my responses to be logged locally so that I can review the conversation history if needed.",
                     "AcceptanceCriteria": [
-                        "The system should allow users to export scripts to Word or PDF format.",
-                        "Exported documents should include the script text and scene descriptions.",
-                        "The exported document should maintain the structure and formatting of the original script."
+                        "All interactions, including questions and responses, are stored in a local conversation log.",
+                        "The log is accessible to the CREATOR for review.",
+                        "The log is stored securely on the local system."
                     ],
                     "Story ID": "S013"
                 },
                 {
-                    "Title": "Language Detection and Support",
-                    "Description": "As a solopreneur, I want the AI to support multiple languages based on my input so that I can generate scripts in different languages.",
+                    "Title": "Sufficient Data Collection",
+                    "Description": "As a CREATOR, I want the AI to continue asking questions until enough data is collected so that the system can generate a complete proposal.",
                     "AcceptanceCriteria": [
-                        "The AI should automatically detect the language of the user's input.",
-                        "The AI should generate scripts in the detected language.",
-                        "Users should have the option to set a preferred language for script generation."
+                        "The AI determines when sufficient information has been collected based on predefined criteria.",
+                        "The system notifies the CREATOR when data collection is complete.",
+                        "The CREATOR can manually indicate if additional information is needed."
                     ],
                     "Story ID": "S014"
                 },
                 {
-                    "Title": "Input OpenAI API Key",
-                    "Description": "As a solopreneur, I want to input my own OpenAI API key so that I can use the AI functionalities of the platform.",
+                    "Title": "Editable Transcription Area",
+                    "Description": "As a CREATOR, I want to edit the transcribed text so that I can ensure accuracy before submission.",
                     "AcceptanceCriteria": [
-                        "The system should provide a field for users to input their OpenAI API key.",
-                        "The system should validate the API key before allowing access to AI functionalities.",
-                        "The API key should be stored securely and used for all AI-related operations."
+                        "The transcribed text is displayed in an editable area.",
+                        "The CREATOR can make changes to the text before submitting.",
+                        "The system saves the final version of the text for processing."
                     ],
                     "Story ID": "S015"
                 }
             ]
         },
         {
-            "Epic ID": "E003",
-            "Title": "Campaign Management",
-            "Description": "Create a feature that allows solopreneurs to create and manage campaigns. Each campaign will have a series of generated scripts that users can review and edit before finalizing.",
+            "Epic ID": "E004",
+            "Title": "Intent to Structure Transformation",
+            "Description": "Create a multi-step pipeline that transforms the CREATOR's captured intents into structured artifacts. This includes stages from Vision to Requirements, Stakeholders/Phases, Epics, Stories, and Tasks, with tasks scored for complexity and effort.",
             "User Stories": [
                 {
-                    "Title": "Create New Campaign",
-                    "Description": "As a solopreneur, I want to create a new campaign so that I can start generating scripts for my social media content.",
+                    "Title": "Voice Intake UI",
+                    "Description": "As a CREATOR, I want to use a voice intake UI to speak my vision so that my audio can be transcribed live into an editable text area.",
                     "AcceptanceCriteria": [
-                        "Given I am on the dashboard, when I click the 'Create a New Campaign' button, then I should be taken to a new campaign setup screen.",
-                        "The setup screen should prompt me to enter the campaign name and description."
+                        "The system provides a local desktop UI for Windows.",
+                        "The UI allows the CREATOR to speak and transcribe audio into text in real-time.",
+                        "The CREATOR can stop, edit, and submit the transcribed text."
                     ],
                     "Story ID": "S016"
                 },
                 {
-                    "Title": "Conversational System for Input",
-                    "Description": "As a solopreneur, I want to interact with a conversational system that prompts me with questions so that I can provide my views and knowledge for script generation.",
+                    "Title": "API Key Onboarding",
+                    "Description": "As a CREATOR, I want to have a clear path to obtain and store an OpenAI API key so that I can use AI-driven functionalities.",
                     "AcceptanceCriteria": [
-                        "Given I am in the campaign setup, when I start the conversational system, then the AI should prompt me with relevant questions.",
-                        "The system should allow me to respond by typing or speaking, with responses transcribed into text."
+                        "The UI includes a 'Get API Key' path with instructions.",
+                        "The API key is stored locally and used for all AI calls.",
+                        "The UI indicates the presence of the API key with a red/green state."
                     ],
                     "Story ID": "S017"
                 },
                 {
-                    "Title": "Upload Text Files for AI Training",
-                    "Description": "As a solopreneur, I want to upload text files to the system so that the AI can use this additional context to generate more accurate scripts.",
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on missing information so that I can provide sufficient details for proposal generation.",
                     "AcceptanceCriteria": [
-                        "Given I am in the campaign setup, when I click the 'Upload Text Files' button, then I should be able to select and upload text files from my computer.",
-                        "The system should confirm the successful upload of the files."
+                        "The system asks a sequence of clarifying questions.",
+                        "Each user response is appended to a local conversation log.",
+                        "The AI generates questions until enough information is collected."
                     ],
                     "Story ID": "S018"
                 },
                 {
-                    "Title": "Generate Scripts",
-                    "Description": "As a solopreneur, I want the AI to generate scripts based on my input so that I can have ready-to-use content for my social media campaigns.",
+                    "Title": "Pipeline Transforms",
+                    "Description": "As a CREATOR, I want my captured intent to be transformed into structured artifacts through a multi-step pipeline so that I can receive organized execution plans.",
                     "AcceptanceCriteria": [
-                        "Given I have provided input through the conversational system, when I click the 'Generate Scripts' button, then the AI should create a series of scripts.",
-                        "Each script should be 90 seconds long and include descriptions of scenes, hooks, arcs, and calls to action."
+                        "The system transforms intent into structured artifacts: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Tasks are scored for complexity and effort.",
+                        "Outputs are compiled into proposal artifacts."
                     ],
                     "Story ID": "S019"
                 },
                 {
-                    "Title": "Review and Edit Scripts",
-                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can ensure they meet my requirements before finalizing.",
+                    "Title": "Local Storage of Artifacts",
+                    "Description": "As a CREATOR, I want JSON artifacts to be stored locally so that I can access and review them offline.",
                     "AcceptanceCriteria": [
-                        "Given the AI has generated scripts, when I navigate to the 'Review Scripts' section, then I should see a list of all generated scripts.",
-                        "I should be able to click on any script to view and edit its content."
+                        "JSON artifacts are written to local storage.",
+                        "The system provides options for reviewing or editing intermediate artifacts.",
+                        "Additional outputs include proposal drafts and optional exports to PDF/Excel."
                     ],
                     "Story ID": "S020"
                 },
                 {
-                    "Title": "Export Scripts",
-                    "Description": "As a solopreneur, I want to export the generated scripts into a document format so that I can review and get feedback on them before filming.",
+                    "Title": "Offline Workflow",
+                    "Description": "As a CREATOR, I want a self-contained offline workflow so that I can start from voice or text input and end with structured plans without needing an internet connection.",
                     "AcceptanceCriteria": [
-                        "Given I am in the 'Review Scripts' section, when I click the 'Export' button, then I should be able to export the scripts into a Word or PDF document.",
-                        "The exported document should be properly formatted and include all script details."
+                        "The system functions offline except for initial API key setup.",
+                        "The workflow starts with voice or text input and ends with structured proposal outputs.",
+                        "AI-driven prompts guide the user through the process."
                     ],
                     "Story ID": "S021"
-                },
+                }
+            ]
+        },
+        {
+            "Epic ID": "E005",
+            "Title": "Local Data Storage and Output",
+            "Description": "Ensure all JSON artifacts and conversation logs are stored locally. Provide options for the CREATOR to review, edit, and export proposal drafts and outputs to formats like PDF or Excel, maintaining a self-contained offline workflow.",
+            "User Stories": [
                 {
-                    "Title": "Manage Existing Campaigns",
-                    "Description": "As a solopreneur, I want to view and manage my existing campaigns so that I can keep track of my content planning and progress.",
+                    "Title": "Store JSON Artifacts Locally",
+                    "Description": "As a CREATOR, I want all JSON artifacts to be stored locally so that I can access and manage them without needing an internet connection.",
                     "AcceptanceCriteria": [
-                        "Given I am on the dashboard, when I click the 'View Existing Campaigns' button, then I should see a list of all my campaigns.",
-                        "Each campaign should display its name, description, and status (e.g., in progress, completed)."
+                        "JSON artifacts are automatically saved to a specified local directory.",
+                        "The system provides a notification confirming successful storage of JSON artifacts.",
+                        "The stored JSON artifacts can be accessed and opened from the local directory."
                     ],
                     "Story ID": "S022"
                 },
                 {
-                    "Title": "Set Language Preference",
-                    "Description": "As a solopreneur, I want to set my language preference so that the AI generates scripts in the language I prefer.",
+                    "Title": "Store Conversation Logs Locally",
+                    "Description": "As a CREATOR, I want conversation logs to be stored locally so that I can review past interactions and refine my proposals.",
                     "AcceptanceCriteria": [
-                        "Given I am in the campaign setup, when I select a language from the language settings, then the AI should generate scripts in the selected language.",
-                        "The system should remember my language preference for future campaigns."
+                        "Conversation logs are saved in a readable format in a specified local directory.",
+                        "The system allows the CREATOR to view and search through past conversation logs.",
+                        "Logs are timestamped and organized by session for easy retrieval."
                     ],
                     "Story ID": "S023"
                 },
                 {
-                    "Title": "Input API Key",
-                    "Description": "As a solopreneur, I want to input my OpenAI API key so that the AI functionalities can be activated.",
+                    "Title": "Review and Edit Proposal Drafts",
+                    "Description": "As a CREATOR, I want to review and edit proposal drafts so that I can refine my ideas before finalizing them.",
                     "AcceptanceCriteria": [
-                        "Given I am in the settings, when I enter my OpenAI API key and click 'Save', then the system should validate and store the key.",
-                        "The system should notify me if the API key is valid or invalid."
+                        "The system provides a user interface for viewing and editing proposal drafts.",
+                        "Changes to proposal drafts are automatically saved locally.",
+                        "The CREATOR can revert to previous versions of a draft if needed."
+                    ],
+                    "Story ID": "S024"
+                },
+                {
+                    "Title": "Export Proposals to PDF",
+                    "Description": "As a CREATOR, I want to export my proposal drafts to PDF format so that I can share them with others in a widely accepted format.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to export proposal drafts to PDF format.",
+                        "Exported PDFs maintain the formatting and content of the original draft.",
+                        "The CREATOR can choose the local directory where the PDF is saved."
+                    ],
+                    "Story ID": "S025"
+                },
+                {
+                    "Title": "Export Proposals to Excel",
+                    "Description": "As a CREATOR, I want to export my proposal drafts to Excel format so that I can analyze and manipulate the data further.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to export proposal drafts to Excel format.",
+                        "Exported Excel files maintain the structure and data integrity of the original draft.",
+                        "The CREATOR can choose the local directory where the Excel file is saved."
+                    ],
+                    "Story ID": "S026"
+                },
+                {
+                    "Title": "Self-contained Offline Workflow",
+                    "Description": "As a CREATOR, I want the entire workflow to be self-contained and offline so that I can work without relying on internet connectivity.",
+                    "AcceptanceCriteria": [
+                        "All functionalities, including data storage, review, editing, and exporting, operate without an internet connection.",
+                        "The system prompts the CREATOR only for initial API key setup, after which all operations are offline.",
+                        "The system provides feedback on the offline status and ensures all data is processed and stored locally."
+                    ],
+                    "Story ID": "S027"
+                }
+            ]
+        }
+    ],
+    "CREATOR: Manages API key onboarding": [
+        {
+            "Epic ID": "E001",
+            "Title": "Voice Intake and Transcription",
+            "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision, transcribe audio into text in real-time, and provide options to edit and submit the transcriptions.",
+            "User Stories": [
+                {
+                    "Title": "UI Launch for Voice Intake",
+                    "Description": "As a CREATOR, I want to launch a local desktop UI so that I can speak my vision and have it transcribed into text in real-time.",
+                    "AcceptanceCriteria": [
+                        "The UI can be launched on a Windows system.",
+                        "The UI provides a microphone access prompt for voice input.",
+                        "The UI displays a real-time transcription of spoken words into text."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "Real-time Audio Transcription",
+                    "Description": "As a CREATOR, I want my spoken words to be transcribed into text in real-time so that I can immediately see and edit my input.",
+                    "AcceptanceCriteria": [
+                        "The system transcribes audio input into text with minimal delay.",
+                        "Transcribed text appears in an editable text area.",
+                        "The transcription is accurate and reflects the spoken words."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Edit and Submit Transcriptions",
+                    "Description": "As a CREATOR, I want to edit the transcribed text and submit it so that I can refine my input before it is processed further.",
+                    "AcceptanceCriteria": [
+                        "The transcribed text is editable within the UI.",
+                        "There is a clear 'Submit' button to finalize the transcription.",
+                        "The system confirms submission with a visual indicator or message."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "API Key Onboarding",
+                    "Description": "As a CREATOR, I want a clear path to obtain and store an OpenAI API key so that I can enable AI functionalities in the application.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a step-by-step guide to obtain an OpenAI API key.",
+                        "The API key can be securely stored locally.",
+                        "The UI indicates the presence of an API key with a red/green status indicator."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "API Key Status Indicator",
+                    "Description": "As a CREATOR, I want a visual indicator of the API key status so that I can easily verify if the AI functionalities are enabled.",
+                    "AcceptanceCriteria": [
+                        "The UI displays a red indicator if the API key is missing or invalid.",
+                        "The UI displays a green indicator if the API key is present and valid.",
+                        "The indicator updates in real-time based on the API key status."
+                    ],
+                    "Story ID": "S005"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "API Key Management",
+            "Description": "Create a user-friendly path within the UI for the CREATOR to obtain and manage an OpenAI API key, including secure local storage of the key and visual indicators of its status.",
+            "User Stories": [
+                {
+                    "Title": "API Key Acquisition Guide",
+                    "Description": "As a CREATOR, I want a clear guide within the UI on how to obtain an OpenAI API key so that I can easily acquire the necessary key for API integration.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a step-by-step guide on obtaining an OpenAI API key.",
+                        "The guide includes links to the OpenAI website and any necessary documentation.",
+                        "The guide is accessible from the main dashboard or settings menu."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "API Key Input Field",
+                    "Description": "As a CREATOR, I want an input field in the UI to enter my OpenAI API key so that I can securely store it for use in API calls.",
+                    "AcceptanceCriteria": [
+                        "The UI includes a dedicated input field for entering the API key.",
+                        "The input field is clearly labeled and easy to locate.",
+                        "The entered API key is stored securely on the local system."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "API Key Storage Security",
+                    "Description": "As a CREATOR, I want my API key to be stored securely on my local system so that it is protected from unauthorized access.",
+                    "AcceptanceCriteria": [
+                        "The API key is encrypted before being stored locally.",
+                        "Access to the stored API key requires appropriate permissions.",
+                        "The system provides a confirmation message once the key is securely stored."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "API Key Status Indicator",
+                    "Description": "As a CREATOR, I want a visual indicator in the UI to show the status of my API key so that I can easily see if it is active or missing.",
+                    "AcceptanceCriteria": [
+                        "The UI displays a green indicator when a valid API key is present.",
+                        "The UI displays a red indicator when the API key is missing or invalid.",
+                        "The status indicator updates in real-time as the API key is entered or removed."
+                    ],
+                    "Story ID": "S009"
+                },
+                {
+                    "Title": "API Key Management Interface",
+                    "Description": "As a CREATOR, I want an interface to manage my API key so that I can update or remove it as needed.",
+                    "AcceptanceCriteria": [
+                        "The UI provides options to update or remove the stored API key.",
+                        "Changes to the API key are reflected immediately in the system.",
+                        "The interface includes a confirmation prompt before removing the API key."
+                    ],
+                    "Story ID": "S010"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Conversational Requirements Capture",
+            "Description": "Implement an AI-driven system that asks clarifying questions to the CREATOR to gather necessary information, storing responses locally and ensuring comprehensive data collection.",
+            "User Stories": [
+                {
+                    "Title": "Initiate AI-Driven Question Session",
+                    "Description": "As a CREATOR, I want to initiate an AI-driven question session so that I can provide necessary information for proposal creation.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to start a new AI-driven question session.",
+                        "Upon initiation, the system begins asking clarifying questions based on existing input.",
+                        "The session can be paused and resumed at any time."
+                    ],
+                    "Story ID": "S011"
+                },
+                {
+                    "Title": "Store Responses Locally",
+                    "Description": "As a CREATOR, I want my responses to be stored locally so that I can ensure data privacy and have offline access.",
+                    "AcceptanceCriteria": [
+                        "All responses to AI-driven questions are stored in a local database or file system.",
+                        "The stored responses are accessible for review and editing.",
+                        "Data is stored in a secure format to prevent unauthorized access."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "Review and Edit Conversation Log",
+                    "Description": "As a CREATOR, I want to review and edit the conversation log so that I can ensure the accuracy and completeness of the information provided.",
+                    "AcceptanceCriteria": [
+                        "The system provides an interface to view the entire conversation log.",
+                        "Users can edit previous responses in the log.",
+                        "Changes to the log are saved locally and reflected in the proposal output."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "Generate Clarifying Questions",
+                    "Description": "As a CREATOR, I want the AI to generate clarifying questions based on my input so that I can provide comprehensive information for proposal creation.",
+                    "AcceptanceCriteria": [
+                        "The AI generates questions dynamically based on the current state of input.",
+                        "Questions are relevant and aim to fill gaps in the provided information.",
+                        "The AI stops generating questions once sufficient information is collected."
+                    ],
+                    "Story ID": "S014"
+                },
+                {
+                    "Title": "Indicate Completion of Information Gathering",
+                    "Description": "As a CREATOR, I want to know when sufficient information has been gathered so that I can proceed to the next stage of proposal creation.",
+                    "AcceptanceCriteria": [
+                        "The system provides a clear indication when all necessary information has been gathered.",
+                        "A summary of collected information is presented to the user for confirmation.",
+                        "Users can choose to provide additional information or proceed to proposal generation."
+                    ],
+                    "Story ID": "S015"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E004",
+            "Title": "Intent Transformation Pipeline",
+            "Description": "Design a multi-step pipeline that converts the CREATOR's captured intents into structured artifacts, including requirements, stakeholders, phases, epics, stories, and tasks.",
+            "User Stories": [
+                {
+                    "Title": "Voice Intake UI for Intent Capture",
+                    "Description": "As a CREATOR, I want a voice intake UI that transcribes my spoken intents into text so that I can easily edit and submit my vision for further processing.",
+                    "AcceptanceCriteria": [
+                        "The UI must allow the CREATOR to start and stop voice recording.",
+                        "The transcribed text should appear in an editable text area in real-time.",
+                        "The CREATOR can edit the transcribed text before submission.",
+                        "The UI should provide a clear option to submit the final text for processing."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "API Key Onboarding Process",
+                    "Description": "As a CREATOR, I want a straightforward process to obtain and store my OpenAI API key so that I can enable AI-driven functionalities in the platform.",
+                    "AcceptanceCriteria": [
+                        "The UI must include a 'Get API Key' guide explaining how to obtain an OpenAI API key.",
+                        "The system should securely store the API key locally.",
+                        "The UI should indicate the presence of the API key with a red/green state indicator."
+                    ],
+                    "Story ID": "S017"
+                },
+                {
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on my inputs so that I can provide complete and accurate information for proposal generation.",
+                    "AcceptanceCriteria": [
+                        "The system should generate AI-driven questions based on missing information.",
+                        "Each user response should be logged in a local conversation log.",
+                        "The system should continue to ask questions until sufficient information is collected."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Pipeline Transformation from Intent to Structured Artifacts",
+                    "Description": "As a CREATOR, I want my captured intents to be transformed into structured artifacts through a multi-step pipeline so that I can receive organized execution plans.",
+                    "AcceptanceCriteria": [
+                        "The system should transform intents into structured artifacts in stages: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Tasks should be scored for complexity and effort.",
+                        "The system should compile outputs into proposal artifacts."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Local Storage of Outputs and Artifacts",
+                    "Description": "As a CREATOR, I want the system to store outputs and artifacts locally so that I can access and manage them offline.",
+                    "AcceptanceCriteria": [
+                        "JSON artifacts should be stored locally on the system.",
+                        "The system should provide options to export outputs to PDF/Excel.",
+                        "Local UIs should be available for reviewing or editing intermediate artifacts."
+                    ],
+                    "Story ID": "S020"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E005",
+            "Title": "Proposal and Artifact Generation",
+            "Description": "Develop functionalities to compile outputs into proposal drafts and structured artifacts, with options for local storage and export to formats like PDF and Excel.",
+            "User Stories": [
+                {
+                    "Title": "Local Storage of Proposal Drafts",
+                    "Description": "As a CREATOR, I want to store proposal drafts locally so that I can access and manage them offline.",
+                    "AcceptanceCriteria": [
+                        "Proposal drafts are saved in a specified local directory.",
+                        "The system provides a confirmation message upon successful saving.",
+                        "Users can access saved drafts through the local UI."
+                    ],
+                    "Story ID": "S021"
+                },
+                {
+                    "Title": "Export Proposals to PDF",
+                    "Description": "As a CREATOR, I want to export proposal drafts to PDF format so that I can share them easily with stakeholders.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to export drafts to PDF.",
+                        "Exported PDFs maintain the format and structure of the original draft.",
+                        "Users receive a notification upon successful export."
+                    ],
+                    "Story ID": "S022"
+                },
+                {
+                    "Title": "Export Proposals to Excel",
+                    "Description": "As a CREATOR, I want to export proposal drafts to Excel format so that I can perform further data analysis.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to export drafts to Excel.",
+                        "Exported Excel files maintain the data integrity of the original draft.",
+                        "Users receive a notification upon successful export."
+                    ],
+                    "Story ID": "S023"
+                },
+                {
+                    "Title": "Review and Edit Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want to review and edit intermediate artifacts so that I can ensure accuracy before finalizing proposals.",
+                    "AcceptanceCriteria": [
+                        "The system provides a UI for reviewing intermediate artifacts.",
+                        "Users can make edits to artifacts and save changes locally.",
+                        "The system tracks changes and updates the proposal draft accordingly."
+                    ],
+                    "Story ID": "S024"
+                },
+                {
+                    "Title": "Compile Outputs into Structured Artifacts",
+                    "Description": "As a CREATOR, I want to compile outputs into structured artifacts so that I can have organized documentation of the proposal process.",
+                    "AcceptanceCriteria": [
+                        "The system compiles outputs into structured formats like JSON.",
+                        "Users can view and manage these artifacts through the local UI.",
+                        "Artifacts reflect all stages of the proposal process from intent to tasks."
+                    ],
+                    "Story ID": "S025"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E006",
+            "Title": "Local Data Management",
+            "Description": "Ensure all data, including conversation logs and JSON artifacts, are stored securely on the local system, with options for reviewing and editing intermediate artifacts.",
+            "User Stories": [
+                {
+                    "Title": "Secure Local Storage for API Keys",
+                    "Description": "As the CREATOR, I want to securely store the OpenAI API key on the local system so that I can ensure data privacy and prevent unauthorized access.",
+                    "AcceptanceCriteria": [
+                        "The API key is encrypted before being stored on the local system.",
+                        "Only authorized users can access or modify the stored API key.",
+                        "The system provides a clear indication (red/green state) of the API key's presence and validity."
+                    ],
+                    "Story ID": "S026"
+                },
+                {
+                    "Title": "Local Storage of Conversation Logs",
+                    "Description": "As the CREATOR, I want all conversation logs to be stored locally so that I can review and manage them without relying on external servers.",
+                    "AcceptanceCriteria": [
+                        "All conversation logs are automatically saved to a designated local directory.",
+                        "The system allows for easy retrieval and review of past conversation logs.",
+                        "Logs are stored in a structured format that is easy to read and analyze."
+                    ],
+                    "Story ID": "S027"
+                },
+                {
+                    "Title": "Local Storage of JSON Artifacts",
+                    "Description": "As the CREATOR, I want JSON artifacts to be stored locally so that I can access and edit them as needed.",
+                    "AcceptanceCriteria": [
+                        "JSON artifacts are saved to a specified local directory upon creation.",
+                        "The system provides an interface for viewing and editing JSON artifacts.",
+                        "Changes to JSON artifacts are saved and versioned to prevent data loss."
+                    ],
+                    "Story ID": "S028"
+                },
+                {
+                    "Title": "Review and Edit Intermediate Artifacts",
+                    "Description": "As the CREATOR, I want to review and edit intermediate artifacts locally so that I can refine proposals before finalizing them.",
+                    "AcceptanceCriteria": [
+                        "The system provides a user-friendly interface for reviewing intermediate artifacts.",
+                        "Users can make edits to artifacts and save changes locally.",
+                        "The interface supports undo/redo functionality to manage changes."
+                    ],
+                    "Story ID": "S029"
+                },
+                {
+                    "Title": "Export Artifacts to PDF/Excel",
+                    "Description": "As the CREATOR, I want to export proposal artifacts to PDF or Excel formats so that I can share them with stakeholders easily.",
+                    "AcceptanceCriteria": [
+                        "The system provides options to export artifacts in PDF and Excel formats.",
+                        "Exported files maintain the structure and content of the original artifacts.",
+                        "Users can select specific artifacts or the entire proposal for export."
+                    ],
+                    "Story ID": "S030"
+                }
+            ]
+        }
+    ],
+    "CREATOR: Converts intents to proposals": [
+        {
+            "Epic ID": "E001",
+            "Title": "Voice Intake and Transcription",
+            "Description": "Develop a local desktop user interface for Windows that allows the CREATOR to speak their vision. This UI will transcribe audio input live into an editable text area, enabling the CREATOR to stop, edit, and submit their responses.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into the application so that it transcribes my audio input into text in real-time.",
+                    "AcceptanceCriteria": [
+                        "The system must capture audio input from the microphone.",
+                        "The system must transcribe spoken words into text with minimal delay.",
+                        "The transcribed text should appear in an editable text area."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "Editable Text Area",
+                    "Description": "As a CREATOR, I want to edit the transcribed text so that I can correct any errors or refine my vision before submission.",
+                    "AcceptanceCriteria": [
+                        "The transcribed text must be editable by the user.",
+                        "The user can make changes to the text without losing the original transcription.",
+                        "The text area should support basic text editing functionalities like cut, copy, paste, and undo."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Control Over Transcription",
+                    "Description": "As a CREATOR, I want to be able to stop and start the transcription process so that I have control over when my input is being recorded.",
+                    "AcceptanceCriteria": [
+                        "The user can start the transcription process with a button click.",
+                        "The user can stop the transcription process with a button click.",
+                        "The system should indicate when it is actively transcribing audio."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "Submission of Responses",
+                    "Description": "As a CREATOR, I want to submit my edited transcription so that it can be processed into structured proposals.",
+                    "AcceptanceCriteria": [
+                        "The user can submit the edited text with a button click.",
+                        "Upon submission, the system should confirm receipt of the text.",
+                        "The submitted text should be stored locally for further processing."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the application so that I can utilize AI-driven functionalities.",
+                    "AcceptanceCriteria": [
+                        "The application provides a clear path for obtaining an OpenAI API key.",
+                        "The API key is stored securely on the local system.",
+                        "The UI indicates the presence and validity of the API key with a red/green state."
+                    ],
+                    "Story ID": "S005"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "API Key Management",
+            "Description": "Implement a user-friendly path within the UI for obtaining and managing an OpenAI API key. The system should store the key locally, use it for AI calls, and visually indicate the key's presence with a red/green state.",
+            "User Stories": [
+                {
+                    "Title": "API Key Acquisition Guide",
+                    "Description": "As a CREATOR, I want a clear guide within the UI for obtaining an OpenAI API key so that I can easily acquire the necessary credentials for AI integration.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a step-by-step guide on how to obtain an OpenAI API key.",
+                        "The guide includes links to relevant OpenAI documentation.",
+                        "The guide is accessible from the main UI dashboard."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "Local Storage of API Key",
+                    "Description": "As a CREATOR, I want the system to store my OpenAI API key locally so that I can ensure my credentials are secure and readily available for AI calls.",
+                    "AcceptanceCriteria": [
+                        "The API key is stored securely on the local system.",
+                        "The system encrypts the API key before storage.",
+                        "The stored API key is automatically used for all AI-related calls."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "Visual Indicator for API Key Status",
+                    "Description": "As a CREATOR, I want a visual indicator in the UI to show the presence of my API key so that I can easily verify whether the system is ready for AI operations.",
+                    "AcceptanceCriteria": [
+                        "A green indicator is displayed when the API key is present and valid.",
+                        "A red indicator is displayed when the API key is missing or invalid.",
+                        "The indicator is prominently displayed on the main UI dashboard."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "API Key Management Interface",
+                    "Description": "As a CREATOR, I want an interface to manage my OpenAI API key so that I can update or remove the key as needed.",
+                    "AcceptanceCriteria": [
+                        "The UI includes an option to update the stored API key.",
+                        "The UI includes an option to remove the stored API key.",
+                        "Changes to the API key are reflected immediately in the system."
+                    ],
+                    "Story ID": "S009"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Conversational Requirements Capture",
+            "Description": "Create a system that uses AI-driven prompts to ask clarifying questions and capture necessary information from the CREATOR. Each response should be logged in a local conversation log, with the AI generating questions until sufficient data is collected.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input for Intent Capture",
+                    "Description": "As a CREATOR, I want to input my intents through voice so that I can easily articulate my ideas without needing to type.",
+                    "AcceptanceCriteria": [
+                        "The system provides a voice input interface that transcribes spoken words into text.",
+                        "The transcription is displayed in real-time in an editable text area.",
+                        "The CREATOR can start, stop, and edit the transcription before submission."
+                    ],
+                    "Story ID": "S010"
+                },
+                {
+                    "Title": "AI-Driven Clarifying Questions",
+                    "Description": "As a CREATOR, I want the system to ask AI-driven clarifying questions so that I can provide all necessary information for proposal creation.",
+                    "AcceptanceCriteria": [
+                        "The system generates clarifying questions based on the initial input.",
+                        "Questions are contextually relevant to the CREATOR's intent.",
+                        "The AI continues to ask questions until sufficient information is gathered."
+                    ],
+                    "Story ID": "S011"
+                },
+                {
+                    "Title": "Local Conversation Log",
+                    "Description": "As a CREATOR, I want each of my responses to be logged locally so that I can review the conversation history and ensure all details are captured.",
+                    "AcceptanceCriteria": [
+                        "Each user response is appended to a local conversation log.",
+                        "The log is accessible for review and editing by the CREATOR.",
+                        "The log is stored securely on the local system."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "AI Question Generation",
+                    "Description": "As a CREATOR, I want the AI to generate the next question based on my previous responses so that the conversation remains relevant and efficient.",
+                    "AcceptanceCriteria": [
+                        "The AI analyzes previous responses to generate the next question.",
+                        "Questions are designed to fill gaps in information provided by the CREATOR.",
+                        "The AI adapts its questioning strategy based on the CREATOR's responses."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "Completion Indicator",
+                    "Description": "As a CREATOR, I want to be notified when sufficient data has been collected so that I know when the input process is complete.",
+                    "AcceptanceCriteria": [
+                        "The system provides a clear indicator when all necessary information has been captured.",
+                        "The CREATOR receives a notification or prompt indicating the completion of the data collection phase.",
+                        "The system allows the CREATOR to proceed to the next step of proposal generation once data collection is complete."
+                    ],
+                    "Story ID": "S014"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E004",
+            "Title": "Intent to Structure Pipeline",
+            "Description": "Design a multi-step pipeline that transforms captured intents into structured artifacts, progressing through stages such as Vision, Requirements, Stakeholders/Phases, Epics, Stories, and Tasks. Tasks should be scored for complexity and effort.",
+            "User Stories": [
+                {
+                    "Title": "Voice Intake for Intent Capture",
+                    "Description": "As a CREATOR, I want to use a voice intake UI to speak my vision so that it can be transcribed into text for further processing.",
+                    "AcceptanceCriteria": [
+                        "The system provides a local desktop UI for Windows.",
+                        "The UI allows the CREATOR to speak and transcribe audio into an editable text area.",
+                        "The CREATOR can stop, edit, and submit the transcribed text."
+                    ],
+                    "Story ID": "S015"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key through the UI so that I can enable AI-driven functionalities.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a clear path to obtain and input an OpenAI API key.",
+                        "The system stores the API key locally.",
+                        "The UI indicates the presence of the API key with a red/green state."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on missing information so that I can provide comprehensive inputs for proposal generation.",
+                    "AcceptanceCriteria": [
+                        "The system generates AI-driven questions to gather missing information.",
+                        "User responses are logged in a local conversation log.",
+                        "The system continues to prompt until sufficient information is collected."
+                    ],
+                    "Story ID": "S017"
+                },
+                {
+                    "Title": "Intent to Structure Pipeline",
+                    "Description": "As a CREATOR, I want my captured intents to be transformed into structured artifacts so that I can receive organized execution plans.",
+                    "AcceptanceCriteria": [
+                        "The system processes intents through stages: Vision, Requirements, Stakeholders/Phases, Epics, Stories, and Tasks.",
+                        "Tasks are scored for complexity and effort.",
+                        "Structured artifacts are stored locally as JSON."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Proposal Outputs and Export",
+                    "Description": "As a CREATOR, I want to review and export proposal outputs so that I can share or store them in preferred formats.",
+                    "AcceptanceCriteria": [
+                        "The system compiles outputs into proposal drafts.",
+                        "The CREATOR can export outputs to PDF or Excel formats.",
+                        "Local UIs are available for reviewing and editing intermediate artifacts."
+                    ],
+                    "Story ID": "S019"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E005",
+            "Title": "Proposal Artifacts and Outputs",
+            "Description": "Develop functionality to compile outputs into proposal artifacts, storing JSON files locally. Provide options for exporting these outputs to formats like PDF or Excel, and include local UIs for reviewing or editing intermediate artifacts.",
+            "User Stories": [
+                {
+                    "Title": "Store Proposal Artifacts as JSON",
+                    "Description": "As a CREATOR, I want to store proposal artifacts as JSON files locally so that I can access and manage them offline.",
+                    "AcceptanceCriteria": [
+                        "JSON files are generated and stored locally after proposal creation.",
+                        "Files are accessible through the local file system.",
+                        "The storage process is secure and does not require an internet connection."
+                    ],
+                    "Story ID": "S020"
+                },
+                {
+                    "Title": "Export Proposal Artifacts to PDF",
+                    "Description": "As a CREATOR, I want to export proposal artifacts to PDF format so that I can easily share them with stakeholders.",
+                    "AcceptanceCriteria": [
+                        "A PDF export option is available in the UI.",
+                        "Exported PDFs maintain the structure and formatting of the original proposal.",
+                        "PDF files are saved locally and can be accessed through the file system."
+                    ],
+                    "Story ID": "S021"
+                },
+                {
+                    "Title": "Export Proposal Artifacts to Excel",
+                    "Description": "As a CREATOR, I want to export proposal artifacts to Excel format so that I can analyze and manipulate data as needed.",
+                    "AcceptanceCriteria": [
+                        "An Excel export option is available in the UI.",
+                        "Exported Excel files contain all relevant data in a structured format.",
+                        "Excel files are saved locally and can be accessed through the file system."
+                    ],
+                    "Story ID": "S022"
+                },
+                {
+                    "Title": "Review Intermediate Artifacts Locally",
+                    "Description": "As a CREATOR, I want to review intermediate artifacts locally so that I can ensure accuracy before finalizing proposals.",
+                    "AcceptanceCriteria": [
+                        "A local UI is available for reviewing intermediate artifacts.",
+                        "The UI displays all relevant information in an organized manner.",
+                        "Users can navigate through different stages of the proposal process."
+                    ],
+                    "Story ID": "S023"
+                },
+                {
+                    "Title": "Edit Intermediate Artifacts Locally",
+                    "Description": "As a CREATOR, I want to edit intermediate artifacts locally so that I can make necessary adjustments before finalizing proposals.",
+                    "AcceptanceCriteria": [
+                        "A local UI is available for editing intermediate artifacts.",
+                        "Users can make changes to any part of the proposal structure.",
+                        "Changes are saved locally and reflected in the final proposal output."
                     ],
                     "Story ID": "S024"
                 }
             ]
         },
         {
-            "Epic ID": "E004",
-            "Title": "Content Extraction and Formatting",
-            "Description": "Develop functionality to allow users to export generated scripts into structured document formats (e.g., Word or PDF) for review and feedback.",
+            "Epic ID": "E006",
+            "Title": "Offline Workflow Optimization",
+            "Description": "Ensure the entire workflow operates offline on a local Windows system, from voice or text input to structured plan outputs. This includes optimizing the system for performance and responsiveness during real-time transcription and AI-driven interactions.",
             "User Stories": [
                 {
-                    "Title": "Export Script to Word Document",
-                    "Description": "As a Solopreneur, I want to export the generated scripts to a Word document so that I can review and edit them easily.",
+                    "Title": "Voice Intake UI for Offline Use",
+                    "Description": "As a CREATOR, I want a voice intake UI that operates offline so that I can input my intents without needing an internet connection.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user selects the 'Export to Word' option, then the script should be saved as a .docx file.",
-                        "The exported Word document should include the script's title, content, and scene descriptions in a structured format.",
-                        "The document should be saved to a user-specified location on the local machine."
+                        "The UI must be accessible on a local Windows system.",
+                        "The UI should allow for live transcription of spoken inputs into an editable text area.",
+                        "The system should function without an internet connection, except for initial API key setup."
                     ],
                     "Story ID": "S025"
                 },
                 {
-                    "Title": "Export Script to PDF",
-                    "Description": "As a Solopreneur, I want to export the generated scripts to a PDF document so that I can share them for feedback without editing.",
+                    "Title": "Real-time Transcription Optimization",
+                    "Description": "As a CREATOR, I want the system to provide real-time transcription of my voice inputs so that I can see and edit my intents immediately.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user selects the 'Export to PDF' option, then the script should be saved as a .pdf file.",
-                        "The exported PDF should include the script's title, content, and scene descriptions in a structured format.",
-                        "The document should be saved to a user-specified location on the local machine."
+                        "Transcription should occur in real-time with minimal delay.",
+                        "The text area should allow for immediate editing of transcribed text.",
+                        "The system should handle transcription efficiently without lag."
                     ],
                     "Story ID": "S026"
                 },
                 {
-                    "Title": "Preview Exported Document",
-                    "Description": "As a Solopreneur, I want to preview the exported document before saving it so that I can ensure it is formatted correctly.",
+                    "Title": "AI-driven Clarifying Questions",
+                    "Description": "As a CREATOR, I want the system to ask AI-driven clarifying questions so that I can provide all necessary information for proposal generation.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user selects the 'Preview' option, then a preview of the document should be displayed.",
-                        "The preview should show the script's title, content, and scene descriptions in the same format as the exported document.",
-                        "The user should have the option to go back and make changes before finalizing the export."
+                        "The system should generate questions based on missing information.",
+                        "User responses should be logged locally in a conversation log.",
+                        "The AI should continue to prompt until sufficient information is collected."
                     ],
                     "Story ID": "S027"
                 },
                 {
-                    "Title": "Select Export Format",
-                    "Description": "As a Solopreneur, I want to choose between exporting the script as a Word document or a PDF so that I can use the format that best suits my needs.",
+                    "Title": "Local Storage of Artifacts",
+                    "Description": "As a CREATOR, I want the system to store all generated artifacts locally so that I can access and manage them without internet dependency.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user selects the 'Export' option, then they should be prompted to choose between 'Export to Word' and 'Export to PDF'.",
-                        "The user should be able to select their preferred format and proceed with the export process."
+                        "All JSON artifacts should be stored on the local system.",
+                        "The system should allow for optional export of outputs to PDF or Excel.",
+                        "Local UIs should be available for reviewing and editing artifacts."
                     ],
                     "Story ID": "S028"
                 },
                 {
-                    "Title": "Customize Export Path",
-                    "Description": "As a Solopreneur, I want to specify the location where the exported document will be saved so that I can organize my files effectively.",
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key locally so that my AI interactions are secure and offline-ready.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user selects the 'Export' option, then they should be prompted to choose a save location on their local machine.",
-                        "The exported document should be saved to the specified location."
+                        "The UI should provide a clear path for obtaining and storing the API key.",
+                        "The system should indicate the presence of the API key with a red/green state.",
+                        "All AI calls should securely use the locally stored API key."
                     ],
                     "Story ID": "S029"
                 },
                 {
-                    "Title": "Include Metadata in Exported Document",
-                    "Description": "As a Solopreneur, I want the exported document to include metadata such as the creation date and campaign name so that I can keep track of my content.",
+                    "Title": "Performance Optimization for Offline Workflow",
+                    "Description": "As a CREATOR, I want the system to be optimized for performance and responsiveness so that my interactions are smooth and efficient.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user exports the document, then the document should include metadata such as the creation date, campaign name, and any relevant tags.",
-                        "The metadata should be displayed in a designated section of the document, such as a header or footer."
+                        "The system should handle real-time transcription and AI interactions without noticeable delays.",
+                        "Performance should be consistent across different stages of the workflow.",
+                        "The system should efficiently convert intents into structured proposals."
                     ],
                     "Story ID": "S030"
+                }
+            ]
+        }
+    ],
+    "CREATOR: Exports outputs to formats": [
+        {
+            "Epic ID": "E001",
+            "Title": "Voice Intake and Transcription",
+            "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision, with live transcription into an editable text area. This feature will enable the CREATOR to capture their ideas verbally and make real-time edits before submission.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input and Live Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into the desktop application so that it is transcribed live into an editable text area.",
+                    "AcceptanceCriteria": [
+                        "The application must allow the CREATOR to start and stop voice input.",
+                        "The spoken words are transcribed in real-time into a text area.",
+                        "The transcription is editable by the CREATOR at any time."
+                    ],
+                    "Story ID": "S001"
                 },
                 {
-                    "Title": "Format Script with Proper Sections",
-                    "Description": "As a Solopreneur, I want the exported document to have clearly defined sections for the hook, body, and conclusion so that the script is easy to follow.",
+                    "Title": "Editable Text Area",
+                    "Description": "As a CREATOR, I want to edit the transcribed text so that I can refine my ideas before submission.",
                     "AcceptanceCriteria": [
-                        "Given a generated script, when the user exports the document, then the script should be divided into sections for the hook, body, and conclusion.",
-                        "Each section should be clearly labeled and formatted to enhance readability."
+                        "The text area must allow for text editing, including adding, deleting, and modifying text.",
+                        "Changes to the text are saved automatically or with a save option.",
+                        "The edited text can be submitted for further processing."
                     ],
-                    "Story ID": "S031"
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the application so that I can ensure AI functionalities are accessible.",
+                    "AcceptanceCriteria": [
+                        "The application provides a clear path to obtain and enter an OpenAI API key.",
+                        "The API key is stored locally and securely.",
+                        "The UI indicates the presence and validity of the API key with a red/green state."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "Export Transcribed Text",
+                    "Description": "As a CREATOR, I want to export the transcribed and edited text to various formats so that I can use it in different applications.",
+                    "AcceptanceCriteria": [
+                        "The application allows exporting the text to PDF format.",
+                        "The application allows exporting the text to Excel format.",
+                        "The export functionality is accessible from the main UI."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "Local Data Storage",
+                    "Description": "As a CREATOR, I want my transcriptions and edits to be stored locally so that I can access them offline and ensure data privacy.",
+                    "AcceptanceCriteria": [
+                        "All transcriptions and edits are saved locally on the Windows system.",
+                        "Data storage must be secure and accessible only by the CREATOR.",
+                        "The application provides a method to view and manage stored data."
+                    ],
+                    "Story ID": "S005"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "API Key Management",
+            "Description": "Implement a user-friendly path within the UI for obtaining and managing an OpenAI API key. The system should store the key locally and indicate its presence with a red/green state, ensuring seamless integration with AI functionalities.",
+            "User Stories": [
+                {
+                    "Title": "UI Path for API Key Acquisition",
+                    "Description": "As a CREATOR, I want a clear and guided path within the UI to obtain an OpenAI API key so that I can easily set up the system for AI functionalities.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a step-by-step guide for obtaining the OpenAI API key.",
+                        "The guide includes clear instructions and links to the OpenAI website for key generation.",
+                        "The UI confirms successful key acquisition with a confirmation message."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "Local Storage of API Key",
+                    "Description": "As a CREATOR, I want the system to store my OpenAI API key locally so that I can ensure my data privacy and security.",
+                    "AcceptanceCriteria": [
+                        "The API key is securely stored on the local system.",
+                        "The storage mechanism prevents unauthorized access to the API key.",
+                        "The system provides a confirmation message once the key is successfully stored."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "API Key Presence Indicator",
+                    "Description": "As a CREATOR, I want the UI to indicate the presence of the API key with a red/green state so that I can easily verify if the key is active and ready for use.",
+                    "AcceptanceCriteria": [
+                        "The UI displays a green indicator when the API key is present and valid.",
+                        "The UI displays a red indicator when the API key is missing or invalid.",
+                        "The indicator updates in real-time based on the key's status."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "API Key Management Interface",
+                    "Description": "As a CREATOR, I want an interface to manage my OpenAI API key so that I can update or remove the key as needed.",
+                    "AcceptanceCriteria": [
+                        "The UI includes an option to update the stored API key.",
+                        "The UI includes an option to remove the stored API key.",
+                        "The system prompts for confirmation before removing the key."
+                    ],
+                    "Story ID": "S009"
+                },
+                {
+                    "Title": "Seamless Integration with AI Functionalities",
+                    "Description": "As a CREATOR, I want the system to seamlessly integrate the API key with AI functionalities so that I can use AI-driven features without manual intervention.",
+                    "AcceptanceCriteria": [
+                        "The system automatically uses the stored API key for all AI-related calls.",
+                        "The system provides error messages if the API key is invalid during AI operations.",
+                        "The integration does not require additional setup once the key is stored."
+                    ],
+                    "Story ID": "S010"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Conversational Requirements Capture",
+            "Description": "Create a system that uses AI-driven prompts to ask clarifying questions and capture necessary information from the CREATOR. Each response should be logged locally, and the AI should continue generating questions until sufficient data is collected for proposal creation.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input and Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into the system so that it can be transcribed into text for further processing.",
+                    "AcceptanceCriteria": [
+                        "The system provides a user interface for voice input.",
+                        "The spoken input is transcribed into text in real-time.",
+                        "The user can pause, edit, and submit the transcribed text."
+                    ],
+                    "Story ID": "S011"
+                },
+                {
+                    "Title": "AI-Driven Question Generation",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on my input so that all necessary information is captured for proposal creation.",
+                    "AcceptanceCriteria": [
+                        "The system generates questions based on the initial input.",
+                        "Questions are relevant and aim to fill information gaps.",
+                        "The AI continues to ask questions until sufficient data is collected."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "Local Logging of Responses",
+                    "Description": "As a CREATOR, I want my responses to be logged locally so that I can review and edit them if needed.",
+                    "AcceptanceCriteria": [
+                        "Each response is saved to a local conversation log.",
+                        "The log is accessible for review and editing.",
+                        "The log is stored securely on the local system."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "Completion Criteria for Data Collection",
+                    "Description": "As a CREATOR, I want the system to notify me when sufficient data has been collected so that I know when the proposal creation process can begin.",
+                    "AcceptanceCriteria": [
+                        "The system evaluates the completeness of the collected data.",
+                        "A notification is provided when data collection is complete.",
+                        "The user is informed of any missing information that is critical."
+                    ],
+                    "Story ID": "S014"
+                },
+                {
+                    "Title": "Exporting Outputs to Formats",
+                    "Description": "As a CREATOR, I want to export the proposal outputs to formats like PDF or Excel so that I can share them with stakeholders.",
+                    "AcceptanceCriteria": [
+                        "The system provides options to export outputs to PDF and Excel.",
+                        "Exports maintain the structure and content of the proposal.",
+                        "The export process is straightforward and user-friendly."
+                    ],
+                    "Story ID": "S015"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E004",
+            "Title": "Intent to Structure Transformation",
+            "Description": "Design a multi-step pipeline that transforms captured intents into structured artifacts, including requirements, stakeholders, phases, epics, stories, and tasks. This process should score tasks for complexity and effort, compiling them into proposal artifacts.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input and Transcription",
+                    "Description": "As a CREATOR, I want to speak my intent into the system so that it can be transcribed into text for further processing.",
+                    "AcceptanceCriteria": [
+                        "The system provides a voice input interface on a local Windows desktop.",
+                        "The spoken intent is transcribed live into an editable text area.",
+                        "The CREATOR can stop, edit, and submit the transcribed text."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the application so that I can ensure AI functionalities are available.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a clear path to obtain and input an OpenAI API key.",
+                        "The system stores the API key locally and securely.",
+                        "The UI indicates the presence of the API key with a red/green state indicator."
+                    ],
+                    "Story ID": "S017"
+                },
+                {
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on my input so that it can gather all necessary information for proposal generation.",
+                    "AcceptanceCriteria": [
+                        "The system generates AI-driven questions to fill information gaps.",
+                        "User responses are logged in a conversation log stored locally.",
+                        "The AI continues to prompt until sufficient information is collected."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Intent to Structure Transformation",
+                    "Description": "As a CREATOR, I want my captured intents to be transformed into structured artifacts so that I can have organized execution plans.",
+                    "AcceptanceCriteria": [
+                        "The system transforms intents into structured stages: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Tasks are scored for complexity and effort.",
+                        "Structured artifacts are compiled into proposal drafts."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Local Storage of Artifacts",
+                    "Description": "As a CREATOR, I want the system to store generated artifacts locally so that I can access and review them offline.",
+                    "AcceptanceCriteria": [
+                        "JSON artifacts are stored locally on the user's system.",
+                        "The system provides options to review or edit intermediate artifacts through a local UI."
+                    ],
+                    "Story ID": "S020"
+                },
+                {
+                    "Title": "Exporting Outputs",
+                    "Description": "As a CREATOR, I want to export proposal drafts and artifacts to formats like PDF or Excel so that I can share them with stakeholders.",
+                    "AcceptanceCriteria": [
+                        "The system provides options to export outputs to PDF and Excel formats.",
+                        "Exports maintain the structure and content of the original artifacts."
+                    ],
+                    "Story ID": "S021"
                 }
             ]
         },
         {
             "Epic ID": "E005",
-            "Title": "Multi-language Support",
-            "Description": "Ensure the platform supports multiple languages based on user input. The AI should automatically detect the language of the user's input and generate scripts in that language.",
+            "Title": "Local Storage and Export Options",
+            "Description": "Ensure all JSON artifacts and conversation logs are stored locally. Provide the CREATOR with options to export proposal drafts and other outputs to formats like PDF and Excel, allowing for easy sharing and review of structured plans.",
             "User Stories": [
                 {
-                    "Title": "Language Detection",
-                    "Description": "As a solopreneur, I want the AI to automatically detect the language of my input so that I can generate scripts in my preferred language without manually selecting it.",
+                    "Title": "Store JSON Artifacts Locally",
+                    "Description": "As a CREATOR, I want all JSON artifacts to be stored locally so that I can access and manage them without needing an internet connection.",
                     "AcceptanceCriteria": [
-                        "Given a text input in any language, when the user submits the input, then the AI should detect the language accurately.",
-                        "The detected language should be displayed to the user for confirmation."
+                        "JSON artifacts are automatically saved to a specified local directory.",
+                        "The system provides a notification confirming successful storage of JSON artifacts.",
+                        "Users can access and view stored JSON artifacts through the local UI."
                     ],
-                    "Story ID": "S032"
+                    "Story ID": "S022"
                 },
                 {
-                    "Title": "Script Generation in Detected Language",
-                    "Description": "As a solopreneur, I want the AI to generate scripts in the detected language so that I can create content that is relevant to my audience.",
+                    "Title": "Store Conversation Logs Locally",
+                    "Description": "As a CREATOR, I want all conversation logs to be stored locally so that I can review past interactions and ensure data privacy.",
                     "AcceptanceCriteria": [
-                        "Given the detected language, when the AI generates a script, then the script should be in the same language as the input.",
-                        "The script should include proper hooks, arcs, and calls to action in the detected language."
+                        "Conversation logs are saved in a readable format in a specified local directory.",
+                        "Users can access and view stored conversation logs through the local UI.",
+                        "The system provides a notification confirming successful storage of conversation logs."
                     ],
-                    "Story ID": "S033"
+                    "Story ID": "S023"
                 },
                 {
-                    "Title": "Language Preference Setting",
-                    "Description": "As a solopreneur, I want to set my language preference so that the AI can generate scripts in my preferred language even if my input is in another language.",
+                    "Title": "Export Proposal Drafts to PDF",
+                    "Description": "As a CREATOR, I want to export proposal drafts to PDF format so that I can easily share them with others for review.",
                     "AcceptanceCriteria": [
-                        "Given a language preference setting, when the user selects a preferred language, then the AI should generate scripts in the selected language regardless of the input language.",
-                        "The language preference should be saved and applied to all future script generations."
+                        "Users can select a proposal draft and choose to export it as a PDF.",
+                        "The exported PDF retains the original formatting and content of the proposal draft.",
+                        "Users receive a notification confirming successful export of the proposal draft to PDF."
                     ],
-                    "Story ID": "S034"
+                    "Story ID": "S024"
                 },
                 {
-                    "Title": "Language Confirmation and Override",
-                    "Description": "As a solopreneur, I want to confirm or override the detected language before the script is generated so that I can ensure the script is in the correct language.",
+                    "Title": "Export Proposal Drafts to Excel",
+                    "Description": "As a CREATOR, I want to export proposal drafts to Excel format so that I can manipulate and analyze the data as needed.",
                     "AcceptanceCriteria": [
-                        "Given a detected language, when the AI displays the detected language, then the user should have the option to confirm or select a different language.",
-                        "If the user selects a different language, the AI should generate the script in the newly selected language."
+                        "Users can select a proposal draft and choose to export it as an Excel file.",
+                        "The exported Excel file retains the original data structure and content of the proposal draft.",
+                        "Users receive a notification confirming successful export of the proposal draft to Excel."
                     ],
-                    "Story ID": "S035"
+                    "Story ID": "S025"
                 },
                 {
-                    "Title": "Multi-language Script Review",
-                    "Description": "As a solopreneur, I want to review and edit the generated scripts in multiple languages so that I can ensure the content meets my standards before publishing.",
+                    "Title": "Review and Edit Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want to review and edit intermediate artifacts through a local UI so that I can ensure accuracy and completeness before finalizing proposals.",
                     "AcceptanceCriteria": [
-                        "Given a generated script in any language, when the user reviews the script, then the user should be able to edit the script in the same language.",
-                        "The platform should support text editing features for multiple languages, including special characters and language-specific formatting."
+                        "Users can access intermediate artifacts through the local UI.",
+                        "Users can make edits to the artifacts and save changes locally.",
+                        "The system provides a confirmation message after successful edits and saves."
                     ],
-                    "Story ID": "S036"
-                },
-                {
-                    "Title": "Language-specific Script Templates",
-                    "Description": "As a solopreneur, I want the AI to use language-specific templates for script generation so that the scripts are culturally and linguistically appropriate.",
-                    "AcceptanceCriteria": [
-                        "Given a detected or selected language, when the AI generates a script, then it should use templates that are tailored to the cultural and linguistic norms of that language.",
-                        "The templates should include language-specific hooks, arcs, and calls to action."
-                    ],
-                    "Story ID": "S037"
-                },
-                {
-                    "Title": "Language-specific Error Handling",
-                    "Description": "As a solopreneur, I want the platform to handle errors in multiple languages so that I can understand and resolve issues without language barriers.",
-                    "AcceptanceCriteria": [
-                        "Given an error occurs, when the platform displays an error message, then the message should be in the detected or selected language.",
-                        "The error message should provide clear instructions for resolving the issue in the user's language."
-                    ],
-                    "Story ID": "S038"
+                    "Story ID": "S026"
                 }
             ]
         },
         {
             "Epic ID": "E006",
-            "Title": "API Key Management",
-            "Description": "Implement a feature that allows users to input their own OpenAI API key to use the AI functionalities, ensuring the system is tied to the user's own account.",
+            "Title": "Review and Edit Intermediate Artifacts",
+            "Description": "Develop optional local UIs that allow the CREATOR to review and edit intermediate artifacts. This feature will enable the CREATOR to refine their proposals and ensure accuracy before finalizing outputs.",
             "User Stories": [
                 {
-                    "Title": "API Key Input Field",
-                    "Description": "As a solopreneur, I want to have an input field to enter my OpenAI API key so that I can enable the AI functionalities tied to my own account.",
+                    "Title": "UI for Reviewing Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want a local UI to review intermediate artifacts so that I can ensure the accuracy and completeness of my proposals before finalizing them.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the settings page, when I navigate to the API key section, then I should see an input field labeled 'OpenAI API Key'.",
-                        "When I enter my API key into the input field and click 'Save', then the system should store the key locally and confirm that the key has been saved successfully.",
-                        "If the entered API key is invalid or missing, then the system should display an error message indicating that a valid API key is required."
+                        "The UI should display all intermediate artifacts in a structured format.",
+                        "The UI must allow navigation between different stages of the proposal (e.g., Vision, Requirements, Epics).",
+                        "The UI should provide a summary view of each artifact for quick assessment."
                     ],
-                    "Story ID": "S039"
+                    "Story ID": "S027"
+                },
+                {
+                    "Title": "Edit Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want to edit intermediate artifacts directly from the local UI so that I can make necessary adjustments to improve the quality of my proposals.",
+                    "AcceptanceCriteria": [
+                        "The UI must allow editing of text fields within each artifact.",
+                        "Changes should be saved locally and update the artifact in real-time.",
+                        "The system should track changes and allow for undo/redo actions."
+                    ],
+                    "Story ID": "S028"
+                },
+                {
+                    "Title": "Export Edited Artifacts",
+                    "Description": "As a CREATOR, I want to export my edited artifacts to formats like PDF or Excel so that I can share them with stakeholders or keep them for records.",
+                    "AcceptanceCriteria": [
+                        "The UI must provide an option to export artifacts in PDF and Excel formats.",
+                        "Exported files should reflect the latest edits made by the CREATOR.",
+                        "The export process should be completed within a reasonable time frame (e.g., under 30 seconds)."
+                    ],
+                    "Story ID": "S029"
+                },
+                {
+                    "Title": "Artifact Version Control",
+                    "Description": "As a CREATOR, I want version control for my artifacts so that I can track changes over time and revert to previous versions if needed.",
+                    "AcceptanceCriteria": [
+                        "The system should automatically save versions of artifacts after each edit.",
+                        "The UI must provide a history view of previous versions.",
+                        "The CREATOR should be able to restore any previous version as the current version."
+                    ],
+                    "Story ID": "S030"
+                },
+                {
+                    "Title": "UI Feedback and Error Handling",
+                    "Description": "As a CREATOR, I want the UI to provide feedback and handle errors gracefully so that I can understand what actions are successful or need correction.",
+                    "AcceptanceCriteria": [
+                        "The UI must display success messages after saving or exporting artifacts.",
+                        "Error messages should be clear and provide guidance on how to resolve issues.",
+                        "The system should prevent actions that could lead to data loss or corruption."
+                    ],
+                    "Story ID": "S031"
+                }
+            ]
+        }
+    ],
+    "CREATOR: Reviews AI-driven prompts": [
+        {
+            "Epic ID": "E001",
+            "Title": "Voice Intake and Transcription",
+            "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision. The system will transcribe audio live into an editable text area, enabling the CREATOR to stop, edit, and submit their responses.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input and Live Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into the system so that it is transcribed live into an editable text area.",
+                    "AcceptanceCriteria": [
+                        "The system provides a microphone input option for the CREATOR to start speaking.",
+                        "The audio is transcribed in real-time and displayed in an editable text area.",
+                        "The transcription is accurate and updates dynamically as the CREATOR speaks."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "Editable Text Area",
+                    "Description": "As a CREATOR, I want to edit the transcribed text so that I can refine my vision before submission.",
+                    "AcceptanceCriteria": [
+                        "The transcribed text appears in an editable text area.",
+                        "The CREATOR can make changes to the text using standard text editing functions (e.g., cut, copy, paste).",
+                        "The system saves edits in real-time to prevent data loss."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Stop and Resume Transcription",
+                    "Description": "As a CREATOR, I want to be able to stop and resume the transcription process so that I can manage my input at my own pace.",
+                    "AcceptanceCriteria": [
+                        "The system provides a 'Stop' button to pause the transcription process.",
+                        "The system provides a 'Resume' button to continue the transcription from where it was stopped.",
+                        "The transcription process can be paused and resumed multiple times without losing data."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "Submit Transcribed Vision",
+                    "Description": "As a CREATOR, I want to submit my transcribed and edited vision so that it can be processed into structured proposals.",
+                    "AcceptanceCriteria": [
+                        "The system provides a 'Submit' button to finalize the transcribed text.",
+                        "Upon submission, the text is saved and prepared for further processing.",
+                        "The CREATOR receives a confirmation that the submission was successful."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "AI-Driven Prompt Review",
+                    "Description": "As a CREATOR, I want to review AI-driven prompts so that I can provide additional information or clarifications.",
+                    "AcceptanceCriteria": [
+                        "The system displays AI-driven prompts based on the transcribed text.",
+                        "The CREATOR can respond to prompts to provide additional information.",
+                        "The system logs the CREATOR\u2019s responses for further processing."
+                    ],
+                    "Story ID": "S005"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "API Key Management",
+            "Description": "Implement a user-friendly path within the UI for obtaining and storing an OpenAI API key locally. The UI should visually indicate the presence of the API key using a red/green state.",
+            "User Stories": [
+                {
+                    "Title": "API Key Acquisition Guide",
+                    "Description": "As a CREATOR, I want a clear guide within the UI on how to obtain an OpenAI API key so that I can easily acquire the necessary credentials for AI functionalities.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a step-by-step guide on obtaining an OpenAI API key.",
+                        "The guide includes visual aids or links to the OpenAI website.",
+                        "The guide is accessible from the main settings menu."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "Local Storage of API Key",
+                    "Description": "As a CREATOR, I want the ability to store my OpenAI API key locally so that I can ensure my credentials are secure and accessible for AI operations.",
+                    "AcceptanceCriteria": [
+                        "The system securely stores the API key on the local machine.",
+                        "The storage process includes encryption of the API key.",
+                        "The API key is retrievable for use in AI calls without requiring re-entry."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "Visual Indicator for API Key Presence",
+                    "Description": "As a CREATOR, I want a visual indicator in the UI that shows whether my API key is present so that I can quickly verify the system's readiness for AI interactions.",
+                    "AcceptanceCriteria": [
+                        "The UI displays a green indicator when the API key is present and valid.",
+                        "The UI displays a red indicator when the API key is missing or invalid.",
+                        "The indicator is visible on the main dashboard or settings page."
+                    ],
+                    "Story ID": "S008"
                 },
                 {
                     "Title": "API Key Validation",
-                    "Description": "As a solopreneur, I want the system to validate my OpenAI API key upon entry so that I can be sure the key is correct and functional.",
+                    "Description": "As a CREATOR, I want the system to validate my API key upon entry so that I can ensure it is correct and functional for AI calls.",
                     "AcceptanceCriteria": [
-                        "Given that I have entered my API key and clicked 'Save', when the system validates the key, then it should make a test call to the OpenAI API to confirm the key's validity.",
-                        "If the API key is valid, then the system should store the key and display a success message.",
-                        "If the API key is invalid, then the system should display an error message and prompt me to enter a valid key."
+                        "The system checks the validity of the API key upon entry.",
+                        "A success message is displayed if the key is valid.",
+                        "An error message is displayed if the key is invalid, with suggestions for correction."
                     ],
-                    "Story ID": "S040"
+                    "Story ID": "S009"
                 },
                 {
-                    "Title": "API Key Storage",
-                    "Description": "As a solopreneur, I want my OpenAI API key to be stored securely on my local machine so that it can be used for future AI interactions without re-entering it.",
+                    "Title": "API Key Management Interface",
+                    "Description": "As a CREATOR, I want an interface to manage my API key so that I can update or delete it as needed.",
                     "AcceptanceCriteria": [
-                        "Given that I have entered a valid API key, when I click 'Save', then the system should store the key in a secure, encrypted format on my local machine.",
-                        "When I restart the application, then the system should automatically retrieve and use the stored API key without requiring me to re-enter it."
+                        "The UI provides options to update the existing API key.",
+                        "The UI allows for the deletion of the API key with a confirmation prompt.",
+                        "Changes to the API key are reflected immediately in the system's status indicators."
                     ],
-                    "Story ID": "S041"
-                },
-                {
-                    "Title": "API Key Update",
-                    "Description": "As a solopreneur, I want to be able to update my OpenAI API key at any time so that I can change it if needed.",
-                    "AcceptanceCriteria": [
-                        "Given that I am on the settings page, when I navigate to the API key section, then I should see my current API key (masked for security) and an option to update it.",
-                        "When I enter a new API key and click 'Save', then the system should validate and store the new key, replacing the old one.",
-                        "If the new API key is invalid, then the system should display an error message and retain the old key until a valid new key is provided."
-                    ],
-                    "Story ID": "S042"
-                },
-                {
-                    "Title": "API Key Error Handling",
-                    "Description": "As a solopreneur, I want the system to handle errors gracefully if there are issues with my OpenAI API key so that I can understand and resolve the problem quickly.",
-                    "AcceptanceCriteria": [
-                        "Given that I have entered an API key, when the system encounters an error while validating or using the key, then it should display a clear and informative error message.",
-                        "The error message should include possible reasons for the error (e.g., invalid key, network issues) and steps to resolve it (e.g., re-enter the key, check internet connection)."
-                    ],
-                    "Story ID": "S043"
-                },
-                {
-                    "Title": "API Key Usage Notification",
-                    "Description": "As a solopreneur, I want to be notified when my OpenAI API key is being used so that I am aware of the system's activities.",
-                    "AcceptanceCriteria": [
-                        "Given that I have entered a valid API key, when the system makes a call to the OpenAI API, then it should display a brief notification indicating that the API key is being used.",
-                        "The notification should include information about the action being performed (e.g., generating a script) and should disappear after a few seconds."
-                    ],
-                    "Story ID": "S044"
+                    "Story ID": "S010"
                 }
             ]
         },
         {
-            "Epic ID": "E007",
-            "Title": "Local Data Storage",
-            "Description": "Store all user data, including inputs and generated scripts, locally in JSON files within a specified storage directory. Ensure efficient management of local storage for quick access and retrieval of data.",
+            "Epic ID": "E003",
+            "Title": "Conversational Requirements Capture",
+            "Description": "Create a system that uses AI-driven prompts to ask clarifying questions and capture necessary information. User responses should be logged in a conversation log stored locally, with AI generating questions until sufficient information is collected.",
             "User Stories": [
                 {
-                    "Title": "Create Storage Directory",
-                    "Description": "As a solopreneur, I want to specify a storage directory for all my data so that I can easily manage and locate my files.",
+                    "Title": "Initiate AI-Driven Prompt Session",
+                    "Description": "As a CREATOR, I want to initiate a session with AI-driven prompts so that I can start capturing necessary information through a guided conversation.",
                     "AcceptanceCriteria": [
-                        "Given the application is installed, when I launch it for the first time, then I should be prompted to specify a storage directory.",
-                        "When I specify the storage directory, then all subsequent data should be stored in that directory."
+                        "The system provides an option to start a new AI-driven prompt session.",
+                        "Upon initiation, the system begins with a default introductory question.",
+                        "The session is logged with a unique identifier for future reference."
                     ],
-                    "Story ID": "S045"
+                    "Story ID": "S011"
                 },
                 {
-                    "Title": "Save User Inputs Locally",
-                    "Description": "As a solopreneur, I want my inputs during the conversational process to be saved locally in JSON files so that I can have a record of my responses.",
+                    "Title": "AI-Driven Question Generation",
+                    "Description": "As a CREATOR, I want the AI to generate clarifying questions based on my responses so that I can provide all necessary information efficiently.",
                     "AcceptanceCriteria": [
-                        "Given I am interacting with the AI system, when I provide responses, then those responses should be saved in a JSON file in the specified storage directory.",
-                        "The JSON file should be named uniquely to avoid overwriting existing data."
+                        "The AI generates a new question based on the previous response.",
+                        "Questions are relevant and aim to fill gaps in information.",
+                        "The system allows the CREATOR to request a repeat or clarification of the question."
                     ],
-                    "Story ID": "S046"
+                    "Story ID": "S012"
                 },
                 {
-                    "Title": "Save Generated Scripts Locally",
-                    "Description": "As a solopreneur, I want the AI-generated scripts to be saved locally in JSON files so that I can review and edit them later.",
+                    "Title": "Log User Responses Locally",
+                    "Description": "As a CREATOR, I want my responses to be logged in a conversation log stored locally so that I can review and edit them if necessary.",
                     "AcceptanceCriteria": [
-                        "Given the AI has generated a script, when the script is finalized, then it should be saved in a JSON file in the specified storage directory.",
-                        "The JSON file should include metadata such as the date of creation and campaign name."
+                        "Each response is appended to a local conversation log in real-time.",
+                        "The log is accessible for review and editing during and after the session.",
+                        "The log is stored in a format that is easy to export and share."
                     ],
-                    "Story ID": "S047"
+                    "Story ID": "S013"
                 },
                 {
-                    "Title": "Efficient Data Retrieval",
-                    "Description": "As a solopreneur, I want to quickly access and retrieve my stored data so that I can efficiently manage my content creation process.",
+                    "Title": "Session Completion and Review",
+                    "Description": "As a CREATOR, I want to be notified when sufficient information has been collected so that I can review the session and make any final adjustments.",
                     "AcceptanceCriteria": [
-                        "Given I have multiple JSON files in the storage directory, when I open the application, then I should see a list of available campaigns and scripts.",
-                        "When I select a campaign or script, then the corresponding JSON file should be quickly loaded and displayed."
+                        "The system notifies the CREATOR when the AI determines that sufficient information has been collected.",
+                        "The CREATOR can review the entire conversation log before finalizing.",
+                        "The CREATOR can make edits to the log and mark the session as complete."
                     ],
-                    "Story ID": "S048"
+                    "Story ID": "S014"
                 },
                 {
-                    "Title": "Organize Data by Campaign",
-                    "Description": "As a solopreneur, I want my data to be organized by campaign so that I can easily navigate through different projects.",
+                    "Title": "Export Conversation Log",
+                    "Description": "As a CREATOR, I want to export the conversation log to a preferred format so that I can use it in other applications or share it with others.",
                     "AcceptanceCriteria": [
-                        "Given I am creating a new campaign, when I save data, then it should be stored in a subdirectory named after the campaign within the specified storage directory.",
-                        "Each campaign subdirectory should contain all related JSON files for that campaign."
+                        "The system provides options to export the log in formats such as PDF and Excel.",
+                        "The export function is accessible from the session review screen.",
+                        "The exported file retains the structure and content of the conversation log."
                     ],
-                    "Story ID": "S049"
-                },
-                {
-                    "Title": "Backup Data Manually",
-                    "Description": "As a solopreneur, I want to be able to manually backup my data so that I can ensure its safety and recover it if needed.",
-                    "AcceptanceCriteria": [
-                        "Given I have data stored locally, when I want to backup my data, then I should be able to copy the storage directory to an external storage solution like Google Drive or a USB drive.",
-                        "The application should provide a reminder to backup data periodically."
-                    ],
-                    "Story ID": "S050"
-                },
-                {
-                    "Title": "View Storage Usage",
-                    "Description": "As a solopreneur, I want to view the storage usage of my data so that I can manage my local storage effectively.",
-                    "AcceptanceCriteria": [
-                        "Given I have data stored locally, when I open the application, then I should see an overview of the storage usage including the size of each campaign and total storage used.",
-                        "The storage overview should be updated in real-time as new data is added."
-                    ],
-                    "Story ID": "S051"
+                    "Story ID": "S015"
                 }
             ]
         },
         {
-            "Epic ID": "E008",
-            "Title": "Script Review and Editing",
-            "Description": "Provide a user-friendly interface for solopreneurs to review and edit AI-generated scripts before finalizing them for use.",
+            "Epic ID": "E004",
+            "Title": "Intent to Structure Transformation",
+            "Description": "Build a pipeline that transforms captured intents into structured artifacts through stages: Vision to Requirements, Stakeholders/Phases, Epics, Stories, and Tasks. Tasks should be scored for complexity and effort.",
             "User Stories": [
                 {
-                    "Title": "View AI-Generated Scripts",
-                    "Description": "As a solopreneur, I want to view the AI-generated scripts so that I can review them before making any edits.",
+                    "Title": "Voice Intake and Transcription",
+                    "Description": "As a CREATOR, I want to use a voice intake UI to speak my vision so that it can be transcribed live into an editable text area for further processing.",
                     "AcceptanceCriteria": [
-                        "Given that I have logged into the platform, when I navigate to the campaign dashboard, I should see a list of AI-generated scripts.",
-                        "Each script should be displayed with a title and a brief summary.",
-                        "I should be able to click on a script to view its full content."
+                        "The system provides a local desktop UI for voice input.",
+                        "The spoken vision is transcribed live into text.",
+                        "The transcribed text is editable before submission."
                     ],
-                    "Story ID": "S052"
+                    "Story ID": "S016"
                 },
                 {
-                    "Title": "Edit AI-Generated Scripts",
-                    "Description": "As a solopreneur, I want to edit the AI-generated scripts so that I can make necessary changes before finalizing them.",
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the UI so that I can ensure AI-driven functionalities are operational.",
                     "AcceptanceCriteria": [
-                        "Given that I am viewing an AI-generated script, when I click the 'Edit' button, I should be able to modify the script content.",
-                        "I should be able to edit the text directly within the platform.",
-                        "There should be an 'Undo' button to revert changes made during the current editing session.",
-                        "I should be able to save my changes by clicking a 'Save' button."
+                        "The UI provides a clear path for obtaining an OpenAI API key.",
+                        "The API key is stored locally and securely.",
+                        "The UI indicates the presence of the API key with a red/green state."
                     ],
-                    "Story ID": "S053"
+                    "Story ID": "S017"
                 },
                 {
-                    "Title": "Highlight Changes",
-                    "Description": "As a solopreneur, I want to see the changes I have made to the AI-generated scripts so that I can easily identify my edits.",
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on missing information so that I can provide complete and accurate inputs.",
                     "AcceptanceCriteria": [
-                        "Given that I am editing a script, when I make changes, the modified text should be highlighted.",
-                        "There should be a legend or key explaining the highlight colors (e.g., additions in green, deletions in red)."
+                        "The system generates AI-driven questions to capture missing information.",
+                        "User responses are logged in a conversation log stored locally.",
+                        "The AI continues to prompt until sufficient information is collected."
                     ],
-                    "Story ID": "S054"
+                    "Story ID": "S018"
                 },
                 {
-                    "Title": "Add Comments to Scripts",
-                    "Description": "As a solopreneur, I want to add comments to specific parts of the scripts so that I can note down my thoughts or feedback.",
+                    "Title": "Transform Intent to Structured Artifacts",
+                    "Description": "As a CREATOR, I want the system to transform my captured intent into structured artifacts through defined stages so that I can have a detailed execution plan.",
                     "AcceptanceCriteria": [
-                        "Given that I am viewing or editing a script, when I select a portion of the text, I should see an option to add a comment.",
-                        "I should be able to type my comment in a text box and save it.",
-                        "The commented text should be highlighted, and the comment should be viewable on hover or click."
+                        "The system processes intents through stages: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Each stage is clearly defined and outputs are stored locally.",
+                        "Tasks are scored for complexity and effort."
                     ],
-                    "Story ID": "S055"
+                    "Story ID": "S019"
                 },
                 {
-                    "Title": "Track Script Versions",
-                    "Description": "As a solopreneur, I want to track different versions of the scripts so that I can revert to previous versions if needed.",
+                    "Title": "Review and Edit Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want to review and edit intermediate artifacts locally so that I can ensure accuracy before finalizing proposals.",
                     "AcceptanceCriteria": [
-                        "Given that I am viewing a script, I should see a 'Version History' button.",
-                        "When I click the 'Version History' button, I should see a list of previous versions with timestamps.",
-                        "I should be able to select a previous version to view its content.",
-                        "I should have the option to revert to a selected previous version."
+                        "The system provides local UI options to review intermediate artifacts.",
+                        "Users can edit artifacts before they are finalized.",
+                        "Changes are saved and reflected in the final outputs."
                     ],
-                    "Story ID": "S056"
+                    "Story ID": "S020"
                 },
                 {
-                    "Title": "Export Finalized Scripts",
-                    "Description": "As a solopreneur, I want to export the finalized scripts so that I can share them or use them for filming.",
+                    "Title": "Generate and Export Proposal Outputs",
+                    "Description": "As a CREATOR, I want to generate proposal drafts and export them to various formats so that I can share and utilize them effectively.",
                     "AcceptanceCriteria": [
-                        "Given that I have finalized a script, I should see an 'Export' button.",
-                        "When I click the 'Export' button, I should be able to choose a file format (e.g., Word, PDF).",
-                        "The exported file should be properly formatted and include all my edits and comments."
+                        "The system compiles outputs into proposal drafts.",
+                        "Users can export outputs to PDF and Excel formats.",
+                        "All outputs are stored locally for easy access."
                     ],
-                    "Story ID": "S057"
-                },
-                {
-                    "Title": "Search Within Scripts",
-                    "Description": "As a solopreneur, I want to search for specific keywords or phrases within the scripts so that I can quickly find relevant content.",
-                    "AcceptanceCriteria": [
-                        "Given that I am viewing or editing scripts, I should see a 'Search' bar.",
-                        "When I type a keyword or phrase into the 'Search' bar and press 'Enter', the platform should highlight all instances of the keyword or phrase within the scripts.",
-                        "I should be able to navigate through the search results using 'Next' and 'Previous' buttons."
-                    ],
-                    "Story ID": "S058"
-                },
-                {
-                    "Title": "Provide Feedback on AI Suggestions",
-                    "Description": "As a solopreneur, I want to provide feedback on the AI-generated scripts so that the system can improve over time.",
-                    "AcceptanceCriteria": [
-                        "Given that I am viewing an AI-generated script, I should see a 'Feedback' button.",
-                        "When I click the 'Feedback' button, I should be able to rate the script and provide comments.",
-                        "The feedback should be saved and associated with the specific script."
-                    ],
-                    "Story ID": "S059"
+                    "Story ID": "S021"
                 }
             ]
         },
         {
-            "Epic ID": "E009",
-            "Title": "User Interface Design",
-            "Description": "Design a simple, full-screen interface with a dashboard that includes buttons for creating new campaigns and viewing existing ones. The conversational system should resemble a chat window for intuitive user interaction.",
+            "Epic ID": "E005",
+            "Title": "Local Storage and Output Management",
+            "Description": "Design a system to store JSON artifacts locally and provide options for exporting proposal drafts and other outputs to formats like PDF or Excel. Include local UIs for reviewing or editing intermediate artifacts.",
             "User Stories": [
                 {
-                    "Title": "Create New Campaign Button",
-                    "Description": "As a solopreneur, I want a button to create a new campaign on the dashboard so that I can easily start planning my social media content.",
+                    "Title": "Store JSON Artifacts Locally",
+                    "Description": "As a CREATOR, I want to store JSON artifacts locally so that I can access and manage my proposal data offline.",
                     "AcceptanceCriteria": [
-                        "Given the dashboard is displayed, when the user clicks the 'Create New Campaign' button, then a new campaign creation process should start.",
-                        "The button should be prominently displayed and easily accessible on the dashboard.",
-                        "The button should be labeled 'Create New Campaign'."
+                        "The system must save JSON artifacts to a specified local directory.",
+                        "Users can specify or change the directory location for storing JSON artifacts.",
+                        "The system should notify the user upon successful storage of a JSON artifact."
                     ],
-                    "Story ID": "S060"
+                    "Story ID": "S022"
                 },
                 {
-                    "Title": "View Existing Campaigns Button",
-                    "Description": "As a solopreneur, I want a button to view existing campaigns on the dashboard so that I can easily access and manage my ongoing campaigns.",
+                    "Title": "Export Proposal Drafts to PDF",
+                    "Description": "As a CREATOR, I want to export proposal drafts to PDF format so that I can share finalized documents easily.",
                     "AcceptanceCriteria": [
-                        "Given the dashboard is displayed, when the user clicks the 'View Existing Campaigns' button, then a list of existing campaigns should be shown.",
-                        "The button should be prominently displayed and easily accessible on the dashboard.",
-                        "The button should be labeled 'View Existing Campaigns'."
+                        "The system provides an option to export proposal drafts to PDF format.",
+                        "Exported PDFs should maintain the formatting and structure of the proposal.",
+                        "Users receive a confirmation message upon successful export."
                     ],
-                    "Story ID": "S061"
+                    "Story ID": "S023"
                 },
                 {
-                    "Title": "Campaign Cards Display",
-                    "Description": "As a solopreneur, I want to see campaign cards with key details on the dashboard so that I can quickly understand the status and content of each campaign.",
+                    "Title": "Export Outputs to Excel",
+                    "Description": "As a CREATOR, I want to export outputs to Excel format so that I can analyze and manipulate data using spreadsheet tools.",
                     "AcceptanceCriteria": [
-                        "Given the user is viewing existing campaigns, when the campaigns are displayed, then each campaign should be represented by a card.",
-                        "Each card should display the campaign title, creation date, and a brief summary of the scripts generated.",
-                        "The cards should be clickable to access detailed views of the campaigns."
+                        "The system provides an option to export outputs to Excel format.",
+                        "Exported Excel files should include all relevant data fields and maintain data integrity.",
+                        "Users receive a confirmation message upon successful export."
                     ],
-                    "Story ID": "S062"
+                    "Story ID": "S024"
                 },
                 {
-                    "Title": "Conversational System Interface",
-                    "Description": "As a solopreneur, I want the conversational system to resemble a chat window so that I can interact with the AI in an intuitive and familiar way.",
+                    "Title": "Review Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want to review intermediate artifacts so that I can ensure accuracy and completeness before finalizing proposals.",
                     "AcceptanceCriteria": [
-                        "Given the user starts a new campaign, when the conversational system is displayed, then it should resemble a chat window.",
-                        "The AI's text should be displayed in one color and the user's text in another color.",
-                        "The chat window should have a text input field and a submit button for user responses."
+                        "The system provides a UI for viewing intermediate artifacts.",
+                        "Users can navigate through different stages of the proposal process to review artifacts.",
+                        "Users can see a summary of changes made to each artifact."
                     ],
-                    "Story ID": "S063"
+                    "Story ID": "S025"
                 },
                 {
-                    "Title": "Start Recording Button",
-                    "Description": "As a solopreneur, I want a button to start recording my responses so that I can provide verbal input to the AI.",
+                    "Title": "Edit Intermediate Artifacts",
+                    "Description": "As a CREATOR, I want to edit intermediate artifacts so that I can make necessary adjustments to the proposal content.",
                     "AcceptanceCriteria": [
-                        "Given the user is in the conversational system, when the user clicks the 'Start Recording' button, then the system should start recording the user's verbal input.",
-                        "The button should be labeled 'Start Recording'.",
-                        "The recorded input should be transcribed into text and displayed in the chat window."
+                        "The system provides a UI for editing intermediate artifacts.",
+                        "Users can make changes to text, add comments, and update data fields.",
+                        "The system tracks changes and allows users to revert to previous versions if needed."
                     ],
-                    "Story ID": "S064"
+                    "Story ID": "S026"
                 },
                 {
-                    "Title": "Submit Response Button",
-                    "Description": "As a solopreneur, I want a button to submit my text responses so that the AI can analyze my input and provide the next question.",
+                    "Title": "Notification of Export Options",
+                    "Description": "As a CREATOR, I want to be notified of available export options so that I can choose the best format for my needs.",
                     "AcceptanceCriteria": [
-                        "Given the user has entered a response in the text input field, when the user clicks the 'Submit' button, then the system should analyze the input and display the next question from the AI.",
-                        "The button should be labeled 'Submit'.",
-                        "The submitted response should be displayed in the chat window."
+                        "The system displays available export options (PDF, Excel) prominently in the UI.",
+                        "Users receive guidance on when to use each export format.",
+                        "The system provides tooltips or help sections explaining the export process."
                     ],
-                    "Story ID": "S065"
-                },
-                {
-                    "Title": "Script Review and Edit",
-                    "Description": "As a solopreneur, I want to review and edit the generated scripts so that I can ensure the content meets my standards before finalizing.",
-                    "AcceptanceCriteria": [
-                        "Given the AI has generated scripts, when the user views the scripts, then there should be an option to edit the scripts.",
-                        "The edited scripts should be saved and updated in the campaign.",
-                        "There should be a clear 'Edit' button next to each script."
-                    ],
-                    "Story ID": "S066"
-                },
-                {
-                    "Title": "Export Scripts",
-                    "Description": "As a solopreneur, I want to export the generated scripts into a structured document format so that I can review and make further edits outside the platform.",
-                    "AcceptanceCriteria": [
-                        "Given the user has reviewed the scripts, when the user clicks the 'Export' button, then the scripts should be exported into a Word or PDF document.",
-                        "The exported document should be properly formatted with the script content and scene descriptions.",
-                        "The button should be labeled 'Export'."
-                    ],
-                    "Story ID": "S067"
+                    "Story ID": "S027"
                 }
             ]
         },
         {
-            "Epic ID": "E010",
-            "Title": "Data Backup Responsibility",
-            "Description": "Inform users about their responsibility for backing up their data manually, as the platform will not include built-in backup or data recovery features.",
+            "Epic ID": "E006",
+            "Title": "Offline Workflow Optimization",
+            "Description": "Ensure the software functions as a self-contained offline workflow, starting from voice or text input and ending with structured plans and proposal outputs. Optimize the system for efficient processing and responsiveness.",
             "User Stories": [
                 {
-                    "Title": "Display Backup Responsibility Notification",
-                    "Description": "As a solopreneur, I want to see a notification informing me about my responsibility for data backup so that I am aware that the platform does not include built-in backup or data recovery features.",
+                    "Title": "Voice Input and Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into the system and have it transcribed into text so that I can easily review and edit my input before submission.",
                     "AcceptanceCriteria": [
-                        "Given that I am using the platform for the first time, when I launch the application, then I should see a notification informing me about the need to manually back up my data.",
-                        "Given that I am using the platform, when I navigate to the settings or help section, then I should see a persistent message about the responsibility for data backup."
+                        "The system provides a voice input feature that transcribes speech into text in real-time.",
+                        "The transcribed text is displayed in an editable text area.",
+                        "The CREATOR can stop, edit, and submit the transcribed text."
                     ],
-                    "Story ID": "S068"
+                    "Story ID": "S028"
                 },
                 {
-                    "Title": "Provide Backup Instructions",
-                    "Description": "As a solopreneur, I want detailed instructions on how to manually back up my data so that I can ensure my data is safe.",
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the application so that I can ensure all AI calls are authenticated and functional.",
                     "AcceptanceCriteria": [
-                        "Given that I am in the settings or help section, when I click on the 'Backup Instructions' link, then I should see a detailed guide on how to back up my data using common methods like Google Drive or USB storage.",
-                        "Given that I am viewing the backup instructions, when I follow the steps provided, then I should be able to successfully back up my data."
+                        "The UI provides a clear path for obtaining and entering an OpenAI API key.",
+                        "The system stores the API key locally and securely.",
+                        "The UI indicates the presence of the API key with a red/green state indicator."
                     ],
-                    "Story ID": "S069"
+                    "Story ID": "S029"
                 },
                 {
-                    "Title": "Reminder for Regular Data Backup",
-                    "Description": "As a solopreneur, I want periodic reminders to back up my data so that I do not forget to perform regular backups.",
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on my input so that I can provide all necessary information for proposal generation.",
                     "AcceptanceCriteria": [
-                        "Given that I am using the platform, when a week has passed since my last backup, then I should receive a reminder notification to back up my data.",
-                        "Given that I receive a backup reminder, when I click on the notification, then I should be directed to the backup instructions page."
+                        "The system generates AI-driven prompts to ask clarifying questions.",
+                        "User responses are logged in a conversation log stored locally.",
+                        "The system continues to ask questions until sufficient information is collected."
                     ],
-                    "Story ID": "S070"
+                    "Story ID": "S030"
                 },
                 {
-                    "Title": "Backup Status Indicator",
-                    "Description": "As a solopreneur, I want to see an indicator of my last backup date so that I can easily track when I last backed up my data.",
+                    "Title": "Pipeline Transformation",
+                    "Description": "As a CREATOR, I want my captured intent to be transformed into structured artifacts so that I can receive detailed execution plans.",
                     "AcceptanceCriteria": [
-                        "Given that I am on the dashboard, when I look at the backup status section, then I should see the date of my last backup.",
-                        "Given that I have not backed up my data for more than a month, when I view the backup status section, then I should see a warning message indicating that my data is overdue for backup."
+                        "The system transforms captured intents through stages: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Tasks are scored for complexity and effort.",
+                        "Structured artifacts are compiled into proposal outputs."
                     ],
-                    "Story ID": "S071"
+                    "Story ID": "S031"
                 },
                 {
-                    "Title": "Export Data for Backup",
-                    "Description": "As a solopreneur, I want to be able to export my data in a structured format so that I can easily back it up manually.",
+                    "Title": "Local Storage of Artifacts",
+                    "Description": "As a CREATOR, I want my proposal artifacts to be stored locally so that I can access and manage them offline.",
                     "AcceptanceCriteria": [
-                        "Given that I am in the settings or data management section, when I click on the 'Export Data' button, then I should be able to download my data in a structured format (e.g., JSON or CSV).",
-                        "Given that I have exported my data, when I open the exported file, then I should see all my data organized in a readable and structured manner."
+                        "JSON artifacts are stored locally on the system.",
+                        "The system provides options to export outputs to PDF or Excel.",
+                        "Local UIs are available for reviewing or editing intermediate artifacts."
                     ],
-                    "Story ID": "S072"
+                    "Story ID": "S032"
+                },
+                {
+                    "Title": "Efficient Processing and Responsiveness",
+                    "Description": "As a CREATOR, I want the system to process my inputs efficiently and respond promptly so that I can have a seamless and productive experience.",
+                    "AcceptanceCriteria": [
+                        "The system processes voice inputs and generates AI-driven prompts without noticeable delays.",
+                        "The system efficiently transforms intents into structured proposals.",
+                        "The overall workflow is optimized for responsiveness and user experience."
+                    ],
+                    "Story ID": "S033"
+                }
+            ]
+        }
+    ],
+    "CREATOR: Edits transcriptions": [
+        {
+            "Epic ID": "E001",
+            "Title": "Voice Intake and Transcription",
+            "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision. The system should transcribe audio into text in real-time, providing an editable text area for the CREATOR to make necessary adjustments before submission.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input and Real-Time Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into the system so that it can be transcribed into text in real-time for immediate review and editing.",
+                    "AcceptanceCriteria": [
+                        "The system must allow the CREATOR to start and stop voice input with a single click.",
+                        "The transcribed text should appear in real-time as the CREATOR speaks.",
+                        "The transcription accuracy should be at least 90% for clear speech."
+                    ],
+                    "Story ID": "S001"
+                },
+                {
+                    "Title": "Editable Text Area for Transcription",
+                    "Description": "As a CREATOR, I want an editable text area where I can make corrections to the transcribed text so that I can ensure accuracy before submission.",
+                    "AcceptanceCriteria": [
+                        "The text area should allow standard text editing functions such as cut, copy, paste, and undo.",
+                        "Changes made in the text area should be saved automatically.",
+                        "The text area should support basic formatting options like bold and italics."
+                    ],
+                    "Story ID": "S002"
+                },
+                {
+                    "Title": "Submission of Edited Transcription",
+                    "Description": "As a CREATOR, I want to submit the edited transcription so that it can be processed into structured proposals.",
+                    "AcceptanceCriteria": [
+                        "The system should provide a clear 'Submit' button for the CREATOR to finalize the transcription.",
+                        "Upon submission, the system should confirm receipt of the transcription.",
+                        "The submitted text should be stored locally for further processing."
+                    ],
+                    "Story ID": "S003"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the UI so that I can ensure the system has access to AI functionalities.",
+                    "AcceptanceCriteria": [
+                        "The UI should have a section for entering and storing the OpenAI API key.",
+                        "The system should indicate the status of the API key with a red/green indicator.",
+                        "The CREATOR should be able to update or remove the API key at any time."
+                    ],
+                    "Story ID": "S004"
+                },
+                {
+                    "Title": "Real-Time Feedback on Transcription Quality",
+                    "Description": "As a CREATOR, I want to receive real-time feedback on the quality of the transcription so that I can make necessary adjustments during the voice input.",
+                    "AcceptanceCriteria": [
+                        "The system should provide visual indicators if the transcription quality drops below a certain threshold.",
+                        "Suggestions for improving transcription quality should be displayed if issues are detected.",
+                        "The CREATOR should be able to pause and resume transcription based on feedback."
+                    ],
+                    "Story ID": "S005"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E002",
+            "Title": "API Key Management and Onboarding",
+            "Description": "Create a user-friendly interface for obtaining and managing an OpenAI API key. The UI should guide the CREATOR through the process of acquiring the key, store it locally, and visually indicate its presence with a red/green state.",
+            "User Stories": [
+                {
+                    "Title": "UI for API Key Acquisition",
+                    "Description": "As a CREATOR, I want a clear and guided path to acquire an OpenAI API key so that I can easily set up the system for AI functionalities.",
+                    "AcceptanceCriteria": [
+                        "The UI provides step-by-step instructions for obtaining an OpenAI API key.",
+                        "The UI includes a link or button that redirects to the OpenAI API key registration page.",
+                        "The UI displays a confirmation message once the API key is successfully obtained."
+                    ],
+                    "Story ID": "S006"
+                },
+                {
+                    "Title": "Local Storage of API Key",
+                    "Description": "As a CREATOR, I want the system to store my OpenAI API key locally so that I can ensure my key is secure and accessible for AI operations.",
+                    "AcceptanceCriteria": [
+                        "The system securely stores the API key on the local machine.",
+                        "The stored API key is accessible for all AI-related calls without requiring re-entry.",
+                        "The system encrypts the API key before saving it locally."
+                    ],
+                    "Story ID": "S007"
+                },
+                {
+                    "Title": "Visual Indicator for API Key Presence",
+                    "Description": "As a CREATOR, I want a visual indicator to show the presence of my API key so that I can quickly verify if the system is ready for AI operations.",
+                    "AcceptanceCriteria": [
+                        "The UI displays a green indicator when the API key is present and valid.",
+                        "The UI displays a red indicator when the API key is missing or invalid.",
+                        "The indicator updates in real-time based on the API key status."
+                    ],
+                    "Story ID": "S008"
+                },
+                {
+                    "Title": "API Key Management Interface",
+                    "Description": "As a CREATOR, I want an interface to manage my API key so that I can update or change it as needed.",
+                    "AcceptanceCriteria": [
+                        "The UI provides an option to view the current API key status.",
+                        "The UI allows the CREATOR to update or replace the existing API key.",
+                        "The system validates the new API key before saving changes."
+                    ],
+                    "Story ID": "S009"
+                },
+                {
+                    "Title": "Error Handling for API Key Issues",
+                    "Description": "As a CREATOR, I want the system to handle errors related to the API key so that I am informed of any issues and can take corrective action.",
+                    "AcceptanceCriteria": [
+                        "The system displays an error message if the API key is invalid or expired.",
+                        "The UI provides guidance on how to resolve API key issues.",
+                        "The system logs API key errors for troubleshooting purposes."
+                    ],
+                    "Story ID": "S010"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E003",
+            "Title": "Conversational Requirements Capture",
+            "Description": "Implement a system that engages the CREATOR with AI-driven prompts to capture detailed requirements. The system should log each response locally, ensuring a comprehensive collection of information to transform into structured outputs.",
+            "User Stories": [
+                {
+                    "Title": "Voice Input Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision and have it transcribed live into text so that I can easily edit and refine my ideas.",
+                    "AcceptanceCriteria": [
+                        "The system provides a voice input feature that transcribes spoken words into text in real-time.",
+                        "The transcribed text appears in an editable text area where the CREATOR can make changes.",
+                        "The transcription is accurate and updates as the CREATOR speaks."
+                    ],
+                    "Story ID": "S011"
+                },
+                {
+                    "Title": "AI-Driven Prompt Generation",
+                    "Description": "As a CREATOR, I want the system to ask AI-driven clarifying questions so that I can provide detailed and complete requirements.",
+                    "AcceptanceCriteria": [
+                        "The system generates AI-driven prompts based on the initial input to gather more information.",
+                        "The prompts are relevant and help in clarifying the CREATOR's intent.",
+                        "The CREATOR can respond to prompts, and the system logs each response."
+                    ],
+                    "Story ID": "S012"
+                },
+                {
+                    "Title": "Local Response Logging",
+                    "Description": "As a CREATOR, I want each of my responses to be logged locally so that I have a comprehensive record of the conversation.",
+                    "AcceptanceCriteria": [
+                        "Each response from the CREATOR is logged in a local conversation log.",
+                        "The log is accessible for review and can be exported if needed.",
+                        "The log maintains the sequence of the conversation for clarity."
+                    ],
+                    "Story ID": "S013"
+                },
+                {
+                    "Title": "Editable Conversation Log",
+                    "Description": "As a CREATOR, I want to review and edit the conversation log so that I can ensure all information is accurate and complete.",
+                    "AcceptanceCriteria": [
+                        "The system provides an interface to view the entire conversation log.",
+                        "The CREATOR can edit entries in the log to correct or add information.",
+                        "Changes to the log are saved locally and do not affect the original transcriptions."
+                    ],
+                    "Story ID": "S014"
+                },
+                {
+                    "Title": "Structured Output Generation",
+                    "Description": "As a CREATOR, I want my inputs to be transformed into structured outputs so that I can easily use them for proposal creation.",
+                    "AcceptanceCriteria": [
+                        "The system transforms the logged responses into structured artifacts such as requirements, stakeholders, and tasks.",
+                        "The structured outputs are stored locally in a format that can be reviewed and edited.",
+                        "The outputs can be exported to formats like PDF or Excel for further use."
+                    ],
+                    "Story ID": "S015"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E004",
+            "Title": "Pipeline Transformation from Intent to Structure",
+            "Description": "Design a multi-step pipeline that converts the CREATOR's spoken intents into structured artifacts. This includes stages from Vision to Requirements, Stakeholders/Phases, Epics, Stories, and Tasks, with complexity scoring for each task.",
+            "User Stories": [
+                {
+                    "Title": "Voice Intake and Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision into a voice intake UI so that it can be transcribed live into an editable text area.",
+                    "AcceptanceCriteria": [
+                        "The system provides a local desktop UI for voice input.",
+                        "Live transcription of spoken words into text is accurate and displayed in real-time.",
+                        "The transcribed text is editable by the CREATOR before submission."
+                    ],
+                    "Story ID": "S016"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key within the UI so that I can ensure AI functionalities are enabled.",
+                    "AcceptanceCriteria": [
+                        "The UI provides a clear path to obtain and input an OpenAI API key.",
+                        "The API key is stored securely on the local system.",
+                        "The UI displays a red/green indicator to show the presence and validity of the API key."
+                    ],
+                    "Story ID": "S017"
+                },
+                {
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on my input so that it can gather all necessary information for proposal generation.",
+                    "AcceptanceCriteria": [
+                        "The system generates AI-driven questions to clarify and gather missing information.",
+                        "Each user response is logged and stored locally in a conversation log.",
+                        "The system continues to prompt until sufficient information is collected."
+                    ],
+                    "Story ID": "S018"
+                },
+                {
+                    "Title": "Pipeline Transformation",
+                    "Description": "As a CREATOR, I want my spoken intents to be transformed into structured artifacts through a multi-step pipeline so that I can receive organized execution plans.",
+                    "AcceptanceCriteria": [
+                        "The system processes intents through stages: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Each task is scored for complexity and effort.",
+                        "Structured artifacts are compiled into proposal drafts."
+                    ],
+                    "Story ID": "S019"
+                },
+                {
+                    "Title": "Artifact Storage and Export",
+                    "Description": "As a CREATOR, I want to store and export my proposal artifacts locally so that I can review and share them as needed.",
+                    "AcceptanceCriteria": [
+                        "JSON artifacts are stored locally on the system.",
+                        "The system provides options to export proposals to PDF and Excel formats.",
+                        "Local UIs are available for reviewing and editing intermediate artifacts."
+                    ],
+                    "Story ID": "S020"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E005",
+            "Title": "Local Storage and Artifact Management",
+            "Description": "Ensure all conversation logs and JSON artifacts are stored locally. Provide options for the CREATOR to review, edit, and export proposal drafts and artifacts to formats like PDF or Excel, maintaining data integrity and accessibility.",
+            "User Stories": [
+                {
+                    "Title": "Store Conversation Logs Locally",
+                    "Description": "As a CREATOR, I want all conversation logs to be stored locally so that I can access and review them at any time without needing an internet connection.",
+                    "AcceptanceCriteria": [
+                        "Conversation logs are automatically saved to a specified local directory.",
+                        "Logs are stored in a readable format, such as JSON or plain text.",
+                        "The system provides a notification confirming successful storage after each session."
+                    ],
+                    "Story ID": "S021"
+                },
+                {
+                    "Title": "Store JSON Artifacts Locally",
+                    "Description": "As a CREATOR, I want JSON artifacts to be stored locally so that I can manage and analyze structured data offline.",
+                    "AcceptanceCriteria": [
+                        "JSON artifacts are saved to a specified local directory upon creation.",
+                        "Artifacts are named and organized in a way that reflects their content and creation date.",
+                        "The system provides a notification confirming successful storage of each artifact."
+                    ],
+                    "Story ID": "S022"
+                },
+                {
+                    "Title": "Review and Edit Proposal Drafts",
+                    "Description": "As a CREATOR, I want to review and edit proposal drafts locally so that I can refine my proposals before finalizing them.",
+                    "AcceptanceCriteria": [
+                        "The system provides a local UI for accessing and editing proposal drafts.",
+                        "Edits can be made directly within the UI and saved back to the local storage.",
+                        "The UI allows for undo/redo actions during the editing process."
+                    ],
+                    "Story ID": "S023"
+                },
+                {
+                    "Title": "Export Proposals to PDF",
+                    "Description": "As a CREATOR, I want to export proposal drafts to PDF format so that I can share them easily with stakeholders.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to export proposal drafts to PDF format.",
+                        "Exported PDFs maintain the formatting and content of the original draft.",
+                        "The export process is completed within a reasonable time frame (e.g., under 30 seconds)."
+                    ],
+                    "Story ID": "S024"
+                },
+                {
+                    "Title": "Export Proposals to Excel",
+                    "Description": "As a CREATOR, I want to export proposal drafts to Excel format so that I can perform further data analysis.",
+                    "AcceptanceCriteria": [
+                        "The system provides an option to export proposal drafts to Excel format.",
+                        "Exported Excel files maintain the structure and data integrity of the original draft.",
+                        "The export process is completed within a reasonable time frame (e.g., under 30 seconds)."
+                    ],
+                    "Story ID": "S025"
+                },
+                {
+                    "Title": "Maintain Data Integrity",
+                    "Description": "As a CREATOR, I want the system to ensure data integrity during storage and export so that my proposals remain accurate and reliable.",
+                    "AcceptanceCriteria": [
+                        "Data integrity checks are performed when saving and exporting files.",
+                        "Any detected data corruption or errors are reported to the user with options for resolution.",
+                        "The system logs all storage and export actions for audit purposes."
+                    ],
+                    "Story ID": "S026"
+                },
+                {
+                    "Title": "Access Local Storage Options",
+                    "Description": "As a CREATOR, I want to access and configure local storage options so that I can manage where and how my data is stored.",
+                    "AcceptanceCriteria": [
+                        "The system provides a settings menu to configure local storage paths.",
+                        "Users can choose default directories for conversation logs and JSON artifacts.",
+                        "Changes to storage settings are applied immediately and persist across sessions."
+                    ],
+                    "Story ID": "S027"
+                }
+            ]
+        },
+        {
+            "Epic ID": "E006",
+            "Title": "Offline Workflow Optimization",
+            "Description": "Optimize the system for a self-contained offline workflow, allowing the CREATOR to operate without constant internet connectivity. Focus on efficient local processing and storage, with only necessary interactions with the OpenAI API.",
+            "User Stories": [
+                {
+                    "Title": "Voice Intake and Transcription",
+                    "Description": "As a CREATOR, I want to speak my vision and have it transcribed live into an editable text area so that I can easily capture and refine my ideas.",
+                    "AcceptanceCriteria": [
+                        "The system provides a local desktop UI for voice input on Windows.",
+                        "Live transcription of spoken words into text is displayed in real-time.",
+                        "The text area allows for editing and submission of the transcribed text."
+                    ],
+                    "Story ID": "S028"
+                },
+                {
+                    "Title": "API Key Management",
+                    "Description": "As a CREATOR, I want to manage my OpenAI API key locally so that I can ensure secure and efficient AI interactions.",
+                    "AcceptanceCriteria": [
+                        "The UI includes a path for obtaining and storing the OpenAI API key locally.",
+                        "The system indicates the presence of the API key with a red/green state.",
+                        "All AI-related calls use the locally stored API key."
+                    ],
+                    "Story ID": "S029"
+                },
+                {
+                    "Title": "Conversational Requirements Capture",
+                    "Description": "As a CREATOR, I want the system to ask clarifying questions based on missing information so that I can provide sufficient details for proposal generation.",
+                    "AcceptanceCriteria": [
+                        "The system generates AI-driven questions to gather necessary information.",
+                        "User responses are logged in a conversation log stored locally.",
+                        "The question loop continues until all required information is collected."
+                    ],
+                    "Story ID": "S030"
+                },
+                {
+                    "Title": "Intent to Structure Pipeline",
+                    "Description": "As a CREATOR, I want my captured intents to be transformed into structured artifacts so that I can have organized execution plans.",
+                    "AcceptanceCriteria": [
+                        "The system transforms intents through stages: Vision \u2192 Requirements \u2192 Stakeholders/Phases \u2192 Epics \u2192 Stories \u2192 Tasks.",
+                        "Tasks are scored for complexity and effort.",
+                        "Outputs are compiled into proposal artifacts."
+                    ],
+                    "Story ID": "S031"
+                },
+                {
+                    "Title": "Local Storage of Artifacts",
+                    "Description": "As a CREATOR, I want my proposal artifacts to be stored locally so that I can access and manage them without internet connectivity.",
+                    "AcceptanceCriteria": [
+                        "JSON artifacts are stored locally on the Windows system.",
+                        "The system provides options to export outputs to PDF/Excel.",
+                        "Local UIs are available for reviewing or editing intermediate artifacts."
+                    ],
+                    "Story ID": "S032"
+                },
+                {
+                    "Title": "Offline Workflow",
+                    "Description": "As a CREATOR, I want to operate the system offline so that I can work without relying on constant internet connectivity.",
+                    "AcceptanceCriteria": [
+                        "The system functions as a self-contained offline workflow.",
+                        "All interactions, except initial API key setup, do not require internet connectivity.",
+                        "The system efficiently processes intents into structured proposals offline."
+                    ],
+                    "Story ID": "S033"
                 }
             ]
         }

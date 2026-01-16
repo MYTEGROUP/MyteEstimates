@@ -1,14 +1,23 @@
 #2Stories2Tasks.py
 import json
+import os
 from OpenAIModels.textgen import generate_text, generate_text_json
 import threading
 import queue
 import time
 from threading import Semaphore, Timer, Lock
 from collections import OrderedDict
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
 
 # Initialize semaphore with 60 permits
 rate_limit_semaphore = Semaphore(30)
+
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
 
 def reset_semaphore(timer):
     """
@@ -156,7 +165,8 @@ def main():
     timer = Timer(60, reset_semaphore, [None])
     timer.start()
 
-    with open('storage/ProjectBreakdown.json') as file:
+    storage_dir = get_storage_dir()
+    with open(os.path.join(storage_dir, 'ProjectBreakdown.json')) as file:
         project_breakdown = json.load(file, object_pairs_hook=OrderedDict)
 
     task_queue = queue.Queue()
@@ -211,7 +221,7 @@ def main():
                     task_counter += 1
 
     # Save results to JSON
-    with open('storage/ProjectBreakdown1.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'ProjectBreakdown1.json'), 'w') as file:
         json.dump(results, file, indent=4)
 
 

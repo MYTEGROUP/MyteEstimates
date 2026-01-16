@@ -4,8 +4,16 @@ import os
 import threading
 from queue import Queue
 import logging
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
 
 
 def load_complexity_hours(file_path):
@@ -260,7 +268,8 @@ def calculate_totals(file_path):
 if __name__ == '__main__':
     results = []
     q = Queue()
-    file_path = os.path.join('storage', 'ProjectBreakdown1.json')
-    complexity_file_path = os.path.join('storage', 'Complexity.json')
+    storage_dir = get_storage_dir()
+    file_path = os.path.join(storage_dir, 'ProjectBreakdown1.json')
+    complexity_file_path = os.path.join(storage_dir, 'Complexity.json')
     read_and_process_json(file_path, complexity_file_path)
     calculate_totals(file_path)

@@ -1,7 +1,17 @@
 from datetime import datetime
 from OpenAIModels.textgen import generate_text, generate_text_json
 import json
+import os
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
 from datetime import datetime
+
+
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
 
 
 def read_json(file_path):
@@ -218,19 +228,20 @@ def add_proposal_id_to_json(file_path, proposal_id):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
 def main():
+    storage_dir = get_storage_dir()
 
     # Read contents of ProjectBreakdown1.json and Project_Requirements.json
-    project_breakdown = read_json('storage/Initial_Client_Requirements.json')
-    project_requirements = read_json('storage/Project_Requirements.json')
+    project_breakdown = read_json(os.path.join(storage_dir, 'Initial_Client_Requirements.json'))
+    project_requirements = read_json(os.path.join(storage_dir, 'Project_Requirements.json'))
 
     # Pass the contents to ProposalCreateDetails function
     project_details = ProposalCreateDetails(project_breakdown, project_requirements)
 
     # Save project details into Proposal.json
-    write_json(project_details, 'storage/Proposal.json')
+    write_json(project_details, os.path.join(storage_dir, 'Proposal.json'))
 
     # Extract global deliverables from Proposal.json
-    proposal_data = read_json('storage/Proposal.json')
+    proposal_data = read_json(os.path.join(storage_dir, 'Proposal.json'))
     global_deliverables = proposal_data.get('Deliverables', [])
     # Generate and update milestones
     proposal_milestones = ProposalMilestones(project_breakdown, project_requirements, global_deliverables)
@@ -241,16 +252,16 @@ def main():
     proposal_data['Risks'] = json.loads(proposal_risks)            # Assuming returns a JSON string
 
     # Write the updated proposal data back to the Proposal.json file
-    with open('storage/Proposal.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'Proposal.json'), 'w') as file:
         json.dump(proposal_data, file, indent=4)
 
     ### Link this to a CRM of Clients
     client_info = {
-        "CompanyName": "Questionz",
-        "ContactPerson": "Paul Lafleur",
-        "Address": "275 Lakeshore Dr Pointe-Claire, QC H9S 4L1",
-        "Email": "paul.lafleur@questionz.ca",
-        "Phone": "5149709691"
+        "CompanyName": "The World",
+        "ContactPerson": "Builders of the Open Web",
+        "Address": "Distributed, borderless, and P2P",
+        "Email": "hello@theworld.network",
+        "Phone": "0000000000"
     }
 
     #Link this to a CRM of Users of the Tool.
@@ -269,17 +280,17 @@ def main():
         "TeamExpertise": "Under the leadership of Ahmed Mekallach, Myte Group boasts a profound expertise uniquely blending business acumen with technical prowess. With over eight years of experience in sales, estimating, and project management, Ahmed's comprehensive understanding of business processes and keen coding skills enable him to tackle challenges efficiently and innovatively. His approach not only ensures operational excellence but also drives the development of AI-driven solutions that are both sophisticated and practical, perfectly suited to meet the intricate demands of modern businesses. This unique combination positions Myte Group as a leader in AI systems design and development, capable of delivering high-quality, customized solutions."
     }
 
-    file_path = 'storage/Proposal.json'
+    file_path = os.path.join(storage_dir, 'Proposal.json')
     update_client_information(file_path, client_info)
     update_user_information(file_path, user_info)
     update_our_qualifications(file_path, qualifications)
 
 
-    update_proposal_json('storage/ProjectBreakdown1.json', 'storage/Proposal.json')
+    update_proposal_json(os.path.join(storage_dir, 'ProjectBreakdown1.json'), os.path.join(storage_dir, 'Proposal.json'))
     add_current_date_to_proposal(file_path)
     # Add Proposal ID to Proposal.json
     proposal_id = "S2024017"  # Example hardcoded Proposal ID
-    add_proposal_id_to_json('storage/Proposal.json', proposal_id)
+    add_proposal_id_to_json(os.path.join(storage_dir, 'Proposal.json'), proposal_id)
 
 if __name__ == "__main__":
     main()

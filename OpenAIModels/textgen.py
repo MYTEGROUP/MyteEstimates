@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 # Load environment variables from the project directory
-load_dotenv('credentials.env')
+load_dotenv('.env')
 api_key = os.getenv('OPENAI_API_KEY')
 
 openai_client = OpenAI(api_key=api_key)

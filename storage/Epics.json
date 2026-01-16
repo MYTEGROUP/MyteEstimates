@@ -1,55 +1,190 @@
 {
     "Stakeholder_Epics": {
-        "Solopreneurs": [
+        "CREATOR: Inputs spoken intents": [
             {
                 "Epic ID": "E001",
-                "Title": "Conversational System for Ideation",
-                "Description": "Develop a chat-like interface where solopreneurs can interact with an AI system. The AI will prompt users with questions to gather their views, opinions, and knowledge about their business or expertise."
+                "Title": "Voice Intake and Transcription",
+                "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision. The system will transcribe audio input live into an editable text area, enabling the CREATOR to stop, edit, and submit their responses."
             },
             {
                 "Epic ID": "E002",
-                "Title": "AI Script Generation",
-                "Description": "Implement an AI system that uses gathered information to generate 90-second scripts, including scene descriptions. Ensure the scripts have a proper hook, arc, and finish to maximize engagement on social media platforms."
+                "Title": "API Key Management",
+                "Description": "Implement a user-friendly path within the UI for the CREATOR to obtain and manage an OpenAI API key. The system will store the key locally and indicate its presence with a red/green state, ensuring seamless integration with AI functionalities."
             },
             {
                 "Epic ID": "E003",
-                "Title": "Campaign Management",
-                "Description": "Create a feature that allows solopreneurs to create and manage campaigns. Each campaign will have a series of generated scripts that users can review and edit before finalizing."
+                "Title": "Conversational Requirements Capture",
+                "Description": "Design a system that uses AI-driven prompts to ask clarifying questions and capture the necessary information from the CREATOR. Responses will be logged in a local conversation log, with the AI generating questions until sufficient data is collected."
             },
             {
                 "Epic ID": "E004",
-                "Title": "Content Extraction and Formatting",
-                "Description": "Develop functionality to allow users to export generated scripts into structured document formats (e.g., Word or PDF) for review and feedback."
+                "Title": "Intent to Structure Transformation",
+                "Description": "Create a multi-step pipeline that transforms the CREATOR's captured intents into structured artifacts. This includes stages from Vision to Requirements, Stakeholders/Phases, Epics, Stories, and Tasks, with tasks scored for complexity and effort."
             },
             {
                 "Epic ID": "E005",
-                "Title": "Multi-language Support",
-                "Description": "Ensure the platform supports multiple languages based on user input. The AI should automatically detect the language of the user's input and generate scripts in that language."
+                "Title": "Local Data Storage and Output",
+                "Description": "Ensure all JSON artifacts and conversation logs are stored locally. Provide options for the CREATOR to review, edit, and export proposal drafts and outputs to formats like PDF or Excel, maintaining a self-contained offline workflow."
+            }
+        ],
+        "CREATOR: Manages API key onboarding": [
+            {
+                "Epic ID": "E001",
+                "Title": "Voice Intake and Transcription",
+                "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision, transcribe audio into text in real-time, and provide options to edit and submit the transcriptions."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "API Key Management",
+                "Description": "Create a user-friendly path within the UI for the CREATOR to obtain and manage an OpenAI API key, including secure local storage of the key and visual indicators of its status."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Conversational Requirements Capture",
+                "Description": "Implement an AI-driven system that asks clarifying questions to the CREATOR to gather necessary information, storing responses locally and ensuring comprehensive data collection."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Intent Transformation Pipeline",
+                "Description": "Design a multi-step pipeline that converts the CREATOR's captured intents into structured artifacts, including requirements, stakeholders, phases, epics, stories, and tasks."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Proposal and Artifact Generation",
+                "Description": "Develop functionalities to compile outputs into proposal drafts and structured artifacts, with options for local storage and export to formats like PDF and Excel."
             },
             {
                 "Epic ID": "E006",
+                "Title": "Local Data Management",
+                "Description": "Ensure all data, including conversation logs and JSON artifacts, are stored securely on the local system, with options for reviewing and editing intermediate artifacts."
+            }
+        ],
+        "CREATOR: Converts intents to proposals": [
+            {
+                "Epic ID": "E001",
+                "Title": "Voice Intake and Transcription",
+                "Description": "Develop a local desktop user interface for Windows that allows the CREATOR to speak their vision. This UI will transcribe audio input live into an editable text area, enabling the CREATOR to stop, edit, and submit their responses."
+            },
+            {
+                "Epic ID": "E002",
                 "Title": "API Key Management",
-                "Description": "Implement a feature that allows users to input their own OpenAI API key to use the AI functionalities, ensuring the system is tied to the user's own account."
+                "Description": "Implement a user-friendly path within the UI for obtaining and managing an OpenAI API key. The system should store the key locally, use it for AI calls, and visually indicate the key's presence with a red/green state."
             },
             {
-                "Epic ID": "E007",
-                "Title": "Local Data Storage",
-                "Description": "Store all user data, including inputs and generated scripts, locally in JSON files within a specified storage directory. Ensure efficient management of local storage for quick access and retrieval of data."
+                "Epic ID": "E003",
+                "Title": "Conversational Requirements Capture",
+                "Description": "Create a system that uses AI-driven prompts to ask clarifying questions and capture necessary information from the CREATOR. Each response should be logged in a local conversation log, with the AI generating questions until sufficient data is collected."
             },
             {
-                "Epic ID": "E008",
-                "Title": "Script Review and Editing",
-                "Description": "Provide a user-friendly interface for solopreneurs to review and edit AI-generated scripts before finalizing them for use."
+                "Epic ID": "E004",
+                "Title": "Intent to Structure Pipeline",
+                "Description": "Design a multi-step pipeline that transforms captured intents into structured artifacts, progressing through stages such as Vision, Requirements, Stakeholders/Phases, Epics, Stories, and Tasks. Tasks should be scored for complexity and effort."
             },
             {
-                "Epic ID": "E009",
-                "Title": "User Interface Design",
-                "Description": "Design a simple, full-screen interface with a dashboard that includes buttons for creating new campaigns and viewing existing ones. The conversational system should resemble a chat window for intuitive user interaction."
+                "Epic ID": "E005",
+                "Title": "Proposal Artifacts and Outputs",
+                "Description": "Develop functionality to compile outputs into proposal artifacts, storing JSON files locally. Provide options for exporting these outputs to formats like PDF or Excel, and include local UIs for reviewing or editing intermediate artifacts."
             },
             {
-                "Epic ID": "E010",
-                "Title": "Data Backup Responsibility",
-                "Description": "Inform users about their responsibility for backing up their data manually, as the platform will not include built-in backup or data recovery features."
+                "Epic ID": "E006",
+                "Title": "Offline Workflow Optimization",
+                "Description": "Ensure the entire workflow operates offline on a local Windows system, from voice or text input to structured plan outputs. This includes optimizing the system for performance and responsiveness during real-time transcription and AI-driven interactions."
+            }
+        ],
+        "CREATOR: Exports outputs to formats": [
+            {
+                "Epic ID": "E001",
+                "Title": "Voice Intake and Transcription",
+                "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision, with live transcription into an editable text area. This feature will enable the CREATOR to capture their ideas verbally and make real-time edits before submission."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "API Key Management",
+                "Description": "Implement a user-friendly path within the UI for obtaining and managing an OpenAI API key. The system should store the key locally and indicate its presence with a red/green state, ensuring seamless integration with AI functionalities."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Conversational Requirements Capture",
+                "Description": "Create a system that uses AI-driven prompts to ask clarifying questions and capture necessary information from the CREATOR. Each response should be logged locally, and the AI should continue generating questions until sufficient data is collected for proposal creation."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Intent to Structure Transformation",
+                "Description": "Design a multi-step pipeline that transforms captured intents into structured artifacts, including requirements, stakeholders, phases, epics, stories, and tasks. This process should score tasks for complexity and effort, compiling them into proposal artifacts."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Local Storage and Export Options",
+                "Description": "Ensure all JSON artifacts and conversation logs are stored locally. Provide the CREATOR with options to export proposal drafts and other outputs to formats like PDF and Excel, allowing for easy sharing and review of structured plans."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Review and Edit Intermediate Artifacts",
+                "Description": "Develop optional local UIs that allow the CREATOR to review and edit intermediate artifacts. This feature will enable the CREATOR to refine their proposals and ensure accuracy before finalizing outputs."
+            }
+        ],
+        "CREATOR: Reviews AI-driven prompts": [
+            {
+                "Epic ID": "E001",
+                "Title": "Voice Intake and Transcription",
+                "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision. The system will transcribe audio live into an editable text area, enabling the CREATOR to stop, edit, and submit their responses."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "API Key Management",
+                "Description": "Implement a user-friendly path within the UI for obtaining and storing an OpenAI API key locally. The UI should visually indicate the presence of the API key using a red/green state."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Conversational Requirements Capture",
+                "Description": "Create a system that uses AI-driven prompts to ask clarifying questions and capture necessary information. User responses should be logged in a conversation log stored locally, with AI generating questions until sufficient information is collected."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Intent to Structure Transformation",
+                "Description": "Build a pipeline that transforms captured intents into structured artifacts through stages: Vision to Requirements, Stakeholders/Phases, Epics, Stories, and Tasks. Tasks should be scored for complexity and effort."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Local Storage and Output Management",
+                "Description": "Design a system to store JSON artifacts locally and provide options for exporting proposal drafts and other outputs to formats like PDF or Excel. Include local UIs for reviewing or editing intermediate artifacts."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Offline Workflow Optimization",
+                "Description": "Ensure the software functions as a self-contained offline workflow, starting from voice or text input and ending with structured plans and proposal outputs. Optimize the system for efficient processing and responsiveness."
+            }
+        ],
+        "CREATOR: Edits transcriptions": [
+            {
+                "Epic ID": "E001",
+                "Title": "Voice Intake and Transcription",
+                "Description": "Develop a local desktop UI for Windows that allows the CREATOR to speak their vision. The system should transcribe audio into text in real-time, providing an editable text area for the CREATOR to make necessary adjustments before submission."
+            },
+            {
+                "Epic ID": "E002",
+                "Title": "API Key Management and Onboarding",
+                "Description": "Create a user-friendly interface for obtaining and managing an OpenAI API key. The UI should guide the CREATOR through the process of acquiring the key, store it locally, and visually indicate its presence with a red/green state."
+            },
+            {
+                "Epic ID": "E003",
+                "Title": "Conversational Requirements Capture",
+                "Description": "Implement a system that engages the CREATOR with AI-driven prompts to capture detailed requirements. The system should log each response locally, ensuring a comprehensive collection of information to transform into structured outputs."
+            },
+            {
+                "Epic ID": "E004",
+                "Title": "Pipeline Transformation from Intent to Structure",
+                "Description": "Design a multi-step pipeline that converts the CREATOR's spoken intents into structured artifacts. This includes stages from Vision to Requirements, Stakeholders/Phases, Epics, Stories, and Tasks, with complexity scoring for each task."
+            },
+            {
+                "Epic ID": "E005",
+                "Title": "Local Storage and Artifact Management",
+                "Description": "Ensure all conversation logs and JSON artifacts are stored locally. Provide options for the CREATOR to review, edit, and export proposal drafts and artifacts to formats like PDF or Excel, maintaining data integrity and accessibility."
+            },
+            {
+                "Epic ID": "E006",
+                "Title": "Offline Workflow Optimization",
+                "Description": "Optimize the system for a self-contained offline workflow, allowing the CREATOR to operate without constant internet connectivity. Focus on efficient local processing and storage, with only necessary interactions with the OpenAI API."
             }
         ]
     }

@@ -2,3 +2,19 @@ openai  # Replace <version> with the specific version of the OpenAI package you 
 python-dotenv==0.20.0
 pandas
 python-docx==0.8.11
+beautifulsoup4
+email-validator
+flask
+flask-wtf
+openpyxl
+pillow
+pygame
+scipy
+sounddevice
+weasyprint
+wtforms
+numpy  # Voice UI deps were originally installed system-wide on the author's machine
+scipy  # Voice UI deps were originally installed system-wide on the author's machine
+sounddevice  # Voice UI deps were originally installed system-wide on the author's machine
+pygame  # Voice UI deps were originally installed system-wide on the author's machine
+pillow  # Voice UI deps were originally installed system-wide on the author's machine

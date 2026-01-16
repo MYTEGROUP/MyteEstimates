@@ -1,0 +1,7 @@
+/.venv then
+/.venv
+*.pyc
+.env
+credentials.env
+/temp
+/staticLinkedIN

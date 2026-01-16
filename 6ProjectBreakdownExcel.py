@@ -3,9 +3,19 @@ import pandas as pd
 import openpyxl
 from openpyxl.styles import Font, Border, Side, Alignment, PatternFill, NamedStyle
 from openpyxl.utils.dataframe import dataframe_to_rows
+import os
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
+
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
 
 # Load JSON data
-with open('storage/ProjectBreakdown1.json') as file:
+storage_dir = get_storage_dir()
+with open(os.path.join(storage_dir, 'ProjectBreakdown1.json')) as file:
     data = json.load(file)
 
 # Flatten the data for Excel conversion
@@ -70,4 +80,5 @@ def apply_merge_style(ws, column_indices):
 apply_merge_style(ws, [1, 2, 3, 4, 5, 6, 7, 8])  # Adjust the indices to include all the columns that need merging
 
 # Save the styled Excel file
-wb.save('StyledProjectBreakdown.xlsx')
+output_path = os.path.join(get_base_path(), 'StyledProjectBreakdown.xlsx')
+wb.save(output_path)

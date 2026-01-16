@@ -14,6 +14,7 @@ import numpy as np
 from tools.AGetAPIKeyInstructions import display_instructions
 import webbrowser
 from json.decoder import JSONDecodeError
+from dotenv import load_dotenv
 
 welcome_message = "Hey, glad you're here with us! Can you start by telling us what you plan to build as a platform?"
 # Set the final message of the conversation
@@ -31,7 +32,7 @@ def initialize_conversation_file():
     }
 
     # Ensure the Storage directory exists
-    storage_dir = os.path.join(get_base_path(), '../storage')
+    storage_dir = os.path.join(get_base_path(), 'storage')
     if not os.path.exists(storage_dir):
         os.makedirs(storage_dir)
 
@@ -62,11 +63,11 @@ def start_recording():
     def transcribe_segment(segment_data):
 
         # Ensure the temp directory exists
-        temp_dir = os.path.join(get_base_path(), '../temp')
+        temp_dir = os.path.join(get_base_path(), 'temp')
         os.makedirs(temp_dir, exist_ok=True)
 
         # Save the current segment to a temporary file
-        segment_path = os.path.join(get_base_path(), '../temp', 'segment.wav')
+        segment_path = os.path.join(get_base_path(), 'temp', 'segment.wav')
         write(segment_path, sample_rate, segment_data)
 
         # Transcribe the segment
@@ -190,7 +191,7 @@ def play_audio(file_path):
 
 
 def append_to_conversation_file(role, message):
-    file_path = os.path.join(get_base_path(), '../storage', 'OnboardConversation.json')
+    file_path = os.path.join(get_base_path(), 'storage', 'OnboardConversation.json')
     # Ensure the file exists with a default structure
     if not os.path.exists(file_path):
         with open(file_path, 'w', encoding='utf-8') as f:  # Specify UTF-8 encoding
@@ -208,7 +209,7 @@ def append_to_conversation_file(role, message):
 
 
 def ClientOnboarder():
-    file_path = os.path.join(get_base_path(), '../storage', 'OnboardConversation.json')
+    file_path = os.path.join(get_base_path(), 'storage', 'OnboardConversation.json')
     # Check if file exists, if not, create it with an initial structure
     if not os.path.exists(file_path):
         with open(file_path, 'w') as f:
@@ -269,7 +270,7 @@ def ClientOnboarder():
 
 
 def check_onboarding_status():
-    status_file_path = os.path.join(get_base_path(), '../storage', 'User_Onboarding_Status.json')
+    status_file_path = os.path.join(get_base_path(), 'storage', 'User_Onboarding_Status.json')
     # Check if file exists, if not, create it with an initial structure
     if not os.path.exists(status_file_path):
         with open(status_file_path, 'w') as f:
@@ -322,16 +323,14 @@ def update_next_step_button_color(button, status):
 
 
 def check_api_key_and_update_button():
-    preferences_file_path = os.path.join(get_base_path(), '../storage', 'User_Preferences.json')
     try:
-        with open(preferences_file_path, 'r') as f:
-            preferences = json.load(f)
-            api_key = preferences.get('openai_api_key', '')
-            if api_key:  # If the API key exists and is not empty
-                get_api_key_button.config(bg='green', fg='white')
-            else:
-                get_api_key_button.config(bg='red', fg='white')
-    except (FileNotFoundError, JSONDecodeError):  # Catch both file not found and JSON decode errors
+        load_dotenv(os.path.join(get_base_path(), '.env'))
+        api_key = os.getenv('OPENAI_API_KEY', '')
+        if api_key:  # If the API key exists and is not empty
+            get_api_key_button.config(bg='green', fg='white')
+        else:
+            get_api_key_button.config(bg='red', fg='white')
+    except Exception:
         get_api_key_button.config(bg='red', fg='white')
 
 
@@ -361,17 +360,15 @@ def center_window(window):
 
 
 def check_api_key_before_action(action):
-    preferences_file_path = os.path.join(get_base_path(), '../storage', 'User_Preferences.json')
     try:
-        with open(preferences_file_path, 'r') as f:
-            preferences = json.load(f)
-            api_key = preferences.get('openai_api_key', '')
-            if not api_key:
-                messagebox.showerror("API Key Required", "Please get your API Key first.")
-                return
-            else:
-                action()
-    except (FileNotFoundError, JSONDecodeError):
+        load_dotenv(os.path.join(get_base_path(), '.env'))
+        api_key = os.getenv('OPENAI_API_KEY', '')
+        if not api_key:
+            messagebox.showerror("API Key Required", "Please get your API Key first.")
+            return
+        else:
+            action()
+    except Exception:
         messagebox.showerror("API Key Required", "Please get your API Key first.")
 
 

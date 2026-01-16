@@ -1,17 +1,28 @@
 #7ReviewBreakdown.py
 from flask import Flask, render_template, url_for, redirect, jsonify, request
 import json
+import os
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
 
 app = Flask(__name__)
+
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
+
+storage_dir = get_storage_dir()
 
 # Global variable to hold the project data
 project_data = {}
 
 # Load the project data when the application starts, not as a before_first_request
-with open('storage/ProjectBreakdown1.json') as file:
+with open(os.path.join(storage_dir, 'ProjectBreakdown1.json')) as file:
     project_data = json.load(file)
 def save_changes():
-    with open('storage/ProjectBreakdown1.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'ProjectBreakdown1.json'), 'w') as file:
         json.dump(project_data, file, indent=4)
 
 @app.route('/')

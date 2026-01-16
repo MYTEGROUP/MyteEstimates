@@ -2,6 +2,7 @@
 import base64
 
 from openai import OpenAI
+from dotenv import load_dotenv
 import json
 import os
 import sys
@@ -22,11 +23,8 @@ def get_base_path():
 
 def get_api_key():
     try:
-        preferences_path = os.path.join(get_base_path(), 'storage', 'User_Preferences.json')
-
-        with open(preferences_path, 'r') as file:
-            preferences = json.load(file)
-            return preferences.get('openai_api_key')
+        load_dotenv(os.path.join(get_base_path(), '.env'))
+        return os.getenv('OPENAI_API_KEY')
     except Exception as e:
         print(f"An error occurred while retrieving the API key: {e}")
         return None
@@ -147,8 +145,9 @@ def text_to_speech(input_text, filename="question.mp3"):
     # Determine the base path of the application
     base_path = get_base_path()
 
-    # Define the full path to the staticLinkedIN directory
-    static_dir = os.path.join(base_path, 'staticLinkedIN')
+    # Define the full path to the audio output directory
+    audio_output_dir = os.getenv('MYTE_AUDIO_OUTPUT_DIR', 'staticLinkedIN')
+    static_dir = os.path.join(base_path, audio_output_dir)
 
     # Ensure the staticLinkedIN directory exists
     if not os.path.exists(static_dir):

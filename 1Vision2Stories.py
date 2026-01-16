@@ -1,5 +1,6 @@
 #1Vision2Stories.py
 import json
+import os
 from OpenAIModels.textgen import generate_text, generate_text_json
 import threading
 from collections import OrderedDict
@@ -7,6 +8,15 @@ import tkinter as tk
 from tkinter import scrolledtext, simpledialog
 import queue
 import time
+from dotenv import load_dotenv
+from tools.JsonOperators import get_base_path
+
+
+def get_storage_dir():
+    base_path = get_base_path()
+    load_dotenv(os.path.join(base_path, '.env'))
+    storage_dir = os.getenv('MYTE_STORAGE_DIR', 'storage')
+    return os.path.join(base_path, storage_dir)
 
 
 # Functions to process a single section of Project Requirement Template and update its response
@@ -270,13 +280,14 @@ def process_stakeholder_epic(epic_index, epic, stakeholder, project_requirements
         }
 
 def process_epics():
-    with open('storage/Epics.json', 'r') as file:
+    storage_dir = get_storage_dir()
+    with open(os.path.join(storage_dir, 'Epics.json'), 'r') as file:
         epics_data = json.load(file)
 
-    with open('storage/Project_Requirements.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'Project_Requirements.json'), 'r') as file:
         project_requirements = json.load(file)
 
-    with open('storage/Initial_Client_Requirements.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'Initial_Client_Requirements.json'), 'r') as file:
         client_requirements = json.load(file)
 
     # This will store the final results with proper IDs
@@ -312,7 +323,7 @@ def process_epics():
             final_results[stakeholder].append(story_group)
 
         # Save to JSON
-    with open('storage/ProjectBreakdown.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'ProjectBreakdown.json'), 'w') as file:
         json.dump(final_results, file, indent=4)
 
     print("Project breakdown with user stories for each stakeholder has been successfully compiled and saved.")
@@ -438,12 +449,13 @@ def main():
     }
 
     # Save the data into a JSON file in the 'storage' directory
-    with open('storage/Initial_Client_Requirements.json', 'w') as json_file:
+    storage_dir = get_storage_dir()
+    with open(os.path.join(storage_dir, 'Initial_Client_Requirements.json'), 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
     root.destroy()  # Now destroy the root window safely after capturing the input
 
-    with open('storage/project_description_template.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'project_description_template.json'), 'r') as file:
         project_description_template = json.load(file)
 
     updated_project_description = []
@@ -460,14 +472,14 @@ def main():
     # Sort the updated_project_description by index and extract the data
     ordered_project_description = [item["data"] for item in sorted(updated_project_description, key=lambda x: x["index"])]
 
-    with open('storage/Project_Requirements.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'Project_Requirements.json'), 'w') as file:
         json.dump(ordered_project_description, file, indent=4)
 
     print("Project requirements have been successfully processed and saved.")
 
 
     # Creating Summaries for Vision, Business Verticles, StakeHolders, Revenue Models
-    with open('storage/Project_Requirements.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'Project_Requirements.json'), 'r') as file:
         Project_Requirements = json.load(file)
 
     project_vision = Project_Vision(Project_Requirements)
@@ -499,20 +511,20 @@ def main():
     }
 
     # Save the compiled requirements to a JSON file
-    with open('storage/ProjectSummary.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'ProjectSummary.json'), 'w') as file:
         json.dump(project_requirements_short, file, indent=4)
 
     print("Short project requirements have been successfully compiled and saved.")
 
     #Creation of Epics
     # Load Project Requirements and Project Summary
-    with open('storage/Project_Requirements.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'Project_Requirements.json'), 'r') as file:
         Project_Requirements = json.load(file)
 
-    with open('storage/ProjectSummary.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'ProjectSummary.json'), 'r') as file:
         project_summary = json.load(file)
 
-    with open('storage/Initial_Client_Requirements.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'Initial_Client_Requirements.json'), 'r') as file:
         Initial_Requirements = json.load(file)
 
     stakeholders = project_summary['Stakeholders']
@@ -520,19 +532,19 @@ def main():
     # Generate and save epics for each stakeholder
     stakeholder_epics = process_all_stakeholders(Project_Requirements, stakeholders,Initial_Requirements)
 
-    with open('storage/Epics.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'Epics.json'), 'w') as file:
         json.dump({"Stakeholder_Epics": stakeholder_epics}, file, indent=4)
 
     print("Epics for each stakeholder have been successfully compiled and saved.")
 
     # Edit Epics before proceeding to create stories
-    with open('storage/Epics.json', 'r') as file:
+    with open(os.path.join(storage_dir, 'Epics.json'), 'r') as file:
         epics_json = file.read()
 
     epics_json = edit_epics(epics_json)
 
     # Save the updated epics
-    with open('storage/Epics.json', 'w') as file:
+    with open(os.path.join(storage_dir, 'Epics.json'), 'w') as file:
         file.write(epics_json)
 
    #Logic to create the Stories for each epic/Stakeholder
